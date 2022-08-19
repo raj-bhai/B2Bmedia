@@ -3,3 +3,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.smallParent{
+    width: 100%;
+    height:100%;
+    position: relative;
+    z-index: 0;
+}
+
+.smallParent div{
+    width: 60px;
+    height: 60px;
+    border-radius: 60%;
+    background-color: transparent;
+    border:4px solid white;
+    position: absolute;
+}
+
+.smallParent div:nth-child(1){
+ left: 30%;
+ top: 10%;
+ animation: square 10s linear infinite;
+}
+
+.smallParent div:nth-child(2){
+    left: 2%;
+    top: 50%;
+    animation: square 5s linear infinite;
+   }
+
+   .smallParent div:nth-child(3){
+    left: 12%;
+    top: 0%;
+    animation: square 7s linear infinite;
+   }
+
+   .smallParent div:nth-child(4){
+    right: 30%;
+    top: 10%;
+    animation: square 4s linear infinite;
+   }
+   .smallParent div:nth-child(5){
+    right: 40%;
+    top: 20%;
+    animation: square 7s linear infinite;
+   }
+   .smallParent div:nth-child(6){
+    right: 50%;
+    top: 30%;
+    animation: square 2s linear infinite;
+   }
+   .smallParent div:nth-child(7){
+    right: 60%;
+    top: 40%;
+    animation: square 5s linear infinite;
+   }
+
+@keyframes square {
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+    }
+    100%{
+        transform: scale(2) translateY(-400px) rotate(360deg)
+    }
+}
