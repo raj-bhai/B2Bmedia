@@ -78,7 +78,7 @@ const Dashboard = () => {
         )
     }
 
-    const Dashboard = (props) => {
+    const Dashboard_ = (props) => {
         const [active, setActive] = useState(null);
         return (
             <div className="w-[1110px] h-[100%] bg-[rgba(19,141,117,0.1)] mt-[50px] fixed">
@@ -90,13 +90,13 @@ const Dashboard = () => {
                         className="mt-[9px] ml-[8px] "
                     />
                 </div>
-                <div className="w-[100%] h-[100%] border-[0px] pt-[20px] " >
+                <div className="w-[100%] h-[75%] rounded-lg border-[1px] mb-[100px] pt-[20px] overflow-hidden" >
                     {
                         ProjectGroup.map((item, index) => {
                             const color = (index === 0) ? "#5DADE2" : "#28B463"
                             return (
                                 (active === index) ?
-                                    <div className="border-[1px] w-[100%] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-x-auto ">
+                                    <div className="border-[1px] w-[100%] h-[500px] mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-hidden overflow-x-auto">
                                         <div className="flex" >
                                             <FaAngleDown
                                                 size={20}
@@ -107,28 +107,30 @@ const Dashboard = () => {
                                             <h1 style={{ color: color }} className="text-[20px] ml-[10px]  ">{item.name}</h1>
                                             <p className="text-xs text-[#B3B6B7] mt-[9px] ml-[5px]" >{item.items + " items / " + item.subItems + " subitems"}</p>
                                         </div>
-                                        <table className="border-[0px] bg-[rgba(255,255,255,0.5)] ml-[5px] mt-[5px] rounded-lg" >
-                                            <tr className="border-[0px] rounded-lg" >
-                                                <th className="w-[600px] h-[50px] px-[5px] hover:bg-[#5B6168] cursor-pointer rounded-lg">Item</th>
-                                                <th className=" w-[400px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Clients</th>
-                                                <th className=" w-[300px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Starting date</th>
-                                                <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Script</th>
-                                                <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Voice Over</th>
-                                                <th className=" h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Video</th>
-                                                <th className="h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Thumbnail</th>
-                                                <th className=" h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Uploaded</th>
-                                            </tr>
-                                            <tr>
-                                                <td>Jill</td>
-                                                <td>Smith</td>
-                                                <td>50</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Eve</td>
-                                                <td>Jackson</td>
-                                                <td>94</td>
-                                            </tr>
-                                        </table>
+                                        <div className="border-[1px] w-[100%] overflow-x-auto border-yellow-600 pb-[5px] " >
+                                            <table className="border-[0px] w-[2300px] bg-[rgba(255,255,255,0.5)] ml-[5px] mt-[5px] rounded-lg" >
+                                                <tr className="border-[0px] rounded-lg" >
+                                                    <th className="w-[600px] h-[50px] px-[5px] ml-[0px] hover:bg-[#5B6168] cursor-pointer rounded-lg">Item</th>
+                                                    <th className=" w-[400px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Clients</th>
+                                                    <th className=" w-[300px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Starting date</th>
+                                                    <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Script</th>
+                                                    <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Voice Over</th>
+                                                    <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Video</th>
+                                                    <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Thumbnail</th>
+                                                    <th className=" h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Uploaded</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Jill</td>
+                                                    <td>Smith</td>
+                                                    <td>50</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Eve</td>
+                                                    <td>Jackson</td>
+                                                    <td>94</td>
+                                                </tr>
+                                            </table>
+                                        </div>
                                     </div> :
                                     <div className=" w-[100%] border-[0px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] ">
                                         <div className="flex" >
@@ -348,7 +350,7 @@ const Dashboard = () => {
                         }
                     </div>
                 </div>
-                <div className="h-screen bg-[#000] w-[80%] border-[1px] px-[10px]"
+                <div className="h-screen bg-[#000] w-[80%] border-[0px] px-[10px]"
                     style={{
                         backgroundImage: `url("https://www.icegif.com/wp-content/uploads/2022/05/icegif-507.gif")`
                     }}
@@ -356,7 +358,7 @@ const Dashboard = () => {
                     {/* <div className="w-[100%] h-[100%] bg-[rgba(19,141,117,0.1)] mt-[50px] fixed">
                         <h3 className=" ml-[350px] mr-[600px] mt-[300px] text-[#fff] text-7xl italic bg-[#138D75] ">Coming Soon !</h3>
                     </div> */}
-                    <Dashboard />
+                    <Dashboard_ />
                 </div>
             </div>
         </div>
