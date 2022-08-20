@@ -13,7 +13,10 @@ import {
     FaPlus,
     FaFilter,
     FaBook,
-    FaFolderOpen
+    FaFolderOpen,
+    FaStar,
+    FaAlignRight,
+    FaAngleRight,
 } from "react-icons/fa";
 
 
@@ -49,6 +52,19 @@ const Dashboard = () => {
         }
     ]
 
+    const ProjectGroup = [
+        {
+            name: "Active Projects",
+            items: 13,
+            subItems: 125
+        },
+        {
+            name: "Finished Projects",
+            items: 72,
+            subItems: 2946
+        }
+    ]
+
     //#1C2833 hoverButton
     //#138D75 FocusedIcon
 
@@ -63,18 +79,82 @@ const Dashboard = () => {
     }
 
     const Dashboard = (props) => {
+        const [active, setActive] = useState(null);
         return (
-            <div>
-
+            <div className="w-[1110px] h-[100%] bg-[rgba(19,141,117,0.1)] mt-[50px] fixed">
+                <div className="w-[100%] h-[100px] border-[0px] pl-[10px] pt-[5px] flex bg-[rgba(19,141,117,0.1)]" >
+                    <h1 className="text-[#fff] text-2xl" >{clients[clientIndex].name.toUpperCase()}</h1>
+                    <FaStar
+                        size={15}
+                        color="gray"
+                        className="mt-[9px] ml-[8px] "
+                    />
+                </div>
+                <div className="w-[100%] h-[100%] border-[0px] pt-[20px] " >
+                    {
+                        ProjectGroup.map((item, index) => {
+                            const color = (index === 0) ? "#5DADE2" : "#28B463"
+                            return (
+                                (active === index) ?
+                                    <div className="border-[1px] w-[100%] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-x-auto ">
+                                        <div className="flex" >
+                                            <FaAngleDown
+                                                size={20}
+                                                color={color}
+                                                className="mt-[8px]"
+                                                onClick={() => setActive(null)}
+                                            />
+                                            <h1 style={{ color: color }} className="text-[20px] ml-[10px]  ">{item.name}</h1>
+                                            <p className="text-xs text-[#B3B6B7] mt-[9px] ml-[5px]" >{item.items + " items / " + item.subItems + " subitems"}</p>
+                                        </div>
+                                        <table className="border-[0px] bg-[rgba(255,255,255,0.5)] ml-[5px] mt-[5px] rounded-lg" >
+                                            <tr className="border-[0px] rounded-lg" >
+                                                <th className="w-[600px] h-[50px] px-[5px] hover:bg-[#5B6168] cursor-pointer rounded-lg">Item</th>
+                                                <th className=" w-[400px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Clients</th>
+                                                <th className=" w-[300px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Starting date</th>
+                                                <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Script</th>
+                                                <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Voice Over</th>
+                                                <th className=" h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Video</th>
+                                                <th className="h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Thumbnail</th>
+                                                <th className=" h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Uploaded</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Jill</td>
+                                                <td>Smith</td>
+                                                <td>50</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Eve</td>
+                                                <td>Jackson</td>
+                                                <td>94</td>
+                                            </tr>
+                                        </table>
+                                    </div> :
+                                    <div className=" w-[100%] border-[0px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] ">
+                                        <div className="flex" >
+                                            <FaAngleRight
+                                                size={20}
+                                                color={color}
+                                                className="mt-[8px]"
+                                                onClick={() => setActive(index)}
+                                            />
+                                            <h1 style={{ color: color }} className="text-[20px] ml-[10px]  ">{item.name}</h1>
+                                        </div>
+                                        <p className="text-xs text-[#B3B6B7] ml-[35px]" >{item.items + " items / " + item.subItems + " subitems"}</p>
+                                    </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
         )
     }
 
 
     return (
-        <div className="flex-col">
+        <div className="flex-col overflow-hidden">
             <Header />
-            <div className="flex">
+            <div className="flex border-2 overflow-hidden">
                 <div className="w-[60px] h-screen bg-[#17202A] justify-end flex-col border-[1px] "
                     onFocus={() => console.log("view focused")}
                 >
@@ -273,9 +353,10 @@ const Dashboard = () => {
                         backgroundImage: `url("https://www.icegif.com/wp-content/uploads/2022/05/icegif-507.gif")`
                     }}
                 >
-                    <div className="w-[100%] h-[100%] bg-[rgba(19,141,117,0.1)] mt-[50px] fixed">
+                    {/* <div className="w-[100%] h-[100%] bg-[rgba(19,141,117,0.1)] mt-[50px] fixed">
                         <h3 className=" ml-[350px] mr-[600px] mt-[300px] text-[#fff] text-7xl italic bg-[#138D75] ">Coming Soon !</h3>
-                    </div>
+                    </div> */}
+                    <Dashboard />
                 </div>
             </div>
         </div>
