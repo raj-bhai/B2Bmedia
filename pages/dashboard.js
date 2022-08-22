@@ -17,7 +17,10 @@ import {
     FaStar,
     FaAlignRight,
     FaAngleRight,
+    FaExpand,
+    FaYoutube
 } from "react-icons/fa";
+import DashboardModal from "../components/modal";
 
 
 const Dashboard = () => {
@@ -33,6 +36,7 @@ const Dashboard = () => {
     const focusedColor = "#138D75"
     const [clientIndex, setClientIndex] = useState(0);
     const [iconIndex, setIconIndex] = useState(0);
+    const [showDashboardModal, setShowDashboardModal] = useState(false)
 
     const clients = [
         {
@@ -65,6 +69,73 @@ const Dashboard = () => {
         }
     ]
 
+    const DashboardData = [
+        {
+            id: 1,
+            title: "NASA warns of horrific solar flares! Earth will be impacted",
+            Script: "Done",
+            VoiceOver: "Approval",
+            video: "working on it",
+            Thumbnail: "working on it"
+        },
+        {
+            id: 2,
+            title: "China Rocket Crashes Back on Earth, Draws NASA Rebuke",
+            Script: "Done",
+            VoiceOver: "working on it",
+            video: "working on it",
+            Thumbnail: "working on it"
+        },
+        {
+            id: 3,
+            title: "Israeli high-tech on edge as Wall Street storm approaches",
+            Script: "Done",
+            VoiceOver: "Done",
+            video: "working on it",
+            Thumbnail: "stuck"
+        },
+        {
+            id: 4,
+            title: "NASA warns of horrific solar flares! Earth will be impacted",
+            Script: "Done",
+            VoiceOver: "Approval",
+            video: "working on it",
+            Thumbnail: "working on it"
+        },
+        {
+            id: 5,
+            title: "China Rocket Crashes Back on Earth, Draws NASA Rebuke",
+            Script: "Done",
+            VoiceOver: "working on it",
+            video: "working on it",
+            Thumbnail: "working on it"
+        },
+        {
+            id: 6,
+            title: "Israeli high-tech on edge as Wall Street storm approaches",
+            Script: "Done",
+            VoiceOver: "Done",
+            video: "working on it",
+            Thumbnail: "stuck"
+        },
+        {
+            id: 7,
+            title: "China Rocket Crashes Back on Earth, Draws NASA Rebuke",
+            Script: "Done",
+            VoiceOver: "working on it",
+            video: "working on it",
+            Thumbnail: "working on it"
+        },
+        {
+            id: 8,
+            title: "Israeli high-tech on edge as Wall Street storm approaches",
+            Script: "Done",
+            VoiceOver: "Done",
+            video: "working on it",
+            Thumbnail: "stuck"
+        },
+    ]
+
     //#1C2833 hoverButton
     //#138D75 FocusedIcon
 
@@ -79,9 +150,13 @@ const Dashboard = () => {
     }
 
     const Dashboard_ = (props) => {
-        const [active, setActive] = useState(null);
+        const [active, setActive] = useState(0);
+        const [taskIndex, setTaskIndex] = useState(null);
         return (
-            <div className="w-[1110px] h-[100%] bg-[rgba(19,141,117,0.1)] mt-[50px] fixed">
+            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)] mt-[50px] fixed overflow-y-auto"
+                style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
+            // w-[1160px] 
+            >
                 <div className="w-[100%] h-[100px] border-[0px] pl-[10px] pt-[5px] flex bg-[rgba(19,141,117,0.1)]" >
                     <h1 className="text-[#fff] text-2xl" >{clients[clientIndex].name.toUpperCase()}</h1>
                     <FaStar
@@ -90,13 +165,13 @@ const Dashboard = () => {
                         className="mt-[9px] ml-[8px] "
                     />
                 </div>
-                <div className="w-[100%] h-[75%] rounded-lg border-[1px] mb-[100px] pt-[20px] overflow-hidden" >
+                <div className="w-[100%] rounded-lg border-[0px] mb-[100px] pt-[20px] overflow-hidden" >
                     {
                         ProjectGroup.map((item, index) => {
                             const color = (index === 0) ? "#5DADE2" : "#28B463"
                             return (
                                 (active === index) ?
-                                    <div className="border-[1px] w-[100%] h-[500px] mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-hidden overflow-x-auto">
+                                    <div className="border-[0px] overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-hidden overflow-x-auto">
                                         <div className="flex" >
                                             <FaAngleDown
                                                 size={20}
@@ -105,31 +180,86 @@ const Dashboard = () => {
                                                 onClick={() => setActive(null)}
                                             />
                                             <h1 style={{ color: color }} className="text-[20px] ml-[10px]  ">{item.name}</h1>
-                                            <p className="text-xs text-[#B3B6B7] mt-[9px] ml-[5px]" >{item.items + " items / " + item.subItems + " subitems"}</p>
+                                            <h1 className="text-xs text-[#B3B6B7] mt-[9px] ml-[5px]" >{item.items + " items / " + item.subItems + " subitems"}</h1>
                                         </div>
-                                        <div className="border-[1px] w-[100%] overflow-x-auto border-yellow-600 pb-[5px] " >
-                                            <table className="border-[0px] w-[2300px] bg-[rgba(255,255,255,0.5)] ml-[5px] mt-[5px] rounded-lg" >
-                                                <tr className="border-[0px] rounded-lg" >
-                                                    <th className="w-[600px] h-[50px] px-[5px] ml-[0px] hover:bg-[#5B6168] cursor-pointer rounded-lg">Item</th>
-                                                    <th className=" w-[400px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Clients</th>
-                                                    <th className=" w-[300px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Starting date</th>
-                                                    <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Script</th>
-                                                    <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Voice Over</th>
-                                                    <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Video</th>
-                                                    <th className=" w-[200px] h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Thumbnail</th>
-                                                    <th className=" h-[50px] px-[5px] text-left hover:bg-[#5B6168] cursor-pointer rounded-lg">Uploaded</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jill</td>
-                                                    <td>Smith</td>
-                                                    <td>50</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Eve</td>
-                                                    <td>Jackson</td>
-                                                    <td>94</td>
-                                                </tr>
-                                            </table>
+                                        <div className="border-[0px] w-[100%] flex overflow-y-auto border-yellow-600 p-[5px] flex-wrap " >
+                                            {
+                                                DashboardData.map((item, index) => {
+                                                    const getColor = (type) => {
+                                                        if (type === "Done") {
+                                                            return "green"
+                                                        }
+                                                        if (type === "Approval") {
+                                                            return "orange"
+                                                        }
+                                                        if (type === "working on it") {
+                                                            return "yellow"
+                                                        }
+                                                        if (type === "stuck") {
+                                                            return "red"
+                                                        }
+                                                    }
+                                                    return (
+                                                        <div className="relative w-[200px] h-[250px] hover:border-[1px] cursor-pointer   mt-[50px] px-[10px] py-[5px] ml-[10px] bg-[rgba(255,255,255,0.5)] rounded-lg "
+                                                            onMouseOver={() => setTaskIndex(index)}
+                                                            onMouseOut={() => setTaskIndex(null)}
+                                                            onClick={setShowDashboardModal(true)}
+                                                            style={{
+                                                                // backgroundImage: `url("https://c.tenor.com/VuQPPwDkIbsAAAAd/galaxy-space.gif")`,
+                                                                opacity: (taskIndex === index) ? 1 : 0.5
+                                                            }}
+                                                        >
+                                                            {/* {
+                                                                (taskIndex === index) &&
+                                                                <FaExpand
+                                                                    size={50}
+                                                                    color="#fff"
+                                                                    className="absolute top-[150px] left-[100px]"
+                                                                />
+                                                            } */}
+
+                                                            <div className="h-[100px]" >
+                                                                <h1 className="text-left text-[#fff] italic leading-4 font-bold text-[13px] ">{item.title}</h1>
+                                                            </div>
+                                                            <table className="border-[0px] " >
+                                                                <tr className="items-center mt-[5px]" >
+                                                                    <td className="leading-4 text-[12px] pr-[10px] " >Script</td>
+                                                                    <td className="leading-4 text-[12px] pl-[5px] pr-[5px]"
+                                                                        style={{ backgroundColor: getColor(item.Script) }}
+                                                                    >{item.Script}</td>
+                                                                </tr>
+                                                                <tr className="">
+                                                                    <td className="leading-4 text-[12px] pr-[10px] " >VoiceOver</td>
+                                                                    <td className="leading-4 text-[12px] pl-[5px] pr-[5px]"
+                                                                        style={{ backgroundColor: getColor(item.VoiceOver) }}
+                                                                    >{item.VoiceOver}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className="leading-4 text-[12px] pr-[10px]"
+                                                                    >Video</td>
+                                                                    <td className="leading-4 text-[12px] pl-[5px] pr-[5px]"
+                                                                        style={{ backgroundColor: getColor(item.video) }}
+                                                                    >{item.video}</td>
+                                                                </tr>
+                                                                <tr className="" >
+                                                                    <td className="leading-4 text-[12px] pr-[10px]]"
+                                                                    >Thumbnail</td>
+                                                                    <td className="leading-4 text-[12px] pl-[5px] pr-[5px]"
+                                                                        style={{ backgroundColor: getColor(item.Thumbnail) }}
+                                                                    >{item.Thumbnail}</td>
+                                                                </tr>
+                                                            </table>
+                                                            {/* <FaYoutube
+                                                                size={50}
+                                                                color="#FF0000"
+                                                            /> */}
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                            {/* <div className="w-[250px] h-[300px] mt-[50px] ml-[10px] bg-[rgba(255,255,255,0.5)] rounded-lg " >
+
+                                            </div> */}
                                         </div>
                                     </div> :
                                     <div className=" w-[100%] border-[0px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] ">
@@ -142,7 +272,7 @@ const Dashboard = () => {
                                             />
                                             <h1 style={{ color: color }} className="text-[20px] ml-[10px]  ">{item.name}</h1>
                                         </div>
-                                        <p className="text-xs text-[#B3B6B7] ml-[35px]" >{item.items + " items / " + item.subItems + " subitems"}</p>
+                                        <h1 className="text-xs text-[#B3B6B7] ml-[35px]" >{item.items + " items / " + item.subItems + " subitems"}</h1>
                                     </div>
                             )
                         })
@@ -156,8 +286,12 @@ const Dashboard = () => {
     return (
         <div className="flex-col overflow-hidden">
             <Header />
-            <div className="flex border-2 overflow-hidden">
-                <div className="w-[60px] h-screen bg-[#17202A] justify-end flex-col border-[1px] "
+            <DashboardModal
+                visible={showDashboardModal}
+                onClose={() => setShowDashboardModal(false)}
+            />
+            <div className="flex  overflow-hidden">
+                <div className="w-[60px] h-screen bg-[#17202A] justify-end flex-col border-[0px] "
                     onFocus={() => console.log("view focused")}
                 >
                     <div className="items-center w-[60px] h-[65%]">
@@ -352,13 +486,12 @@ const Dashboard = () => {
                 </div>
                 <div className="h-screen bg-[#000] w-[80%] border-[0px] px-[10px]"
                     style={{
-                        backgroundImage: `url("https://www.icegif.com/wp-content/uploads/2022/05/icegif-507.gif")`
+                        backgroundImage: `url("https://www.icegif.com/wp-content/uploads/2022/05/icegif-507.gif")`,
                     }}
                 >
-                    {/* <div className="w-[100%] h-[100%] bg-[rgba(19,141,117,0.1)] mt-[50px] fixed">
-                        <h3 className=" ml-[350px] mr-[600px] mt-[300px] text-[#fff] text-7xl italic bg-[#138D75] ">Coming Soon !</h3>
-                    </div> */}
+                    {/* Dashboard Content here */}
                     <Dashboard_ />
+
                 </div>
             </div>
         </div>
