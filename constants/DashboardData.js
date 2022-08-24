@@ -64,6 +64,38 @@ export default {
             video: "working on it",
             Thumbnail: "stuck"
         },
+        {
+            id: 9,
+            title: "NASA warns of horrific solar flares! Earth will be impacted",
+            Script: "Done",
+            VoiceOver: "Approval",
+            video: "working on it",
+            Thumbnail: "working on it"
+        },
+        {
+            id: 10,
+            title: "China Rocket Crashes Back on Earth, Draws NASA Rebuke",
+            Script: "Done",
+            VoiceOver: "working on it",
+            video: "working on it",
+            Thumbnail: "working on it"
+        },
+        {
+            id: 11,
+            title: "Israeli high-tech on edge as Wall Street storm approaches",
+            Script: "Done",
+            VoiceOver: "Done",
+            video: "working on it",
+            Thumbnail: "stuck"
+        },
+        {
+            id: 13,
+            title: "NASA warns of horrific solar flares! Earth will be impacted",
+            Script: "Done",
+            VoiceOver: "Approval",
+            video: "working on it",
+            Thumbnail: "working on it"
+        },
     ],
 
     FinishedProjects: [
@@ -73,7 +105,8 @@ export default {
             Script: "Done",
             VoiceOver: "Approval",
             video: "working on it",
-            Thumbnail: "working on it"
+            Thumbnail: "working on it",
+            uploaded: false
         },
         {
             id: 2,
@@ -81,7 +114,8 @@ export default {
             Script: "Done",
             VoiceOver: "working on it",
             video: "working on it",
-            Thumbnail: "working on it"
+            Thumbnail: "working on it",
+            uploaded: true
         },
         {
             id: 3,
@@ -89,7 +123,8 @@ export default {
             Script: "Done",
             VoiceOver: "Done",
             video: "working on it",
-            Thumbnail: "stuck"
+            Thumbnail: "stuck",
+            uploaded: false
         },
         {
             id: 4,
@@ -97,7 +132,8 @@ export default {
             Script: "Done",
             VoiceOver: "Approval",
             video: "working on it",
-            Thumbnail: "working on it"
+            Thumbnail: "working on it",
+            uploaded: true
         },
         {
             id: 5,
@@ -105,7 +141,8 @@ export default {
             Script: "Done",
             VoiceOver: "working on it",
             video: "working on it",
-            Thumbnail: "working on it"
+            Thumbnail: "working on it",
+            uploaded: true
         },
         {
             id: 6,
@@ -113,7 +150,8 @@ export default {
             Script: "Done",
             VoiceOver: "Done",
             video: "working on it",
-            Thumbnail: "stuck"
+            Thumbnail: "stuck",
+            uploaded: true
         },
         {
             id: 7,
@@ -121,7 +159,8 @@ export default {
             Script: "Done",
             VoiceOver: "working on it",
             video: "working on it",
-            Thumbnail: "working on it"
+            Thumbnail: "working on it",
+            uploaded: true
         },
         {
             id: 8,
@@ -129,7 +168,8 @@ export default {
             Script: "Done",
             VoiceOver: "Done",
             video: "working on it",
-            Thumbnail: "stuck"
+            Thumbnail: "stuck",
+            uploaded: true
         },
     ]
 

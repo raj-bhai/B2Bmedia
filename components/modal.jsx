@@ -13,5 +13,6 @@ const DashboardModal = (props) => {
     )
 }
 
-export default DashboardModal
+
+ export default DashboardModal
 
