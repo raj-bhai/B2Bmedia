@@ -19,11 +19,12 @@ import {
     FaAngleRight,
     FaExpand,
     FaYoutube,
-    FaCheck
+    FaCheck,
 } from "react-icons/fa";
 import DashboardModal from "../components/modal";
 import ClientsType from "../constants/ClientsType";
 import DashboardData from "../constants/DashboardData";
+import Modal from 'react-modal';
 
 
 const Dashboard = () => {
@@ -39,7 +40,6 @@ const Dashboard = () => {
     const focusedColor = "#138D75"
     const [clientIndex, setClientIndex] = useState(0);
     const [iconIndex, setIconIndex] = useState(0);
-    const [showDashboardModal, setShowDashboardModal] = useState(false);
 
     const ProjectGroup = [
         {
@@ -68,13 +68,43 @@ const Dashboard = () => {
     }
 
     const Dashboard_ = (props) => {
-        const [active, setActive] = useState(0);
-        const [taskIndex, setTaskIndex] = useState(null);
+        const [active, setActive] = useState(null); //Active Project Finished project index
+        const [taskIndex, setTaskIndex] = useState(null); //MouseOver on Card
+        const [selectedData, setSelectedData] = useState(null);
+        const [showDashboardModal, setShowDashboardModal] = useState(false);
+        const customStyles = {
+            content: {
+                // top: '50%',
+                // left: '50%',
+                // right: 'auto',
+                // bottom: 'auto',
+                // marginRight: '-50%',
+                // transform: 'translate(-50%, -50%)',
+            },
+        };
         return (
             <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)]  mt-[50px] fixed overflow-y-auto"
                 style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
             // w-[1160px] 
             >
+                <Modal
+                    isOpen={showDashboardModal}
+                    // onAfterOpen={afterOpenModal}
+                    onRequestClose={() => {
+                        setShowDashboardModal(false);
+                        setSelectedData(null)
+                    }}
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                >
+                    <DashboardModal
+                        onClose={() => {
+                            setShowDashboardModal(false);
+                            setSelectedData(null)
+                        }}
+                        data={selectedData}
+                    />
+                </Modal>
                 <div className="w-[100%] h-[100px] border-[0px] pl-[10px] pt-[5px] flex bg-[rgba(19,141,117,0.1)]" >
                     <h1 className="text-[#fff] text-2xl" >{ClientsType.clients[clientIndex].name.toUpperCase()}</h1>
                     <FaStar
@@ -145,7 +175,11 @@ const Dashboard = () => {
                                                             // bg-[rgba(11,83,69,1)]
                                                             onMouseOver={() => setTaskIndex(index)}
                                                             onMouseOut={() => setTaskIndex(null)}
-                                                            onClick={setShowDashboardModal(true)}
+                                                            onClick={() => {
+                                                                setSelectedData(item);
+                                                                setShowDashboardModal(true);
+                                                            }
+                                                            }
                                                             style={{
                                                                 // backgroundImage: `url("https://c.tenor.com/VuQPPwDkIbsAAAAd/galaxy-space.gif")`,
                                                                 opacity: (taskIndex === index) ? 1 : 0.8
@@ -232,10 +266,6 @@ const Dashboard = () => {
     return (
         <div className="flex-col overflow-hidden">
             <Header />
-            <DashboardModal
-                visible={showDashboardModal}
-                onClose={() => setShowDashboardModal(false)}
-            />
             <div className="flex  overflow-hidden">
                 <div className="w-[60px] h-screen bg-[#17202A] justify-end flex-col border-[0px] "
                     onFocus={() => console.log("view focused")}

@@ -6,7 +6,8 @@ export default {
             Script: "Done",
             VoiceOver: "Approval",
             video: "working on it",
-            Thumbnail: "working on it"
+            Thumbnail: "working on it",
+            channelName: "CYCLING RIGHT NOW",
         },
         {
             id: 2,
@@ -14,7 +15,8 @@ export default {
             Script: "Done",
             VoiceOver: "working on it",
             video: "working on it",
-            Thumbnail: "working on it"
+            Thumbnail: "working on it",
+            channelName: "CYCLING NEWS LIVE",
         },
         {
             id: 3,
@@ -22,7 +24,8 @@ export default {
             Script: "Done",
             VoiceOver: "Done",
             video: "working on it",
-            Thumbnail: "stuck"
+            Thumbnail: "stuck",
+            channelName: "TATE NATION",
         },
         {
             id: 4,
@@ -30,7 +33,8 @@ export default {
             Script: "Done",
             VoiceOver: "Approval",
             video: "working on it",
-            Thumbnail: "working on it"
+            Thumbnail: "working on it",
+            channelName: "TATE NATION"
         },
         {
             id: 5,
@@ -38,7 +42,8 @@ export default {
             Script: "Done",
             VoiceOver: "working on it",
             video: "working on it",
-            Thumbnail: "working on it"
+            Thumbnail: "working on it",
+            channelName: "FORMULA1 LIVE"
         },
         {
             id: 6,
@@ -46,7 +51,8 @@ export default {
             Script: "Done",
             VoiceOver: "Done",
             video: "working on it",
-            Thumbnail: "stuck"
+            Thumbnail: "stuck",
+            channelName: "FORMULA1 LIVE"
         },
         {
             id: 7,
@@ -128,7 +134,7 @@ export default {
         },
         {
             id: 4,
-            title: "NASA warns of horrific solar flares! Earth will be impacted",
+            title: "Why Team Jumbo Visma is UNBEATABLE this year",
             Script: "Done",
             VoiceOver: "Approval",
             video: "working on it",
@@ -137,7 +143,7 @@ export default {
         },
         {
             id: 5,
-            title: "China Rocket Crashes Back on Earth, Draws NASA Rebuke",
+            title: "How Jonas Vingegaard Won The Tour De France 2022?!",
             Script: "Done",
             VoiceOver: "working on it",
             video: "working on it",
@@ -146,7 +152,7 @@ export default {
         },
         {
             id: 6,
-            title: "Israeli high-tech on edge as Wall Street storm approaches",
+            title: "Peter Sagan, The ABSOLUTE KING Of Cycling!",
             Script: "Done",
             VoiceOver: "Done",
             video: "working on it",
@@ -155,7 +161,7 @@ export default {
         },
         {
             id: 7,
-            title: "China Rocket Crashes Back on Earth, Draws NASA Rebuke",
+            title: "Top 10 Mass Sprints Of ALL TIME!",
             Script: "Done",
             VoiceOver: "working on it",
             video: "working on it",
