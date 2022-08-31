@@ -113,13 +113,6 @@ const Dashboard = () => {
                         className="mt-[9px] ml-[8px]"
                     />
                 </div>
-                <div>
-                    <FaStar
-                        size={15}
-                        color="gray"
-                        className="mt-[9px] ml-[8px]"
-                    />
-                </div>
                 <div className="w-[100%] rounded-lg border-[0px] mb-[100px] pt-[20px] overflow-hidden" >
                     {
                         ProjectGroup.map((item, index) => {

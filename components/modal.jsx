@@ -8,6 +8,8 @@ import { Carousel, ScrollingCarousel } from '@trendyol-js/react-carousel';
 
 const DashboardModal = (props) => {
 
+    const [selectedTypes, setSelectedTypes] = useState(0)
+
     const Types = [
         {
             name: "Script"
@@ -32,8 +34,6 @@ const DashboardModal = (props) => {
                         props.onClose()
                     }}
                 />
-                {/* <button className="bg-yellow-200 mr-[20px] " >Save</button>
-                <button className="bg-yellow-200 " >Save and Exit</button> */}
             </div>
             <div className="border-[0px] flex justify-between items-center " >
                 <div className="flex border-[0px] " >
@@ -54,53 +54,19 @@ const DashboardModal = (props) => {
                     <h1 className="mr-[10px]" >{props.data?.channelName ? props.data.channelName : "Channel Name"}</h1>
                 </div>
             </div>
-            <div className="w-[350px]">
-                <Carousel show={1.2} slide={1} autoSwipe={true} transition={0.5} swiping={true}
-                    // key={name}
-                    // autoSwipe={true}
-                    // leftArrow={true}
-                    // rightArrow={true}
-                    useArrowKeys={true}
-                    children={Types}
-                    swipeOn={0.5}
-                    
-                    // dynamic={true}
-                    // leftArrow={() =>
-                    //     <FaTimes
-                    //         size={20}
-                    //         color="black"
-                    //         onClick={() => {
-                    //             props.onClose()
-                    //         }}
-                    //     />
-                    // }
-                    rightArrow={() =>
-                        <FaTimes
-                            size={20}
-                            color="black"
-                            onClick={() => {
-                                props.onClose()
-                            }}
-                        />
+            <div>
+                <div className="flex space-x-[5px] mt-[20px] " >
+                    {
+                        Types.map((x, i) =>
+                            <div className="border-[1px] w-[100px] pl-[10px] cursor-pointer "
+                            style={{backgroundColor: selectedTypes === i ? "yellow" : null}}
+                                onClick={() => setSelectedTypes(i)}
+                            >
+                                <h1 className="text-[16px]" >{x.name}</h1>
+                            </div>
+                        )
                     }
-                    hideArrows={false}
-                // responsive={true}
-                // infinite={false}
-                // className="w-[400px]"
-                >
-                    <div className="w-[100%] h-[200px] rounded-lg bg-yellow-200 " >
-                        <p className="legend">Script</p>
-                    </div>
-                    <div className="w-[100%] h-[200px] border-[1px] bg-gray-200 " >
-                        <p className="legend">Voice Over</p>
-                    </div>
-                    <div className="w-[100%] h-[200px] border-[1px] bg-green-200 " >
-                        <p className="legend">Video</p>
-                    </div>
-                    <div className="w-[100%] h-[200px] border-[1px] bg-blue-200 " >
-                        <p className="legend">Thumbnail</p>
-                    </div>
-                </Carousel>
+                </div>
             </div>
         </div>
     )
