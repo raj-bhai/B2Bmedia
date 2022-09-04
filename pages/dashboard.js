@@ -73,6 +73,15 @@ const Dashboard = () => {
         const [selectedData, setSelectedData] = useState(null);
         const [showDashboardModal, setShowDashboardModal] = useState(false);
         const customStyles = {
+            overlay: {
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+               // backgroundColor: 'rgba(20,90,50,1)'
+               background : "linear-gradient(#0B5345, #154360)"
+            },
             content: {
                 // top: '50%',
                 // left: '50%',
@@ -80,11 +89,12 @@ const Dashboard = () => {
                 // bottom: 'auto',
                 // marginRight: '-50%',
                 // transform: 'translate(-50%, -50%)',
-                backgroundColor: 'rgba(0,0,0,0.7)',
+                backgroundColor: 'rgba(23,32,42,1)',
+                borderWidth: 0
             },
         };
         return (
-            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)]  mt-[50px] fixed overflow-y-scroll"
+            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)] border-[0px]  mt-[50px] fixed overflow-y-scroll"
                 style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
             >
                 <Modal
