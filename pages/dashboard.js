@@ -80,12 +80,12 @@ const Dashboard = () => {
                 // bottom: 'auto',
                 // marginRight: '-50%',
                 // transform: 'translate(-50%, -50%)',
+                backgroundColor: 'rgba(0,0,0,0.7)',
             },
         };
         return (
-            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)]  mt-[50px] fixed overflow-y-auto"
+            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)]  mt-[50px] fixed overflow-y-scroll"
                 style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
-            // w-[1160px] 
             >
                 <Modal
                     isOpen={showDashboardModal}
@@ -460,7 +460,6 @@ const Dashboard = () => {
                 >
                     {/* Dashboard Content here */}
                     <Dashboard_ />
-
                 </div>
             </div>
         </div>
