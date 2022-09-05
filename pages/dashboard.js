@@ -94,7 +94,7 @@ const Dashboard = () => {
             },
         };
         return (
-            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)] border-[0px]  mt-[50px] fixed overflow-y-scroll"
+            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)] border-[0px]  mt-[50px] fixed overflow-y-auto"
                 style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
             >
                 <Modal
