@@ -64,10 +64,14 @@ const Dashboard = () => {
     //#138D75 FocusedIcon
 
     function Active(x) {
-        return x.completed === false;
+        if (x.completed === false && x.clientType == ClientsType[clientIndex].clientType) {
+            return x
+        }
     }
     function Completed(x) {
-        return x.completed === true;
+        if (x.completed === true && x.clientType == ClientsType[clientIndex].clientType) {
+            return x
+        }
     }
 
     useEffect(() => {
