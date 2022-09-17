@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/header";
 import {
     FaEllipsisH,
@@ -23,12 +23,14 @@ import {
 } from "react-icons/fa";
 import DashboardModal from "../components/modal";
 import ClientsType from "../constants/ClientsType";
-import DashboardData from "../constants/DashboardData";
+//import DashboardData from "../constants/DashboardData";
 import Modal from 'react-modal';
+import { useDispatch, useSelector } from 'react-redux';
+import * as dashboardAction from '../redux/action/dashboard';
 
 
 const Dashboard = () => {
-
+    const dispatch = useDispatch();
     const [WorkspaceName, SetWorkspaceName] = useState("My Workspace");
     const [workSpaceModal, setWorkSpaceModal] = useState(false);
     const [notfFocused, setNotfFocused] = useState(false);
@@ -40,6 +42,8 @@ const Dashboard = () => {
     const focusedColor = "#138D75"
     const [clientIndex, setClientIndex] = useState(0);
     const [iconIndex, setIconIndex] = useState(0);
+
+    const DashboardData = useSelector(state => state.dashboard.Task);
 
     const ProjectGroup = [
         {
@@ -56,6 +60,10 @@ const Dashboard = () => {
 
     //#1C2833 hoverButton
     //#138D75 FocusedIcon
+
+    useEffect(() => {
+        dispatch(dashboardAction.getTask())
+    }, [])
 
     const IconTip = (props) => {
         return (
@@ -79,8 +87,8 @@ const Dashboard = () => {
                 left: 0,
                 right: 0,
                 bottom: 0,
-               // backgroundColor: 'rgba(20,90,50,1)'
-               background : "linear-gradient(#0B5345, #154360)"
+                // backgroundColor: 'rgba(20,90,50,1)'
+                background: "linear-gradient(#0B5345, #154360)"
             },
             content: {
                 // top: '50%',
@@ -127,7 +135,14 @@ const Dashboard = () => {
                     {
                         ProjectGroup.map((item, index) => {
                             const color = (index === 0) ? "#5DADE2" : "#28B463";
-                            const Data = (item.name === "Active Projects") ? DashboardData.ActiveProjects : DashboardData.FinishedProjects;
+                            // const Data = (item.name === "Active Projects") ? DashboardData.ActiveProjects : DashboardData.FinishedProjects;
+                            function Active(x) {
+                                return x.completed === false;
+                            }
+                            function Completed(x) {
+                                return x.completed === true;
+                            }
+                            const Data = (item.name === "Active Projects") ? DashboardData.filter(Active) : DashboardData.filter(Completed);
                             return (
                                 (active === index) ?
                                     <div className="border-[0px] overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-hidden overflow-x-auto">

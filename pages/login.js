@@ -5,7 +5,13 @@ import Image from 'next/image';
 const Login = () => {
 
   return (
-    <div className='w-full h-screen bg-gradient-to-l hover:bg-gradient-to-r from-[#0B5345] to-[#154360] transition ease-in-out delay-150 overflow-y-hidden overflow-x-hidden' >
+    <div className='w-full h-screen bg-gradient-to-l hover:bg-gradient-to-r from-[#0B5345] to-[#154360] transition ease-in-out delay-150 overflow-y-hidden overflow-x-hidden'
+      style={{
+        backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBRDEB4tj6eMrqePmLQGfDa448-ULi1pKyaA&usqp=CAU")`,
+        backgroundSize: 'cover'
+
+      }}
+    >
       <div className='w-[100%] flex justify-center items-center '
       >
         <div className=' w-[90%] mt-[100px] z-[100]  z-1 py-8 sm:w-[40%] md:w-[25%] flex flex-col items-center bg-indigo-100 rounded-xl hover:bg-indigo-100 duration-300'>
