@@ -22,11 +22,12 @@ import {
     FaCheck,
 } from "react-icons/fa";
 import DashboardModal from "../components/modal";
-import ClientsType from "../constants/ClientsType";
+//import ClientsType from "../constants/ClientsType";
 //import DashboardData from "../constants/DashboardData";
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import * as dashboardAction from '../redux/action/dashboard';
+import { Image, Shimmer } from 'react-shimmer'
 
 
 const Dashboard = () => {
@@ -44,25 +45,34 @@ const Dashboard = () => {
     const [iconIndex, setIconIndex] = useState(0);
 
     const DashboardData = useSelector(state => state.dashboard.Task);
+    const ClientsType = useSelector(state => state.dashboard.ClientType);
 
     const ProjectGroup = [
         {
             name: "Active Projects",
-            items: 13,
-            subItems: 125
+            items: DashboardData.filter(Active).length,
+            subItems: DashboardData.filter(Active).length * 4
         },
         {
             name: "Finished Projects",
-            items: 72,
-            subItems: 2946
+            items: DashboardData.filter(Completed).length,
+            subItems: DashboardData.filter(Completed).length * 4
         }
     ]
 
     //#1C2833 hoverButton
     //#138D75 FocusedIcon
 
+    function Active(x) {
+        return x.completed === false;
+    }
+    function Completed(x) {
+        return x.completed === true;
+    }
+
     useEffect(() => {
-        dispatch(dashboardAction.getTask())
+        dispatch(dashboardAction.getTask());
+        dispatch(dashboardAction.getClientType());
     }, [])
 
     const IconTip = (props) => {
@@ -123,25 +133,24 @@ const Dashboard = () => {
                         data={selectedData}
                     />
                 </Modal>
-                <div className="w-[100%] h-[100px] border-[0px] pl-[10px] pt-[5px] flex bg-[rgba(19,141,117,0.1)]" >
-                    <h1 className="text-[#fff] text-2xl" >{ClientsType.clients[clientIndex].name.toUpperCase()}</h1>
-                    <FaStar
-                        size={15}
-                        color="gray"
-                        className="mt-[9px] ml-[8px]"
-                    />
-                </div>
+                {
+                    ClientsType.length ?
+                        <div className="w-[100%] h-[100px] border-[0px] pl-[10px] pt-[5px] flex bg-[rgba(19,141,117,0.1)]" >
+                            <h1 className="text-[#fff] text-2xl" >{ClientsType[clientIndex].clientType.toUpperCase()}</h1>
+                            <FaStar
+                                size={15}
+                                color="gray"
+                                className="mt-[9px] ml-[8px]"
+                            />
+                        </div> :
+                        <div className="w-[100%] h-[100px] border-[0px] pl-[10px] pt-[5px] flex bg-[rgba(19,141,117,0.1)]" >
+                        </div>
+                }
                 <div className="w-[100%] rounded-lg border-[0px] mb-[100px] pt-[20px] overflow-hidden" >
                     {
                         ProjectGroup.map((item, index) => {
                             const color = (index === 0) ? "#5DADE2" : "#28B463";
                             // const Data = (item.name === "Active Projects") ? DashboardData.ActiveProjects : DashboardData.FinishedProjects;
-                            function Active(x) {
-                                return x.completed === false;
-                            }
-                            function Completed(x) {
-                                return x.completed === true;
-                            }
                             const Data = (item.name === "Active Projects") ? DashboardData.filter(Active) : DashboardData.filter(Completed);
                             return (
                                 (active === index) ?
@@ -264,19 +273,26 @@ const Dashboard = () => {
                                                         /* you can also use 'auto' behaviour
                                                            in place of 'smooth' */
                                                     });
+                                                    if (item.items) {
+                                                        setActive(index);
+                                                    }
+                                                }}
+                                            />
+                                            <h1 onClick={() => {
+                                                if (item.items) {
                                                     setActive(index);
                                                 }
-                                                }
-                                            />
-                                            <h1 onClick={() => setActive(index)} style={{ color: color }} className="text-[20px] ml-[10px] cursor-pointer  ">{item.name}</h1>
+                                            }
+                                            }
+                                                style={{ color: color }} className="text-[20px] ml-[10px] cursor-pointer  ">{item.name}</h1>
                                         </div>
                                         <h1 className="text-xs text-[#B3B6B7] ml-[35px]" >{item.items + " items / " + item.subItems + " subitems"}</h1>
                                     </div>
                             )
                         })
                     }
-                </div>
-            </div>
+                </div >
+            </div >
         )
     }
 
@@ -462,7 +478,7 @@ const Dashboard = () => {
                     </div>
                     <div className="pt-[30px]">
                         {
-                            ClientsType.clients.map(((item, index) => (
+                            ClientsType.map(((item, index) => (
                                 <div className="flex border-[0px] mt-[2px] pt-[2px] pb-[4px] px-[10px] ml-[25px] mr-[40px] rounded-lg hover:bg-[#5B6168] cursor-pointer"
                                     style={{ backgroundColor: (clientIndex === index) ? "#138D75" : null }}
                                     onClick={() => setClientIndex(index)}
@@ -472,7 +488,7 @@ const Dashboard = () => {
                                         size={15}
                                         className="mt-[7px]"
                                     />
-                                    <p className="ml-[5px] text-white" >{item.name.toUpperCase()}</p>
+                                    <p className="ml-[5px] text-white" >{item.clientType.toUpperCase()}</p>
                                 </div>
                             )))
                         }
