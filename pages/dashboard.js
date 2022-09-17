@@ -64,13 +64,17 @@ const Dashboard = () => {
     //#138D75 FocusedIcon
 
     function Active(x) {
-        if (x.completed === false && x.clientType == ClientsType[clientIndex].clientType) {
-            return x
+        if (ClientsType.length) {
+            if (x.completed === false && x.clientType == ClientsType[clientIndex].clientType) {
+                return x
+            }
         }
     }
     function Completed(x) {
-        if (x.completed === true && x.clientType == ClientsType[clientIndex].clientType) {
-            return x
+        if (ClientsType.length) {
+            if (x.completed === true && x.clientType == ClientsType[clientIndex].clientType) {
+                return x
+            }
         }
     }
 
