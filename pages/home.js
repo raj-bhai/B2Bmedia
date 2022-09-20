@@ -10,7 +10,8 @@ import {
     FaReact,
     FaTwitter,
     FaFacebookSquare,
-    FaInstagram
+    FaInstagram,
+    FaAngleDoubleUp
 } from 'react-icons/fa';
 
 
@@ -18,44 +19,48 @@ const Home = () => {
     const [headerStyle, setHeaderStyle] = useState('h-[100px]');
     const [textContainerStyle, setTextContainerStyle] = useState('pt-[100px]');
     const [aboutStyle, setAboutStyle] = useState('');
+    const [showArrowUp, setShowArrowUp] = useState(false);
     const scroll = useRef(null)
 
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
-        const onScroll = () => {
-            setOffset(window.pageYOffset);
-            if (window.pageYOffset > 50) {
-                setHeaderStyle('bg-[#2E4053] fixed h-[80px] top-[0px]');
-                setTextContainerStyle('pt-[250px]')
-                if ((335 > window.pageYOffset) && (window.pageYOffset > 156)) {
-                    setTextContainerStyle('pt-[350px]')
-                }
-                if ((380 > window.pageYOffset) && (window.pageYOffset > 280)) {
-                    setTextContainerStyle('pt-[450px]')
-                }
-                // if ((window.pageYOffset > 720) && (window.pageYOffset > 770)) {
-                //     setAboutStyle('pt-[20px]')
-                // }
-                // if ((window.pageYOffset > 720) && (window.pageYOffset > 770)) {
-                //     setAboutStyle('pt-[20px]')
-                // }
-                // if ((window.pageYOffset > 770) && (window.pageYOffset > 840)) {
-                //     setAboutStyle('pt-[70px]')
-                // }
-            } else {
-                setHeaderStyle('h-[100px]');
-                setTextContainerStyle('pt-[100px]')
-            }
-        };
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    const onScroll = () => {
+        setOffset(window.pageYOffset);
+        if (window.pageYOffset > 50) {
+            setHeaderStyle('bg-[#2E4053] fixed h-[80px] top-[0px]');
+            setTextContainerStyle('pt-[250px]');
+            setShowArrowUp(true)
+            if ((335 > window.pageYOffset) && (window.pageYOffset > 156)) {
+                setTextContainerStyle('pt-[350px]')
+            }
+            if ((380 > window.pageYOffset) && (window.pageYOffset > 280)) {
+                setTextContainerStyle('pt-[450px]')
+            }
+            // if ((window.pageYOffset > 720) && (window.pageYOffset > 770)) {
+            //     setAboutStyle('pt-[20px]')
+            // }
+            // if ((window.pageYOffset > 720) && (window.pageYOffset > 770)) {
+            //     setAboutStyle('pt-[20px]')
+            // }
+            // if ((window.pageYOffset > 770) && (window.pageYOffset > 840)) {
+            //     setAboutStyle('pt-[70px]')
+            // }
+        } else {
+            setShowArrowUp(false);
+            setHeaderStyle('h-[100px]');
+            setTextContainerStyle('pt-[100px]')
+        }
+    };
+
     console.log(offset);
     return (
-        <div className='w-full px-[0px] py-[0px]  bg-gradient-to-l hover:bg-gradient-to-r from-[#0B5345] to-[#154360] transition ease-in-out delay-150 overflow-y-hidden overflow-x-hidden'
+        <div className='w-full px-[0px] py-[0px] bg-gradient-to-l hover:bg-gradient-to-r from-[#0B5345] to-[#154360] transition ease-in-out delay-150 overflow-y-hidden overflow-x-hidden'
             ref={scroll}
         >
             <div className={'w-[100%] h-[800px] '} id="home"
@@ -75,11 +80,7 @@ const Home = () => {
                             />
                         </div>
                         <div className='flex space-x-[18px] items-center' >
-                            <div
-                                style={{
-                                    borderBottomWidth: (window.pageYOffset < 645) ? 2 : 0
-                                }}
-                            >
+                            <div>
                                 <h1 className='text-white font-normal text-[18px] cursor-pointer '
                                     onClick={() => {
                                         document.getElementById('home').scrollIntoView()
@@ -123,6 +124,19 @@ const Home = () => {
                         />
                     </div>
                 </div>
+                {/* AroowUpIcon */}
+                {
+                    showArrowUp &&
+                    <div id="goToTop" className='fixed border-[0px] w-[80px] bottom-[30px] right-[30px] h-[80px] flex items-center justify-center ' >
+                        <FaAngleDoubleUp
+                            size={45}
+                            onClick={() => {
+                                document.getElementById('home').scrollIntoView()
+                            }}
+                            className='text-white hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
+                        />
+                    </div>
+                }
                 <div className={`w-[50%] h-[200px] border-[0px] ml-[100px] ` + textContainerStyle}
                     style={{ zIndex: -1 }}
                 >
@@ -215,7 +229,27 @@ const Home = () => {
 
             </div>
             <div id="contact" className='w-[100%] h-[700px] bg-[#273746] flex items-center justify-center '>
-
+                <div className='w-[60%] h-[80%] border-[0px] px-[10px] py-[10px] ' >
+                    <h1 className='text-white text-[50px] font-bold' >Connect with us</h1>
+                    <div className='w-[100%] h-[100px] border-[0px]' >
+                        <h1
+                            className='text-white text-[18px]'
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h1>
+                    </div>
+                    <div className='w-[100%] h-[80px] border-[0px] flex justify-between items-center' >
+                        <input className='w-[48%] h-[50px] border-[1px] text-white rounded-lg bg-transparent px-[20px] ' placeholder='your name' ></input>
+                        <input className='w-[48%] h-[50px] border-[1px] text-white rounded-lg bg-transparent px-[20px] ' placeholder='your email' ></input>
+                    </div>
+                    <div className='w-[100%] h-[80px] border-[0px] flex justify-between items-center' >
+                        <input className='w-[100%] h-[50px] rounded-lg border-[1px] text-white bg-transparent px-[20px]' placeholder='Write a subject' ></input>
+                    </div>
+                    <div className='w-[100%] border-[0px] flex justify-between items-center' >
+                        <textarea placeholder="Your message" className='w-[100%] text-white py-[10px] h-[50px] rounded-lg border-[1px] bg-transparent px-[20px]'></textarea>
+                    </div>
+                    <div className='w-[100%] flex items-center h-[100px] border-[0px] justify-center' >
+                        <button className='w-[150px] h-[50px] border-[1px] hover:bg-[#0E6655] hover:border-0 rounded-lg text-white text-[17px] font-semibold' type="button">Submit</button>
+                    </div>
+                </div>
             </div>
             <div className='w-[100%] h-[200px] bg-[#424949] flex items-center justify-center' id="footer" >
                 <div className='flex border-[0px] w-[200px] h-[40px] items-center justify-between' >
