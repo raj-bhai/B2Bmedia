@@ -30,30 +30,42 @@ const TEXTS = [
 const SERVICES = [
     {
         name: "Script",
-        description: "Our Scriptwriters Knows Exactly how To Mould the story as per your need."
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
         name: "Voiceover",
-        description: "A good voice quality really grabs the attention of user."
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
         name: "Video",
-        description: "We have the best video editor for every niche."
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
         name: "Thumbnail",
-        description: "An Eye-catchy thumbnail is really important that's why we have the creative people"
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
 ];
+const uderlineText = 'underline underline-offset-8 decoration-sky-500';
 
 const AboutUsText = "We are a group of young YouTube specialists and enthusiasts dedicated to establishing a viable career path for YouTubers. Our goal is to assist individuals in acing their YouTube journey and turning YouTube into a revenue-generating platform through content improvement."
 const Home = () => {
     const [headerStyle, setHeaderStyle] = useState('h-[100px]');
     const [textContainerStyle, setTextContainerStyle] = useState('pt-[100px]');
     const [aboutStyle, setAboutStyle] = useState('');
+    const [serviceStyle, setServiceStyle] = useState('');
+    const [homeH1, setHomeH1] = useState('');
+    const [AboutH1, setAboutH1] = useState('');
+    const [ServicesH1, setServicesH1] = useState('');
+    const [PricingH1, setPricingH1] = useState('');
+    const [ContactH1, setContactH1] = useState('');
     const [showArrowUp, setShowArrowUp] = useState(false);
     const [homeBG, setHomeBG] = useState(0);
-    const scroll = useRef(null)
+    const scroll = useRef(null);
+    const HomeRef = useRef(null);
+    const AboutRef = useRef(null);
+    const ServicesRef = useRef(null);
+    const PricingRef = useRef(null);
+    const ContactRef = useRef(null);
 
     const [offset, setOffset] = useState(0);
 
@@ -66,6 +78,10 @@ const Home = () => {
         );
         return () => clearTimeout(intervalId);
     }, []);
+
+    useEffect(() => {
+        HomeFocused()
+    }, [])
 
     const bgImages = [
         "url(https://res.cloudinary.com/drgvislmm/image/upload/v1663691577/WebsiteImages/27263_szxh1r.jpg)",
@@ -83,6 +99,14 @@ const Home = () => {
         }, 15000);
         return () => clearTimeout(timer);
     }, [homeBG])
+
+    useEffect(() => {
+        if (document.activeElement === HomeRef.current) {
+          console.log('element has focus');
+        } else {
+          console.log('element does NOT have focus');
+        }
+      }, []);
 
     useEffect(() => {
         window.removeEventListener('scroll', onScroll);
@@ -111,19 +135,72 @@ const Home = () => {
             // if ((window.pageYOffset > 770) && (window.pageYOffset > 840)) {
             //     setAboutStyle('pt-[70px]')
             // }
+            // if ((window.pageYOffset > 1444) && (window.pageYOffset < 1716)) {
+            //     setServiceStyle('fixed top-[100px]');
+            // }
+            if ((window.pageYOffset > 1716)) {
+                setServiceStyle('')
+            }
         } else {
             setShowArrowUp(false);
             setHeaderStyle('h-[100px]');
-            setTextContainerStyle('pt-[100px]')
+            setTextContainerStyle('pt-[100px]');
+            setServiceStyle('')
         }
     };
+
+    const HomeFocused = () => {
+        setHomeH1(uderlineText);
+        document.getElementById('home').scrollIntoView();
+        setAboutH1('');
+        setServicesH1('');
+        setPricingH1('');
+        setContactH1('')
+    }
+
+    const AboutFocused = () => {
+        setHomeH1('');
+        document.getElementById('about').scrollIntoView();
+        //document.activeElement 
+        setAboutH1(uderlineText);
+        setServicesH1('');
+        setPricingH1('');
+        setContactH1('')
+    }
+
+    const ServiceFocused = () => {
+        setHomeH1('');
+        document.getElementById('services').scrollIntoView();
+        setAboutH1('');
+        setServicesH1(uderlineText);
+        setPricingH1('');
+        setContactH1('')
+    }
+
+    const PricingFocused = () => {
+        setHomeH1('');
+        document.getElementById('pricing').scrollIntoView();
+        setAboutH1('');
+        setServicesH1('');
+        setPricingH1(uderlineText);
+        setContactH1('')
+    }
+
+    const ContactFocused = () => {
+        setHomeH1('');
+        document.getElementById('contact').scrollIntoView();
+        setAboutH1('');
+        setServicesH1('');
+        setPricingH1('');
+        setContactH1(uderlineText);
+    }
 
     console.log(offset);
     return (
         <div className='w-full px-[0px] py-[0px] bg-[#17202A] overflow-y-hidden overflow-x-hidden'
             ref={scroll}
         >
-            <div className={'w-[100%] h-[800px] '} id="home"
+            <div className={'w-[100%] h-[800px] '} id="home" ref={HomeRef}
                 style={{
                     // backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663567484/WebsiteImages/SL_101619_24150_55_cszay4.jpg")`,
                     backgroundImage: bgImages[homeBG],
@@ -142,30 +219,30 @@ const Home = () => {
                         </div>
                         <div className='flex space-x-[18px] items-center' >
                             <div>
-                                <h1 className='text-white font-normal text-[18px] cursor-pointer '
+                                <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + homeH1}
                                     onClick={() => {
-                                        document.getElementById('home').scrollIntoView()
+                                        HomeFocused()
                                     }}
                                 >Home</h1>
                             </div>
-                            <h1 className='text-white font-normal text-[18px] cursor-pointer '
+                            <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + AboutH1}
                                 onClick={() => {
-                                    document.getElementById('about').scrollIntoView()
+                                    AboutFocused()
                                 }}
                             >About</h1>
-                            <h1 className='text-white font-normal text-[18px] cursor-pointer '
+                            <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + ServicesH1}
                                 onClick={() => {
-                                    document.getElementById('services').scrollIntoView()
+                                    ServiceFocused()
                                 }}
                             >Services</h1>
-                            <h1 className='text-white font-normal text-[18px] cursor-pointer '
+                            <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + PricingH1}
                                 onClick={() => {
-                                    document.getElementById('portfolio').scrollIntoView()
+                                    PricingFocused()
                                 }}
-                            >Portfolio</h1>
-                            <h1 className='text-white font-normal text-[18px] cursor-pointer'
+                            >Pricing</h1>
+                            <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + ContactH1}
                                 onClick={() => {
-                                    document.getElementById('contact').scrollIntoView()
+                                    ContactFocused()
                                 }}
                             >Contact</h1>
                         </div>
@@ -260,7 +337,7 @@ const Home = () => {
                     </AnimatedText>
                 </div>
             </div>
-            <div className='w-[100%] h-[700px] bg-[#212F3C] flex items-center justify-center ' id='about'
+            <div className='w-[100%] h-[700px] bg-[#212F3C] flex items-center justify-center ' id='about' rerf={AboutRef}
                 style={{
                     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663689788/WebsiteImages/rm373batch2-08_ikx2nb.jpg")`,
                     backgroundSize: 'cover',
@@ -298,24 +375,24 @@ const Home = () => {
                         <div className=' w-[75%] h-[100%] border-[0px] ' >
                             <h1
                                 className='text-white text-[19px] leading-[30px] italic font-normal mt-[10px]'
-                            >{AboutUsText}</h1>
+                            >{AboutUsText + SERVICES[0].description}</h1>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="services" className='w-[100%] h-[700px] bg-[#273746] flex items-center justify-center '
+            <div id="services" ref={ServicesRef} className='w-[100%] h-[700px] bg-[#273746] flex items-center justify-center '
                 style={{
                     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663921647/WebsiteImages/6150452_nxhsth.jpg")`,
                     backgroundSize: 'cover',
                 }}
             >
-                <div className='w-[90%] h-[80%] border-[0px] ' >
-                    <div className='w-[100%] h-[20%] border-[0px] flex items-center justify-center  ' >
-                        <h1 className='text-white text-[45px] ' >Services we provide</h1>
+                <div className={'w-[90%] h-[80%] border-[0px] ' + serviceStyle}  >
+                    <div className={'w-[100%] h-[20%] border-[0px] flex items-center justify-center  '} >
+                        <h1 className='text-white text-[50px] font-sans font-bold' >Services we provide</h1>
                     </div>
-                    <div className='w-[100%] h-[80%] border-[0px] flex items-center justify-between flex-wrap gap-x-[10px] gap-y-[10px] ' >
-                        {SERVICES.map((e, i) => <div className="border-[1px] h-[350px] w-[280px] px-[10px] py-[10px] rounded-lg">
-                            <div className='flex items-center gap-[10px]' >
+                    <div className='w-[100%] border-[0px] flex items-center justify-between flex-wrap gap-x-[10px] gap-y-[10px] ' >
+                        {SERVICES.map((e, i) => <div className="border-[1px]  mt-[80px] hover:bg-[#17202A] hover transition  pb-[30px] w-[280px] px-[15px] py-[10px] rounded-lg">
+                            <div className='flex items-start gap-[10px] border-[0px] py-[10px] px-[5px] text-justify cursor-default' >
                                 {(i === 0) &&
                                     <FaScroll
                                         color='white'
@@ -343,12 +420,16 @@ const Home = () => {
                                 <h1 className='text-[white] text-[25px]' >
                                     {e.name}</h1>
                             </div>
-                            <div>
-                                <h1 className='text-[white] text-[16px]' >
+                            <div  >
+                                <h1 className='text-[white] cursor-default text-[15px] flex text-justify decoration-2 whitespace-pre-wrap font-sans ' >
                                     {e.description}</h1>
                             </div>
                         </div>)}
                     </div>
+                </div>
+            </div>
+            <div id="pricing" ref={PricingRef} className='w-[100%] h-[700px] bg-[#060606] flex items-center justify-center '>
+                <div className=' w-[80%] h-[80%] border-[1px] ' >
                 </div>
             </div>
             <div id="portfolio" className='w-[100%] h-[700px] bg-[#060606] flex items-center justify-center '>
@@ -370,7 +451,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div id="contact" className='w-[100%] h-[700px] bg-[#273746] flex items-center justify-center '
+            <div id="contact" ref={ContactRef} className='w-[100%] h-[700px] bg-[#273746] flex items-center justify-center '
             // style={{
             //     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663691577/WebsiteImages/27263_szxh1r.jpg")`,
             //     backgroundSize: 'cover',
