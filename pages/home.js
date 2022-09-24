@@ -455,19 +455,19 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div id="services" ref={ServicesRef} className='w-[100%] h-[700px] bg-[#273746] flex items-center justify-center '
+            <div id="services" ref={ServicesRef} className='w-[100%] sm:h-[700px] border-[0px] bg-[#273746] flex items-center justify-center '
                 style={{
                     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663921647/WebsiteImages/6150452_nxhsth.jpg")`,
                     backgroundSize: 'cover',
                 }}
             >
-                <div className={'w-[90%] h-[80%] border-[0px] ' + serviceStyle}  >
-                    <div className={'w-[100%] h-[20%] border-[0px] flex items-center justify-center  '} >
-                        <h1 className='text-white text-[50px] font-sans font-bold' >Services we provide</h1>
+                <div className={'w-[90%] h-[80%] border-[0px] pb-[20px] sm:pb-[20px] ' + serviceStyle}  >
+                    <div className={'w-[100%] h-[20%] border-[0px] mt-[20px] sm:mt-[0px] flex items-center justify-center  '} >
+                        <h1 className='text-white text-[30px] sm:text-[50px] font-sans font-bold' >Services we provide</h1>
                     </div>
-                    <div className='w-[100%] border-[0px] flex items-center justify-between flex-wrap gap-x-[10px] gap-y-[10px] ' >
-                        {SERVICES.map((e, i) => <div key={i} className="border-[1px]  mt-[80px] hover:bg-[#17202A] pb-[30px] w-[280px] px-[15px] py-[10px] rounded-lg">
-                            <div className='flex items-start gap-[10px] border-[0px] py-[10px] px-[5px] text-justify cursor-default' >
+                    <div className='w-[100%] border-[0px] flex items-center justify-center sm:justify-between flex-wrap gap-x-[0px] gap-y-[0px] sm:gap-x-[10px] sm:gap-y-[10px] ' >
+                        {SERVICES.map((e, i) => <div key={i} className="border-[1px]  mt-[20px] sm:mt-[80px] hover:bg-[#17202A] pb-[30px] w-[280px] px-[15px] py-[10px] rounded-lg">
+                            <div className='flex items-center gap-[10px] border-[0px] py-[10px] px-[5px] text-justify cursor-default' >
                                 {(i === 0) &&
                                     <FaScroll
                                         color='white'
@@ -492,7 +492,7 @@ const Home = () => {
                                         size={25}
                                     />
                                 }
-                                <h1 className='text-[white] text-[25px]' >
+                                <h1 className='text-[white] text-[18px] sm:text-[25px]' >
                                     {e.name}</h1>
                             </div>
                             <div  >
