@@ -72,10 +72,11 @@ const Login = () => {
     //   backgroundSize: 'cover'
 
     // }}
-    
+
     >
       <div className='w-[100%] flex justify-center items-center '
       >
+        
         <div className=' w-[90%] mt-[100px] z-[100]  z-1 py-8 sm:w-[40%] md:w-[25%] flex flex-col items-center bg-indigo-100 rounded-xl hover:bg-indigo-100 duration-300'>
           <div className="imgwrapper w-16 h-16 mt-8 animate-bounce">
             <Image src={Logo} className='rounded-lg' alt="logo"></Image>
