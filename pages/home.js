@@ -257,7 +257,7 @@ const Home = () => {
         <div className='w-full px-[0px] py-[0px] bg-[#17202A] overflow-y-hidden overflow-x-hidden'
             ref={scroll}
         >
-            <div className={'w-[100%] h-[800px] '} id="home" ref={HomeRef}
+            <div className={'w-[100%] h-[500px] sm:h-[800px] border-[0px] '} id="home" ref={HomeRef}
                 style={{
                     // backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663567484/WebsiteImages/SL_101619_24150_55_cszay4.jpg")`,
                     backgroundImage: bgImages[homeBG],
@@ -335,7 +335,7 @@ const Home = () => {
                 }
                 {
                     showMainText &&
-                    <div className='border-[0px] flex items-center w-[100%] h-[100%] fixed' >
+                    <div className='border-[0px] flex items-center w-[100%] h-[500px] sm:h-[100%] fixed' >
                         <div className={`w-[50%] h-[200px] border-[0px] ml-[100px] ` + textContainerStyle}
                             style={{ zIndex: -1 }}
                         >
@@ -412,7 +412,7 @@ const Home = () => {
                     </div>
                 }
             </div>
-            <div className='w-[100%] h-[700px] bg-[#212F3C] flex items-center justify-center ' id='about' rerf={AboutRef}
+            <div className='w-[100%] h-[700px] bg-[#212F3C] flex items-center sm:items-center justify-center ' id='about' rerf={AboutRef}
                 style={{
                     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663689788/WebsiteImages/rm373batch2-08_ikx2nb.jpg")`,
                     backgroundSize: 'cover',
@@ -442,7 +442,7 @@ const Home = () => {
                     {/* <h1 className='text-white text-[80px] font-bold ' >About us</h1> */}
                     <div className='flex-wrap sm:flex  border-[0px] items-center mt-[30px] w-[100%]'
                     >
-                        <div className=' w-[100%] sm:w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
+                        <div className=' w-[100%] sm:w-[25%] h-[100%] border-[0px] flex sm:justify-center items-center justify-start ' >
                             <img src="https://res.cloudinary.com/drgvislmm/image/upload/v1663606102/WebsiteImages/avtar_lnzfdl.png" alt="Girl in a jacket"
                                 className='w-[180px] sm:w-[180px] sm:h-[180px] h-[180px] rounded-[100px] '
                             ></img>
