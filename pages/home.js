@@ -569,12 +569,12 @@ const Home = () => {
                             color='white'
                             className='text-[20px] sm:text-[30px] cursor-pointer '
                             onClick={() => {
-                                window?.open("https://wa.me/8413802010")
+                                window?.open("https://wa.me/918413802010")
                             }}
                         />
                         <h1 className='text-white text-[15px] sm-text-[18px] cursor-pointer'
                             onClick={() => {
-                                window?.open("https://wa.me/8413802010")
+                                window?.open("https://wa.me/918413802010")
                             }}
                         >8413802010</h1>
                     </div>
