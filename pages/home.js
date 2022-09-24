@@ -307,13 +307,22 @@ const Home = () => {
                     </div>
                     <div className='sm:w-[50%] w-[0px] border-[0px] space-x-[10px] flex justify-end items-center pr-[30px] ' >
                         <FaFacebookSquare
-                            className={'text-[0px] sm:text-[22px]' + textPrimaryCol}
+                            className={'text-[0px] sm:text-[22px] cursor-pointer' + textPrimaryCol}
+                            onClick={() => {
+                                window?.open("https://www.facebook.com/raj.kiran.1800")
+                            }}
                         />
                         <FaInstagram
-                            className={'text-[0px] sm:text-[22px]' + textPrimaryCol}
+                            className={'text-[0px] sm:text-[22px] cursor-pointer' + textPrimaryCol}
+                            onClick={() => {
+                                window?.open("https://www.instagram.com/iamrajklwr/?hl=en")
+                            }}
                         />
                         <FaTwitter
-                            className={'text-[0px] sm:text-[22px]' + textPrimaryCol}
+                            className={'text-[0px] sm:text-[22px] cursor-pointer' + textPrimaryCol}
+                            onClick={() => {
+                                window?.open("https://twitter.com/iamrajkalwar")
+                            }}
                         />
                     </div>
                 </div>
@@ -325,7 +334,7 @@ const Home = () => {
                             onClick={() => {
                                 document.getElementById('home').scrollIntoView()
                             }}
-                            className='text-white sm:text-[40px] text-[20px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
+                            className='text-sky-500 sm:text-[40px] text-[25px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
                         />
                     </div>
                 }
@@ -558,26 +567,42 @@ const Home = () => {
                     <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
                         <FaWhatsapp
                             color='white'
-                            className='text-[20px] sm:text-[30px]'
+                            className='text-[20px] sm:text-[30px] cursor-pointer '
+                            onClick={() => {
+                                window?.open("https://wa.me/8413802010")
+                            }}
                         />
-                        <h1 className='text-white text-[15px] sm-text-[18px]' >8413802010</h1>
+                        <h1 className='text-white text-[15px] sm-text-[18px] cursor-pointer'
+                            onClick={() => {
+                                window?.open("https://wa.me/8413802010")
+                            }}
+                        >8413802010</h1>
                     </div>
                     <div className='flex border-[0px] w-[400px] sm:w-[200px] h-[40px] items-center justify-center gap-[20px]' >
                         <FaFacebookSquare
                             color='white'
-                            className='text-[20px] sm:text-[30px]'
+                            className='text-[20px] sm:text-[30px] cursor-pointer '
+                            onClick={() => {
+                                window?.open("https://www.facebook.com/raj.kiran.1800")
+                            }}
                         />
                         <FaInstagram
                             color='white'
-                            className='text-[20px] sm:text-[30px]'
+                            className='text-[20px] sm:text-[30px] cursor-pointer '
+                            onClick={() => {
+                                window?.open("https://www.instagram.com/iamrajklwr/?hl=en")
+                            }}
                         />
                         <FaTwitter
                             color='white'
-                            className='text-[20px] sm:text-[30px]'
+                            className='text-[20px] sm:text-[30px] cursor-pointer '
+                            onClick={() => {
+                                window?.open("https://twitter.com/iamrajkalwar")
+                            }}
                         />
                     </div>
                     <div className='sm:w-[400px] w-[100%] h-[50%] border-[0px] flex items-center sm:justify-end justify-center' >
-                        <h1 className='text-white text-[15px] sm:text-[17px] ' >{`Copyright ${`©`} 2022, all rights reserved`}</h1>
+                        <h1 className='text-white text-[15px] sm:text-[17px] sm:pb-[0px] pb-[10px] ' >{`Copyright ${`©`} 2022, all rights reserved`}</h1>
                     </div>
                 </div>
             </div>
