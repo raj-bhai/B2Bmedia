@@ -135,6 +135,7 @@ const Home = () => {
 
     const onScroll = () => {
         setOffset(window.pageYOffset);
+        console.log("gg :", AboutRef.current?.clientHeight)
         if (window.pageYOffset > 50) {
             setHeaderStyle('bg-[#060606] fixed h-[80px] top-[0px]');
             // setTextContainerStyle('pt-[250px]');
@@ -164,10 +165,10 @@ const Home = () => {
                 setShowMaiinText(true);
             }
 
-            if ((window.pageYOffset > 600)) {
-                if ((window.pageYOffset > 1400)) {
-                    if ((window.pageYOffset > 2000)) {
-                        if ((window.pageYOffset > 3400)) {
+            if ((window.pageYOffset > HomeRef.current?.clientHeight - 100)) {
+                if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight - 100)) {
+                    if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100)) {
+                        if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight + PricingRef.current?.clientHeight - 100)) {
                             ContactFocused()
                         } else {
                             PricingFocused()
@@ -406,7 +407,7 @@ const Home = () => {
                     </div>
                 }
             </div>
-            <div className='w-[100%] h-[700px] bg-[#212F3C] flex items-center sm:items-center justify-center ' id='about' rerf={AboutRef}
+            <div className='w-[100%] h-[700px] bg-[#212F3C] flex items-center sm:items-center justify-center ' id='about' ref={AboutRef}
                 style={{
                     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663689788/WebsiteImages/rm373batch2-08_ikx2nb.jpg")`,
                     backgroundSize: 'cover',
