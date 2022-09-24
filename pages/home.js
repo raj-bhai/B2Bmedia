@@ -526,22 +526,22 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div id="contact" ref={ContactRef} className='w-[100%] h-[700px] bg-[#060606] flex items-center justify-center '
+            <div id="contact" ref={ContactRef} className='w-[100%] border-[0px] sm:h-[700px] bg-[#060606] flex items-center justify-center '
             // style={{
             //     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1664009359/WebsiteImages/90595_gi3aj3.jpg")`,
             //     backgroundSize: 'cover',
             // }}
             >
-                <div className='w-[50%] h-[80%] border-[0px] px-[10px] py-[10px] ' >
-                    <h1 className='text-white text-[50px] font-bold' >Connect with us</h1>
-                    <div className='w-[100%] h-[100px] border-[0px]' >
+                <div className='sm:w-[50%] sm:h-[80%] border-[0px] px-[10px] py-[10px] ' >
+                    <h1 className='text-white sm:text-[50px] text-[18px] font-bold' >Connect with us</h1>
+                    <div className='w-[100%] sm:h-[100px] border-[0px]' >
                         <h1
-                            className='text-white text-[18px]'
+                            className='text-white sm:text-[18px] text-[15px]'
                         >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h1>
                     </div>
-                    <div className='w-[100%] h-[80px] border-[0px] flex justify-between items-center' >
-                        <input className='w-[48%] h-[50px] border-[1px] text-white rounded-lg bg-transparent px-[20px] ' placeholder='your name' ></input>
-                        <input className='w-[48%] h-[50px] border-[1px] text-white rounded-lg bg-transparent px-[20px] ' placeholder='your email' ></input>
+                    <div className='w-[100%] sm:h-[80px] border-[0px] sm:flex flex:wrap justify-between items-center' >
+                        <input className='sm:w-[48%] w-[100%] sm:mt-[0px] mt-[20px] h-[50px] border-[1px] text-white rounded-lg bg-transparent px-[20px] ' placeholder='your name' ></input>
+                        <input className='sm:w-[48%] w-[100%]  sm:mt-[0px] mt-[20px] h-[50px] border-[1px] text-white rounded-lg bg-transparent px-[20px] ' placeholder='your email' ></input>
                     </div>
                     <div className='w-[100%] h-[80px] border-[0px] flex justify-between items-center' >
                         <input className='w-[100%] h-[50px] rounded-lg border-[1px] text-white bg-transparent px-[20px]' placeholder='Write a subject' ></input>
