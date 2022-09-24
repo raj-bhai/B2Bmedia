@@ -267,56 +267,51 @@ const Home = () => {
                 <div id="header" className={'w-[100%] border-[0px] flex items-center z-50 ' + headerStyle}
                     style={{}}
                 >
-                    <div className='w-[50%] border-[0px] flex ' >
-                        <div className='w-[10%] ml-[20px] ' >
+                    <div className='sm:w-[50%] w-[100%] border-[0px] flex ' >
+                        <div className=' border-[0px] flex items-center sm:w-[10%] sm:ml-[20px] sm:mr-[0px] ml-[10px] mr-[10px] ' >
                             <FaReact
-                                // color='white'
-                                size={40}
-                                className='text-sky-500'
+                                className='text-sky-500 sm:text-[40px] text-[30px]  '
                             />
                         </div>
                         <div className='flex space-x-[18px] items-center' >
                             <div>
-                                <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + homeH1 + textPrimaryCol}
+                                <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + homeH1 + textPrimaryCol}
                                     onClick={() => {
                                         HomeFocused(true)
                                     }}
                                 >Home</h1>
                             </div>
-                            <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + AboutH1 + textPrimaryCol}
+                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + AboutH1 + textPrimaryCol}
                                 onClick={() => {
                                     AboutFocused(true)
                                 }}
                             >About</h1>
-                            <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + ServicesH1 + textPrimaryCol}
+                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + ServicesH1 + textPrimaryCol}
                                 onClick={() => {
                                     ServiceFocused(true)
                                 }}
                             >Services</h1>
-                            <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + PricingH1 + textPrimaryCol}
+                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + PricingH1 + textPrimaryCol}
                                 onClick={() => {
                                     PricingFocused(true)
                                 }}
                             >Pricing</h1>
-                            <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + ContactH1 + textPrimaryCol}
+                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + ContactH1 + textPrimaryCol}
                                 onClick={() => {
                                     ContactFocused(true)
                                 }}
                             >Contact</h1>
                         </div>
                     </div>
-                    <div className='w-[50%] border-[0px] space-x-[10px] flex justify-end items-center pr-[30px] ' >
+                    <div className='sm:w-[50%] w-[0px] border-[0px] space-x-[10px] flex justify-end items-center pr-[30px] ' >
                         <FaFacebookSquare
-                            size={22}
-                            className={textPrimaryCol}
+                            className={'text-[0px] sm:text-[22px]' + textPrimaryCol}
                         />
                         <FaInstagram
-                            className={textPrimaryCol}
-                            size={22}
+                            className={'text-[0px] sm:text-[22px]' + textPrimaryCol}
                         />
                         <FaTwitter
-                            className={textPrimaryCol}
-                            size={22}
+                            className={'text-[0px] sm:text-[22px]' + textPrimaryCol}
                         />
                     </div>
                 </div>
