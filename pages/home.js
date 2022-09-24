@@ -417,7 +417,7 @@ const Home = () => {
                     </div>
                 }
             </div>
-            <div className='w-[100%] h-[700px] bg-[#212F3C] flex items-center sm:items-center justify-center ' id='about' ref={AboutRef}
+            <div className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] pt-[80px] pb-[30px] bg-[#212F3C] flex items-center sm:items-center justify-center ' id='about' ref={AboutRef}
                 style={{
                     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663689788/WebsiteImages/rm373batch2-08_ikx2nb.jpg")`,
                     backgroundSize: 'cover',
@@ -460,7 +460,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div id="services" ref={ServicesRef} className='w-[100%] sm:h-[700px] border-[0px] bg-[#273746] flex items-center justify-center '
+            <div id="services" ref={ServicesRef} className='w-[100%] sm:h-[700px] sm:pt-[0px] pt-[80px] border-[0px] bg-[#273746] flex items-center justify-center '
                 style={{
                     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663921647/WebsiteImages/6150452_nxhsth.jpg")`,
                     backgroundSize: 'cover',
@@ -562,7 +562,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[100%] sm:h-[150px] border-[0px] bg-[#424949] flex items-center justify-center' id="footer" >
+            <div className='w-[100%] sm:h-[80px] border-[0px] bg-[#0B5345] flex items-center justify-center' id="footer" >
                 <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
                     <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
                         <FaWhatsapp
@@ -602,7 +602,7 @@ const Home = () => {
                         />
                     </div>
                     <div className='sm:w-[400px] w-[100%] h-[50%] border-[0px] flex items-center sm:justify-end justify-center' >
-                        <h1 className='text-white text-[15px] sm:text-[17px] sm:pb-[0px] pb-[10px] ' >{`Copyright ${`©`} 2022, all rights reserved`}</h1>
+                        <h1 className='text-white text-[15px] sm:text-[17px] sm:pb-[0px] pb-[10px] ' >{`2022 ${`©`} brandName`}</h1>
                     </div>
                 </div>
             </div>
