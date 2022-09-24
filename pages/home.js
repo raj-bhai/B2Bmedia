@@ -330,7 +330,7 @@ const Home = () => {
                 {
                     showMainText &&
                     <div className='border-[0px] flex items-center w-[100%] h-[500px] sm:h-[100%] fixed' >
-                        <div className={`w-[50%] h-[200px] border-[0px] ml-[100px] ` + textContainerStyle}
+                        <div className={`sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px] h-[200px] border-[1px] sm:ml-[100px] ml-[20px]  ` + textContainerStyle}
                             style={{ zIndex: -1 }}
                         >
                             <h1 className="text-white  sm:text-[17px] text-[15px] leading-relaxed animate-text"> WELCOME TO MY WORLD </h1>
