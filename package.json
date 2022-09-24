@@ -4,11 +4,11 @@
   "private": true,
   "homepage": "https://raj-bhai.github.io/B2Bmedia",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next -p 4000",
     "build": "next build",
     "start": "next start -p 4000",
-    "lint": "next lint",
-    "deploy": "npm run build"
+    "start:prod": "next build && /usr/bin/pm2 restart 0",
+    "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
