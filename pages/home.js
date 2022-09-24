@@ -339,8 +339,8 @@ const Home = () => {
                         <div className={`w-[50%] h-[200px] border-[0px] ml-[100px] ` + textContainerStyle}
                             style={{ zIndex: -1 }}
                         >
-                            <h1 className="text-white  sm:text-[17px] text-[14px] leading-relaxed animate-text"> WELCOME TO MY WORLD </h1>
-                            <h1 className="text-white  sm:text-[50px]  text-[20px] leading-relaxed italic" >Hi, I am Tonmoy</h1>
+                            <h1 className="text-white  sm:text-[17px] text-[15px] leading-relaxed animate-text"> WELCOME TO MY WORLD </h1>
+                            <h1 className="text-white  sm:text-[50px]  text-[25px] leading-relaxed italic" >Hi, I am Tonmoy</h1>
                             <h1 className="text-white  sm:text-[50px] text-[20px] leading-relaxed italic" >Welcome to our platform</h1>
                             
                             {/* <AnimatedText
@@ -432,7 +432,7 @@ const Home = () => {
                         interval={0.05}
                         duration={0}
                         tag="p"
-                        className="text-white text-[80px] font-semibold animate-text"
+                        className="text-white sm:text-[80px] text-[50px] font-semibold animate-text"
                         includeWhiteSpaces
                         threshold={0.1}
                         rootMargin="20%"
@@ -440,16 +440,16 @@ const Home = () => {
                         About us
                     </AnimatedText>
                     {/* <h1 className='text-white text-[80px] font-bold ' >About us</h1> */}
-                    <div className='flex border-[0px] mt-[30px] w-[100%] h-[200px] '
+                    <div className='flex-wrap sm:flex  border-[0px] items-center mt-[30px] w-[100%]'
                     >
-                        <div className=' w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
+                        <div className=' w-[100%] sm:w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
                             <img src="https://res.cloudinary.com/drgvislmm/image/upload/v1663606102/WebsiteImages/avtar_lnzfdl.png" alt="Girl in a jacket"
-                                className='w-[180px] h-[180px] rounded-[100px] '
+                                className='w-[180px] sm:w-[180px] sm:h-[180px] h-[180px] rounded-[100px] '
                             ></img>
                         </div>
-                        <div className=' w-[75%] h-[100%] border-[0px] ' >
+                        <div className=' w-[100%] sm:w-[75%] h-[100%] border-[0px] ' >
                             <h1
-                                className='text-white text-[19px] leading-[30px] italic font-normal mt-[10px]'
+                                className='text-white text-[15px] sm:text-[19px] leading-[15px] sm:leading-[30px] italic font-normal mt-[10px]'
                             >{AboutUsText + SERVICES[0].description}</h1>
                         </div>
                     </div>
