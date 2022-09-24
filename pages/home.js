@@ -342,6 +342,7 @@ const Home = () => {
                             <h1 className="text-white text-[17px] leading-relaxed animate-text"> WELCOME TO MY WORLD </h1>
                             <h1 className="text-white  text-[50px] leading-relaxed italic" >Hi, I am Tonmoy</h1>
                             <h1 className="text-white  text-[50px] leading-relaxed italic" >Welcome to our platform</h1>
+                            
                             {/* <AnimatedText
                                 type="chars" // animate words or chars
                                 animation={{
