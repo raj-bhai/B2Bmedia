@@ -89,6 +89,7 @@ const Home = () => {
     const HomeRef = useRef(null);
     const AboutRef = useRef(null);
     const ServicesRef = useRef(null);
+    const PortfolioRef= useRef(null)
     const PricingRef = useRef(null);
     const ContactRef = useRef(null);
     const textPrimaryCol = ' text-[#ECF0F1]';
@@ -168,7 +169,7 @@ const Home = () => {
             if ((window.pageYOffset > HomeRef.current?.clientHeight - 100)) {
                 if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight - 100)) {
                     if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100)) {
-                        if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight + PricingRef.current?.clientHeight - 100)) {
+                        if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight + PricingRef.current?.clientHeight + PortfolioRef.current?.clientHeight  - 150)) {
                             ContactFocused()
                         } else {
                             PricingFocused()
@@ -427,7 +428,7 @@ const Home = () => {
                         interval={0.05}
                         duration={0}
                         tag="p"
-                        className="text-white sm:text-[80px] text-[50px] font-semibold animate-text"
+                        className="text-white sm:text-[80px] text-[50px] sm:font-semibold animate-text"
                         includeWhiteSpaces
                         threshold={0.1}
                         rootMargin="20%"
@@ -444,7 +445,7 @@ const Home = () => {
                         </div>
                         <div className=' w-[100%] sm:w-[75%] h-[100%] border-[0px] ' >
                             <h1
-                                className='text-white text-[15px] sm:text-[19px] leading-[15px] sm:leading-[30px] italic font-normal mt-[10px]'
+                                className='text-white text-justify text-[16px] sm:text-[19px] leading-[15px] sm:leading-[30px] italic font-normal mt-[10px]'
                             >{AboutUsText + SERVICES[0].description}</h1>
                         </div>
                     </div>
@@ -502,7 +503,7 @@ const Home = () => {
                 <div className=' w-[80%] h-[80%] border-[1px] ' >
                 </div>
             </div>
-            <div id="portfolio" className='w-[100%] border-[0px]  sm:h-[700px] bg-[#060606] flex items-center justify-center '>
+            <div id="portfolio" ref={PortfolioRef} className='w-[100%] border-[0px]  sm:h-[700px] bg-[#060606] flex items-center justify-center '>
                 <div className=' w-[80%] h-[80%] border-[0px] ' >
                     <div className='w-[100%] h-[25%] border-[0px] flex items-center justify-center ' >
                         <h1 className='text-[#F7F9F9] sm:text-[30px] text-[18px] ' >Some of our successfully delivered work</h1>
