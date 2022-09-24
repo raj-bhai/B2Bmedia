@@ -7,7 +7,10 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-     router.push('./dashboard')
+    if (typeof window !== "undefined") {
+      window.welcomeMessage = "Welcome to CodingDeft!"
+    }
+    router.push('./dashboard')
   }, [])
 
   return (
