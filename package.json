@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
-    "@trendyol-js/react-carousel": "^3.0.0",
+    "@trendyol-js/react-carousel": "^3.0.0", 
     "axios": "^0.27.2",
     "next": "12.2.3",
     "prop-types": "^15.8.1",
