@@ -112,6 +112,7 @@ const Login = () => {
       </div>
       <div className="smallParent">
 
+
         {/* {[...Array(14)].map((e, i) => <div className="items" key={i}></div>)} */}
       </div>
     </div>
