@@ -89,7 +89,7 @@ const Home = () => {
     const HomeRef = useRef(null);
     const AboutRef = useRef(null);
     const ServicesRef = useRef(null);
-    const PortfolioRef= useRef(null)
+    const PortfolioRef = useRef(null)
     const PricingRef = useRef(null);
     const ContactRef = useRef(null);
     const textPrimaryCol = ' text-[#ECF0F1]';
@@ -169,7 +169,7 @@ const Home = () => {
             if ((window.pageYOffset > HomeRef.current?.clientHeight - 100)) {
                 if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight - 100)) {
                     if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100)) {
-                        if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight + PricingRef.current?.clientHeight + PortfolioRef.current?.clientHeight  - 150)) {
+                        if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight + PricingRef.current?.clientHeight + PortfolioRef.current?.clientHeight - 150)) {
                             ContactFocused()
                         } else {
                             PricingFocused()
@@ -445,7 +445,7 @@ const Home = () => {
                         </div>
                         <div className=' w-[100%] sm:w-[75%] h-[100%] border-[0px] ' >
                             <h1
-                                className='text-white text-justify text-[16px] sm:text-[19px] leading-[15px] sm:leading-[30px] italic font-normal mt-[10px]'
+                                className='text-white text-justify text-[15px] sm:text-[19px] leading-[20px] sm:leading-[30px] italic font-normal mt-[10px]'
                             >{AboutUsText + SERVICES[0].description}</h1>
                         </div>
                     </div>
@@ -500,7 +500,10 @@ const Home = () => {
                 </div>
             </div>
             <div id="pricing" ref={PricingRef} className='w-[100%] h-[700px] bg-[#060606] flex items-center justify-center '>
-                <div className=' w-[80%] h-[80%] border-[1px] ' >
+                <div className=' sm:w-[80%] w-[90%] h-[80%] border-[0px] ' >
+                    <div className='border-[0px] w-[100%] sm:h-[20%] h-[60px] flex items-center sm:justify-start justify-center ' >
+                        <h1 className={' sm:text-[40px] text-[20px] font-semibold ' + textPrimaryCol} >Package Deals for Cash Cow Channels</h1>
+                    </div>
                 </div>
             </div>
             <div id="portfolio" ref={PortfolioRef} className='w-[100%] border-[0px]  sm:h-[700px] bg-[#060606] flex items-center justify-center '>
@@ -528,7 +531,7 @@ const Home = () => {
             //     backgroundSize: 'cover',
             // }}
             >
-                <div className='sm:w-[50%] sm:h-[80%] border-[0px] px-[10px] py-[10px] ' >
+                <div className='sm:w-[50%] sm:h-[80%] w-[90%] border-[0px] px-[10px] py-[10px] ' >
                     <h1 className='text-white sm:text-[50px] text-[18px] font-bold' >Connect with us</h1>
                     <div className='w-[100%] sm:h-[100px] border-[0px]' >
                         <h1
