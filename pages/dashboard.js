@@ -27,7 +27,6 @@ import DashboardModal from "../components/modal";
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import * as dashboardAction from '../redux/action/dashboard';
-import { Image, Shimmer } from 'react-shimmer';
 import Avatar, { ConfigProvider } from 'react-avatar';
 import Inbox from "../components/Inbox/Inbox";
 

@@ -13,7 +13,6 @@ import {
     FaDotCircle
 } from "react-icons/fa";
 import Avatar from 'react-avatar';
-import DocViewer from "react-doc-viewer";
 import StatusType from "../constants/StatusType";
 
 //bg-gradient-to-r from-[#0B5345] to-[#154360]
