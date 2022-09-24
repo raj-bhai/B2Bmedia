@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useMemo, } from 'react'
 import Logo from '../public/images/logo.png';
 import Image from 'next/image';
 import axios from 'axios';
@@ -17,7 +17,8 @@ import {
     FaScroll,
     FaMicrophone,
     FaYoutube,
-    FaPhotoVideo
+    FaPhotoVideo,
+    FaWhatsapp
 } from 'react-icons/fa';
 
 const TEXTS = [
@@ -45,12 +46,36 @@ const SERVICES = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
 ];
+
+const WORKS = [
+    {
+        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
+    },
+    {
+        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
+    },
+    {
+        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
+    },
+    {
+        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
+    },
+    {
+        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
+    },
+    {
+        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
+    },
+]
+
+
 const uderlineText = 'underline underline-offset-8 decoration-sky-500';
 
 const AboutUsText = "We are a group of young YouTube specialists and enthusiasts dedicated to establishing a viable career path for YouTubers. Our goal is to assist individuals in acing their YouTube journey and turning YouTube into a revenue-generating platform through content improvement."
 const Home = () => {
-    const [headerStyle, setHeaderStyle] = useState('h-[100px]');
-    const [textContainerStyle, setTextContainerStyle] = useState('pt-[100px]');
+    const [headerStyle, setHeaderStyle] = useState('h-[80px] border-b-[0px] fixed top-0');
+    const [textContainerStyle, setTextContainerStyle] = useState('');
+    const [showMainText, setShowMaiinText] = useState(true);
     const [aboutStyle, setAboutStyle] = useState('');
     const [serviceStyle, setServiceStyle] = useState('');
     const [homeH1, setHomeH1] = useState('');
@@ -66,10 +91,12 @@ const Home = () => {
     const ServicesRef = useRef(null);
     const PricingRef = useRef(null);
     const ContactRef = useRef(null);
+    const textPrimaryCol = ' text-[#ECF0F1]';
 
     const [offset, setOffset] = useState(0);
 
     const [index, setIndex] = useState(0);
+
 
     useEffect(() => {
         const intervalId = setInterval(() =>
@@ -85,7 +112,7 @@ const Home = () => {
 
     const bgImages = [
         "url(https://res.cloudinary.com/drgvislmm/image/upload/v1663691577/WebsiteImages/27263_szxh1r.jpg)",
-        // "url(https://res.cloudinary.com/drgvislmm/image/upload/v1663567484/WebsiteImages/SL_101619_24150_55_cszay4.jpg)",
+         "url(https://res.cloudinary.com/drgvislmm/image/upload/v1664009359/WebsiteImages/90595_gi3aj3.jpg)",
         "url(https://res.cloudinary.com/drgvislmm/image/upload/v1663689788/WebsiteImages/rm373batch2-08_ikx2nb.jpg)"
     ]
 
@@ -101,14 +128,6 @@ const Home = () => {
     }, [homeBG])
 
     useEffect(() => {
-        if (document.activeElement === HomeRef.current) {
-          console.log('element has focus');
-        } else {
-          console.log('element does NOT have focus');
-        }
-      }, []);
-
-    useEffect(() => {
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
@@ -117,15 +136,16 @@ const Home = () => {
     const onScroll = () => {
         setOffset(window.pageYOffset);
         if (window.pageYOffset > 50) {
-            setHeaderStyle('bg-[#2E4053] fixed h-[80px] top-[0px]');
-            setTextContainerStyle('pt-[250px]');
+            setHeaderStyle('bg-[#060606] fixed h-[80px] top-[0px]');
+            // setTextContainerStyle('pt-[250px]');
+            // setTextContainerStyle('fixed top-[0px]');
             setShowArrowUp(true)
-            if ((335 > window.pageYOffset) && (window.pageYOffset > 156)) {
-                setTextContainerStyle('pt-[350px]')
-            }
-            if ((380 > window.pageYOffset) && (window.pageYOffset > 280)) {
-                setTextContainerStyle('pt-[450px]')
-            }
+            // if ((335 > window.pageYOffset) && (window.pageYOffset > 156)) {
+            //     setTextContainerStyle('pt-[350px]')
+            // }
+            // if ((380 > window.pageYOffset) && (window.pageYOffset > 280)) {
+            //     setTextContainerStyle('pt-[450px]')
+            // }
             // if ((window.pageYOffset > 720) && (window.pageYOffset > 770)) {
             //     setAboutStyle('pt-[20px]')
             // }
@@ -138,57 +158,94 @@ const Home = () => {
             // if ((window.pageYOffset > 1444) && (window.pageYOffset < 1716)) {
             //     setServiceStyle('fixed top-[100px]');
             // }
+            if ((window.pageYOffset > 400)) {
+                setShowMaiinText(false);
+            } else {
+                setShowMaiinText(true);
+            }
+
+            if ((window.pageYOffset > 600)) {
+                if ((window.pageYOffset > 1400)) {
+                    if ((window.pageYOffset > 2000)) {
+                        if ((window.pageYOffset > 3400)) {
+                            ContactFocused()
+                        } else {
+                            PricingFocused()
+                        }
+                    } else {
+                        ServiceFocused()
+                    }
+                } else {
+                    AboutFocused()
+                }
+            } else {
+                HomeFocused()
+            }
+
             if ((window.pageYOffset > 1716)) {
                 setServiceStyle('')
             }
         } else {
             setShowArrowUp(false);
-            setHeaderStyle('h-[100px]');
-            setTextContainerStyle('pt-[100px]');
-            setServiceStyle('')
+            setShowMaiinText(true);
+            setHeaderStyle('h-[80px] border-b-[0px] fixed top-0');
+            setTextContainerStyle('');
+            setServiceStyle('');
+            HomeFocused()
         }
     };
 
-    const HomeFocused = () => {
+
+    const HomeFocused = (scroll) => {
         setHomeH1(uderlineText);
-        document.getElementById('home').scrollIntoView();
+        if (scroll) {
+            document.getElementById('home').scrollIntoView();
+        }
         setAboutH1('');
         setServicesH1('');
         setPricingH1('');
-        setContactH1('')
+        setContactH1('');
     }
 
-    const AboutFocused = () => {
+
+    const AboutFocused = (scroll) => {
         setHomeH1('');
-        document.getElementById('about').scrollIntoView();
-        //document.activeElement 
+        if (scroll) {
+            document.getElementById('about').scrollIntoView();
+        }
         setAboutH1(uderlineText);
         setServicesH1('');
         setPricingH1('');
-        setContactH1('')
+        setContactH1('');
     }
 
-    const ServiceFocused = () => {
+    const ServiceFocused = (scroll) => {
         setHomeH1('');
-        document.getElementById('services').scrollIntoView();
+        if (scroll) {
+            document.getElementById('services').scrollIntoView();
+        }
         setAboutH1('');
         setServicesH1(uderlineText);
         setPricingH1('');
         setContactH1('')
     }
 
-    const PricingFocused = () => {
+    const PricingFocused = (scroll) => {
         setHomeH1('');
-        document.getElementById('pricing').scrollIntoView();
+        if (scroll) {
+            document.getElementById('pricing').scrollIntoView();
+        }
         setAboutH1('');
         setServicesH1('');
         setPricingH1(uderlineText);
         setContactH1('')
     }
 
-    const ContactFocused = () => {
+    const ContactFocused = (scroll) => {
         setHomeH1('');
-        document.getElementById('contact').scrollIntoView();
+        if (scroll) {
+            document.getElementById('contact').scrollIntoView();
+        }
         setAboutH1('');
         setServicesH1('');
         setPricingH1('');
@@ -213,52 +270,53 @@ const Home = () => {
                     <div className='w-[50%] border-[0px] flex ' >
                         <div className='w-[10%] ml-[20px] ' >
                             <FaReact
-                                color='white'
+                                // color='white'
                                 size={40}
+                                className='text-sky-500'
                             />
                         </div>
                         <div className='flex space-x-[18px] items-center' >
                             <div>
-                                <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + homeH1}
+                                <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + homeH1 + textPrimaryCol}
                                     onClick={() => {
-                                        HomeFocused()
+                                        HomeFocused(true)
                                     }}
                                 >Home</h1>
                             </div>
-                            <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + AboutH1}
+                            <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + AboutH1 + textPrimaryCol}
                                 onClick={() => {
-                                    AboutFocused()
+                                    AboutFocused(true)
                                 }}
                             >About</h1>
-                            <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + ServicesH1}
+                            <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + ServicesH1 + textPrimaryCol}
                                 onClick={() => {
-                                    ServiceFocused()
+                                    ServiceFocused(true)
                                 }}
                             >Services</h1>
-                            <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + PricingH1}
+                            <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + PricingH1 + textPrimaryCol}
                                 onClick={() => {
-                                    PricingFocused()
+                                    PricingFocused(true)
                                 }}
                             >Pricing</h1>
-                            <h1 className={'text-white font-normal text-[18px] cursor-pointer ' + ContactH1}
+                            <h1 className={'font-normal text-[18px] cursor-pointer font-sans ' + ContactH1 + textPrimaryCol}
                                 onClick={() => {
-                                    ContactFocused()
+                                    ContactFocused(true)
                                 }}
                             >Contact</h1>
                         </div>
                     </div>
-                    <div className='w-[50%] border-[0px] space-x-[18px] flex justify-end items-center pr-[30px] ' >
+                    <div className='w-[50%] border-[0px] space-x-[10px] flex justify-end items-center pr-[30px] ' >
                         <FaFacebookSquare
-                            color='white'
-                            size={25}
+                            size={22}
+                            className={textPrimaryCol}
                         />
                         <FaInstagram
-                            color='white'
-                            size={25}
+                            className={textPrimaryCol}
+                            size={22}
                         />
                         <FaTwitter
-                            color='white'
-                            size={25}
+                            className={textPrimaryCol}
+                            size={22}
                         />
                     </div>
                 </div>
@@ -275,67 +333,83 @@ const Home = () => {
                         />
                     </div>
                 }
-                <div className={`w-[50%] h-[200px] border-[0px] ml-[100px] ` + textContainerStyle}
-                    style={{ zIndex: -1 }}
-                >
-                    <AnimatedText
-                        type="chars" // animate words or chars
-                        animation={{
-                            x: '200px',
-                            y: '-20px',
-                            scale: 1.1,
-                            // ease: 'ease-in-out', 
-                        }}
-                        animationType="float"
-                        interval={0.06}
-                        duration={0.8}
-                        tag="p"
-                        className="text-white  text-[17px] leading-relaxed animate-text"
-                        includeWhiteSpaces
-                        threshold={0.5}
-                        rootMargin="20%"
-                    >
-                        WELCOME TO MY WORLD
-                    </AnimatedText>
-                    <AnimatedText
-                        type="chars" // animate words or chars
-                        animation={{
-                            x: '200px',
-                            y: '-20px',
-                            scale: 1.1,
-                            ease: 'ease-in-out',
-                        }}
-                        animationType="float"
-                        interval={0.06}
-                        duration={0.8}
-                        tag="p"
-                        className="text-white  text-[50px] leading-relaxed italic"
-                        includeWhiteSpaces
-                        threshold={0.1}
-                        rootMargin="20%"
-                    >
-                        Hi, I'm Tonmoy
-                    </AnimatedText>
-                    <AnimatedText
-                        type="chars" // animate words or chars
-                        animation={{
-                            x: '200px',
-                            y: '-20px',
-                            scale: 1.1,
-                            ease: 'ease-in-out',
-                        }}
-                        animationType="float"
-                        interval={0.06}
-                        duration={0.8}
-                        tag="p"
-                        className="text-white  text-[50px] leading-relaxed italic"
-                        includeWhiteSpaces
-                        threshold={0.5}
-                        rootMargin="50%"
-                    >
-                        Welcome to our platform
-                    </AnimatedText>
-                </div>
+                {
+                    showMainText &&
+                    <div className='border-[0px] flex items-center w-[100%] h-[100%] fixed' >
+                        <div className={`w-[50%] h-[200px] border-[0px] ml-[100px] ` + textContainerStyle}
+                            style={{ zIndex: -1 }}
+                        >
+                            <h1 className="text-white text-[17px] leading-relaxed animate-text"> WELCOME TO MY WORLD </h1>
+                            <h1 className="text-white  text-[50px] leading-relaxed italic" >Hi, I am Tonmoy</h1>
+                            <h1 className="text-white  text-[50px] leading-relaxed italic" >Welcome to our platform</h1>
+                            {/* <AnimatedText
+                                type="chars" // animate words or chars
+                                animation={{
+                                    x: '200px',
+                                    y: '-20px',
+                                    scale: 1.1,
+                                    // ease: 'ease-in-out', 
+                                }}
+                                animationType="float"
+                                interval={0.06}
+                                duration={0.8}
+                                tag="p"
+                                className="text-white  text-[17px] leading-relaxed animate-text"
+                                includeWhiteSpaces
+                                threshold={0.5}
+                                rootMargin="20%"
+                            >
+                                WELCOME TO MY WORLD
+                            </AnimatedText>
+                            <AnimatedText
+                                type="chars" // animate words or chars
+                                animation={{
+                                    x: '200px',
+                                    y: '-20px',
+                                    scale: 1.1,
+                                    ease: 'ease-in-out',
+                                }}
+                                animationType="float"
+                                interval={0.06}
+                                duration={0.8}
+                                tag="p"
+                                className="text-white  text-[50px] leading-relaxed italic"
+                                includeWhiteSpaces
+                                threshold={0.1}
+                                rootMargin="20%"
+                            >
+                                Hi, I'm Tonmoy
+                            </AnimatedText>
+                            <AnimatedText
+                                type="chars" // animate words or chars
+                                animation={{
+                                    x: '200px',
+                                    y: '-20px',
+                                    scale: 1.1,
+                                    ease: 'ease-in-out',
+                                }}
+                                animationType="float"
+                                interval={0.06}
+                                duration={0.8}
+                                tag="p"
+                                className="text-white  text-[50px] leading-relaxed italic"
+                                includeWhiteSpaces
+                                threshold={0.5}
+                                rootMargin="50%"
+                            >
+                                Welcome to our platform
+                            </AnimatedText> */}
+                        </div>
+                        {/* {
+                        showMainText &&
+                        <div className='border-[0px]' >
+                            <img src="https://res.cloudinary.com/drgvislmm/image/upload/v1664004951/WebsiteImages/men_fbrjnf.jpg" alt="my-photo"
+                                className='w-[300px] h-[500px] rounded-[100px] '
+                            ></img>
+                        </div>
+                    } */}
+                    </div>
+                }
             </div>
             <div className='w-[100%] h-[700px] bg-[#212F3C] flex items-center justify-center ' id='about' rerf={AboutRef}
                 style={{
@@ -391,7 +465,7 @@ const Home = () => {
                         <h1 className='text-white text-[50px] font-sans font-bold' >Services we provide</h1>
                     </div>
                     <div className='w-[100%] border-[0px] flex items-center justify-between flex-wrap gap-x-[10px] gap-y-[10px] ' >
-                        {SERVICES.map((e, i) => <div className="border-[1px]  mt-[80px] hover:bg-[#17202A] hover transition  pb-[30px] w-[280px] px-[15px] py-[10px] rounded-lg">
+                        {SERVICES.map((e, i) => <div key={i} className="border-[1px]  mt-[80px] hover:bg-[#17202A] pb-[30px] w-[280px] px-[15px] py-[10px] rounded-lg">
                             <div className='flex items-start gap-[10px] border-[0px] py-[10px] px-[5px] text-justify cursor-default' >
                                 {(i === 0) &&
                                     <FaScroll
@@ -443,17 +517,17 @@ const Home = () => {
                         </TextTransition> */}
                     </div>
                     <div className='w-[100%] h-[75%] border-[0px] flex flex-wrap  gap-x-[50px] justify-center ' >
-                        {[...Array(6)].map((e, i) => <div className="border-[0px] h-[200px] w-[300px] flex items-center justify-center">
-                            <img src="https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png" alt="Girl in a jacket"
+                        {WORKS.map((e, i) => <div key={i} className="border-[0px] h-[200px] w-[300px] flex items-center justify-center">
+                            <img src={e.uri} alt="Girl in a jacket"
                                 className='w-[80%] h-[80%] hover:w-[85%] hover:h-[85%] rounded-lg cursor-pointer '
                             ></img>
                         </div>)}
                     </div>
                 </div>
             </div>
-            <div id="contact" ref={ContactRef} className='w-[100%] h-[700px] bg-[#273746] flex items-center justify-center '
+            <div id="contact" ref={ContactRef} className='w-[100%] h-[700px] bg-[#060606] flex items-center justify-center '
             // style={{
-            //     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663691577/WebsiteImages/27263_szxh1r.jpg")`,
+            //     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1664009359/WebsiteImages/90595_gi3aj3.jpg")`,
             //     backgroundSize: 'cover',
             // }}
             >
@@ -479,20 +553,32 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[100%] h-[200px] bg-[#424949] flex items-center justify-center' id="footer" >
-                <div className='flex border-[0px] w-[200px] h-[40px] items-center justify-between' >
-                    <FaFacebookSquare
-                        color='white'
-                        size={35}
-                    />
-                    <FaInstagram
-                        color='white'
-                        size={35}
-                    />
-                    <FaTwitter
-                        color='white'
-                        size={35}
-                    />
+            <div className='w-[100%] h-[150px] border-[0px] bg-[#424949] flex items-center justify-center' id="footer" >
+                <div className='flex w-[90%] h-[80%] border-[0px] items-center justify-between' >
+                    <div className='w-[400px] h-[50%] border-[0px] flex items-center gap-[10px]' >
+                        <FaWhatsapp
+                            color='white'
+                            size={35}
+                        />
+                        <h1 className='text-white' >8413802010</h1>
+                    </div>
+                    <div className='flex border-[0px] w-[200px] h-[40px] items-center justify-center gap-[20px]' >
+                        <FaFacebookSquare
+                            color='white'
+                            size={35}
+                        />
+                        <FaInstagram
+                            color='white'
+                            size={35}
+                        />
+                        <FaTwitter
+                            color='white'
+                            size={35}
+                        />
+                    </div>
+                    <div className='w-[400px] h-[50%] border-[0px] flex items-center justify-end' >
+                        <h1 className='text-white   ' >{`Copyright ${`©`} 2022, all rights reserved`}</h1>
+                    </div>
                 </div>
             </div>
 

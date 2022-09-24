@@ -248,7 +248,7 @@ const DashboardModal = (props) => {
                     <div className="border-[0px] w-[14%] h-[500px] mt-[10px] " >
                         {
                             Types.map((x, i) =>
-                                <div className="border-[0px] relative w-[100%] pl-[10px] flex cursor-pointer rounded-md h-[50px]  items-center "
+                                <div key={i} className="border-[0px] relative w-[100%] pl-[10px] flex cursor-pointer rounded-md h-[50px]  items-center "
                                     style={{
                                         // backgroundColor: selectedTypes === i ? "yellow" : null 
                                         background: selectedTypes === i ? "linear-gradient(#0B5345, #154360)" : null
@@ -543,8 +543,8 @@ const DashboardModal = (props) => {
                             showDropdown &&
                             <div className="absolute top-[40px] -right-[20px] w-[170px] rounded-md bg-white " >
                                 {
-                                    StatusType.map((x) =>
-                                        <div className="w-[100%] h-[35px] border-[0px] items-center pl-[20px] flex hover:bg-sky-700 cursor-pointer "
+                                    StatusType.map((x, index) =>
+                                        <div key={index} className="w-[100%] h-[35px] border-[0px] items-center pl-[20px] flex hover:bg-sky-700 cursor-pointer "
                                             onClick={() => {
                                                 setShowDropdown(false)
                                                 if (selectedTypes === 0) {

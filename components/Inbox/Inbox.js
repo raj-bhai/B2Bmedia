@@ -41,7 +41,7 @@ const Inbox = (props) => {
                     </div>
                     <div className='w-[90%] ' >
                         {[...Array(100)].map((e, i) =>
-                            <div className='w-[80%] cursor-pointer hover:bg-gradient-to-l from-[#0B5345] to-[#0B5345] h-[100px] border-[1px] border-[#BDC3C7] ml-[20px] mt-[15px] rounded-lg px-[10px] py-[10px]'
+                            <div key={i} className='w-[80%] cursor-pointer hover:bg-gradient-to-l from-[#0B5345] to-[#0B5345] h-[100px] border-[1px] border-[#BDC3C7] ml-[20px] mt-[15px] rounded-lg px-[10px] py-[10px]'
                             >
                                 {
                                     (props.type === "Notification") &&

@@ -164,7 +164,7 @@ const Dashboard = () => {
                             const Data = (item.name === "Active Projects") ? DashboardData.filter(Active) : DashboardData.filter(Completed);
                             return (
                                 (active === index) ?
-                                    <div className="border-[0px] overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-hidden overflow-x-auto">
+                                    <div key={item.name}  className="border-[0px] overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-hidden overflow-x-auto">
                                         <div className="flex" >
                                             <FaAngleDown
                                                 size={20}
@@ -208,7 +208,7 @@ const Dashboard = () => {
                                                         }
                                                     }
                                                     return (
-                                                        <div className="relative w-[200px] h-[250px] hover:border-[1px] bg-gradient-to-r from-[#0B5345] to-[#154360] cursor-pointer mt-[50px] px-[10px] py-[5px] ml-[10px]  rounded-lg "
+                                                        <div key={index} className="relative w-[200px] h-[250px] hover:border-[1px] bg-gradient-to-r from-[#0B5345] to-[#154360] cursor-pointer mt-[50px] px-[10px] py-[5px] ml-[10px]  rounded-lg "
                                                             // bg-[rgba(11,83,69,1)]
                                                             onMouseOver={() => setTaskIndex(index)}
                                                             onMouseOut={() => setTaskIndex(null)}
@@ -493,7 +493,7 @@ const Dashboard = () => {
                             <div className="pt-[30px]">
                                 {
                                     ClientsType.map(((item, index) => (
-                                        <div className="flex border-[0px] mt-[2px] pt-[2px] pb-[4px] px-[10px] ml-[25px] mr-[40px] rounded-lg hover:bg-[#5B6168] cursor-pointer"
+                                        <div key={index} className="flex border-[0px] mt-[2px] pt-[2px] pb-[4px] px-[10px] ml-[25px] mr-[40px] rounded-lg hover:bg-[#5B6168] cursor-pointer"
                                             style={{ backgroundColor: (clientIndex === index) ? "#138D75" : null }}
                                             onClick={() => setClientIndex(index)}
                                         >
