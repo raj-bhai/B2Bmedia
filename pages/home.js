@@ -257,7 +257,7 @@ const Home = () => {
         <div className='w-full px-[0px] py-[0px] bg-[#17202A] overflow-y-hidden overflow-x-hidden'
             ref={scroll}
         >
-            <div className={'w-[100%] h-[500px] sm:h-[800px] border-[0px] '} id="home" ref={HomeRef}
+            <div className={'w-[100%] h-[800px] sm:h-[800px] border-[0px] '} id="home" ref={HomeRef}
                 style={{
                     // backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663567484/WebsiteImages/SL_101619_24150_55_cszay4.jpg")`,
                     backgroundImage: bgImages[homeBG],
