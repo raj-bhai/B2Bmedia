@@ -339,9 +339,9 @@ const Home = () => {
                         <div className={`w-[50%] h-[200px] border-[0px] ml-[100px] ` + textContainerStyle}
                             style={{ zIndex: -1 }}
                         >
-                            <h1 className="text-white text-[17px] leading-relaxed animate-text"> WELCOME TO MY WORLD </h1>
-                            <h1 className="text-white  text-[50px] leading-relaxed italic" >Hi, I am Tonmoy</h1>
-                            <h1 className="text-white  text-[50px] leading-relaxed italic" >Welcome to our platform</h1>
+                            <h1 className="text-white  sm:text-[17px] text-[14px] leading-relaxed animate-text"> WELCOME TO MY WORLD </h1>
+                            <h1 className="text-white  sm:text-[50px]  text-[20px] leading-relaxed italic" >Hi, I am Tonmoy</h1>
+                            <h1 className="text-white  sm:text-[50px] text-[20px] leading-relaxed italic" >Welcome to our platform</h1>
                             
                             {/* <AnimatedText
                                 type="chars" // animate words or chars
