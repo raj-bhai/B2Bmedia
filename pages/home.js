@@ -325,11 +325,10 @@ const Home = () => {
                     showArrowUp &&
                     <div id="goToTop" className='fixed border-[0px] w-[80px] bottom-[30px] right-[30px] h-[80px] flex items-center justify-center ' >
                         <FaAngleDoubleUp
-                            size={45}
                             onClick={() => {
                                 document.getElementById('home').scrollIntoView()
                             }}
-                            className='text-white hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
+                            className='text-white sm:text-[40px] text-[20px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
                         />
                     </div>
                 }
@@ -554,31 +553,31 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[100%] h-[150px] border-[0px] bg-[#424949] flex items-center justify-center' id="footer" >
-                <div className='flex w-[90%] h-[80%] border-[0px] items-center justify-between' >
-                    <div className='w-[400px] h-[50%] border-[0px] flex items-center gap-[10px]' >
+            <div className='w-[100%] sm:h-[150px] border-[0px] bg-[#424949] flex items-center justify-center' id="footer" >
+                <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
+                    <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
                         <FaWhatsapp
                             color='white'
-                            size={35}
+                            className='text-[20px] sm:text-[30px]'
                         />
-                        <h1 className='text-white' >8413802010</h1>
+                        <h1 className='text-white text-[15px] sm-text-[18px]' >8413802010</h1>
                     </div>
-                    <div className='flex border-[0px] w-[200px] h-[40px] items-center justify-center gap-[20px]' >
+                    <div className='flex border-[0px] w-[400px] sm:w-[200px] h-[40px] items-center justify-center gap-[20px]' >
                         <FaFacebookSquare
                             color='white'
-                            size={35}
+                            className='text-[20px] sm:text-[30px]'
                         />
                         <FaInstagram
                             color='white'
-                            size={35}
+                            className='text-[20px] sm:text-[30px]'
                         />
                         <FaTwitter
                             color='white'
-                            size={35}
+                            className='text-[20px] sm:text-[30px]'
                         />
                     </div>
-                    <div className='w-[400px] h-[50%] border-[0px] flex items-center justify-end' >
-                        <h1 className='text-white   ' >{`Copyright ${`©`} 2022, all rights reserved`}</h1>
+                    <div className='sm:w-[400px] w-[100%] h-[50%] border-[0px] flex items-center sm:justify-end justify-center' >
+                        <h1 className='text-white text-[15px] sm:text-[17px] ' >{`Copyright ${`©`} 2022, all rights reserved`}</h1>
                     </div>
                 </div>
             </div>
