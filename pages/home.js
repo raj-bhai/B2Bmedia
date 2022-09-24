@@ -270,7 +270,7 @@ const Home = () => {
                     <div className='sm:w-[50%] w-[100%] border-[0px] flex ' >
                         <div className=' border-[0px] flex items-center sm:w-[10%] sm:ml-[20px] sm:mr-[0px] ml-[10px] mr-[10px] ' >
                             <FaReact
-                                className='text-sky-500 sm:text-[40px] text-[30px]  '
+                                className='text-sky-500 sm:text-[40px] text-[0px]  '
                             />
                         </div>
                         <div className='flex space-x-[18px] items-center' >
