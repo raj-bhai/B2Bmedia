@@ -72,6 +72,7 @@ const Login = () => {
     //   backgroundSize: 'cover'
 
     // }}
+    
     >
       <div className='w-[100%] flex justify-center items-center '
       >
@@ -116,6 +117,7 @@ const Login = () => {
         {/* {[...Array(14)].map((e, i) => <div className="items" key={i}></div>)} */}
       </div>
     </div>
+
   )
 }
 
