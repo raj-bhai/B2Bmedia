@@ -112,7 +112,7 @@ const Home = () => {
 
     const bgImages = [
         "url(https://res.cloudinary.com/drgvislmm/image/upload/v1663691577/WebsiteImages/27263_szxh1r.jpg)",
-         "url(https://res.cloudinary.com/drgvislmm/image/upload/v1664009359/WebsiteImages/90595_gi3aj3.jpg)",
+        "url(https://res.cloudinary.com/drgvislmm/image/upload/v1664009359/WebsiteImages/90595_gi3aj3.jpg)",
         "url(https://res.cloudinary.com/drgvislmm/image/upload/v1663689788/WebsiteImages/rm373batch2-08_ikx2nb.jpg)"
     ]
 
@@ -341,8 +341,8 @@ const Home = () => {
                         >
                             <h1 className="text-white  sm:text-[17px] text-[15px] leading-relaxed animate-text"> WELCOME TO MY WORLD </h1>
                             <h1 className="text-white  sm:text-[50px]  text-[25px] leading-relaxed italic" >Hi, I am Tonmoy</h1>
-                            <h1 className="text-white  sm:text-[50px] text-[20px] leading-relaxed italic" >Welcome to our platform</h1>
-                            
+                            <h1 className="text-white  sm:text-[50px] text-[18px] leading-relaxed italic" >Welcome to our platform</h1>
+
                             {/* <AnimatedText
                                 type="chars" // animate words or chars
                                 animation={{
@@ -507,10 +507,10 @@ const Home = () => {
                 <div className=' w-[80%] h-[80%] border-[1px] ' >
                 </div>
             </div>
-            <div id="portfolio" className='w-[100%] h-[700px] bg-[#060606] flex items-center justify-center '>
+            <div id="portfolio" className='w-[100%] border-[0px]  sm:h-[700px] bg-[#060606] flex items-center justify-center '>
                 <div className=' w-[80%] h-[80%] border-[0px] ' >
                     <div className='w-[100%] h-[25%] border-[0px] flex items-center justify-center ' >
-                        <h1 className='text-[#F7F9F9] text-[30px] ' >Some of our successfully delivered work</h1>
+                        <h1 className='text-[#F7F9F9] sm:text-[30px] text-[18px] ' >Some of our successfully delivered work</h1>
                         {/* <TextTransition springConfig={presets.molasses}
                             className='text-white text-[30px] '
                         >
