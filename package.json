@@ -11,6 +11,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/material": "^5.10.13",
     "@reduxjs/toolkit": "^1.8.5",
     "@trendyol-js/react-carousel": "^3.0.0",
     "axios": "^0.27.2",

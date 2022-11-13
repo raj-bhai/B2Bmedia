@@ -20,6 +20,9 @@ import {
     FaExpand,
     FaYoutube,
     FaCheck,
+    FaChevronRight,
+    FaChevronDown,
+    FaRegCommentAlt
 } from "react-icons/fa";
 import DashboardModal from "../components/modal";
 //import ClientsType from "../constants/ClientsType";
@@ -29,6 +32,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as dashboardAction from '../redux/action/dashboard';
 import Avatar, { ConfigProvider } from 'react-avatar';
 import Inbox from "../components/Inbox/Inbox";
+import Checkbox from '@mui/material/Checkbox';
+import SubTable from "../components/TableComponents/Subtable";
 
 
 const Dashboard = () => {
@@ -60,6 +65,7 @@ const Dashboard = () => {
             subItems: DashboardData.filter(Completed).length * 4
         }
     ]
+
 
     //#1C2833 hoverButton
     //#138D75 FocusedIcon
@@ -95,8 +101,9 @@ const Dashboard = () => {
     }
 
     const Dashboard_ = (props) => {
-        const [active, setActive] = useState(null); //Active Project Finished project index
+        const [active, setActive] = useState(0); //Active Project Finished project index
         const [taskIndex, setTaskIndex] = useState(null); //MouseOver on Card
+        const [showSubTableIndex, setShowSubtableIndex] = useState(null); //show subtable of Task
         const [selectedData, setSelectedData] = useState(null);
         const [showDashboardModal, setShowDashboardModal] = useState(false);
         const customStyles = {
@@ -120,28 +127,50 @@ const Dashboard = () => {
                 borderWidth: 0
             },
         };
+
+        const Rows = [
+            {
+                name: "checkbox",
+            },
+            {
+                name: "Item",
+            },
+            {
+                name: "comment",
+            },
+            {
+                name: "STARTING",
+            },
+            {
+                name: "Clients",
+            },
+            {
+                name: "Script",
+            },
+            {
+                name: "Voice Over",
+            },
+            {
+                name: "Video",
+            },
+            {
+                name: "Thumbnail",
+            },
+            {
+                name: "Uploaded",
+            },
+            {
+                name: "SCRIPT PAID",
+            },
+            {
+                name: "CLIENT PAID",
+            }
+        ];
+
         return (
             <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)] border-[0px]  mt-[50px] fixed overflow-y-auto"
                 style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
             >
-                <Modal
-                    isOpen={showDashboardModal}
-                    // onAfterOpen={afterOpenModal}
-                    onRequestClose={() => {
-                        setShowDashboardModal(false);
-                        setSelectedData(null)
-                    }}
-                    style={customStyles}
-                    contentLabel="Example Modal"
-                >
-                    <DashboardModal
-                        onClose={() => {
-                            setShowDashboardModal(false);
-                            setSelectedData(null)
-                        }}
-                        data={selectedData}
-                    />
-                </Modal>
                 {
                     ClientsType.length ?
                         <div className="w-[100%] h-[100px] border-[0px] pl-[10px] pt-[5px] flex bg-[rgba(19,141,117,0.1)]" >
@@ -163,7 +192,7 @@ const Dashboard = () => {
                             const Data = (item.name === "Active Projects") ? DashboardData.filter(Active) : DashboardData.filter(Completed);
                             return (
                                 (active === index) ?
-                                    <div key={item.name}  className="border-[0px] overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-hidden overflow-x-auto">
+                                    <div key={item.name} className="border-[0px] overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-hidden overflow-x-auto">
                                         <div className="flex" >
                                             <FaAngleDown
                                                 size={20}
@@ -174,9 +203,63 @@ const Dashboard = () => {
                                             <h1 onClick={() => setActive(null)} style={{ color: color }} className="text-[20px] ml-[10px] cursor-pointer  ">{item.name}</h1>
                                             <h1 className="text-xs text-[#B3B6B7] mt-[9px] ml-[5px]" >{item.items + " items / " + item.subItems + " subitems"}</h1>
                                         </div>
-                                        <div className="border-[0px] w-[100%] flex overflow-y-auto border-yellow-600 p-[5px] flex-wrap " >
+                                        <div className="border-[0px] w-[100%] overflow-y-auto border-yellow-600 p-[5px] pt-[10px]" >
+                                            <div className="w-[100%] h-[50px] bg-[#34495E]  border-[0px] flex " >
+                                                {
+                                                    Rows.map((i, index) => {
+                                                        return (
+                                                            <>
+                                                                <div className="flex w-[100%] h-[50px]  " >
+                                                                    {
+                                                                        i.name == "checkbox" &&
+                                                                        <div key={index} className="w-[50px] border-r-[1px] border-[1px] h-[100%] bg-[#2C3E50] flex items-center justify-center " >
+                                                                            <Checkbox
+                                                                                size="medium"
+                                                                            />
+                                                                        </div>
+                                                                    }
+                                                                    {
+                                                                        i.name == "Item" &&
+                                                                        <div key={index} className="w-[550px] border-l-[0px] border-[1px] -ml-[0px] h-[100%] bg-[#2C3E50] flex items-center justify-center " >
+                                                                            <h1 className="text-white text-left text-[18px] font-medium " >{i.name}</h1>
+                                                                        </div>
+                                                                    }
+                                                                    {
+                                                                        i.name == "STARTING" &&
+                                                                        <div key={index} className="w-[120px] border-l-[0px] border-[1px] -ml-[26px] h-[100%] bg-[#2C3E50] flex items-center justify-center " >
+                                                                            <h1 className="text-white text-left text-[16px] font-medium " >{i.name}</h1>
+                                                                        </div>
+                                                                    }
+                                                                    {
+                                                                        i.name == "Clients" &&
+                                                                        <div key={index} className="w-[120px] border-l-[0px] border-[1px] -ml-[0px] h-[100%] bg-[#2C3E50] flex items-center justify-center " >
+                                                                            <h1 className="text-white text-left text-[16px] font-medium " >{i.name}</h1>
+                                                                        </div>
+                                                                    }
+                                                                    {
+                                                                        i.name == "Script" &&
+                                                                        <div key={index} className="w-[120px] border-l-[0px] border-[1px] -ml-[0px] h-[100%] bg-[#2C3E50] flex items-center justify-center " >
+                                                                            <h1 className="text-white text-left text-[16px] font-medium " >{i.name}</h1>
+                                                                        </div>
+                                                                    }
+                                                                </div>
+                                                            </>
+                                                        )
+                                                    })
+                                                }
+                                                <div className="" >
+
+                                                </div>
+                                            </div>
                                             {
                                                 Data.map((item, index) => {
+                                                    console.log("abcd :", item);
+                                                    let Obj = item;
+
+                                                    if (Obj.title.length > 65) {
+                                                        let text = Obj.title.substring(0, 63) + "...";
+                                                        Obj.title = text
+                                                    }
                                                     const getColor = (type) => {
                                                         if (type === "Done") {
                                                             return "green"
@@ -207,62 +290,88 @@ const Dashboard = () => {
                                                         }
                                                     }
                                                     return (
-                                                        <div key={index} className="relative w-[200px] h-[250px] hover:border-[1px] bg-gradient-to-r from-[#0B5345] to-[#154360] cursor-pointer mt-[50px] px-[10px] py-[5px] ml-[10px]  rounded-lg "
-                                                            // bg-[rgba(11,83,69,1)]
-                                                            onMouseOver={() => setTaskIndex(index)}
-                                                            onMouseOut={() => setTaskIndex(null)}
-                                                            onClick={() => {
-                                                                setSelectedData(item);
-                                                                setShowDashboardModal(true);
-                                                            }
-                                                            }
-                                                            style={{
-                                                                // backgroundImage: `url("https://c.tenor.com/VuQPPwDkIbsAAAAd/galaxy-space.gif")`,
-                                                                opacity: (taskIndex === index) ? 1 : 0.8
-                                                            }}
-                                                        >
-                                                            <div className="h-[100px]" >
-                                                                <h1 className="text-left text-[#fff] italic leading-4 font-bold text-[13px] ">{item.title}</h1>
+                                                        <div>
+                                                            <div className="w-[100%] bg-[#34495E] border-[0px] flex " >
+                                                                {
+                                                                    Rows.map((i, index1) => {
+                                                                        return (
+                                                                            <div className="border-[0px]" >
+                                                                                <div className="flex w-[100%] h-[50px] border-[0px] " >
+                                                                                    {
+                                                                                        i.name == "checkbox" &&
+                                                                                        <div key={index} className="w-[50px] border-r-[1px] border-t-[0px] border-[1px] h-[100%] bg-[#2C3E50] flex items-center justify-center " >
+                                                                                            <Checkbox
+                                                                                                size="medium"
+                                                                                                className=""
+                                                                                            />
+                                                                                        </div>
+                                                                                    }
+                                                                                    {
+                                                                                        i.name == "Item" &&
+                                                                                        <div key={index} className="w-[500px] border-r-[1px] border-b-[1px] h-[100%] bg-[#2C3E50] -ml-[0px] flex items-center justify-left " >
+                                                                                            {
+                                                                                                (showSubTableIndex == index) ?
+                                                                                                    <FaChevronDown
+                                                                                                        size={25}
+                                                                                                        color='white'
+                                                                                                        className="mt-[8px] ml-[2px] mr-[2px] pb-[5px] font-light"
+                                                                                                        onClick={() => {
+                                                                                                            if (showSubTableIndex == index) {
+                                                                                                                setShowSubtableIndex(null)
+                                                                                                                return
+                                                                                                            }
+                                                                                                            setShowSubtableIndex(index)
+                                                                                                        }}
+                                                                                                    />
+                                                                                                    :
+                                                                                                    <FaChevronRight
+                                                                                                        size={25}
+                                                                                                        color='white'
+                                                                                                        className="mt-[8px] ml-[2px] mr-[2px] pb-[5px] font-light"
+                                                                                                        onClick={() => {
+                                                                                                            if (showSubTableIndex == index) {
+                                                                                                                setShowSubtableIndex(null)
+                                                                                                                return
+                                                                                                            }
+                                                                                                            setShowSubtableIndex(index)
+                                                                                                        }}
+                                                                                                    />
+                                                                                            }
+                                                                                            <h1 className="text-white text-left text-[15px] font-medium " >{Obj.title}</h1>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {
+                                                                                        i.name == "comment" &&
+                                                                                        <div key={index} className="w-[50px] border-l-[0px] border-t-[0px] border-[1px] h-[100%] bg-[#2C3E50] ml-[0px] flex items-center justify-center " >
+                                                                                            <FaRegCommentAlt
+                                                                                                size={25}
+                                                                                                color='white'
+                                                                                                className="mt-[8px] ml-[2px] mr-[2px] pb-[5px] font-light"
+                                                                                                onClick={() => {
+                                                                                                }}
+                                                                                            />
+                                                                                        </div>
+                                                                                    }
+                                                                                    {
+                                                                                        i.name == "STARTING" &&
+                                                                                        <div key={index} className="w-[120px] border-l-[0px] border-t-[0px] border-[1px] -ml-[0px] h-[100%] bg-[#2C3E50] flex items-center justify-center " >
+                                                                                            {/* <h1 className="text-white text-left text-[16px] font-medium " >{i.name}</h1> */}
+                                                                                        </div>
+                                                                                    }
+                                                                                </div>
+                                                                            </div>
+                                                                        )
+                                                                    })
+                                                                }
                                                             </div>
                                                             {
-                                                                item.uploaded &&
-                                                                <div className="flex absolute top-[100px] left-[-15px] bg-[rgba(236,240,241,0.7)] py-[10px] px-[40px] -rotate-45">
-                                                                    <h1 className="text-[#1C2833] text-2xl font-bold" >Uploaded</h1>
-                                                                    <FaCheck
-                                                                        size={30}
-                                                                        color='green'
-                                                                        className="ml-[10px]"
+                                                                (showSubTableIndex == index) &&
+                                                                <div className="w-[90%] h-[400px] ml-[30px] border-l-[3px] border-[#1ABC9C] flex items-center justify-end  " >
+                                                                    <SubTable
+                                                                        className="w-[90%] h-[80%] border-[1px] "
                                                                     />
                                                                 </div>
                                                             }
-                                                            <table className="border-[0px] " >
-                                                                <tr className="items-center mt-[5px]" >
-                                                                    <td className="leading-4 text-white text-[12px] pr-[10px] " >Script</td>
-                                                                    <td className="leading-4 text-[12px] pl-[5px] pr-[5px]"
-                                                                        style={{ backgroundColor: getColor(item.Script), color: getFontColor(item.Script) }}
-                                                                    >{item.Script}</td>
-                                                                </tr>
-                                                                <tr className="">
-                                                                    <td className="leading-4 text-white text-[12px] pr-[10px] " >VoiceOver</td>
-                                                                    <td className="leading-4 text-[12px] pl-[5px] pr-[5px]"
-                                                                        style={{ backgroundColor: getColor(item.VoiceOver), color: getFontColor(item.VoiceOver) }}
-                                                                    >{item.VoiceOver}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className="leading-4 text-white text-[12px] pr-[10px]"
-                                                                    >Video</td>
-                                                                    <td className="leading-4 text-[12px] pl-[5px] pr-[5px]"
-                                                                        style={{ backgroundColor: getColor(item.video), color: getFontColor(item.video) }}
-                                                                    >{item.video}</td>
-                                                                </tr>
-                                                                <tr className="" >
-                                                                    <td className="leading-4 text-white text-[12px] pr-[10px]]"
-                                                                    >Thumbnail</td>
-                                                                    <td className="leading-4 text-[12px] pl-[5px] pr-[5px]"
-                                                                        style={{ backgroundColor: getColor(item.Thumbnail), color: getFontColor(item.Thumbnail) }}
-                                                                    >{item.Thumbnail}</td>
-                                                                </tr>
-                                                            </table>
                                                         </div>
                                                     )
                                                 })
@@ -523,8 +632,8 @@ const Dashboard = () => {
                     {
                         (iconIndex === 1) &&
                         <Inbox
-                        type="Notification"
-                    />
+                            type="Notification"
+                        />
                     }
                     {
                         (iconIndex === 2) &&

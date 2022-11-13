@@ -266,16 +266,23 @@ const Home = () => {
                     backgroundSize: 'cover',
                 }}
             >
-                <div id="header" className={'w-[100%] border-[0px] flex items-center z-50 ' + headerStyle}
+                <div id="header" className={'w-[100%] border-[1px] flex items-center z-50 ' + headerStyle}
                     style={{}}
                 >
-                    <div className='sm:w-[50%] w-[100%] border-[0px] flex ' >
-                        <div className=' border-[0px] flex items-center sm:w-[10%] sm:ml-[20px] sm:mr-[0px] ml-[10px] mr-[10px] ' >
-                            <FaReact
-                                className='text-sky-500 sm:text-[40px] text-[0px]  '
-                            />
+                    <div className='sm:w-[30%] w-[100%] h-[100%] border-[1px] flex ' >
+                        <div className='w-[100%] h-[100%] flex items-center justify-center  ' >
+                            <h1 className='text-white text-[25px] ' >CompanyName</h1>
                         </div>
-                        <div className='flex space-x-[18px] items-center' >
+                        {/* <div className=' border-[0px] flex items-center sm:w-[10%] sm:ml-[20px] sm:mr-[0px] ml-[10px] mr-[10px] '
+                            style={{
+                                backgroundImage: bgImages[homeBG],
+                                backgroundSize: 'cover',
+                            }}
+                        >
+                        </div> */}
+                    </div>
+                    <div className='sm:w-[70%] w-[0px] h-[100%] border-[0px] space-x-[10px] flex justify-end items-center pr-[30px] ' >
+                        <div className='flex space-x-[18px] border-[1px] w-[500px] h-[100%] items-center justify-between' >
                             <div>
                                 <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + homeH1 + textPrimaryCol}
                                     onClick={() => {
@@ -303,10 +310,13 @@ const Home = () => {
                                     ContactFocused(true)
                                 }}
                             >Contact</h1>
+                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + ContactH1 + textPrimaryCol}
+                            // onClick={() => {
+                            //     ContactFocused(true)
+                            // }}
+                            >Login</h1>
                         </div>
-                    </div>
-                    <div className='sm:w-[50%] w-[0px] border-[0px] space-x-[10px] flex justify-end items-center pr-[30px] ' >
-                        <FaFacebookSquare
+                        {/* <FaFacebookSquare
                             className={'text-[0px] sm:text-[22px] cursor-pointer' + textPrimaryCol}
                             onClick={() => {
                                 window?.open("https://www.facebook.com/raj.kiran.1800")
@@ -323,7 +333,7 @@ const Home = () => {
                             onClick={() => {
                                 window?.open("https://twitter.com/iamrajkalwar")
                             }}
-                        />
+                        /> */}
                     </div>
                 </div>
                 {/* AroowUpIcon */}
