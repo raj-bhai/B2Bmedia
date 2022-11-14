@@ -8,6 +8,7 @@ import LoadingScreen from '../components/Loader/LoadingScreen';
 import AnimatedText from 'react-animated-text-content';
 import TextTransition, { presets } from "react-text-transition";
 import Header from '../components/Home/header';
+import MovingText from 'react-moving-text'
 import {
     FaReact,
     FaTwitter,
@@ -75,7 +76,7 @@ const uderlineText = 'underline underline-offset-8 decoration-sky-500';
 
 const AboutUsText = "We are a group of young YouTube specialists and enthusiasts dedicated to establishing a viable career path for YouTubers. Our goal is to assist individuals in acing their YouTube journey and turning YouTube into a revenue-generating platform through content improvement."
 const Home = () => {
-    const [headerStyle, setHeaderStyle] = useState('h-[80px] border-b-[0px] fixed top-0');
+    const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
     const [textContainerStyle, setTextContainerStyle] = useState('');
     const [showMainText, setShowMaiinText] = useState(true);
     const [aboutStyle, setAboutStyle] = useState('');
@@ -95,9 +96,14 @@ const Home = () => {
     const PricingRef = useRef(null);
     const ContactRef = useRef(null);
     const textPrimaryCol = ' text-[#ECF0F1]';
-    const backgroundGradient = ' bg-gradient-to-l from-[#107840] to-[#107840] via-[#1F5025] via-[#107840] via-[#28602E]';
+    const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
+    const textHover = 'hover:text-yellow-200'
 
     const [offset, setOffset] = useState(0);
+    const [showText2, setShowText2] = useState(false);
+    const [showText3, setShowText3] = useState(false);
+    const [showText4, setShowText4] = useState(false);
+    const [showText5, setShowText5] = useState(false);
 
     const [index, setIndex] = useState(0);
 
@@ -109,6 +115,22 @@ const Home = () => {
         );
         return () => clearTimeout(intervalId);
     }, []);
+
+    setTimeout(() => {
+        setShowText2(true)
+    }, 1000);
+
+    setTimeout(() => {
+        setShowText3(true)
+    }, 1500);
+
+    setTimeout(() => {
+        setShowText4(true)
+    }, 2000);
+
+    setTimeout(() => {
+        setShowText5(true)
+    }, 2500);
 
     useEffect(() => {
         HomeFocused()
@@ -141,7 +163,7 @@ const Home = () => {
         setOffset(window.pageYOffset);
         console.log("gg :", AboutRef.current?.clientHeight)
         if (window.pageYOffset > 50) {
-            setHeaderStyle('bg-[#060606] fixed h-[80px] top-[0px]');
+            setHeaderStyle(' bg-[#107840]');
             // setTextContainerStyle('pt-[250px]');
             // setTextContainerStyle('fixed top-[0px]');
             setShowArrowUp(true)
@@ -193,7 +215,7 @@ const Home = () => {
         } else {
             setShowArrowUp(false);
             setShowMaiinText(true);
-            setHeaderStyle('h-[80px] border-b-[0px] fixed top-0');
+            setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
             setTextContainerStyle('');
             setServiceStyle('');
             HomeFocused()
@@ -262,14 +284,16 @@ const Home = () => {
         <div className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             ref={scroll}
         >
-            <div className={'w-[100%] h-[600px] sm:h-[800px] border-[0px] '} id="home" ref={HomeRef}
+            <div className={'w-[100%] h-[500px] sm:h-[700px] border-[0px]'} id="home" ref={HomeRef}
             // style={{
             //     // backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663567484/WebsiteImages/SL_101619_24150_55_cszay4.jpg")`,
             //     backgroundImage: bgImages[homeBG],
             //     backgroundSize: 'cover',
             // }}
             >
-                <Header />
+                <Header
+                    className={headerStyle}
+                />
                 {/* AroowUpIcon */}
                 {
                     showArrowUp &&
@@ -278,18 +302,17 @@ const Home = () => {
                             onClick={() => {
                                 document.getElementById('home').scrollIntoView()
                             }}
-                            className='text-sky-500 sm:text-[40px] text-[25px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
+                            className='text-white sm:text-[40px] text-[25px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
                         />
                     </div>
                 }
                 {
-                    showMainText &&
-                    <div className='border-[0px] flex items-center w-[100%] h-[500px] sm:h-[100%] fixed' >
+                    // showMainText &&
+                    <div className='border-[0px] flex items-center w-[100%] h-[500px] sm:h-[500px] justify-between mt-[80px] z-[100] ' >
 
-                        <div className={`sm:w-[40%] w-[100%] sm:mr-[0px] mr-[20px] h-[100%] border-[0px] sm:ml-[0px] ml-[20px]  ` + textContainerStyle}
-                            style={{ zIndex: -1 }}
+                        <div className={`sm:w-[45%] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px] sm:ml-[0px] ml-[20px]  ` + textContainerStyle}
                         >
-                            <div className='w-[80%] h-[80%] border-[0px] ml-[50px] mt-[80px] flex ' >
+                            <div className='w-[600px] h-[80%] border-[0px] ml-[50px] mt-[80px] flex ' >
                                 <div className='w-[50px] h-[100%] border-[0px]' >
                                     <img
                                         src="/images/user/star.png"
@@ -297,32 +320,103 @@ const Home = () => {
                                         alt="star" />
                                 </div>
                                 <div>
-                                    <div className='' >
-                                        <h1 className='text-yellow-200 text-[50px] leading-[50px] font-semibold ' >Stand out of the crowd</h1>
-                                        <h1 className='text-white text-[40px] leading-[45px] mt-[30px] font-normal ' >Creating videos is never so been easy</h1>
+                                    <div className='w-[500px] border-[0px] ' >
+                                        {/* <h1 className='text-yellow-200 text-[50px] leading-[50px] text-left font-semibold  ' >Stand out of the crowd</h1> */}
+                                        <MovingText
+                                            type="flipFromLeftToCenter"
+                                            duration="1000ms"
+                                            delay="100ms"
+                                            direction="normal"
+                                            timing="ease"
+                                            iteration={1}
+                                            fillMode="none"
+                                            className='text-yellow-200 text-[50px] leading-[50px] text-left font-semibold  '
+                                        >
+                                            Stand out of the crowd
+                                        </MovingText>
+
+                                        {/* <h1 className='text-white text-[40px] leading-[45px] mt-[30px] text-left font-normal ' >{'Creating videos is never so been easy'}</h1> */}
+                                        <div className='mt-[28px] h-[100px]' >
+                                            {
+                                                showText2 &&
+                                                <MovingText
+                                                    type="fadeIn"
+                                                    duration="1s"
+                                                    delay="0s"
+                                                    direction="normal"
+                                                    timing="ease"
+                                                    iteration={1}
+                                                    fillMode="forwards"
+                                                    presences="letters"
+                                                    className='text-white text-[40px] leading-[45px] text-left font-normal '
+                                                >
+                                                    {'Creating videos is never so been easy'}
+                                                </MovingText>
+                                            }
+                                        </div>
                                         <div className='w-[100%] h-[50px] border-[0px] mt-[10px] flex items-center ' >
                                             <img
                                                 src="/images/user/path.png"
-                                                className=' ml-[10px] '
+                                                className=' ml-[10px] mt-[-30px] '
                                                 alt="star" />
                                         </div>
-                                        <h1 className='text-white leading-[25px] ' >Just focus on your business we will create content for your business without limits</h1>
-                                        <div className='w-[100%] h-[50px] border-[0px] mt-[30px] flex items-center justify-between ' >
-                                            <div className='w-[120px] h-[40px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce ' >
-                                                <h1 className='text-[#000] font-bold ' >Get Started</h1>
-                                            </div>
-                                            <div className='w-[150px] h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  ' >
-                                                <FaPlayCircle
-                                                    color='#fff'
-                                                    size={20}
-                                                />
-                                                <h1 className='text-white text-[15px] font-normal ml-[5px]' >Watch Demos</h1>
-                                            </div>
+                                        <div className='w-[100%] h-[50px] border-[0px] mt-[-10px]  ' >
+                                            {
+                                                showText3 &&
+                                                <MovingText
+                                                    type="fadeIn"
+                                                    duration="1s"
+                                                    delay="0s"
+                                                    direction="normal"
+                                                    timing="ease"
+                                                    iteration={1}
+                                                    fillMode="forwards"
+                                                    presences="letters"
+                                                    className='text-white leading-[25px] '
+                                                >
+                                                    {'Just focus on your business we will create content for your business without limits'}
+                                                </MovingText>
+                                                // <h1 className='text-white leading-[25px] ' >Just focus on your business we will create content for your business without limits</h1>
+                                            }
+                                        </div>
+                                        <div className='w-[100%] h-[50px] mt-[30px]' >
+                                            {
+                                                showText4 &&
+                                                <MovingText
+                                                    type="flipFromLeftToCenter"
+                                                    duration="1s"
+                                                    delay="0s"
+                                                    direction="normal"
+                                                    timing="ease"
+                                                    iteration={1}
+                                                    fillMode="forwards"
+                                                    presences="letters"
+                                                // className='text-white leading-[25px] '
+                                                >
+                                                    <div className='w-[100%] h-[50px] border-[0px] flex items-center justify-between ' >
+                                                        <div className='w-[120px] h-[40px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce ' >
+                                                            <h1 className='text-[#000] font-bold ' >Get Started</h1>
+                                                        </div>
+
+                                                        <div className='w-[150px] h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  ' >
+                                                            <FaPlayCircle
+                                                                color='#fff'
+                                                                size={20}
+                                                            />
+                                                            <h1 className='text-white text-[15px] font-normal ml-[5px]' >Watch Demos</h1>
+                                                        </div>
+                                                    </div>
+                                                </MovingText>
+                                            }
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {/* contents here */}
+                        </div>
+                        <div className='w-[50%] h-[500px] border-[0px] flex justify-end pr-[50px] ' >
+                            <div className='w-[500px] h-[500px] mt-[25px] mr-[25px] rounded-[250px] border-[1px] border-t-[0px] border-l-yellow-200 animate-spin flex items-center justify-center  ' >
+                                <h1 className='text-[18px] text-white ' >Gif will be here</h1>
+                            </div>
                         </div>
                     </div>
                 }

@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+.homeBG {
+    background: linear-gradient(178.81deg, #107840 100%, #1F5025 32.65%, #107840 62.9%, #28602E 85.85%, #107840 100.14%);
+}
 
 .smallParent {
     width: 100%;
@@ -62,6 +65,7 @@
     top: 40%;
     animation: square 5s linear infinite;
 }
+
 .smallParent div:nth-child(8) {
     left: 30%;
     top: 10%;
@@ -104,6 +108,7 @@
     top: 40%;
     animation: square 8s reverse infinite;
 }
+
 .smallParent div:nth-child(15) {
     left: 30%;
     top: 10%;
@@ -146,6 +151,7 @@
     0% {
         transform: scale(1) translateY(0) rotate(45deg);
     }
+
     25% {
         transform: scale(0.5) translateY(0) rotate(0);
         /* left: 5px;
@@ -155,6 +161,7 @@
     50% {
         transform: scale(1) translateY(0) rotate(0);
     }
+
     75% {
         transform: scale(0.75) translateY(0) rotate(0);
         /* left: 70%;
