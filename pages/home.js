@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import LoadingScreen from '../components/Loader/LoadingScreen';
 import AnimatedText from 'react-animated-text-content';
 import TextTransition, { presets } from "react-text-transition";
+import Header from '../components/Home/header';
 import {
     FaReact,
     FaTwitter,
@@ -18,7 +19,8 @@ import {
     FaMicrophone,
     FaYoutube,
     FaPhotoVideo,
-    FaWhatsapp
+    FaWhatsapp,
+    FaPlayCircle
 } from 'react-icons/fa';
 
 const TEXTS = [
@@ -93,6 +95,7 @@ const Home = () => {
     const PricingRef = useRef(null);
     const ContactRef = useRef(null);
     const textPrimaryCol = ' text-[#ECF0F1]';
+    const backgroundGradient = ' bg-gradient-to-l from-[#107840] to-[#107840] via-[#1F5025] via-[#107840] via-[#28602E]';
 
     const [offset, setOffset] = useState(0);
 
@@ -256,86 +259,17 @@ const Home = () => {
 
     console.log(offset);
     return (
-        <div className='w-full px-[0px] py-[0px] bg-[#17202A] overflow-y-hidden overflow-x-hidden'
+        <div className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             ref={scroll}
         >
             <div className={'w-[100%] h-[600px] sm:h-[800px] border-[0px] '} id="home" ref={HomeRef}
-                style={{
-                    // backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663567484/WebsiteImages/SL_101619_24150_55_cszay4.jpg")`,
-                    backgroundImage: bgImages[homeBG],
-                    backgroundSize: 'cover',
-                }}
+            // style={{
+            //     // backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663567484/WebsiteImages/SL_101619_24150_55_cszay4.jpg")`,
+            //     backgroundImage: bgImages[homeBG],
+            //     backgroundSize: 'cover',
+            // }}
             >
-                <div id="header" className={'w-[100%] border-[1px] flex items-center z-50 ' + headerStyle}
-                    style={{}}
-                >
-                    <div className='sm:w-[30%] w-[100%] h-[100%] border-[1px] flex ' >
-                        <div className='w-[100%] h-[100%] flex items-center justify-center  ' >
-                            <h1 className='text-white text-[25px] ' >CompanyName</h1>
-                        </div>
-                        {/* <div className=' border-[0px] flex items-center sm:w-[10%] sm:ml-[20px] sm:mr-[0px] ml-[10px] mr-[10px] '
-                            style={{
-                                backgroundImage: bgImages[homeBG],
-                                backgroundSize: 'cover',
-                            }}
-                        >
-                        </div> */}
-                    </div>
-                    <div className='sm:w-[70%] w-[0px] h-[100%] border-[0px] space-x-[10px] flex justify-end items-center pr-[30px] ' >
-                        <div className='flex space-x-[18px] border-[1px] w-[500px] h-[100%] items-center justify-between' >
-                            <div>
-                                <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + homeH1 + textPrimaryCol}
-                                    onClick={() => {
-                                        HomeFocused(true)
-                                    }}
-                                >Home</h1>
-                            </div>
-                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + AboutH1 + textPrimaryCol}
-                                onClick={() => {
-                                    AboutFocused(true)
-                                }}
-                            >About</h1>
-                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + ServicesH1 + textPrimaryCol}
-                                onClick={() => {
-                                    ServiceFocused(true)
-                                }}
-                            >Services</h1>
-                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + PricingH1 + textPrimaryCol}
-                                onClick={() => {
-                                    PricingFocused(true)
-                                }}
-                            >Pricing</h1>
-                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + ContactH1 + textPrimaryCol}
-                                onClick={() => {
-                                    ContactFocused(true)
-                                }}
-                            >Contact</h1>
-                            <h1 className={'font-normal sm:text-[18px] cursor-pointer font-sans ' + ContactH1 + textPrimaryCol}
-                            // onClick={() => {
-                            //     ContactFocused(true)
-                            // }}
-                            >Login</h1>
-                        </div>
-                        {/* <FaFacebookSquare
-                            className={'text-[0px] sm:text-[22px] cursor-pointer' + textPrimaryCol}
-                            onClick={() => {
-                                window?.open("https://www.facebook.com/raj.kiran.1800")
-                            }}
-                        />
-                        <FaInstagram
-                            className={'text-[0px] sm:text-[22px] cursor-pointer' + textPrimaryCol}
-                            onClick={() => {
-                                window?.open("https://www.instagram.com/iamrajklwr/?hl=en")
-                            }}
-                        />
-                        <FaTwitter
-                            className={'text-[0px] sm:text-[22px] cursor-pointer' + textPrimaryCol}
-                            onClick={() => {
-                                window?.open("https://twitter.com/iamrajkalwar")
-                            }}
-                        /> */}
-                    </div>
-                </div>
+                <Header />
                 {/* AroowUpIcon */}
                 {
                     showArrowUp &&
@@ -351,79 +285,45 @@ const Home = () => {
                 {
                     showMainText &&
                     <div className='border-[0px] flex items-center w-[100%] h-[500px] sm:h-[100%] fixed' >
-                        <div className={`sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px] h-[200px] border-[0px] sm:ml-[100px] ml-[20px]  ` + textContainerStyle}
+
+                        <div className={`sm:w-[40%] w-[100%] sm:mr-[0px] mr-[20px] h-[100%] border-[0px] sm:ml-[0px] ml-[20px]  ` + textContainerStyle}
                             style={{ zIndex: -1 }}
                         >
-                            <h1 className="text-white  sm:text-[17px] text-[15px] leading-relaxed animate-text"> WELCOME TO MY WORLD </h1>
-                            <h1 className="text-white  sm:text-[50px]  text-[25px] leading-relaxed italic" >Hi, I am Tonmoy</h1>
-                            <h1 className="text-white  sm:text-[50px] text-[18px] leading-relaxed italic" >Welcome to our platform</h1>
-
-                            {/* <AnimatedText
-                                type="chars" // animate words or chars
-                                animation={{
-                                    x: '200px',
-                                    y: '-20px',
-                                    scale: 1.1,
-                                    // ease: 'ease-in-out', 
-                                }}
-                                animationType="float"
-                                interval={0.06}
-                                duration={0.8}
-                                tag="p"
-                                className="text-white  text-[17px] leading-relaxed animate-text"
-                                includeWhiteSpaces
-                                threshold={0.5}
-                                rootMargin="20%"
-                            >
-                                WELCOME TO MY WORLD
-                            </AnimatedText>
-                            <AnimatedText
-                                type="chars" // animate words or chars
-                                animation={{
-                                    x: '200px',
-                                    y: '-20px',
-                                    scale: 1.1,
-                                    ease: 'ease-in-out',
-                                }}
-                                animationType="float"
-                                interval={0.06}
-                                duration={0.8}
-                                tag="p"
-                                className="text-white  text-[50px] leading-relaxed italic"
-                                includeWhiteSpaces
-                                threshold={0.1}
-                                rootMargin="20%"
-                            >
-                                Hi, I'm Tonmoy
-                            </AnimatedText>
-                            <AnimatedText
-                                type="chars" // animate words or chars
-                                animation={{
-                                    x: '200px',
-                                    y: '-20px',
-                                    scale: 1.1,
-                                    ease: 'ease-in-out',
-                                }}
-                                animationType="float"
-                                interval={0.06}
-                                duration={0.8}
-                                tag="p"
-                                className="text-white  text-[50px] leading-relaxed italic"
-                                includeWhiteSpaces
-                                threshold={0.5}
-                                rootMargin="50%"
-                            >
-                                Welcome to our platform
-                            </AnimatedText> */}
+                            <div className='w-[80%] h-[80%] border-[0px] ml-[50px] mt-[80px] flex ' >
+                                <div className='w-[50px] h-[100%] border-[0px]' >
+                                    <img
+                                        src="/images/user/star.png"
+                                        className='w-[40px] h-[40px] mt-[-10px] '
+                                        alt="star" />
+                                </div>
+                                <div>
+                                    <div className='' >
+                                        <h1 className='text-yellow-200 text-[50px] leading-[50px] font-semibold ' >Stand out of the crowd</h1>
+                                        <h1 className='text-white text-[40px] leading-[45px] mt-[30px] font-normal ' >Creating videos is never so been easy</h1>
+                                        <div className='w-[100%] h-[50px] border-[0px] mt-[10px] flex items-center ' >
+                                            <img
+                                                src="/images/user/path.png"
+                                                className=' ml-[10px] '
+                                                alt="star" />
+                                        </div>
+                                        <h1 className='text-white leading-[25px] ' >Just focus on your business we will create content for your business without limits</h1>
+                                        <div className='w-[100%] h-[50px] border-[0px] mt-[30px] flex items-center justify-between ' >
+                                            <div className='w-[120px] h-[40px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce ' >
+                                                <h1 className='text-[#000] font-bold ' >Get Started</h1>
+                                            </div>
+                                            <div className='w-[150px] h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  ' >
+                                                <FaPlayCircle
+                                                    color='#fff'
+                                                    size={20}
+                                                />
+                                                <h1 className='text-white text-[15px] font-normal ml-[5px]' >Watch Demos</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* contents here */}
                         </div>
-                        {/* {
-                        showMainText &&
-                        <div className='border-[0px]' >
-                            <img src="https://res.cloudinary.com/drgvislmm/image/upload/v1664004951/WebsiteImages/men_fbrjnf.jpg" alt="my-photo"
-                                className='w-[300px] h-[500px] rounded-[100px] '
-                            ></img>
-                        </div>
-                    } */}
                     </div>
                 }
             </div>
