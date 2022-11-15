@@ -23,6 +23,7 @@ import {
     FaWhatsapp,
     FaPlayCircle
 } from 'react-icons/fa';
+import Globe from '../components/Home/globe';
 
 const TEXTS = [
     "Forest",
@@ -33,19 +34,24 @@ const TEXTS = [
 
 const SERVICES = [
     {
-        name: "Script",
+        name: "Script Writing",
+        image: "/images/user/scriptW.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
-        name: "Voiceover",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    {
-        name: "Video",
+        name: "Voice over",
+        image: "/images/user/voice-over.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
         name: "Thumbnail",
+        image: "/images/user/thumbnail.png",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    {
+        name: "Video Editing",
+        image: "/images/user/video-edit0.png",
+        image1: "/images/user/video-edit1.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
 ];
@@ -69,7 +75,8 @@ const WORKS = [
     {
         uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
     },
-]
+];
+
 
 
 const uderlineText = 'underline underline-offset-8 decoration-sky-500';
@@ -306,6 +313,10 @@ const Home = () => {
                         />
                     </div>
                 }
+                <img
+                    src="/images/user/circle0.png"
+                    className=' absolute right-[0px] bottom-[-100px] '
+                    alt="star" />
                 {
                     // showMainText &&
                     <div className='border-[0px] flex items-center w-[100%] h-[500px] sm:h-[500px] justify-between mt-[80px] z-[100] ' >
@@ -414,63 +425,105 @@ const Home = () => {
                             </div>
                         </div>
                         <div className='w-[50%] h-[500px] border-[0px] flex justify-end pr-[50px] ' >
-                            <div className='w-[500px] h-[500px] mt-[25px] mr-[25px] rounded-[250px] border-[1px] border-t-[0px] border-l-yellow-200 animate-spin flex items-center justify-center  ' >
-                                <h1 className='text-[18px] text-white ' >Gif will be here</h1>
-                            </div>
+                            <Globe />
                         </div>
                     </div>
                 }
             </div>
-            <div className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] pt-[80px] pb-[30px] bg-[#212F3C] flex items-center sm:items-center justify-center ' id='about' ref={AboutRef}
-                style={{
-                    backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663689788/WebsiteImages/rm373batch2-08_ikx2nb.jpg")`,
-                    backgroundSize: 'cover',
-                }}
+            <div
+                className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] pt-[80px] pb-[30px] relative' id='about' ref={AboutRef}
             >
-                <div className={'w-[70%] h-[80%] border-[0px] ' + aboutStyle}
-                >
-                    <AnimatedText
-                        type="chars" // animate words or chars
-                        animation={{
-                            x: '200px',
-                            y: '-20px',
-                            scale: 1.1,
-                            // ease: 'ease-in-out', 
-                        }}
-                        animationType="float"
-                        interval={0.05}
-                        duration={0}
-                        tag="p"
-                        className="text-white sm:text-[80px] text-[50px] sm:font-semibold animate-text"
-                        includeWhiteSpaces
-                        threshold={0.1}
-                        rootMargin="20%"
-                    >
-                        About us
-                    </AnimatedText>
-                    {/* <h1 className='text-white text-[80px] font-bold ' >About us</h1> */}
-                    <div className='flex-wrap sm:flex  border-[0px] items-center mt-[30px] w-[100%]'
-                    >
-                        <div className=' w-[100%] sm:w-[25%] h-[100%] border-[0px] flex sm:justify-center items-center justify-start ' >
-                            <img src="https://res.cloudinary.com/drgvislmm/image/upload/v1663606102/WebsiteImages/avtar_lnzfdl.png" alt="Girl in a jacket"
-                                className='w-[180px] sm:w-[180px] sm:h-[180px] h-[180px] rounded-[100px] '
-                            ></img>
-                        </div>
-                        <div className=' w-[100%] sm:w-[75%] h-[100%] border-[0px] ' >
-                            <h1
-                                className='text-white text-justify text-[15px] sm:text-[19px] leading-[20px] sm:leading-[30px] italic font-normal mt-[10px]'
-                            >{AboutUsText + SERVICES[0].description}</h1>
+                <img
+                    src="/images/user/circle1.png"
+                    className=' absolute top-[100px] '
+                    alt="star" />
+                <img
+                    src="/images/user/whiteRing.png"
+                    className=' absolute  right-[0px] bottom-[0px]'
+                    alt="star" />
+                <div className='w-[100%] h-[100px] border-[0px] flex items-center justify-between px-[50px] ' >
+                    <div className='w-[200px] border-[0px] align-bottom text-center ' >
+                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >4.8K</h1>
+                        <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >Projects Completed</h1>
+                    </div>
+                    <div className='w-[200px] border-[0px] align-bottom text-center ' >
+                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >12+</h1>
+                        <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >In Progress</h1>
+                    </div>
+                    <div className='w-[200px] border-[0px] align-bottom text-center ' >
+                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >2.5K+</h1>
+                        <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >World wide clients</h1>
+                    </div>
+                    <div className='w-[200px] border-[0px] align-bottom text-center ' >
+                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >120</h1>
+                        <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >Popular</h1>
+                    </div>
+                </div>
+                <div className='w-[100%] h-[500px] border-[0px] flex  ' >
+                    <div className=' w-[50%] h-[100%] border-[0px] flex justify-center items-center ' >
+                        <img
+                            src="/images/user/service.png"
+                            className=' border-[0px] '
+                            alt="star" />
+                    </div>
+                    <div className=' w-[50%] h-[100%] border-[0px] flex justify-center items-center ' >
+                        <div>
+                            <div className='border-[0px] w-[80%]' >
+                                <h1 className=' text-[#fff] text-[50px] font-semibold ' >Non-Stoppable service</h1>
+                            </div>
+                            <div className='border-[0px] w-[80%] ' >
+                                <h1 className=' text-[#E0E5F3] text-[20px] leading-tight ' >
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis diam quis massa. Nulla ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.
+                                </h1>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="services" ref={ServicesRef} className='w-[100%] sm:h-[700px] sm:pt-[0px] pt-[80px] border-[0px] bg-[#273746] flex items-center justify-center '
-                style={{
-                    backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663921647/WebsiteImages/6150452_nxhsth.jpg")`,
-                    backgroundSize: 'cover',
-                }}
+            <div id="services" ref={ServicesRef} className='w-[100%] relative sm:pt-[0px] px-[80px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '
+            // style={{
+            //     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663921647/WebsiteImages/6150452_nxhsth.jpg")`,
+            //     backgroundSize: 'cover',
+            // }}
             >
-                <div className={'w-[90%] h-[80%] border-[0px] pb-[20px] sm:pb-[20px] ' + serviceStyle}  >
+                <img
+                    src="/images/user/circle2.png"
+                    className=' absolute top-[-100px] left-[0px]    '
+                    alt="star" />
+                <img
+                    src="/images/user/circle3.png"
+                    className=' absolute top-[450px] right-[0px]    '
+                    alt="star" />
+
+                <div className='w-[100%] border-[0px] flex justify-evenly pl-[100px] items-center ' >
+                    <div className='w-[350px] border-[0px]' >
+                        <h1 className=' text-[65px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
+                        <h1 className='text-[#fff] text-[25px] mt-[5px] ' >United by B2BMedia</h1>
+                    </div>
+                    <img
+                        src="/images/user/globe1.png"
+                        className=' w-[550px] h-[550px] '
+                        alt="star" />
+                </div>
+                {
+                    // SERVICES.map((item) => {
+                    //     return (
+                    //         <div className=' w-[400px] px-[20px] py-[10px] h-[520px] rounded-[20px] border-[0px] bg-gradient-to-t from-[#107840] via-[#107840] to-[#114F2E] ' >
+                    //             <div className=' w-[100%] h-[200px] border-[1px] rounded-[20px] ' >
+                    //                 {/* <img
+                    //                     src={item.image}
+                    //                     className='     '
+                    //                     alt="star" /> */}
+                    //             </div>
+                    //             <div className='py-[30px] border-[0px] ' >
+                    //                 <h1 className=' text-[#fff] text-[35px] ' >{item.name}</h1>
+                    //                 <h1 className=' text-[#E0E5F3] leading-tight text-[18px] ' >{item.description}</h1>
+                    //             </div>
+                    //         </div>
+                    //     )
+                    // })
+                }
+                {/* <div className={'w-[90%] h-[80%] border-[0px] pb-[20px] sm:pb-[20px] ' + serviceStyle}  >
                     <div className={'w-[100%] h-[20%] border-[0px] mt-[20px] sm:mt-[0px] flex items-center justify-center  '} >
                         <h1 className='text-white text-[30px] sm:text-[50px] font-sans font-bold' >Services we provide</h1>
                     </div>
@@ -510,7 +563,7 @@ const Home = () => {
                             </div>
                         </div>)}
                     </div>
-                </div>
+                </div> */}
             </div>
             <div id="pricing" ref={PricingRef} className='w-[100%] h-[700px] bg-[#060606] flex items-center justify-center '>
                 <div className=' sm:w-[80%] w-[90%] h-[80%] border-[0px] ' >
