@@ -24,13 +24,13 @@ import {
     FaChevronDown,
     FaRegCommentAlt
 } from "react-icons/fa";
-import DashboardModal from "../components/modal";
+//Fimport DashboardModal from "../components/modal";
 //import ClientsType from "../constants/ClientsType";
 //import DashboardData from "../constants/DashboardData";
-import Modal from 'react-modal';
+//import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import * as dashboardAction from '../redux/action/dashboard';
-import Avatar, { ConfigProvider } from 'react-avatar';
+import  { ConfigProvider } from 'react-avatar';
 import Inbox from "../components/Inbox/Inbox";
 import Checkbox from '@mui/material/Checkbox';
 import SubTable from "../components/TableComponents/Subtable";

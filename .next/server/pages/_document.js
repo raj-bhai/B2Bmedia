@@ -47,7 +47,7 @@ module.exports = require("next/dist/shared/lib/html-context.js");
 
 /***/ }),
 
-/***/ 485:
+/***/ 524:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/is-plain-object.js");
