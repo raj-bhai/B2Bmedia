@@ -290,12 +290,12 @@ const Dashboard = () => {
                                                         }
                                                     }
                                                     return (
-                                                        <div>
+                                                        <div key={index} >
                                                             <div className="w-[100%] bg-[#34495E] border-[0px] flex " >
                                                                 {
                                                                     Rows.map((i, index1) => {
                                                                         return (
-                                                                            <div className="border-[0px]" >
+                                                                            <div className="border-[0px]" key={index1} >
                                                                                 <div className="flex w-[100%] h-[50px] border-[0px] " >
                                                                                     {
                                                                                         i.name == "checkbox" &&

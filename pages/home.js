@@ -460,6 +460,10 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='w-[100%] h-[500px] border-[0px] flex  ' >
+                    <img
+                        src="/images/user/star.png"
+                        className=' absolute right-[200px] top-[150px] '
+                        alt="star" />
                     <div className=' w-[50%] h-[100%] border-[0px] flex justify-center items-center ' >
                         <img
                             src="/images/user/service.png"
@@ -505,72 +509,17 @@ const Home = () => {
                         className=' w-[550px] h-[550px] '
                         alt="star" />
                 </div>
-                {
-                    // SERVICES.map((item) => {
-                    //     return (
-                    //         <div className=' w-[400px] px-[20px] py-[10px] h-[520px] rounded-[20px] border-[0px] bg-gradient-to-t from-[#107840] via-[#107840] to-[#114F2E] ' >
-                    //             <div className=' w-[100%] h-[200px] border-[1px] rounded-[20px] ' >
-                    //                 {/* <img
-                    //                     src={item.image}
-                    //                     className='     '
-                    //                     alt="star" /> */}
-                    //             </div>
-                    //             <div className='py-[30px] border-[0px] ' >
-                    //                 <h1 className=' text-[#fff] text-[35px] ' >{item.name}</h1>
-                    //                 <h1 className=' text-[#E0E5F3] leading-tight text-[18px] ' >{item.description}</h1>
-                    //             </div>
-                    //         </div>
-                    //     )
-                    // })
-                }
-                {/* <div className={'w-[90%] h-[80%] border-[0px] pb-[20px] sm:pb-[20px] ' + serviceStyle}  >
-                    <div className={'w-[100%] h-[20%] border-[0px] mt-[20px] sm:mt-[0px] flex items-center justify-center  '} >
-                        <h1 className='text-white text-[30px] sm:text-[50px] font-sans font-bold' >Services we provide</h1>
-                    </div>
-                    <div className='w-[100%] border-[0px] flex items-center justify-center sm:justify-between flex-wrap gap-x-[0px] gap-y-[0px] sm:gap-x-[10px] sm:gap-y-[10px] ' >
-                        {SERVICES.map((e, i) => <div key={i} className="border-[1px]  mt-[20px] sm:mt-[80px] hover:bg-[#17202A] pb-[30px] w-[280px] px-[15px] py-[10px] rounded-lg">
-                            <div className='flex items-center gap-[10px] border-[0px] py-[10px] px-[5px] text-justify cursor-default' >
-                                {(i === 0) &&
-                                    <FaScroll
-                                        color='white'
-                                        size={25}
-                                    />
-                                }
-                                {(i === 1) &&
-                                    <FaMicrophone
-                                        color='white'
-                                        size={25}
-                                    />
-                                }
-                                {(i === 2) &&
-                                    <FaYoutube
-                                        color='white'
-                                        size={25}
-                                    />
-                                }
-                                {(i === 3) &&
-                                    <FaPhotoVideo
-                                        color='white'
-                                        size={25}
-                                    />
-                                }
-                                <h1 className='text-[white] text-[18px] sm:text-[25px]' >
-                                    {e.name}</h1>
-                            </div>
-                            <div  >
-                                <h1 className='text-[white] cursor-default text-[15px] flex text-justify decoration-2 whitespace-pre-wrap font-sans ' >
-                                    {e.description}</h1>
-                            </div>
-                        </div>)}
-                    </div>
-                </div> */}
+
             </div>
-            <div id="pricing" ref={PricingRef} className='w-[100%] h-[700px] bg-[#060606] flex items-center justify-center '>
-                <div className=' sm:w-[80%] w-[90%] h-[80%] border-[0px] ' >
+            <div id="pricing" ref={PricingRef} className='w-[100%] h-[700px]  flex items-center justify-center '>
+                <div>
+                        
+                </div>
+                {/* <div className=' sm:w-[80%] w-[90%] h-[80%] border-[0px] ' >
                     <div className='border-[0px] w-[100%] sm:h-[20%] h-[60px] flex items-center sm:justify-start justify-center ' >
                         <h1 className={' sm:text-[40px] text-[20px] font-semibold ' + textPrimaryCol} >Package Deals for Cash Cow Channels</h1>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div id="portfolio" ref={PortfolioRef} className='w-[100%] border-[0px]  sm:h-[700px] bg-[#060606] flex items-center justify-center '>
                 <div className=' w-[80%] h-[80%] border-[0px] ' >
