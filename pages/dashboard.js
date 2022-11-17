@@ -30,10 +30,10 @@ import {
 //import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import * as dashboardAction from '../redux/action/dashboard';
-import  { ConfigProvider } from 'react-avatar';
+import { ConfigProvider } from 'react-avatar';
 import Inbox from "../components/Inbox/Inbox";
 import Checkbox from '@mui/material/Checkbox';
-import SubTable from "../components/TableComponents/Subtable";
+import SubTable from "../components/TableComponents/subtable";
 
 
 const Dashboard = () => {
@@ -209,7 +209,7 @@ const Dashboard = () => {
                                                     Rows.map((i, index) => {
                                                         return (
                                                             <>
-                                                                <div className="flex w-[100%] h-[50px]  " >
+                                                                <div key={index} className="flex w-[100%] h-[50px]  " >
                                                                     {
                                                                         i.name == "checkbox" &&
                                                                         <div key={index} className="w-[50px] border-r-[1px] border-[1px] h-[100%] bg-[#2C3E50] flex items-center justify-center " >
