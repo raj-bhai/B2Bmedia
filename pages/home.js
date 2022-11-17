@@ -166,6 +166,10 @@ const Home = () => {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const onScroll = () => {
         setOffset(window.pageYOffset);
         console.log("gg :", AboutRef.current?.clientHeight)
@@ -513,7 +517,7 @@ const Home = () => {
             </div>
             <div id="pricing" ref={PricingRef} className='w-[100%] h-[700px]  flex items-center justify-center '>
                 <div>
-                        
+
                 </div>
                 {/* <div className=' sm:w-[80%] w-[90%] h-[80%] border-[0px] ' >
                     <div className='border-[0px] w-[100%] sm:h-[20%] h-[60px] flex items-center sm:justify-start justify-center ' >
