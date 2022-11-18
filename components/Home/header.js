@@ -7,15 +7,38 @@ const Header = (props) => {
     const [btnFocused, setBtnFocused] = useState(false);
     const [btnBG, setBtnBG] = useState(' ');
     const [btnText, setBtnText] = useState(' ');
+    const [logoColor, setLogoColor] = useState(0)
+
+    const Gradiants = [
+        ' bg-gradient-to-r from-[#F7F9F9] via-[#F7F9F9] to-[#F7F9F9] ',
+        ' bg-gradient-to-r from-[#F7F9F9] via-[#D4AC0D] to-[#F7F9F9] ',
+        // ' bg-gradient-to-r from-[#F7F9F9] via-[#D4AC0D] via-[#F7F9F9] to-[#D4AC0D] ',
+        // ' bg-gradient-to-r from-[#D4AC0D] via-[#F7F9F9] via-[#D4AC0D] to-[#F7F9F9] ',
+    ]
 
     // useEffect(() => {
 
     // }, [btnFocused])
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (logoColor < Gradiants.length - 1) {
+                setLogoColor(logoColor + 1)
+            } else {
+                setLogoColor(0)
+            }
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, [logoColor])
+
+
     return (
         <div className={`w-[100%] h-[80px] border-[0px] flex fixed z-[200] top-0` + props.className} >
             <div className="w-[385px] h-[83px] border-[0px] ml-[97.5px] mt-[8px] " >
-                <h1 className="absolute w-[180px] h-[38px] ml-[3.5px] mt-[21.5px] text-[30px] text-[#fff] leading-[38px] font-normal bg-green " >B2BMEDIA</h1>
+                <h1
+                    //  className="font-extrabold text-transparent text-[30px] bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+                    className={"absolute  font-bold ml-[0px] mt-[-5px] text-[52px] text-transparent text-[30px] bg-clip-text " + Gradiants[logoColor]}
+                >GrowGrip</h1>
             </div>
             <div className="flex mt-[19.5px] ml-[150x] w-[800px] border-[0px] justify-between " >
                 <div className=" w-[80px] h-[60px] border-[0px] flex items-center justify-center " >

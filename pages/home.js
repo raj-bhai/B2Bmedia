@@ -24,6 +24,7 @@ import {
     FaPlayCircle
 } from 'react-icons/fa';
 import Globe from '../components/Home/globe';
+import Services from '../components/Home/services';
 
 const TEXTS = [
     "Forest",
@@ -295,13 +296,7 @@ const Home = () => {
         <div className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             ref={scroll}
         >
-            <div className={'w-[100%] h-[500px] sm:h-[700px] border-[0px]'} id="home" ref={HomeRef}
-            // style={{
-            //     // backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663567484/WebsiteImages/SL_101619_24150_55_cszay4.jpg")`,
-            //     backgroundImage: bgImages[homeBG],
-            //     backgroundSize: 'cover',
-            // }}
-            >
+            <div className={'w-[100%] h-[500px] sm:h-[700px] border-[0px]'} id="home" ref={HomeRef}>
                 <Header
                     className={headerStyle}
                 />
@@ -459,7 +454,7 @@ const Home = () => {
                         <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >World wide clients</h1>
                     </div>
                     <div className='w-[200px] border-[0px] align-bottom text-center ' >
-                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >120</h1>
+                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >120+</h1>
                         <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >Popular</h1>
                     </div>
                 </div>
@@ -506,18 +501,24 @@ const Home = () => {
                 <div className='w-[100%] border-[0px] flex justify-evenly pl-[100px] items-center ' >
                     <div className='w-[350px] border-[0px]' >
                         <h1 className=' text-[65px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
-                        <h1 className='text-[#fff] text-[25px] mt-[5px] ' >United by B2BMedia</h1>
+                        <h1 className='text-[#fff] text-[25px] mt-[5px] ' >United by GrowGrip</h1>
                     </div>
-                    <img
-                        src="/images/user/globe1.png"
-                        className=' w-[550px] h-[550px] '
-                        alt="star" />
+                    <div className='relative border-[0px] ' >
+                        <img
+                            src="/images/user/globe1.png"
+                            className=' sm:w-[550px] sm:h-[550px] '
+                            alt="star" />
+                        <img
+                            src="/images/user/dottedPath1.png"
+                            className=' absolute top-[0px] sm:w-[400px] sm:h-[400px] sm:left-[80px] sm:top-[50px] '
+                            alt="star" />
+                    </div>
                 </div>
 
             </div>
-            <div id="pricing" ref={PricingRef} className='w-[100%] h-[700px]  flex items-center justify-center '>
-                <div>
-
+            <div id="pricing" ref={PricingRef} className='w-[100%]  flex items-center justify-center '>
+                <div className='w-[100%]' >
+                    <Services />
                 </div>
                 {/* <div className=' sm:w-[80%] w-[90%] h-[80%] border-[0px] ' >
                     <div className='border-[0px] w-[100%] sm:h-[20%] h-[60px] flex items-center sm:justify-start justify-center ' >
