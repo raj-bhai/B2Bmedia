@@ -9,7 +9,7 @@ const Contact = (props) => {
         <div className=" w-[70%] border-[0.5px] rounded-[20px] mt-[100px] relative p-[50px] " >
             <img
                 src={`/images/user/circle10.png`}
-                className=' absolute right-[0px] bottom-[0px] w-[250px] h-[180px] rounded-br-[20px] z-[0] '
+                className=' absolute right-[0px] bottom-[0px] w-[300px] h-[230px] rounded-br-[20px] z-[0] '
                 alt="project1" />
             <div className=" w-[100%] " >
                 <h1 className={text1} >GET IN TOUCH</h1>
@@ -18,11 +18,14 @@ const Contact = (props) => {
                     <div >
 
                     </div>
-                    <div className=" w-[280px] h-[100%] border-l-[0px] relative " >
+                    <div className=" w-[280px] h-[100%] border-l-[0px] relative flex items-end justify-center " >
                         <img
                             src={`/images/user/person10.png`}
                             className=' w-[415px] h-[440px] z-[200] absolute top-[-100px] '
                             alt="project1" />
+                        <div className=" w-[200px] h-[50px] rounded-[30px] bg-[#0FA152] flex items-center justify-center cursor-pointer "  >
+                            <h1 className=" text-[#fff] text-[20px] font-semibold " >Submit</h1>
+                        </div>
                     </div>
                 </div>
             </div>

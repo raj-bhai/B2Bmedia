@@ -23,6 +23,7 @@ import Globe from '../components/Home/globe';
 import Services from '../components/Home/services';
 import Review from '../components/Home/review';
 import Contact from '../components/Home/contact';
+import Footer from '../components/Home/footer';
 
 const TEXTS = [
     "Forest",
@@ -666,10 +667,13 @@ const Home = () => {
             <div className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
                 <Contact />
             </div>
-            <div className='w-[100%] sm:h-[80px] border-[0px] flex items-center justify-center' id="footer" >
-                {/* <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
+            <div className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
+                <Footer />
+            </div>
+            <div className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' id="footer" >
+                <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
                     <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
-                        <FaWhatsapp
+                        {/* <FaWhatsapp
                             color='white'
                             className='text-[20px] sm:text-[30px] cursor-pointer '
                             onClick={() => {
@@ -680,37 +684,37 @@ const Home = () => {
                             onClick={() => {
                                 window?.open("https://wa.me/918413802010")
                             }}
-                        >8413802010</h1>
+                        >8413802010</h1> */}
+                        <h1 className='text-white text-[15px] sm-text-[18px]' >{`2022 ${`©`} All Rights Reserved`}</h1>
                     </div>
-                    <div className='flex border-[0px] w-[400px] sm:w-[200px] h-[40px] items-center justify-center gap-[20px]' >
+                    <div className='flex border-[0px] w-[400px] sm:w-[200px] h-[40px] items-center justify-center gap-[10px]' >
                         <FaFacebookSquare
                             color='white'
-                            className='text-[20px] sm:text-[30px] cursor-pointer '
+                            className='text-[20px] sm:text-[20px] cursor-pointer '
                             onClick={() => {
                                 window?.open("https://www.facebook.com/raj.kiran.1800")
                             }}
                         />
                         <FaInstagram
                             color='white'
-                            className='text-[20px] sm:text-[30px] cursor-pointer '
+                            className='text-[20px] sm:text-[20px] cursor-pointer '
                             onClick={() => {
                                 window?.open("https://www.instagram.com/iamrajklwr/?hl=en")
                             }}
                         />
                         <FaTwitter
                             color='white'
-                            className='text-[20px] sm:text-[30px] cursor-pointer '
+                            className='text-[20px] sm:text-[20px] cursor-pointer '
                             onClick={() => {
                                 window?.open("https://twitter.com/iamrajkalwar")
                             }}
                         />
                     </div>
-                    <div className='sm:w-[400px] w-[100%] h-[50%] border-[0px] flex items-center sm:justify-end justify-center' >
+                    {/* <div className='sm:w-[400px] w-[100%] h-[50%] border-[0px] flex items-center sm:justify-end justify-center' >
                         <h1 className='text-white text-[15px] sm:text-[17px] sm:pb-[0px] pb-[10px] ' >{`2022 ${`©`} brandName`}</h1>
-                    </div>
-                </div> */}
+                    </div> */}
+                </div>
             </div>
-
         </div>
     )
 }

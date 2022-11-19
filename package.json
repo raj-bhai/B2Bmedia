@@ -32,6 +32,7 @@
     "react-redux": "^8.0.2",
     "react-responsive-carousel": "^3.2.23",
     "react-shimmer": "^3.2.0",
+    "react-slide-button": "^2.0.0",
     "react-text-transition": "^3.0.2",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
