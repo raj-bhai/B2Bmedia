@@ -13,6 +13,7 @@ const Footer = (props) => {
     }, []);
 
 
+    
     return (
         domLoaded &&
         <div className=" w-[90%] h-[300px] border-[0px] p-[50px] relative " >
