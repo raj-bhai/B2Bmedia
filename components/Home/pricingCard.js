@@ -6,8 +6,8 @@ const PricingCard = (props) => {
     const [focused, setFocused] = useState(false);
 
 
-    const green = "#0FA152";
-    const white = "#fff"
+    // const green = "#0FA152";
+    // const white = "#fff"
 
     //button
     const unFocusedBG = ' bg-[#0FA152]'  //green
