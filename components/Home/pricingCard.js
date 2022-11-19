@@ -21,6 +21,7 @@ const Features = (props) => {
 const PricingCard = (props) => {
 
     const [focused, setFocused] = useState(false);
+    const [domLoaded, setDomLoaded] = useState(false);
 
 
     // const green = "#0FA152";
@@ -34,6 +35,10 @@ const PricingCard = (props) => {
     const focusedBorder = ' border-[2px] '
     const unFocusedBorder = ' border-[1px] '
 
+    useEffect(() => {
+        setDomLoaded(true);
+    }, []);
+
 
     useEffect(() => {
         if (props.seletedIndex == props.index) {
@@ -46,6 +51,7 @@ const PricingCard = (props) => {
 
 
     return (
+        domLoaded &&
         <div className={`w-[320px] h-[500px] rounded-[20px] px-[20px] pt-[20px] ${focused ? focusedBorder : unFocusedBorder} `}
             onFocus={() => {
                 props.onFocus();
@@ -79,7 +85,7 @@ const PricingCard = (props) => {
                     <h1 className=" text-[#fff] font-medium text-[18px] "  > /video</h1>
                 </div>
                 <div className=" mt-[15px] " >
-                    <h1 className=" text-[#fff] text-[15px] font-medium " >What's included</h1>
+                    <h1 className=" text-[#fff] text-[15px] font-medium " >What&apos;s included</h1>
                 </div>
                 <div className=" mt-[5px] " >
                     {/* {
