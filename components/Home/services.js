@@ -40,7 +40,7 @@ const RoundedText = (props) => {
                 <FaMicrophone
                     className={iconStyle}
                 />
-            }
+            }   
             {
                 props.text == 'Thumbnail Maker' &&
                 <FaBriefcase

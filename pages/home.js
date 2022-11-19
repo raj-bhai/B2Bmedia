@@ -520,38 +520,56 @@ const Home = () => {
                 <div className='w-[100%]' >
                     <Services />
                 </div>
-                {/* <div className=' sm:w-[80%] w-[90%] h-[80%] border-[0px] ' >
-                    <div className='border-[0px] w-[100%] sm:h-[20%] h-[60px] flex items-center sm:justify-start justify-center ' >
-                        <h1 className={' sm:text-[40px] text-[20px] font-semibold ' + textPrimaryCol} >Package Deals for Cash Cow Channels</h1>
-                    </div>
-                </div> */}
             </div>
-            <div id="portfolio" ref={PortfolioRef} className='w-[100%] border-[0px]  sm:h-[700px] bg-[#060606] flex items-center justify-center '>
-                <div className=' w-[80%] h-[80%] border-[0px] ' >
-                    <div className='w-[100%] h-[25%] border-[0px] flex items-center justify-center ' >
-                        <h1 className='text-[#F7F9F9] sm:text-[30px] text-[18px] ' >Some of our successfully delivered work</h1>
-                        {/* <TextTransition springConfig={presets.molasses}
-                            className='text-white text-[30px] '
-                        >
-                            {TEXTS[index % TEXTS.length]}
-                        </TextTransition> */}
+            <div id="portfolio" ref={PortfolioRef} className='w-[100%] relative border-[0px] flex items-center justify-center '>
+                <img
+                    src="/images/user/circle4.png"
+                    className=' absolute left-[0px] top-[-50px]  '
+                    alt="person7" />
+                <img
+                    src="/images/user/circle5.png"
+                    className=' absolute right-[0px] bottom-[0px]  '
+                    alt="person7" />
+                <div className=' w-[70%] h-[400px] border-[0px] flex ' >
+                    <div className=' w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
+                        <img
+                            src="/images/user/person7.png"
+                            className=' sm:w-[176px] sm:h-[248px] '
+                            alt="person7" />
                     </div>
-                    <div className='w-[100%] h-[75%] border-[0px] flex flex-wrap  gap-x-[50px] justify-center ' >
-                        {WORKS.map((e, i) => <div key={i} className="border-[0px] h-[200px] w-[300px] flex items-center justify-center">
-                            <img src={e.uri} alt="Girl in a jacket"
-                                className='w-[80%] h-[80%] hover:w-[85%] hover:h-[85%] rounded-lg cursor-pointer '
-                            ></img>
-                        </div>)}
+                    <div className='w-[75%] px-[40px] ' >
+                        <div className=' w-[100%] h-[120px] mt-[80px] border-[0px] font-semibold flex items-center '  >
+                            <h1 className=' text-[#fff] text-[50px] ' >Simple, transparent pricing</h1>
+                        </div>
+                        <div>
+                            <h1 className=' text-[#fff] text-[25px] leading-[30px] ' >Super affordable plans , for content creators, startups and enterprises  and for everyone . </h1>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="contact" ref={ContactRef} className='w-[100%] border-[0px] sm:h-[700px] bg-[#060606] flex items-center justify-center '
+            <div className='w-[100%] flex item-center justify-center' >
+                <div className=' w-[90%] border-[0px] mt-[50px] flex gap-[50px] flex-wrap items-center justify-center ' >
+                    {
+                        [...Array(3)].map(() => {
+                            return (
+                                <div className=' w-[350px] h-[500px] border-[1px] rounded-[20px] ' >
+
+                                </div>
+                            )
+                        })
+                    }
+                    {/* <div className=' w-[200px] h-[450px] border-[1px] ' >
+
+                    </div> */}
+                </div>
+            </div>
+            <div id="contact" ref={ContactRef} className='w-[100%] border-[0px] sm:h-[700px] flex items-center justify-center '
             // style={{
             //     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1664009359/WebsiteImages/90595_gi3aj3.jpg")`,
             //     backgroundSize: 'cover',
             // }}
             >
-                <div className='sm:w-[50%] sm:h-[80%] w-[90%] border-[0px] px-[10px] py-[10px] ' >
+                {/* <div className='sm:w-[50%] sm:h-[80%] w-[90%] border-[0px] px-[10px] py-[10px] ' >
                     <h1 className='text-white sm:text-[50px] text-[18px] font-bold' >Connect with us</h1>
                     <div className='w-[100%] sm:h-[100px] border-[0px]' >
                         <h1
@@ -571,7 +589,7 @@ const Home = () => {
                     <div className='w-[100%] flex items-center h-[100px] border-[0px] justify-center' >
                         <button className='w-[150px] h-[50px] border-[1px] hover:bg-[#0E6655] hover:border-0 rounded-lg text-white text-[17px] font-semibold' type="button">Submit</button>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className='w-[100%] sm:h-[80px] border-[0px] bg-[#0B5345] flex items-center justify-center' id="footer" >
                 <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
