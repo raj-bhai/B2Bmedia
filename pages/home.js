@@ -8,7 +8,9 @@ import LoadingScreen from '../components/Loader/LoadingScreen';
 import AnimatedText from 'react-animated-text-content';
 import TextTransition, { presets } from "react-text-transition";
 import Header from '../components/Home/header';
-import MovingText from 'react-moving-text'
+import MovingText from 'react-moving-text';
+import PricingCard from '../components/Home/pricingCard';
+import CustomPlan from '../components/Home/customPlan';
 import {
     FaReact,
     FaTwitter,
@@ -107,6 +109,9 @@ const Home = () => {
     const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
     const textHover = 'hover:text-yellow-200'
 
+    const gradiantText1 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#B2BABB] to-[#F0F3F4]';
+    const gradiantText2 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#5D9B81] via-[#93D900] to-[#93D900]';
+
     const [offset, setOffset] = useState(0);
     const [showText2, setShowText2] = useState(false);
     const [showText3, setShowText3] = useState(false);
@@ -114,6 +119,10 @@ const Home = () => {
     const [showText5, setShowText5] = useState(false);
 
     const [index, setIndex] = useState(0);
+
+    //selected pricing
+    const [pricingIndex, setPricingIndex] = useState(1);
+
 
 
     useEffect(() => {
@@ -318,11 +327,11 @@ const Home = () => {
                     alt="star" />
                 {
                     // showMainText &&
-                    <div className='border-[0px] flex items-center w-[100%] h-[500px] sm:h-[500px] justify-between mt-[80px] z-[100] ' >
+                    <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-between mt-[80px] z-[100] ' >
 
-                        <div className={`sm:w-[45%] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px] sm:ml-[0px] ml-[20px]  ` + textContainerStyle}
+                        <div className={`sm:w-[100%] md:w-[700px] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px] sm:ml-[0px] ml-[20px]  ` + textContainerStyle}
                         >
-                            <div className='w-[600px] h-[80%] border-[0px] ml-[50px] mt-[80px] flex ' >
+                            <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] ml-[50px] mt-[80px] flex ' >
                                 <div className='w-[50px] h-[100%] border-[0px]' >
                                     <img
                                         src="/images/user/star.png"
@@ -330,7 +339,7 @@ const Home = () => {
                                         alt="star" />
                                 </div>
                                 <div>
-                                    <div className='w-[500px] border-[0px] ' >
+                                    <div className='border-[0px] ' >
                                         {/* <h1 className='text-yellow-200 text-[50px] leading-[50px] text-left font-semibold  ' >Stand out of the crowd</h1> */}
                                         <MovingText
                                             type="flipFromLeftToCenter"
@@ -499,9 +508,9 @@ const Home = () => {
                     alt="star" />
 
                 <div className='w-[100%] border-[0px] flex justify-evenly pl-[100px] items-center ' >
-                    <div className='w-[350px] border-[0px]' >
+                    <div className='w-[650px] border-[0px]' >
                         <h1 className=' text-[65px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
-                        <h1 className='text-[#fff] text-[25px] mt-[5px] ' >United by GrowGrip</h1>
+                        <h1 className='text-[#fff] text-[35px] mt-[10px] font-medium ' >United by GrowGrip</h1>
                     </div>
                     <div className='relative border-[0px] ' >
                         <img
@@ -548,20 +557,73 @@ const Home = () => {
                 </div>
             </div>
             <div className='w-[100%] flex item-center justify-center' >
-                <div className=' w-[90%] border-[0px] mt-[50px] flex gap-[50px] flex-wrap items-center justify-center ' >
-                    {
-                        [...Array(3)].map(() => {
-                            return (
-                                <div className=' w-[350px] h-[500px] border-[1px] rounded-[20px] ' >
-
-                                </div>
-                            )
-                        })
-                    }
-                    {/* <div className=' w-[200px] h-[450px] border-[1px] ' >
-
-                    </div> */}
+                <div className=' w-[90%] border-[0px] mt-[50px] flex gap-[80px] flex-wrap items-center justify-center ' >
+                    <PricingCard
+                        for="small"
+                        type="Basic"
+                        index={0}
+                        amount={'$69'}
+                        seletedIndex={pricingIndex}
+                        desc="5 min video with 500 words"
+                        onFocus={() => {
+                            console.log('gg')
+                        }}
+                        onClick={() => {
+                            setPricingIndex(0)
+                        }}
+                    />
+                    <PricingCard
+                        for="startups"
+                        type="Pro"
+                        index={1}
+                        amount={'$199'}
+                        seletedIndex={pricingIndex}
+                        desc="10 min video with 1000 words"
+                        onFocus={() => {
+                            console.log('gg')
+                        }}
+                        onClick={() => {
+                            setPricingIndex(1)
+                        }}
+                    />
+                    <PricingCard
+                        for="business"
+                        type="Enterprise"
+                        index={2}
+                        amount={'$399'}
+                        seletedIndex={pricingIndex}
+                        desc="15 min video with 2000 words"
+                        onFocus={() => {
+                            console.log('gg')
+                        }}
+                        onClick={() => {
+                            setPricingIndex(2)
+                        }}
+                    />
                 </div>
+            </div>
+            <div className='w-[100%]  flex justify-center border-[0px] sm:pt-[100px]' >
+                <img
+                    src="/images/user/circle6.png"
+                    className=' absolute right-[0px] '
+                    alt="person7" />
+                <div className='h-[250px] border-[0px] flex ' >
+                    <div className='sm:w-[600px] h-[100%] flex items-center ' >
+                        <div>
+                            <h1 className={`text-[#fff] text-[40px] font-semibold ${gradiantText1}`} >Confused about the plans</h1>
+                            <h1 className={`text-[#fff] text-[60px] font-bold ${gradiantText2}`} >Dont worry</h1>
+                        </div>
+                    </div>
+                    <div className='h-[100%] border-l-[0px] flex items-center justify-center ' >
+                        <img
+                            src="/images/user/girl1.png"
+                            className=' sm:w-[250px] sm:h-[250px] '
+                            alt="person7" />
+                    </div>
+                </div>
+            </div>
+            <div className='w-[100%]  flex justify-center border-[0px] ' >
+                <CustomPlan />
             </div>
             <div id="contact" ref={ContactRef} className='w-[100%] border-[0px] sm:h-[700px] flex items-center justify-center '
             // style={{
