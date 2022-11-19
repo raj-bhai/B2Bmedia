@@ -90,6 +90,9 @@ const uderlineText = 'underline underline-offset-8 decoration-sky-500';
 
 const AboutUsText = "We are a group of young YouTube specialists and enthusiasts dedicated to establishing a viable career path for YouTubers. Our goal is to assist individuals in acing their YouTube journey and turning YouTube into a revenue-generating platform through content improvement."
 const Home = () => {
+
+    const [domLoaded, setDomLoaded] = useState(false);
+
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
     const [textContainerStyle, setTextContainerStyle] = useState('');
     const [showMainText, setShowMaiinText] = useState(true);
@@ -131,6 +134,9 @@ const Home = () => {
     const [projectIndex, setprojectIndex] = useState(1);
 
 
+    useEffect(() => {
+        setDomLoaded(true);
+    }, []);
 
     useEffect(() => {
         const intervalId = setInterval(() =>
@@ -309,6 +315,7 @@ const Home = () => {
 
     console.log(offset);
     return (
+        domLoaded &&
         <div className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             ref={scroll}
         >
