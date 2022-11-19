@@ -14,6 +14,7 @@ export default function Home() {
   }, [])
 
   return (
-    <LoadingScreen />
+    typeof window !== 'undefined' ?
+    <LoadingScreen /> : null
   )
 }

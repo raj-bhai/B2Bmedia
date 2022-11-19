@@ -316,6 +316,7 @@ const Home = () => {
     console.log(offset);
     return (
         domLoaded &&
+        typeof window !== 'undefined' ?
         <div className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             ref={scroll}
         >
@@ -726,7 +727,7 @@ const Home = () => {
                     </div> */}
                 </div>
             </div>
-        </div>
+        </div> : null
     )
 }
 
