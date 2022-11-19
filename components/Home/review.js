@@ -38,6 +38,7 @@ const Review = (props) => {
                     [...Array(5)].map((x, index) => {
                         return (
                             <FaStar
+                                key={index}
                                 color={yellow}
                                 size={30}
                             />

@@ -634,7 +634,7 @@ const Home = () => {
                         {
                             ProjectTypes.map((item, index) => {
                                 return (
-                                    <h1 className={` text-[19px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                    <h1 key={index} className={` text-[19px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
                                         onClick={() => {
                                             setprojectIndex(index)
                                         }}
@@ -647,6 +647,7 @@ const Home = () => {
                                 [...Array(8)].map((item, index) => {
                                     return (
                                         <img
+                                            key={index}
                                             src={`/images/user/project${index + 1}.png`}
                                             className=' sm:w-[550px] sm:h-[350px] rounded-[20px] '
                                             alt="project1" />
