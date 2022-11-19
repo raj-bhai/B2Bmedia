@@ -676,7 +676,10 @@ const Home = () => {
                 <Contact />
             </div>
             <div className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
-                <Footer />
+                {
+                    typeof window !== 'undefined' &&
+                    <Footer />
+                }
             </div>
             <div className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' id="footer" >
                 <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
