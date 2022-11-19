@@ -15,6 +15,6 @@ export default function Home() {
 
   return (
     typeof window !== 'undefined' ?
-    <LoadingScreen /> : null
+      <LoadingScreen /> : null
   )
 }
