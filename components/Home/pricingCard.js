@@ -1,6 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
 
+const unFocusedBG = ' bg-[#0FA152]'  //green
+const focusedBG = ' bg-[#fff]'  //white
+
+const Features = (props) => {
+    return (
+        <div className="w- [300px] flex border-[0px] py-[5px] " >
+            <div className={`${props.focused ? focusedBG : unFocusedBG} w-[20px] h-[20px] rounded-[10px] flex items-center justify-center `} >
+                <FaCheck
+                    size={12}
+                    color={props.focused ? '#000' : '#fff'}
+                />
+            </div>
+            <h1 className=" text-[#fff] ml-[10px] leading-none " >{props.name}</h1>
+        </div>
+    )
+}
+
 const PricingCard = (props) => {
 
     const [focused, setFocused] = useState(false);
@@ -10,8 +27,6 @@ const PricingCard = (props) => {
     // const white = "#fff"
 
     //button
-    const unFocusedBG = ' bg-[#0FA152]'  //green
-    const focusedBG = ' bg-[#fff]'  //white
     const focusedbtnText = ' text-[#000]'  //black
     const unfocusedBtnText = ' text-[#fff]'  //white
 
@@ -28,19 +43,6 @@ const PricingCard = (props) => {
         }
     }, [props.seletedIndex])
 
-    const Features = (name) => {
-        return (
-            <div className="w- [300px] flex border-[0px] py-[5px] " >
-                <div className={`${focused ? focusedBG : unFocusedBG} w-[20px] h-[20px] rounded-[10px] flex items-center justify-center `} >
-                    <FaCheck
-                        size={12}
-                        color={focused ? '#000' : '#fff'}
-                    />
-                </div>
-                <h1 className=" text-[#fff] ml-[10px] leading-none " >{name}</h1>
-            </div>
-        )
-    }
 
 
     return (
@@ -80,7 +82,7 @@ const PricingCard = (props) => {
                     <h1 className=" text-[#fff] text-[15px] font-medium " >What's included</h1>
                 </div>
                 <div className=" mt-[5px] " >
-                    {
+                    {/* {
                         Features(
                             "Script"
                         )
@@ -104,7 +106,27 @@ const PricingCard = (props) => {
                         Features(
                             "SEO"
                         )
-                    }
+                    } */}
+                    <Features
+                        name="Script"
+                        focused={focused}
+                    />
+                    <Features
+                        name="Voice over"
+                        focused={focused}
+                    />
+                    <Features
+                        name="Video Editing"
+                        focused={focused}
+                    />
+                    <Features
+                        name="Thumbnail"
+                        focused={focused}
+                    />
+                    <Features
+                        name="SEO"
+                        focused={focused}
+                    />
                 </div>
             </div>
             <div className=" w-[100%] border-t-[0px] flex justify-center " >
