@@ -12,21 +12,17 @@ import MovingText from 'react-moving-text';
 import PricingCard from '../components/Home/pricingCard';
 import CustomPlan from '../components/Home/customPlan';
 import {
-    FaReact,
     FaTwitter,
     FaFacebookSquare,
     FaInstagram,
     FaAngleDoubleUp,
-    FaFileAlt,
-    FaScroll,
-    FaMicrophone,
-    FaYoutube,
-    FaPhotoVideo,
     FaWhatsapp,
     FaPlayCircle
 } from 'react-icons/fa';
 import Globe from '../components/Home/globe';
 import Services from '../components/Home/services';
+import Review from '../components/Home/review';
+import Contact from '../components/Home/contact';
 
 const TEXTS = [
     "Forest",
@@ -34,6 +30,13 @@ const TEXTS = [
     "Tree",
     "Color"
 ];
+
+const ProjectTypes = [
+    "All",
+    "Tech",
+    "Misc.",
+    "Crypto"
+]
 
 const SERVICES = [
     {
@@ -122,6 +125,9 @@ const Home = () => {
 
     //selected pricing
     const [pricingIndex, setPricingIndex] = useState(1);
+
+    //selected project types (ex: All, Tech, Crypto)
+    const [projectIndex, setprojectIndex] = useState(1);
 
 
 
@@ -492,12 +498,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div id="services" ref={ServicesRef} className='w-[100%] relative sm:pt-[0px] px-[80px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '
-            // style={{
-            //     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1663921647/WebsiteImages/6150452_nxhsth.jpg")`,
-            //     backgroundSize: 'cover',
-            // }}
-            >
+            <div id="services" ref={ServicesRef} className='w-[100%] relative sm:pt-[0px] px-[80px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
                 <img
                     src="/images/user/circle2.png"
                     className=' absolute top-[-100px] left-[0px]    '
@@ -625,36 +626,48 @@ const Home = () => {
             <div className='w-[100%]  flex justify-center border-[0px] ' >
                 <CustomPlan />
             </div>
-            <div id="contact" ref={ContactRef} className='w-[100%] border-[0px] sm:h-[700px] flex items-center justify-center '
-            // style={{
-            //     backgroundImage: `url("https://res.cloudinary.com/drgvislmm/image/upload/v1664009359/WebsiteImages/90595_gi3aj3.jpg")`,
-            //     backgroundSize: 'cover',
-            // }}
-            >
-                {/* <div className='sm:w-[50%] sm:h-[80%] w-[90%] border-[0px] px-[10px] py-[10px] ' >
-                    <h1 className='text-white sm:text-[50px] text-[18px] font-bold' >Connect with us</h1>
-                    <div className='w-[100%] sm:h-[100px] border-[0px]' >
-                        <h1
-                            className='text-white sm:text-[18px] text-[15px]'
-                        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h1>
+            <div className='w-[100%] border-[0px] flex items-center justify-center '>
+                <div className=' w-[80%] border-[0px] mt-[100px]  ' >
+                    <h1 className=' text-[#fff] text-[30px] font-semibold ' >Our Latest Projects</h1>
+                    <div className=' w-[100%] flex flex-wrap gap-[50px] mt-[20px] pb-[50px] ' >
+                        {
+                            ProjectTypes.map((item, index) => {
+                                return (
+                                    <h1 className={` text-[19px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                        onClick={() => {
+                                            setprojectIndex(index)
+                                        }}
+                                    >{item}</h1>
+                                )
+                            })
+                        }
+                        <div className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
+                            {
+                                [...Array(8)].map((item, index) => {
+                                    return (
+                                        <img
+                                            src={`/images/user/project${index + 1}.png`}
+                                            className=' sm:w-[550px] sm:h-[350px] rounded-[20px] '
+                                            alt="project1" />
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
-                    <div className='w-[100%] sm:h-[80px] border-[0px] sm:flex flex:wrap justify-between items-center' >
-                        <input className='sm:w-[48%] w-[100%] sm:mt-[0px] mt-[20px] h-[50px] border-[1px] text-white rounded-lg bg-transparent px-[20px] ' placeholder='your name' ></input>
-                        <input className='sm:w-[48%] w-[100%]  sm:mt-[0px] mt-[20px] h-[50px] border-[1px] text-white rounded-lg bg-transparent px-[20px] ' placeholder='your email' ></input>
-                    </div>
-                    <div className='w-[100%] h-[80px] border-[0px] flex justify-between items-center' >
-                        <input className='w-[100%] h-[50px] rounded-lg border-[1px] text-white bg-transparent px-[20px]' placeholder='Write a subject' ></input>
-                    </div>
-                    <div className='w-[100%] border-[0px] flex justify-between items-center' >
-                        <textarea placeholder="Your message" className='w-[100%] text-white py-[10px] h-[50px] rounded-lg border-[1px] bg-transparent px-[20px]'></textarea>
-                    </div>
-                    <div className='w-[100%] flex items-center h-[100px] border-[0px] justify-center' >
-                        <button className='w-[150px] h-[50px] border-[1px] hover:bg-[#0E6655] hover:border-0 rounded-lg text-white text-[17px] font-semibold' type="button">Submit</button>
-                    </div>
-                </div> */}
+                </div>
             </div>
-            <div className='w-[100%] sm:h-[80px] border-[0px] bg-[#0B5345] flex items-center justify-center' id="footer" >
-                <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
+            <div className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
+                <img
+                    src={`/images/user/circle9.png`}
+                    className=' absolute right-[0px] top-[30%] '
+                    alt="project1" />
+                <Review />
+            </div>
+            <div className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
+                <Contact />
+            </div>
+            <div className='w-[100%] sm:h-[80px] border-[0px] flex items-center justify-center' id="footer" >
+                {/* <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
                     <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
                         <FaWhatsapp
                             color='white'
@@ -695,7 +708,7 @@ const Home = () => {
                     <div className='sm:w-[400px] w-[100%] h-[50%] border-[0px] flex items-center sm:justify-end justify-center' >
                         <h1 className='text-white text-[15px] sm:text-[17px] sm:pb-[0px] pb-[10px] ' >{`2022 ${`©`} brandName`}</h1>
                     </div>
-                </div>
+                </div> */}
             </div>
 
         </div>

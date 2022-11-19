@@ -21,7 +21,7 @@ const CustomPlan = (props) => {
         )
     }
     return (
-        <div className=" w-[80%] h-[500px] border-[0px] " >
+        <div className=" w-[80%] border-[0px] " >
             <div className=" flex items-center " >
                 <h1 className=" text-[#fff] text-[28px] leading-none " >Create Custom plan</h1>
                 <FaCaretDown
