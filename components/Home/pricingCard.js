@@ -6,14 +6,14 @@ const focusedBG = ' bg-[#fff]'  //white
 
 const Features = (props) => {
     return (
-        <div className="w- [300px] flex border-[0px] py-[5px] " >
+        <div className="sm:w-[300px] flex border-[0px] py-[5px] " >
             <div className={`${props.focused ? focusedBG : unFocusedBG} w-[20px] h-[20px] rounded-[10px] flex items-center justify-center `} >
                 <FaCheck
                     size={12}
                     color={props.focused ? '#000' : '#fff'}
                 />
             </div>
-            <h1 className=" text-[#fff] ml-[10px] leading-none " >{props.name}</h1>
+            <h1 className=" text-[#fff] ml-[10px] text-[13px] sm:text-[15px] leading-none " >{props.name}</h1>
         </div>
     )
 }
@@ -52,7 +52,7 @@ const PricingCard = (props) => {
 
     return (
         domLoaded &&
-        <div className={`w-[320px] h-[500px] rounded-[20px] px-[20px] pt-[20px] ${focused ? focusedBorder : unFocusedBorder} `}
+        <div className={`sm:w-[320px] sm:h-[500px] rounded-[20px] px-[20px] pt-[20px] pb-[20px] ${focused ? focusedBorder : unFocusedBorder} `}
             onFocus={() => {
                 props.onFocus();
             }}
@@ -65,27 +65,27 @@ const PricingCard = (props) => {
             }}
         >
             <div className="w-[100%] h-[80%]" >
-                <div className="w-[100%] h-[100px] border-b-[0px] flex " >
-                    <div className="w-[60px] h-[60px] bg-[#fff] rounded-[5px]  " >
+                <div className="w-[100%] sm:h-[100px] h-[60px] border-b-[0px] flex " >
+                    <div className="sm:w-[60px] sm:h-[60px] w-[40px] h-[40px] bg-[#fff] rounded-[5px]  " >
                         <img
                             src="/images/user/pricing1.png"
                             // className=' absolute right-[0px] bottom-[0px]  '
                             alt="person7" />
                     </div>
                     <div className="ml-[20px] " >
-                        <h1 className=" text-[#fff] text-[18px] leading-tight " >for {props.for}</h1>
-                        <h1 className=" text-[#fff] text-[24px] leading-tight font-semibold " >{props.type}</h1>
+                        <h1 className=" text-[#fff] sm:text-[18px] text-[14px] leading-tight " >for {props.for}</h1>
+                        <h1 className=" text-[#fff] sm:text-[24px] text-[16px] leading-tight font-semibold " >{props.type}</h1>
                     </div>
                 </div>
                 <div>
-                    <h1 className=" text-[#fff] text-[17px] font-normal leading-[30px] " >{props.desc}</h1>
+                    <h1 className=" text-[#fff] sm:text-[17px] text-[14px] font-normal sm:leading-[30px] " >{props.desc}</h1>
                 </div>
                 <div className="flex items-end mt-[10px] " >
-                    <h1 className=" text-[#fff] text-[50px] leading-none font-bold " >{props.amount}</h1>
-                    <h1 className=" text-[#fff] font-medium text-[18px] "  > /video</h1>
+                    <h1 className=" text-[#fff] sm:text-[50px] text-[16px] sm:leading-none font-bold " >{props.amount}</h1>
+                    <h1 className=" text-[#fff] font-medium sm:text-[18px] text-[14px] "  > /video</h1>
                 </div>
-                <div className=" mt-[15px] " >
-                    <h1 className=" text-[#fff] text-[15px] font-medium " >What&apos;s included</h1>
+                <div className=" sm:mt-[15px] mt-[5px] " >
+                    <h1 className=" text-[#fff] sm:text-[15px] text-[13px] font-medium " >What&apos;s included</h1>
                 </div>
                 <div className=" mt-[5px] " >
                     {/* {
@@ -136,7 +136,7 @@ const PricingCard = (props) => {
                 </div>
             </div>
             <div className=" w-[100%] border-t-[0px] flex justify-center " >
-                <div className={`w-[250px] cursor-pointer h-[50px] mt-[20px] rounded-[50px] flex items-center justify-center ${focused ? focusedBG : unFocusedBG}`} >
+                <div className={`sm:w-[250px] w-[200px] cursor-pointer h-[50px] mt-[20px] rounded-[50px] flex items-center justify-center ${focused ? focusedBG : unFocusedBG}`} >
                     <h1 className={`text-[20px] leading-none font-semibold ${focused ? focusedbtnText : unfocusedBtnText} `} >Get Started</h1>
                 </div>
 
