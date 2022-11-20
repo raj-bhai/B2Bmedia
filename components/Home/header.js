@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Header = (props) => {
     const textHover = ' hover:text-yellow-200 hover:border-b-[2px] hover:border-b-yellow-200'
-    const hoverBtn = ' hover:bg-white hover:border-[0px]'
+    const hoverBtn = ' hover:bg-white hover:border-[0px] hover:text-[#000] hover:font-semi bold'
     const hoverTxt = ' hover:text-[#107840] hover:font-semibold  '
     const [btnFocused, setBtnFocused] = useState(false);
     const [btnBG, setBtnBG] = useState(' ');
@@ -55,7 +55,7 @@ const Header = (props) => {
                 <div className=" w-[80px] h-[60px] border-[0px] flex items-center justify-center " >
                     <h1 className={"text-[#fff] font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >About</h1>
                 </div>
-                <div className={" w-[80px] h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn}
+                {/* <div className={" w-[80px] h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn}
                     onFocus={() => {
                         setBtnFocused(true);
                     }}
@@ -64,7 +64,9 @@ const Header = (props) => {
                     }}
                 >
                     <h1 className={"text-[#fff] font-normal text-[18px] leading-[30px] " + hoverTxt} >Login</h1>
-                </div>
+                </div> */}
+                <input type="button" value={"Login"} className={" text-[#fff] font-normal  w-[80px] h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
+                </input>
             </div>
         </div>
     );
