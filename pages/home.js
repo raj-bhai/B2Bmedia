@@ -464,19 +464,19 @@ const Home = () => {
                         className=' absolute  right-[0px] bottom-[0px] sm:visible invisible'
                         alt="star" />
                     <div className='w-[100%] sm:h-[100px] border-[0px] flex-wrap flex items-center justify-between sm:px-[50px] px-[10px] ' >
-                        <div className='sm:w-[200px] border-[0px] align-bottom text-center ' >
+                        <div className='sm:w-[200px] w-[20%] border-[0px] align-bottom text-center ' >
                             <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >4.8K</h1>
                             <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >Projects Completed</h1>
                         </div>
-                        <div className='sm:w-[200px] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >12+</h1>
+                        <div className='sm:w-[200px] w-[20%] border-[0px] align-bottom text-center ' >
+                            <h1 className='text-[#fff]  sm:text-[35px] text-[15px] leading-tight font-semibold  ' >12+</h1>
                             <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >In Progress</h1>
                         </div>
-                        <div className='sm:w-[200px] border-[0px] align-bottom text-center ' >
+                        <div className='sm:w-[200px] w-[20%] border-[0px] align-bottom text-center ' >
                             <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >2.5K+</h1>
                             <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >World wide clients</h1>
                         </div>
-                        <div className='sm:w-[200px] border-[0px] align-bottom text-center ' >
+                        <div className='sm:w-[200px] w-[20%] border-[0px] align-bottom text-center ' >
                             <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >120+</h1>
                             <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >Popular</h1>
                         </div>
@@ -506,29 +506,29 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div id="services" ref={ServicesRef} className='w-[100%] relative sm:pt-[0px] px-[80px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
+                <div id="services" ref={ServicesRef} className='w-[100%] relative sm:pt-[0px] sm:px-[80px] px-[10px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
                     <img
                         src="/images/user/circle2.png"
                         className=' absolute top-[-100px] left-[0px] sm:visible invisible   '
                         alt="star" />
                     <img
                         src="/images/user/circle3.png"
-                        className=' absolute top-[450px] right-[0px]    '
+                        className=' absolute top-[450px] right-[0px] sm:visible invisible   '
                         alt="star" />
 
-                    <div className='w-[100%] border-[0px] flex justify-evenly pl-[100px] items-center ' >
-                        <div className='w-[650px] border-[0px]' >
-                            <h1 className=' text-[65px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
-                            <h1 className='text-[#fff] text-[35px] mt-[10px] font-medium ' >United by GrowGrip</h1>
+                    <div className='w-[100%] border-[0px] sm:flex justify-evenly sm:pl-[100px] items-center ' >
+                        <div className='sm:w-[650px] w-[100%] border-[0px]' >
+                            <h1 className=' sm:text-[65px] text-[20px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
+                            <h1 className='text-[#fff] sm:text-[35px] text-[18px] sm:mt-[10px] font-medium ' >United by GrowGrip</h1>
                         </div>
-                        <div className='relative border-[0px] ' >
+                        <div className='relative border-[0px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
                             <img
                                 src="/images/user/globe1.png"
-                                className=' sm:w-[550px] sm:h-[550px] '
+                                className=' sm:w-[550px] w-[80%] sm:h-[550px] '
                                 alt="star" />
                             <img
                                 src="/images/user/dottedPath1.png"
-                                className=' absolute top-[0px] sm:w-[400px] sm:h-[400px] sm:left-[80px] sm:top-[50px] '
+                                className=' absolute top-[0px] sm:w-[400px] w-[65%] sm:h-[400px] sm:left-[80px] sm:top-[50px] top-[10%] '
                                 alt="star" />
                         </div>
                     </div>
