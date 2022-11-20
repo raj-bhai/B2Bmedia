@@ -10,25 +10,25 @@ const Globe = (props) => {
             <img
                 src="/images/user/globe.png"
                 alt="star" />
-            <img
+            {/* <img
                 src="/images/user/script.png"
-                className="absolute sm:left-[0px] sm:bottom-[0px] "
-                alt="star" />
+                className="absolute sm:left-[0px] sm:bottom-[0px sm:visible invisible "
+                alt="star" /> */}
             <img
                 src="/images/user/microphone.png"
-                className="absolute sm:left-[110px] sm:w-[70px] sm:h-[120px] sm:top-[10px] "
+                className="absolute sm:left-[110px] left-[120px] sm:w-[70px] w-[50px] sm:h-[120px] h-[90px] sm:top-[10px] top-[30px] "
                 alt="star" />
             <img
                 src="/images/user/dotCircle.png"
-                className="absolute "
+                className="absolute  "
                 alt="star" />
             <img
                 src="/images/user/script.png"
-                className="absolute sm:right-[20px] sm:top-[-20px] sm:w-[150px] sm:h-[135px] "
+                className="absolute sm:right-[20px] right-[40px] sm:top-[-20px] top-[30px] sm:w-[150px] w-[100px] sm:h-[135px] h-[75px] "
                 alt="star" />
             <img
                 src="/images/user/aeroplane.png"
-                className="absolute sm:w-[200px] sm:h-[200px] sm:left-[100px] sm:top-[100px] "
+                className="absolute sm:w-[200px] w-[120px] sm:h-[200px] h-[120px] sm:left-[100px] left-[150px] sm:top-[100px] top-[200px] "
                 alt="star" />
         </div>
 
