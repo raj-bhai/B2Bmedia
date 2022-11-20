@@ -138,7 +138,7 @@ const Services = (props) => {
                     alt="star" />
                 <img
                     src="/images/user/person11.png"
-                    className="sm:w-[100px] sm:h-[150px] absolute bottom-[20px] left-[140px] "
+                    className="sm:w-[100px] person1-animate sm:h-[150px] absolute bottom-[20px] left-[140px] "
                     alt="star" />
                 <img
                     src="/images/user/person12.png"
@@ -146,7 +146,7 @@ const Services = (props) => {
                     alt="star" />
                 <img
                     src="/images/user/starYellow.png"
-                    className="sm:w-[40px] sm:h-[40px] absolute bottom-[50px] left-[650px] "
+                    className="sm:w-[40px] moving-star sm:h-[40px] absolute bottom-[50px] left-[650px] "
                     alt="star" />
 
                 {/* <VideoEdit

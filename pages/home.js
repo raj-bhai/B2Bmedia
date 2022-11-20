@@ -461,10 +461,10 @@ const Home = () => {
                                                             {/* <div className='sm:w-[120px] w-[80px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce ' >
                                                                 <h1 className='text-[#000] font-bold sm:text-[15px] text-[12px] ' >Get Started</h1>
                                                             </div> */}
-                                                            <div className='sm:w-[150px] sm:h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  ' 
-                                                            onClick={() => {
-                                                                document.getElementById('demos').scrollIntoView()
-                                                            }}
+                                                            <div className='sm:w-[150px] sm:h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  '
+                                                                onClick={() => {
+                                                                    document.getElementById('demos').scrollIntoView()
+                                                                }}
                                                             >
                                                                 <FaPlayCircle
                                                                     color='#fff'
@@ -558,12 +558,40 @@ const Home = () => {
                         <div className='relative border-[0px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
                             <img
                                 src="/images/user/globe1.png"
-                                className=' sm:w-[550px] w-[80%] sm:h-[550px] '
+                                className=' sm:w-[550px] w-[80%] sm:h-[550px] spin-animate-slow '
                                 alt="star" />
                             <img
                                 src="/images/user/dottedPath1.png"
                                 className=' absolute top-[0px] sm:w-[400px] w-[65%] sm:h-[400px] sm:left-[80px] sm:top-[50px] top-[10%] '
                                 alt="star" />
+                            <img
+                                src="/images/user/avtar.png"
+                                className=' absolute sm:w-[40px] sm:h-[40px] top-[20px] right-[160px] '
+                                alt="video-editor" />
+                            <img
+                                src="/images/user/avtar1.png"
+                                className=' absolute sm:w-[40px] sm:h-[40px] top-[55px] left-[80px] '
+                                alt="voice-artist" />
+                            <img
+                                src="/images/user/avtar2.png"
+                                className=' absolute sm:w-[40px] sm:h-[40px] top-[220px] left-[55px] '
+                                alt="script-writer" />
+                            <img
+                                src="/images/user/avtar3.png"
+                                className=' absolute sm:w-[40px] sm:h-[40px] sm:top-[300px] sm:right-[50px] '
+                                alt="video-editor" />
+                            <img
+                                src="/images/user/avtar4.png"
+                                className=' absolute sm:w-[40px] sm:h-[40px] sm:bottom-[80px] sm:left-[140px] '
+                                alt="video-editor" />
+                            <img
+                                src="/images/user/avtar5.png"
+                                className=' absolute sm:w-[40px] sm:h-[40px] sm:top-[130px] sm:left-[240px] '
+                                alt="video-editor" />
+                            <img
+                                src="/images/user/avtar6.png"
+                                className=' absolute sm:w-[40px] sm:h-[40px] sm:top-[250px] sm:left-[300px] '
+                                alt="video-editor" />
                         </div>
                     </div>
 

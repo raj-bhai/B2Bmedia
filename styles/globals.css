@@ -65,19 +65,38 @@
 }
 
 @keyframes MotionHorizontal {
-    0% {
-
-    }
+    0% {}
 
     100% {
         scale: 1.2;
     }
 }
 
-.revealUp {
-    opacity: 0;
-    visibility: hidden;
-  }
+.person1-animate {
+    animation: rotateHorizontal 3s linear infinite;
+}
+
+@keyframes rotateHorizontal {
+    0% {}
+
+    50% {
+        left: 100px
+    }
+}
+
+.moving-star {
+    animation: move 3s linear infinite;
+}
+
+@keyframes move {
+    0% {}
+
+    50% {
+        rotate: 180deg
+    }
+}
+
+
 
 
 /* .waviy {
