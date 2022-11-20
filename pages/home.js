@@ -519,7 +519,7 @@ const Home = () => {
                     <div className='w-[100%] border-[0px] sm:flex justify-evenly sm:pl-[100px] items-center ' >
                         <div className='sm:w-[650px] w-[100%] border-[0px]' >
                             <h1 className=' sm:text-[65px] text-[20px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
-                            <h1 className='text-[#fff] sm:text-[35px] text-[18px] sm:mt-[10px] font-medium ' >United by GrowGrip</h1>
+                            <h1 className='text-[#fff] sm:text-[35px] text-[18px] sm:mt-[10px] font-medium ' >United by GroGrip</h1>
                         </div>
                         <div className='relative border-[0px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
                             <img
