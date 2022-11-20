@@ -454,7 +454,7 @@ const Home = () => {
                     }
                 </div>
                 <div
-                    className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] pt-[80px] pb-[30px] relative' id='about' ref={AboutRef}
+                    className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative' id='about' ref={AboutRef}
                 >
                     <img
                         src="/images/user/circle1.png"
@@ -464,22 +464,22 @@ const Home = () => {
                         src="/images/user/whiteRing.png"
                         className=' absolute  right-[0px] bottom-[0px]'
                         alt="star" />
-                    <div className='w-[100%] h-[100px] border-[0px] flex items-center justify-between px-[50px] ' >
-                        <div className='w-[200px] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >4.8K</h1>
-                            <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >Projects Completed</h1>
+                    <div className='w-[100%] sm:h-[100px] border-[0px] flex-wrap flex items-center justify-between sm:px-[50px] px-[10px] ' >
+                        <div className='sm:w-[200px] border-[0px] align-bottom text-center ' >
+                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >4.8K</h1>
+                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >Projects Completed</h1>
                         </div>
-                        <div className='w-[200px] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >12+</h1>
-                            <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >In Progress</h1>
+                        <div className='sm:w-[200px] border-[0px] align-bottom text-center ' >
+                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >12+</h1>
+                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >In Progress</h1>
                         </div>
-                        <div className='w-[200px] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >2.5K+</h1>
-                            <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >World wide clients</h1>
+                        <div className='sm:w-[200px] border-[0px] align-bottom text-center ' >
+                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >2.5K+</h1>
+                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >World wide clients</h1>
                         </div>
-                        <div className='w-[200px] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >120+</h1>
-                            <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >Popular</h1>
+                        <div className='sm:w-[200px] border-[0px] align-bottom text-center ' >
+                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >120+</h1>
+                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >Popular</h1>
                         </div>
                     </div>
                     <div className='w-[100%] h-[500px] border-[0px] flex  ' >
