@@ -320,7 +320,7 @@ const Home = () => {
             <div className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
                 ref={scroll}
             >
-                <div className={'w-[100%] h-[500px] sm:h-[700px] border-[0px]'} id="home" ref={HomeRef}>
+                <div className={'w-[100%] sm:h-[700px] border-[0px]'} id="home" ref={HomeRef}>
                     <Header
                         className={headerStyle}
                     />
@@ -342,9 +342,9 @@ const Home = () => {
                         alt="star" />
                     {
                         // showMainText &&
-                        <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-between mt-[80px] z-[100] ' >
+                        <div className='border-[0px] flex flex-wrap items-center w-[100%] sm:justify-between justify-center mt-[80px] z-[100] ' >
 
-                            <div className={`sm:w-[100%] md:w-[700px] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px]  ` + textContainerStyle}
+                            <div className={`sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px]  ` + textContainerStyle}
                             >
                                 <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[50px] ml-[10px] sm:mt-[80px] mt-[0px] flex relative ' >
                                     {/* <div className='w-[50px] h-[100%] border-[0px]' > */}
@@ -447,7 +447,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='w-[50%] h-[500px] border-[0px] flex justify-end pr-[50px] ' >
+                            <div className='sm:w-[50%] w-[90%] h-[500px] border-[0px] flex sm:justify-end justify-center sm:pr-[50px] ' >
                                 <Globe />
                             </div>
                         </div>
