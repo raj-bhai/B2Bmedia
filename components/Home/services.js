@@ -113,7 +113,7 @@ const Services = () => {
                     className="sm:w-[30px] sm:h-[30px] absolute sm:top-[400px] sm:left-[190px] "
                     alt="star" />
                 <img
-                    src="/images/user/vector93.png"
+                    src="/images/user/Vector93.png"
                     className="sm:w-[17px] sm:h-[35px] absolute sm:top-[427px] sm:left-[183px] "
                     alt="star" />
                 <div className=' absolute left-[480px] top-[355px] border-[0px] flex items-end ' >
