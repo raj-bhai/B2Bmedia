@@ -33,10 +33,10 @@ const Header = (props) => {
 
 
     return (
-        <div className={`w-[100%] h-[80px] border-[0px] flex fixed z-[200] top-0` + props.className} >
-            <div className="w-[385px] h-[83px] border-[0px] sm:ml-[97.5px] ml-[20px] sm:mt-[8px] mt-[20px] " >
+        <div className={`w-[100%] sm:h-[80px] h-[50px] border-[0px] flex fixed z-[200] top-0` + props.className} >
+            <div className="w-[385px] h-[83px] border-[0px] sm:ml-[97.5px] ml-[20px] sm:mt-[8px] mt-[5px] " >
                 <h1
-                    className={"absolute  font-bold ml-[0px] mt-[-5px] sm:text-[52px] text-transparent text-[35px] bg-clip-text " + Gradiants[logoColor]}
+                    className={"absolute  font-bold ml-[0px] mt-[-5px] sm:text-[52px] text-transparent text-[30px] bg-clip-text " + Gradiants[logoColor]}
                 >GrowGrip</h1>
             </div>
             <div className="flex mt-[19.5px] ml-[150x] sm:w-[800px] sm:visible invisible border-[0px] justify-between " >

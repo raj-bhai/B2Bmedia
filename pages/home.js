@@ -316,376 +316,376 @@ const Home = () => {
     console.log(offset);
     return (
         domLoaded &&
-        typeof window !== 'undefined' ?
-        <div className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
-            ref={scroll}
-        >
-            <div className={'w-[100%] h-[500px] sm:h-[700px] border-[0px]'} id="home" ref={HomeRef}>
-                <Header
-                    className={headerStyle}
-                />
-                {/* AroowUpIcon */}
-                {
-                    showArrowUp &&
-                    <div id="goToTop" className='fixed border-[0px] w-[80px] bottom-[30px] right-[30px] h-[80px] flex items-center justify-center ' >
-                        <FaAngleDoubleUp
-                            onClick={() => {
-                                document.getElementById('home').scrollIntoView()
-                            }}
-                            className='text-white sm:text-[40px] text-[25px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
-                        />
-                    </div>
-                }
-                <img
-                    src="/images/user/circle0.png"
-                    className=' absolute right-[0px] bottom-[-100px] '
-                    alt="star" />
-                {
-                    // showMainText &&
-                    <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-between mt-[80px] z-[100] ' >
+            typeof window !== 'undefined' ?
+            <div className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
+                ref={scroll}
+            >
+                <div className={'w-[100%] h-[500px] sm:h-[700px] border-[0px]'} id="home" ref={HomeRef}>
+                    <Header
+                        className={headerStyle}
+                    />
+                    {/* AroowUpIcon */}
+                    {
+                        showArrowUp &&
+                        <div id="goToTop" className='fixed border-[0px] w-[80px] bottom-[30px] right-[30px] h-[80px] flex items-center justify-center ' >
+                            <FaAngleDoubleUp
+                                onClick={() => {
+                                    document.getElementById('home').scrollIntoView()
+                                }}
+                                className='text-white sm:text-[40px] text-[25px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
+                            />
+                        </div>
+                    }
+                    <img
+                        src="/images/user/circle0.png"
+                        className=' absolute right-[0px] bottom-[-100px] '
+                        alt="star" />
+                    {
+                        // showMainText &&
+                        <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-between mt-[80px] z-[100] ' >
 
-                        <div className={`sm:w-[100%] md:w-[700px] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px] sm:ml-[0px] ml-[20px]  ` + textContainerStyle}
-                        >
-                            <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] ml-[50px] mt-[80px] flex ' >
-                                <div className='w-[50px] h-[100%] border-[0px]' >
+                            <div className={`sm:w-[100%] md:w-[700px] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px]  ` + textContainerStyle}
+                            >
+                                <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[50px] ml-[10px] sm:mt-[80px] mt-[0px] flex relative ' >
+                                    {/* <div className='w-[50px] h-[100%] border-[0px]' > */}
                                     <img
                                         src="/images/user/star.png"
-                                        className='w-[40px] h-[40px] mt-[-10px] '
+                                        className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[-20px] top-[-5px] sm:left-[0px] '
                                         alt="star" />
-                                </div>
-                                <div>
-                                    <div className='border-[0px] ' >
-                                        {/* <h1 className='text-yellow-200 text-[50px] leading-[50px] text-left font-semibold  ' >Stand out of the crowd</h1> */}
-                                        <MovingText
-                                            type="flipFromLeftToCenter"
-                                            duration="1000ms"
-                                            delay="100ms"
-                                            direction="normal"
-                                            timing="ease"
-                                            iteration={1}
-                                            fillMode="none"
-                                            className='text-yellow-200 text-[50px] leading-[50px] text-left font-semibold  '
-                                        >
-                                            Stand out of the crowd
-                                        </MovingText>
+                                    {/* </div> */}
+                                    <div>
+                                        <div className='border-[0px] sm:ml-[50px] ml-[10px] ' >
+                                            {/* <h1 className='text-yellow-200 text-[50px] leading-[50px] text-left font-semibold  ' >Stand out of the crowd</h1> */}
+                                            <MovingText
+                                                type="flipFromLeftToCenter"
+                                                duration="1000ms"
+                                                delay="100ms"
+                                                direction="normal"
+                                                timing="ease"
+                                                iteration={1}
+                                                fillMode="none"
+                                                className='text-yellow-200 sm:text-[50px] text-[20px] leading-[50px] text-left font-semibold  '
+                                            >
+                                                Stand out of the crowd
+                                            </MovingText>
 
-                                        {/* <h1 className='text-white text-[40px] leading-[45px] mt-[30px] text-left font-normal ' >{'Creating videos is never so been easy'}</h1> */}
-                                        <div className='mt-[28px] h-[100px]' >
-                                            {
-                                                showText2 &&
-                                                <MovingText
-                                                    type="fadeIn"
-                                                    duration="1s"
-                                                    delay="0s"
-                                                    direction="normal"
-                                                    timing="ease"
-                                                    iteration={1}
-                                                    fillMode="forwards"
-                                                    presences="letters"
-                                                    className='text-white text-[40px] leading-[45px] text-left font-normal '
-                                                >
-                                                    {'Creating videos is never so been easy'}
-                                                </MovingText>
-                                            }
-                                        </div>
-                                        <div className='w-[100%] h-[50px] border-[0px] mt-[10px] flex items-center ' >
-                                            <img
-                                                src="/images/user/path.png"
-                                                className=' ml-[10px] mt-[-30px] '
-                                                alt="star" />
-                                        </div>
-                                        <div className='w-[100%] h-[50px] border-[0px] mt-[-10px]  ' >
-                                            {
-                                                showText3 &&
-                                                <MovingText
-                                                    type="fadeIn"
-                                                    duration="1s"
-                                                    delay="0s"
-                                                    direction="normal"
-                                                    timing="ease"
-                                                    iteration={1}
-                                                    fillMode="forwards"
-                                                    presences="letters"
-                                                    className='text-white leading-[25px] '
-                                                >
-                                                    {'Just focus on your business we will create content for your business without limits'}
-                                                </MovingText>
-                                                // <h1 className='text-white leading-[25px] ' >Just focus on your business we will create content for your business without limits</h1>
-                                            }
-                                        </div>
-                                        <div className='w-[100%] h-[50px] mt-[30px]' >
-                                            {
-                                                showText4 &&
-                                                <MovingText
-                                                    type="flipFromLeftToCenter"
-                                                    duration="1s"
-                                                    delay="0s"
-                                                    direction="normal"
-                                                    timing="ease"
-                                                    iteration={1}
-                                                    fillMode="forwards"
-                                                    presences="letters"
-                                                // className='text-white leading-[25px] '
-                                                >
-                                                    <div className='w-[100%] h-[50px] border-[0px] flex items-center justify-between ' >
-                                                        <div className='w-[120px] h-[40px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce ' >
-                                                            <h1 className='text-[#000] font-bold ' >Get Started</h1>
-                                                        </div>
+                                            {/* <h1 className='text-white text-[40px] leading-[45px] mt-[30px] text-left font-normal ' >{'Creating videos is never so been easy'}</h1> */}
+                                            <div className='sm:mt-[28px] mt-[0px] border-[0px] sm:h-[100px]' >
+                                                {
+                                                    showText2 &&
+                                                    <MovingText
+                                                        type="fadeIn"
+                                                        duration="1s"
+                                                        delay="0s"
+                                                        direction="normal"
+                                                        timing="ease"
+                                                        iteration={1}
+                                                        fillMode="forwards"
+                                                        presences="letters"
+                                                        className='text-white sm:text-[40px] text-[20px] leading-[45px] text-left font-normal '
+                                                    >
+                                                        {'Creating videos is never so been easy'}
+                                                    </MovingText>
+                                                }
+                                            </div>
+                                            <div className='w-[100%] sm:h-[50px] h-[30px] border-[0px] sm:mt-[10px] mt-[0px] flex items-center ' >
+                                                <img
+                                                    src="/images/user/path.png"
+                                                    className=' ml-[10px] sm:mt-[-30px] mt-[0px] '
+                                                    alt="star" />
+                                            </div>
+                                            <div className='w-[100%] h-[50px] border-[0px] mt-[-10px]  ' >
+                                                {
+                                                    showText3 &&
+                                                    <MovingText
+                                                        type="fadeIn"
+                                                        duration="1s"
+                                                        delay="0s"
+                                                        direction="normal"
+                                                        timing="ease"
+                                                        iteration={1}
+                                                        fillMode="forwards"
+                                                        presences="letters"
+                                                        className='text-white leading-[25px] '
+                                                    >
+                                                        {'Just focus on your business we will create content for your business without limits'}
+                                                    </MovingText>
+                                                    // <h1 className='text-white leading-[25px] ' >Just focus on your business we will create content for your business without limits</h1>
+                                                }
+                                            </div>
+                                            <div className='w-[100%] h-[50px] mt-[30px]' >
+                                                {
+                                                    showText4 &&
+                                                    <MovingText
+                                                        type="flipFromLeftToCenter"
+                                                        duration="1s"
+                                                        delay="0s"
+                                                        direction="normal"
+                                                        timing="ease"
+                                                        iteration={1}
+                                                        fillMode="forwards"
+                                                        presences="letters"
+                                                    // className='text-white leading-[25px] '
+                                                    >
+                                                        <div className='w-[100%] h-[50px] border-[0px] flex items-center justify-between sm:pr-[0px] pr-[20px] ' >
+                                                            <div className='sm:w-[120px] w-[80px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce ' >
+                                                                <h1 className='text-[#000] font-bold sm:text-[15px] text-[12px] ' >Get Started</h1>
+                                                            </div>
 
-                                                        <div className='w-[150px] h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  ' >
-                                                            <FaPlayCircle
-                                                                color='#fff'
-                                                                size={20}
-                                                            />
-                                                            <h1 className='text-white text-[15px] font-normal ml-[5px]' >Watch Demos</h1>
+                                                            <div className='sm:w-[150px] sm:h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  ' >
+                                                                <FaPlayCircle
+                                                                    color='#fff'
+                                                                    size={20}
+                                                                />
+                                                                <h1 className='text-white sm:text-[15px] text-[12px] font-normal ml-[5px]' >Watch Demos</h1>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </MovingText>
-                                            }
+                                                    </MovingText>
+                                                }
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div className='w-[50%] h-[500px] border-[0px] flex justify-end pr-[50px] ' >
+                                <Globe />
+                            </div>
                         </div>
-                        <div className='w-[50%] h-[500px] border-[0px] flex justify-end pr-[50px] ' >
-                            <Globe />
-                        </div>
-                    </div>
-                }
-            </div>
-            <div
-                className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] pt-[80px] pb-[30px] relative' id='about' ref={AboutRef}
-            >
-                <img
-                    src="/images/user/circle1.png"
-                    className=' absolute top-[100px] '
-                    alt="star" />
-                <img
-                    src="/images/user/whiteRing.png"
-                    className=' absolute  right-[0px] bottom-[0px]'
-                    alt="star" />
-                <div className='w-[100%] h-[100px] border-[0px] flex items-center justify-between px-[50px] ' >
-                    <div className='w-[200px] border-[0px] align-bottom text-center ' >
-                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >4.8K</h1>
-                        <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >Projects Completed</h1>
-                    </div>
-                    <div className='w-[200px] border-[0px] align-bottom text-center ' >
-                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >12+</h1>
-                        <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >In Progress</h1>
-                    </div>
-                    <div className='w-[200px] border-[0px] align-bottom text-center ' >
-                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >2.5K+</h1>
-                        <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >World wide clients</h1>
-                    </div>
-                    <div className='w-[200px] border-[0px] align-bottom text-center ' >
-                        <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >120+</h1>
-                        <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >Popular</h1>
-                    </div>
+                    }
                 </div>
-                <div className='w-[100%] h-[500px] border-[0px] flex  ' >
+                <div
+                    className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] pt-[80px] pb-[30px] relative' id='about' ref={AboutRef}
+                >
                     <img
-                        src="/images/user/star.png"
-                        className=' absolute right-[200px] top-[150px] '
+                        src="/images/user/circle1.png"
+                        className=' absolute top-[100px] '
                         alt="star" />
-                    <div className=' w-[50%] h-[100%] border-[0px] flex justify-center items-center ' >
-                        <img
-                            src="/images/user/service.png"
-                            className=' border-[0px] '
-                            alt="star" />
+                    <img
+                        src="/images/user/whiteRing.png"
+                        className=' absolute  right-[0px] bottom-[0px]'
+                        alt="star" />
+                    <div className='w-[100%] h-[100px] border-[0px] flex items-center justify-between px-[50px] ' >
+                        <div className='w-[200px] border-[0px] align-bottom text-center ' >
+                            <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >4.8K</h1>
+                            <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >Projects Completed</h1>
+                        </div>
+                        <div className='w-[200px] border-[0px] align-bottom text-center ' >
+                            <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >12+</h1>
+                            <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >In Progress</h1>
+                        </div>
+                        <div className='w-[200px] border-[0px] align-bottom text-center ' >
+                            <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >2.5K+</h1>
+                            <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >World wide clients</h1>
+                        </div>
+                        <div className='w-[200px] border-[0px] align-bottom text-center ' >
+                            <h1 className='text-[#fff] text-[35px] leading-tight font-semibold  ' >120+</h1>
+                            <h1 className='text-[#E0E5F3] text-[18px] leading-tight font-normal  ' >Popular</h1>
+                        </div>
                     </div>
-                    <div className=' w-[50%] h-[100%] border-[0px] flex justify-center items-center ' >
-                        <div>
-                            <div className='border-[0px] w-[80%]' >
-                                <h1 className=' text-[#fff] text-[50px] font-semibold ' >Non-Stoppable service</h1>
+                    <div className='w-[100%] h-[500px] border-[0px] flex  ' >
+                        <img
+                            src="/images/user/star.png"
+                            className=' absolute right-[200px] top-[150px] '
+                            alt="star" />
+                        <div className=' w-[50%] h-[100%] border-[0px] flex justify-center items-center ' >
+                            <img
+                                src="/images/user/service.png"
+                                className=' border-[0px] '
+                                alt="star" />
+                        </div>
+                        <div className=' w-[50%] h-[100%] border-[0px] flex justify-center items-center ' >
+                            <div>
+                                <div className='border-[0px] w-[80%]' >
+                                    <h1 className=' text-[#fff] text-[50px] font-semibold ' >Non-Stoppable service</h1>
+                                </div>
+                                <div className='border-[0px] w-[80%] ' >
+                                    <h1 className=' text-[#E0E5F3] text-[20px] leading-tight ' >
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis diam quis massa. Nulla ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.
+                                    </h1>
+                                </div>
                             </div>
-                            <div className='border-[0px] w-[80%] ' >
-                                <h1 className=' text-[#E0E5F3] text-[20px] leading-tight ' >
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis diam quis massa. Nulla ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.
-                                </h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="services" ref={ServicesRef} className='w-[100%] relative sm:pt-[0px] px-[80px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
+                    <img
+                        src="/images/user/circle2.png"
+                        className=' absolute top-[-100px] left-[0px]    '
+                        alt="star" />
+                    <img
+                        src="/images/user/circle3.png"
+                        className=' absolute top-[450px] right-[0px]    '
+                        alt="star" />
+
+                    <div className='w-[100%] border-[0px] flex justify-evenly pl-[100px] items-center ' >
+                        <div className='w-[650px] border-[0px]' >
+                            <h1 className=' text-[65px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
+                            <h1 className='text-[#fff] text-[35px] mt-[10px] font-medium ' >United by GrowGrip</h1>
+                        </div>
+                        <div className='relative border-[0px] ' >
+                            <img
+                                src="/images/user/globe1.png"
+                                className=' sm:w-[550px] sm:h-[550px] '
+                                alt="star" />
+                            <img
+                                src="/images/user/dottedPath1.png"
+                                className=' absolute top-[0px] sm:w-[400px] sm:h-[400px] sm:left-[80px] sm:top-[50px] '
+                                alt="star" />
+                        </div>
+                    </div>
+
+                </div>
+                <div id="pricing" ref={PricingRef} className='w-[100%]  flex items-center justify-center '>
+                    <div className='w-[100%]' >
+                        <Services />
+                    </div>
+                </div>
+                <div id="portfolio" ref={PortfolioRef} className='w-[100%] relative border-[0px] flex items-center justify-center '>
+                    <img
+                        src="/images/user/circle4.png"
+                        className=' absolute left-[0px] top-[-50px]  '
+                        alt="person7" />
+                    <img
+                        src="/images/user/circle5.png"
+                        className=' absolute right-[0px] bottom-[0px]  '
+                        alt="person7" />
+                    <div className=' w-[70%] h-[400px] border-[0px] flex ' >
+                        <div className=' w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
+                            <img
+                                src="/images/user/person7.png"
+                                className=' sm:w-[176px] sm:h-[248px] '
+                                alt="person7" />
+                        </div>
+                        <div className='w-[75%] px-[40px] ' >
+                            <div className=' w-[100%] h-[120px] mt-[80px] border-[0px] font-semibold flex items-center '  >
+                                <h1 className=' text-[#fff] text-[50px] ' >Simple, transparent pricing</h1>
+                            </div>
+                            <div>
+                                <h1 className=' text-[#fff] text-[25px] leading-[30px] ' >Super affordable plans , for content creators, startups and enterprises  and for everyone . </h1>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="services" ref={ServicesRef} className='w-[100%] relative sm:pt-[0px] px-[80px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
-                <img
-                    src="/images/user/circle2.png"
-                    className=' absolute top-[-100px] left-[0px]    '
-                    alt="star" />
-                <img
-                    src="/images/user/circle3.png"
-                    className=' absolute top-[450px] right-[0px]    '
-                    alt="star" />
-
-                <div className='w-[100%] border-[0px] flex justify-evenly pl-[100px] items-center ' >
-                    <div className='w-[650px] border-[0px]' >
-                        <h1 className=' text-[65px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
-                        <h1 className='text-[#fff] text-[35px] mt-[10px] font-medium ' >United by GrowGrip</h1>
-                    </div>
-                    <div className='relative border-[0px] ' >
-                        <img
-                            src="/images/user/globe1.png"
-                            className=' sm:w-[550px] sm:h-[550px] '
-                            alt="star" />
-                        <img
-                            src="/images/user/dottedPath1.png"
-                            className=' absolute top-[0px] sm:w-[400px] sm:h-[400px] sm:left-[80px] sm:top-[50px] '
-                            alt="star" />
+                <div className='w-[100%] flex item-center justify-center' >
+                    <div className=' w-[90%] border-[0px] mt-[50px] flex gap-[80px] flex-wrap items-center justify-center ' >
+                        <PricingCard
+                            for="small"
+                            type="Basic"
+                            index={0}
+                            amount={'$69'}
+                            seletedIndex={pricingIndex}
+                            desc="5 min video with 500 words"
+                            onFocus={() => {
+                                console.log('gg')
+                            }}
+                            onClick={() => {
+                                setPricingIndex(0)
+                            }}
+                        />
+                        <PricingCard
+                            for="startups"
+                            type="Pro"
+                            index={1}
+                            amount={'$199'}
+                            seletedIndex={pricingIndex}
+                            desc="10 min video with 1000 words"
+                            onFocus={() => {
+                                console.log('gg')
+                            }}
+                            onClick={() => {
+                                setPricingIndex(1)
+                            }}
+                        />
+                        <PricingCard
+                            for="business"
+                            type="Enterprise"
+                            index={2}
+                            amount={'$399'}
+                            seletedIndex={pricingIndex}
+                            desc="15 min video with 2000 words"
+                            onFocus={() => {
+                                console.log('gg')
+                            }}
+                            onClick={() => {
+                                setPricingIndex(2)
+                            }}
+                        />
                     </div>
                 </div>
-
-            </div>
-            <div id="pricing" ref={PricingRef} className='w-[100%]  flex items-center justify-center '>
-                <div className='w-[100%]' >
-                    <Services />
-                </div>
-            </div>
-            <div id="portfolio" ref={PortfolioRef} className='w-[100%] relative border-[0px] flex items-center justify-center '>
-                <img
-                    src="/images/user/circle4.png"
-                    className=' absolute left-[0px] top-[-50px]  '
-                    alt="person7" />
-                <img
-                    src="/images/user/circle5.png"
-                    className=' absolute right-[0px] bottom-[0px]  '
-                    alt="person7" />
-                <div className=' w-[70%] h-[400px] border-[0px] flex ' >
-                    <div className=' w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
-                        <img
-                            src="/images/user/person7.png"
-                            className=' sm:w-[176px] sm:h-[248px] '
-                            alt="person7" />
-                    </div>
-                    <div className='w-[75%] px-[40px] ' >
-                        <div className=' w-[100%] h-[120px] mt-[80px] border-[0px] font-semibold flex items-center '  >
-                            <h1 className=' text-[#fff] text-[50px] ' >Simple, transparent pricing</h1>
+                <div className='w-[100%]  flex justify-center border-[0px] sm:pt-[100px]' >
+                    <img
+                        src="/images/user/circle6.png"
+                        className=' absolute right-[0px] '
+                        alt="person7" />
+                    <div className='h-[250px] border-[0px] flex ' >
+                        <div className='sm:w-[600px] h-[100%] flex items-center ' >
+                            <div>
+                                <h1 className={`text-[#fff] text-[40px] font-semibold ${gradiantText1}`} >Confused about the plans</h1>
+                                <h1 className={`text-[#fff] text-[60px] font-bold ${gradiantText2}`} >Dont worry</h1>
+                            </div>
                         </div>
-                        <div>
-                            <h1 className=' text-[#fff] text-[25px] leading-[30px] ' >Super affordable plans , for content creators, startups and enterprises  and for everyone . </h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='w-[100%] flex item-center justify-center' >
-                <div className=' w-[90%] border-[0px] mt-[50px] flex gap-[80px] flex-wrap items-center justify-center ' >
-                    <PricingCard
-                        for="small"
-                        type="Basic"
-                        index={0}
-                        amount={'$69'}
-                        seletedIndex={pricingIndex}
-                        desc="5 min video with 500 words"
-                        onFocus={() => {
-                            console.log('gg')
-                        }}
-                        onClick={() => {
-                            setPricingIndex(0)
-                        }}
-                    />
-                    <PricingCard
-                        for="startups"
-                        type="Pro"
-                        index={1}
-                        amount={'$199'}
-                        seletedIndex={pricingIndex}
-                        desc="10 min video with 1000 words"
-                        onFocus={() => {
-                            console.log('gg')
-                        }}
-                        onClick={() => {
-                            setPricingIndex(1)
-                        }}
-                    />
-                    <PricingCard
-                        for="business"
-                        type="Enterprise"
-                        index={2}
-                        amount={'$399'}
-                        seletedIndex={pricingIndex}
-                        desc="15 min video with 2000 words"
-                        onFocus={() => {
-                            console.log('gg')
-                        }}
-                        onClick={() => {
-                            setPricingIndex(2)
-                        }}
-                    />
-                </div>
-            </div>
-            <div className='w-[100%]  flex justify-center border-[0px] sm:pt-[100px]' >
-                <img
-                    src="/images/user/circle6.png"
-                    className=' absolute right-[0px] '
-                    alt="person7" />
-                <div className='h-[250px] border-[0px] flex ' >
-                    <div className='sm:w-[600px] h-[100%] flex items-center ' >
-                        <div>
-                            <h1 className={`text-[#fff] text-[40px] font-semibold ${gradiantText1}`} >Confused about the plans</h1>
-                            <h1 className={`text-[#fff] text-[60px] font-bold ${gradiantText2}`} >Dont worry</h1>
+                        <div className='h-[100%] border-l-[0px] flex items-center justify-center ' >
+                            <img
+                                src="/images/user/girl1.png"
+                                className=' sm:w-[250px] sm:h-[250px] '
+                                alt="person7" />
                         </div>
                     </div>
-                    <div className='h-[100%] border-l-[0px] flex items-center justify-center ' >
-                        <img
-                            src="/images/user/girl1.png"
-                            className=' sm:w-[250px] sm:h-[250px] '
-                            alt="person7" />
-                    </div>
                 </div>
-            </div>
-            <div className='w-[100%]  flex justify-center border-[0px] ' >
-                <CustomPlan />
-            </div>
-            <div className='w-[100%] border-[0px] flex items-center justify-center '>
-                <div className=' w-[80%] border-[0px] mt-[100px]  ' >
-                    <h1 className=' text-[#fff] text-[30px] font-semibold ' >Our Latest Projects</h1>
-                    <div className=' w-[100%] flex flex-wrap gap-[50px] mt-[20px] pb-[50px] ' >
-                        {
-                            ProjectTypes.map((item, index) => {
-                                return (
-                                    <h1 key={index} className={` text-[19px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
-                                        onClick={() => {
-                                            setprojectIndex(index)
-                                        }}
-                                    >{item}</h1>
-                                )
-                            })
-                        }
-                        <div className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
+                <div className='w-[100%]  flex justify-center border-[0px] ' >
+                    <CustomPlan />
+                </div>
+                <div className='w-[100%] border-[0px] flex items-center justify-center '>
+                    <div className=' w-[80%] border-[0px] mt-[100px]  ' >
+                        <h1 className=' text-[#fff] text-[30px] font-semibold ' >Our Latest Projects</h1>
+                        <div className=' w-[100%] flex flex-wrap gap-[50px] mt-[20px] pb-[50px] ' >
                             {
-                                [...Array(8)].map((item, index) => {
+                                ProjectTypes.map((item, index) => {
                                     return (
-                                        <img
-                                            key={index}
-                                            src={`/images/user/project${index + 1}.png`}
-                                            className=' sm:w-[550px] sm:h-[350px] rounded-[20px] '
-                                            alt="project1" />
+                                        <h1 key={index} className={` text-[19px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                            onClick={() => {
+                                                setprojectIndex(index)
+                                            }}
+                                        >{item}</h1>
                                     )
                                 })
                             }
+                            <div className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
+                                {
+                                    [...Array(8)].map((item, index) => {
+                                        return (
+                                            <img
+                                                key={index}
+                                                src={`/images/user/project${index + 1}.png`}
+                                                className=' sm:w-[550px] sm:h-[350px] rounded-[20px] '
+                                                alt="project1" />
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
-                <img
-                    src={`/images/user/circle9.png`}
-                    className=' absolute right-[0px] top-[30%] '
-                    alt="project1" />
-                <Review />
-            </div>
-            <div className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
-                <Contact />
-            </div>
-            <div className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
-                {
-                    typeof window !== 'undefined' &&
-                    <Footer />
-                }
-            </div>
-            <div className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' id="footer" >
-                <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
-                    <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
-                        {/* <FaWhatsapp
+                <div className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
+                    <img
+                        src={`/images/user/circle9.png`}
+                        className=' absolute right-[0px] top-[30%] '
+                        alt="project1" />
+                    <Review />
+                </div>
+                <div className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
+                    <Contact />
+                </div>
+                <div className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
+                    {
+                        typeof window !== 'undefined' &&
+                        <Footer />
+                    }
+                </div>
+                <div className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' id="footer" >
+                    <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
+                        <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
+                            {/* <FaWhatsapp
                             color='white'
                             className='text-[20px] sm:text-[30px] cursor-pointer '
                             onClick={() => {
@@ -697,37 +697,37 @@ const Home = () => {
                                 window?.open("https://wa.me/918413802010")
                             }}
                         >8413802010</h1> */}
-                        <h1 className='text-white text-[15px] sm-text-[18px]' >{`2022 ${`©`} All Rights Reserved`}</h1>
-                    </div>
-                    <div className='flex border-[0px] w-[400px] sm:w-[200px] h-[40px] items-center justify-center gap-[10px]' >
-                        <FaFacebookSquare
-                            color='white'
-                            className='text-[20px] sm:text-[20px] cursor-pointer '
-                            onClick={() => {
-                                window?.open("https://www.facebook.com/raj.kiran.1800")
-                            }}
-                        />
-                        <FaInstagram
-                            color='white'
-                            className='text-[20px] sm:text-[20px] cursor-pointer '
-                            onClick={() => {
-                                window?.open("https://www.instagram.com/iamrajklwr/?hl=en")
-                            }}
-                        />
-                        <FaTwitter
-                            color='white'
-                            className='text-[20px] sm:text-[20px] cursor-pointer '
-                            onClick={() => {
-                                window?.open("https://twitter.com/iamrajkalwar")
-                            }}
-                        />
-                    </div>
-                    {/* <div className='sm:w-[400px] w-[100%] h-[50%] border-[0px] flex items-center sm:justify-end justify-center' >
+                            <h1 className='text-white text-[15px] sm-text-[18px]' >{`2022 ${`©`} All Rights Reserved`}</h1>
+                        </div>
+                        <div className='flex border-[0px] w-[400px] sm:w-[200px] h-[40px] items-center justify-center gap-[10px]' >
+                            <FaFacebookSquare
+                                color='white'
+                                className='text-[20px] sm:text-[20px] cursor-pointer '
+                                onClick={() => {
+                                    window?.open("https://www.facebook.com/raj.kiran.1800")
+                                }}
+                            />
+                            <FaInstagram
+                                color='white'
+                                className='text-[20px] sm:text-[20px] cursor-pointer '
+                                onClick={() => {
+                                    window?.open("https://www.instagram.com/iamrajklwr/?hl=en")
+                                }}
+                            />
+                            <FaTwitter
+                                color='white'
+                                className='text-[20px] sm:text-[20px] cursor-pointer '
+                                onClick={() => {
+                                    window?.open("https://twitter.com/iamrajkalwar")
+                                }}
+                            />
+                        </div>
+                        {/* <div className='sm:w-[400px] w-[100%] h-[50%] border-[0px] flex items-center sm:justify-end justify-center' >
                         <h1 className='text-white text-[15px] sm:text-[17px] sm:pb-[0px] pb-[10px] ' >{`2022 ${`©`} brandName`}</h1>
                     </div> */}
+                    </div>
                 </div>
-            </div>
-        </div> : null
+            </div> : null
     )
 }
 
