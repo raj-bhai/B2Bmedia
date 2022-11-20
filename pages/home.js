@@ -338,10 +338,9 @@ const Home = () => {
                     }
                     <img
                         src="/images/user/circle0.png"
-                        className=' absolute right-[0px] bottom-[-100px] '
+                        className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        // showMainText &&
                         <div className='border-[0px] flex flex-wrap items-center w-[100%] sm:justify-between justify-center mt-[80px] z-[100] ' >
 
                             <div className={`sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px]  ` + textContainerStyle}
@@ -458,11 +457,11 @@ const Home = () => {
                 >
                     <img
                         src="/images/user/circle1.png"
-                        className=' absolute top-[100px] '
+                        className=' absolute top-[100px] sm:visible invisible '
                         alt="star" />
                     <img
                         src="/images/user/whiteRing.png"
-                        className=' absolute  right-[0px] bottom-[0px]'
+                        className=' absolute  right-[0px] bottom-[0px] sm:visible invisible'
                         alt="star" />
                     <div className='w-[100%] sm:h-[100px] border-[0px] flex-wrap flex items-center justify-between sm:px-[50px] px-[10px] ' >
                         <div className='sm:w-[200px] border-[0px] align-bottom text-center ' >
@@ -482,24 +481,24 @@ const Home = () => {
                             <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >Popular</h1>
                         </div>
                     </div>
-                    <div className='w-[100%] h-[500px] border-[0px] flex  ' >
+                    <div id="services" className='w-[100%] sm:h-[500px] border-[0px] sm:flex   ' >
                         <img
                             src="/images/user/star.png"
-                            className=' absolute right-[200px] top-[150px] '
+                            className=' absolute right-[200px] top-[150px] sm:visible invisible '
                             alt="star" />
-                        <div className=' w-[50%] h-[100%] border-[0px] flex justify-center items-center ' >
+                        <div className=' sm:w-[50%] w-[100%] sm:h-[100%] border-[0px] flex sm:flex-row flex-col justify-center items-center ' >
                             <img
                                 src="/images/user/service.png"
                                 className=' border-[0px] '
                                 alt="star" />
                         </div>
-                        <div className=' w-[50%] h-[100%] border-[0px] flex justify-center items-center ' >
+                        <div className=' sm:w-[50%] sm:h-[100%] border-[0px] flex justify-center items-center sm:px-[0px]  px-[10px] ' >
                             <div>
-                                <div className='border-[0px] w-[80%]' >
-                                    <h1 className=' text-[#fff] text-[50px] font-semibold ' >Non-Stoppable service</h1>
+                                <div className='border-[0px] sm:w-[80%]' >
+                                    <h1 className=' text-[#fff] sm:text-[50px] text-[16px] font-semibold ' >Non-Stoppable service</h1>
                                 </div>
-                                <div className='border-[0px] w-[80%] ' >
-                                    <h1 className=' text-[#E0E5F3] text-[20px] leading-tight ' >
+                                <div className='border-[0px] sm:w-[80%] ' >
+                                    <h1 className=' text-[#E0E5F3] sm:text-[20px] text-[14px] leading-tight ' >
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis diam quis massa. Nulla ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.
                                     </h1>
                                 </div>
@@ -510,7 +509,7 @@ const Home = () => {
                 <div id="services" ref={ServicesRef} className='w-[100%] relative sm:pt-[0px] px-[80px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
                     <img
                         src="/images/user/circle2.png"
-                        className=' absolute top-[-100px] left-[0px]    '
+                        className=' absolute top-[-100px] left-[0px] sm:visible invisible   '
                         alt="star" />
                     <img
                         src="/images/user/circle3.png"
