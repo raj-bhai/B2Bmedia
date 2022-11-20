@@ -24,6 +24,7 @@ import Services from '../components/Home/services';
 import Review from '../components/Home/review';
 import Contact from '../components/Home/contact';
 import Footer from '../components/Home/footer';
+import Label from '../components/Home/micro/label';
 
 const TEXTS = [
     "Forest",
@@ -83,6 +84,8 @@ const WORKS = [
         uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
     },
 ];
+
+
 
 
 
@@ -592,6 +595,30 @@ const Home = () => {
                                 src="/images/user/avtar6.png"
                                 className=' absolute sm:w-[40px] sm:h-[40px] sm:top-[250px] sm:left-[300px] '
                                 alt="video-editor" />
+                            <Label
+                                text="Script Writer"
+                                className=" absolute left-[0px] "
+                            />
+                            <Label
+                                text="Voice Artist"
+                                className=" absolute left-[20px] top-[100px] "
+                            />
+                            <Label
+                                text="Video Editor"
+                                className=" absolute right-[50px] top-[-5px] "
+                            />
+                            <Label
+                                text="Thumbnail Maker"
+                                className=" absolute right-[-50px] bottom-[180px] "
+                            />
+                            <Label
+                                text="SEO"
+                                className=" absolute left-[120px] bottom-[50px] "
+                            />
+                            <Label
+                                text="Team Leader"
+                                className=" absolute left-[200px] top-[100px] "
+                            />
                         </div>
                     </div>
 
