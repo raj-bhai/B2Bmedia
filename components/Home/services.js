@@ -78,7 +78,7 @@ const Services = () => {
                     <div className='flex' >
                         <img
                             src="/images/user/person1.png"
-                            className="sm:w-[165px] sm:h-[228px] ml-[-20px] "
+                            className="sm:w-[165px] sm:h-[228px] ml-[-20px] bounce-medium "
                             alt="star" />
                         <div>
                             <h1 className=' sm:text-[30px]  sm:mt-[20px] text-[#fff] ' >HOW TO GET</h1>
@@ -88,7 +88,7 @@ const Services = () => {
                     <div className='flex items-end sm:ml-[-30px] ' >
                         <img
                             src="/images/user/person2.png"
-                            className="sm:w-[79px] sm:mb-[10px] sm:h-[153px] "
+                            className="sm:w-[79px] sm:mb-[10px] sm:h-[153px] bounce-medium "
                             alt="star" />
                         <img
                             src="/images/user/script.png"
@@ -97,7 +97,7 @@ const Services = () => {
                     </div>
                     <img
                         src="/images/user/person3.png"
-                        className="sm:w-[108px] sm:h-[210px] sm:mr-[120px] "
+                        className="sm:w-[108px] sm:h-[210px] sm:mr-[120px] bounce-medium"
                         alt="star" />
                 </div>
                 <img
@@ -121,7 +121,7 @@ const Services = () => {
                         src="/images/user/person5.png"
                         className="sm:w-[88px] sm:h-[117px] "
                         alt="star" />
-                    <div className=' relative border-[0px] ' >
+                    <div className=' relative border-[0px] spin-animate-slow ' >
                         <img
                             src="/images/user/screen1.png"
                             className="sm:w-[83px] sm:h-[61px] ml-[10px] "
