@@ -534,33 +534,33 @@ const Home = () => {
                     </div>
 
                 </div>
-                <div id="pricing" ref={PricingRef} className='w-[100%]  flex items-center justify-center '>
-                    <div className='w-[100%]' >
+                <div ref={PricingRef} className='sm:w-[100%]  flex items-center justify-center sm:visible invisible '>
+                    <div className='w-[100%] ' >
                         <Services />
                     </div>
                 </div>
                 <div id="portfolio" ref={PortfolioRef} className='w-[100%] relative border-[0px] flex items-center justify-center '>
                     <img
                         src="/images/user/circle4.png"
-                        className=' absolute left-[0px] top-[-50px]  '
+                        className=' absolute left-[0px] top-[-50px] sm:visible invisible '
                         alt="person7" />
                     <img
                         src="/images/user/circle5.png"
-                        className=' absolute right-[0px] bottom-[0px]  '
+                        className=' absolute right-[0px] bottom-[0px] sm:visible invisible  '
                         alt="person7" />
-                    <div className=' w-[70%] h-[400px] border-[0px] flex ' >
+                    <div className=' sm:w-[70%] sm:h-[400px] border-[0px] flex ' >
                         <div className=' w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
                             <img
                                 src="/images/user/person7.png"
-                                className=' sm:w-[176px] sm:h-[248px] '
+                                className=' sm:w-[176px] w-[100px] h-[150px] sm:h-[248px] '
                                 alt="person7" />
                         </div>
-                        <div className='w-[75%] px-[40px] ' >
-                            <div className=' w-[100%] h-[120px] mt-[80px] border-[0px] font-semibold flex items-center '  >
-                                <h1 className=' text-[#fff] text-[50px] ' >Simple, transparent pricing</h1>
+                        <div className='w-[75%] sm:px-[40px] px-[10px] sm:mt-[0px] mt-[5%]  ' >
+                            <div className='sm:w-[100%] sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
+                                <h1 className=' text-[#fff] sm:text-[50px] text-[18px] ' >Simple, transparent pricing</h1>
                             </div>
                             <div>
-                                <h1 className=' text-[#fff] text-[25px] leading-[30px] ' >Super affordable plans , for content creators, startups and enterprises  and for everyone . </h1>
+                                <h1 className=' text-[#fff] sm:text-[25px] text-[14px] sm:leading-[30px] leading-tight ' >Super affordable plans , for content creators, startups and enterprises  and for everyone . </h1>
                             </div>
                         </div>
                     </div>
