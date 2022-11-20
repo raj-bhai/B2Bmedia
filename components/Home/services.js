@@ -40,7 +40,7 @@ const RoundedText = (props) => {
                 <FaMicrophone
                     className={iconStyle}
                 />
-            }   
+            }
             {
                 props.text == 'Thumbnail Maker' &&
                 <FaBriefcase
@@ -70,9 +70,9 @@ const VideoEdit = (props) => {
 }
 
 
-const Services = () => {
+const Services = (props) => {
     return (
-        <div className='relative border-[0px] w-[100%] py-[50px] flex items-center justify-center '>
+        <div id={props.id} className='relative border-[0px] w-[100%] py-[50px] flex items-center justify-center '>
             <div className=' border-[0px] relative  ' >
                 <div className='flex justify-between border-[0px] sm:w-[1100px] items-end  sm:pr-[30px]' >
                     <div className='flex' >
@@ -88,7 +88,7 @@ const Services = () => {
                     <div className='flex items-end sm:ml-[-30px] ' >
                         <img
                             src="/images/user/person2.png"
-                            className="sm:w-[79px] sm:mb-[10px] sm:h-[153px] bounce-medium "
+                            className="sm:w-[79px] person-animate sm:mb-[10px] sm:h-[153px] bounce-medium "
                             alt="star" />
                         <img
                             src="/images/user/script.png"
@@ -136,6 +136,19 @@ const Services = () => {
                     src="/images/user/person6.png"
                     className="sm:w-[54px] sm:h-[134px] absolute sm:top-[345px] sm:left-[800px] "
                     alt="star" />
+                <img
+                    src="/images/user/person11.png"
+                    className="sm:w-[100px] sm:h-[150px] absolute bottom-[20px] left-[140px] "
+                    alt="star" />
+                <img
+                    src="/images/user/person12.png"
+                    className="sm:w-[100px] sm:h-[150px] absolute bottom-[20px] left-[520px] "
+                    alt="star" />
+                <img
+                    src="/images/user/starYellow.png"
+                    className="sm:w-[40px] sm:h-[40px] absolute bottom-[50px] left-[650px] "
+                    alt="star" />
+
                 {/* <VideoEdit
                     className='  ' 
                 /> */}

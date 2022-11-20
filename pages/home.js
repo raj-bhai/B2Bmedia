@@ -125,6 +125,8 @@ const Home = () => {
     const [showText4, setShowText4] = useState(false);
     const [showText5, setShowText5] = useState(false);
 
+    const LETTER1 = ["S", "t", "a", "n", "d"]
+
     const [index, setIndex] = useState(0);
 
     //selected pricing
@@ -291,6 +293,8 @@ const Home = () => {
         setContactH1('')
     }
 
+
+
     const PricingFocused = (scroll) => {
         setHomeH1('');
         if (scroll) {
@@ -317,12 +321,31 @@ const Home = () => {
     return (
         domLoaded &&
             typeof window !== 'undefined' ?
-            <div className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
+            <div id="home" className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
                 ref={scroll}
             >
-                <div className={'w-[100%] sm:h-[700px] border-[0px]'} id="home" ref={HomeRef}>
+                <div className={'w-[100%] sm:h-[700px] border-[0px]'} ref={HomeRef}>
                     <Header
                         className={headerStyle}
+                        onClickHome={() => {
+                            document.getElementById('home').scrollIntoView()
+                            console.log("home clicked")
+                        }}
+                        onClickService={() => {
+                            document.getElementById('service').scrollIntoView()
+                            console.log("service clicked")
+                        }}
+                        onClickPricing={() => {
+                            document.getElementById('pricing').scrollIntoView()
+                            console.log("pricing clicked")
+                        }}
+                        onClickContact={() => {
+                            document.getElementById('contact').scrollIntoView()
+                            console.log("Contact clicked")
+                        }}
+                        onClickAbout={() => {
+                            console.log("about clicked")
+                        }}
                     />
                     {/* AroowUpIcon */}
                     {
@@ -427,11 +450,22 @@ const Home = () => {
                                                     // className='text-white leading-[25px] '
                                                     >
                                                         <div className='w-[100%] h-[50px] border-[0px] flex items-center justify-between sm:pr-[0px] pr-[20px] ' >
-                                                            <div className='sm:w-[120px] w-[80px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce ' >
+                                                            <input
+                                                                type={"button"}
+                                                                value="Get Started"
+                                                                className='sm:w-[120px] w-[80px] text-[#000] font-bold sm:text-[15px] text-[12px sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce '
+                                                                onClick={() => {
+                                                                    document.getElementById('getStarted').scrollIntoView()
+                                                                }}
+                                                            />
+                                                            {/* <div className='sm:w-[120px] w-[80px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce ' >
                                                                 <h1 className='text-[#000] font-bold sm:text-[15px] text-[12px] ' >Get Started</h1>
-                                                            </div>
-
-                                                            <div className='sm:w-[150px] sm:h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  ' >
+                                                            </div> */}
+                                                            <div className='sm:w-[150px] sm:h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  ' 
+                                                            onClick={() => {
+                                                                document.getElementById('demos').scrollIntoView()
+                                                            }}
+                                                            >
                                                                 <FaPlayCircle
                                                                     color='#fff'
                                                                     size={20}
@@ -481,7 +515,7 @@ const Home = () => {
                             <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >Popular</h1>
                         </div>
                     </div>
-                    <div id="services" className='w-[100%] sm:h-[500px] border-[0px] sm:flex   ' >
+                    <div className='w-[100%] sm:h-[500px] border-[0px] sm:flex   ' >
                         <img
                             src="/images/user/star.png"
                             className=' absolute right-[200px] top-[150px] sm:visible invisible '
@@ -492,7 +526,7 @@ const Home = () => {
                                 className=' border-[0px] '
                                 alt="star" />
                         </div>
-                        <div className=' sm:w-[50%] sm:h-[100%] border-[0px] flex justify-center items-center sm:px-[0px]  px-[10px] ' >
+                        <div id='service' className=' sm:w-[50%] sm:h-[100%] border-[0px] flex justify-center items-center sm:px-[0px]  px-[10px] ' >
                             <div>
                                 <div className='border-[0px] sm:w-[80%]' >
                                     <h1 className=' text-[#fff] sm:text-[50px] text-[16px] font-semibold ' >Non-Stoppable service</h1>
@@ -534,9 +568,11 @@ const Home = () => {
                     </div>
 
                 </div>
-                <div ref={PricingRef} className='sm:w-[100%]  flex items-center justify-center sm:visible invisible '>
+                <div className='sm:w-[100%]  flex items-center justify-center sm:visible invisible '>
                     <div className='w-[100%] ' >
-                        <Services />
+                        <Services
+                            id='getStarted'
+                        />
                     </div>
                 </div>
                 <div id="portfolio" ref={PortfolioRef} className='w-[100%] relative border-[0px] flex items-center justify-center '>
@@ -548,7 +584,7 @@ const Home = () => {
                         src="/images/user/circle5.png"
                         className=' absolute right-[0px] bottom-[0px] sm:visible invisible  '
                         alt="person7" />
-                    <div className=' sm:w-[70%] sm:h-[400px] border-[0px] flex ' >
+                    <div id="pricing" className=' sm:w-[70%] sm:h-[400px] border-[0px] flex ' >
                         <div className=' w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
                             <img
                                 src="/images/user/person7.png"
@@ -634,7 +670,7 @@ const Home = () => {
                 <div className='w-[100%]  flex justify-center border-[0px] ' >
                     <CustomPlan />
                 </div>
-                <div className='w-[100%] border-[0px] flex items-center justify-center '>
+                <div id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
                     <div className=' w-[80%] border-[0px] mt-[100px]  ' >
                         <h1 className=' text-[#fff] text-[30px] font-semibold ' >Our Latest Projects</h1>
                         <div className=' w-[100%] flex flex-wrap gap-[50px] mt-[20px] pb-[50px] ' >
@@ -672,7 +708,7 @@ const Home = () => {
                         alt="project1" />
                     <Review />
                 </div>
-                <div className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
+                <div id="contact" className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
                     <Contact />
                 </div>
                 <div className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
