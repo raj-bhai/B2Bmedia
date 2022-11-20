@@ -9,6 +9,7 @@ import AnimatedText from 'react-animated-text-content';
 import TextTransition, { presets } from "react-text-transition";
 import Header from '../components/Home/header';
 import MovingText from 'react-moving-text';
+import ParticleEffectButton from 'react-particle-effect-button'
 import PricingCard from '../components/Home/pricingCard';
 import CustomPlan from '../components/Home/customPlan';
 import {
@@ -98,6 +99,8 @@ const Home = () => {
 
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
     const [textContainerStyle, setTextContainerStyle] = useState('');
+    const [btn1Animate, setBtn1Animate] = useState(false);
+    const [btn2Animate, setBtn2Animate] = useState(false);
     const [showMainText, setShowMaiinText] = useState(true);
     const [aboutStyle, setAboutStyle] = useState('');
     const [serviceStyle, setServiceStyle] = useState('');
@@ -353,9 +356,11 @@ const Home = () => {
                     {/* AroowUpIcon */}
                     {
                         showArrowUp &&
-                        <div id="goToTop" className='fixed border-[0px] w-[80px] bottom-[30px] right-[30px] h-[80px] flex items-center justify-center ' >
+                        <div id="goToTop" className='fixed border-[0px] z-[1000] w-[80px] bottom-[30px] right-[30px] h-[80px] flex items-center justify-center '
+                        >
                             <FaAngleDoubleUp
                                 onClick={() => {
+                                    console.log("ok mf")
                                     document.getElementById('home').scrollIntoView()
                                 }}
                                 className='text-white sm:text-[40px] text-[25px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
@@ -453,28 +458,47 @@ const Home = () => {
                                                     // className='text-white leading-[25px] '
                                                     >
                                                         <div className='w-[100%] h-[50px] border-[0px] flex items-center justify-between sm:pr-[0px] pr-[20px] ' >
-                                                            <input
-                                                                type={"button"}
-                                                                value="Get Started"
-                                                                className='sm:w-[120px] w-[80px] text-[#000] font-bold sm:text-[15px] text-[12px sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce '
-                                                                onClick={() => {
-                                                                    document.getElementById('getStarted').scrollIntoView()
-                                                                }}
-                                                            />
-                                                            {/* <div className='sm:w-[120px] w-[80px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:animate-bounce ' >
-                                                                <h1 className='text-[#000] font-bold sm:text-[15px] text-[12px] ' >Get Started</h1>
-                                                            </div> */}
-                                                            <div className='sm:w-[150px] sm:h-[40px] rounded-md flex items-center justify-end cursor-pointer hover:animate-bounce  '
-                                                                onClick={() => {
-                                                                    document.getElementById('demos').scrollIntoView()
-                                                                }}
+                                                            <ParticleEffectButton
+                                                                color='#fff'
+                                                                hidden={btn1Animate}
                                                             >
-                                                                <FaPlayCircle
-                                                                    color='#fff'
-                                                                    size={20}
+                                                                <input
+                                                                    type={"button"}
+                                                                    value="Get Started"
+                                                                    className='sm:w-[120px] w-[80px] text-[#000] font-bold sm:text-[15px] text-[12px sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer '
+                                                                    onClick={() => {
+                                                                        setBtn1Animate(true)
+                                                                        setTimeout(() => {
+                                                                            document.getElementById('getStarted').scrollIntoView()
+                                                                        }, 1500);
+                                                                        setTimeout(() => {
+                                                                            setBtn1Animate(false)
+                                                                        }, 2500);
+                                                                    }}
                                                                 />
-                                                                <h1 className='text-white sm:text-[15px] text-[12px] font-normal ml-[5px]' >Watch Demos</h1>
-                                                            </div>
+                                                            </ParticleEffectButton>
+                                                            <ParticleEffectButton
+                                                                color='#fff'
+                                                                hidden={btn2Animate}
+                                                            >
+                                                                <div className='sm:w-[150px] sm:h-[40px] rounded-md flex items-center justify-end cursor-pointer  '
+                                                                    onClick={() => {
+                                                                        setBtn2Animate(true)
+                                                                        setTimeout(() => {
+                                                                            document.getElementById('demos').scrollIntoView()
+                                                                        }, 1500);
+                                                                        setTimeout(() => {
+                                                                            setBtn2Animate(false)
+                                                                        }, 2500);
+                                                                    }}
+                                                                >
+                                                                    <FaPlayCircle
+                                                                        color='#fff'
+                                                                        size={20}
+                                                                    />
+                                                                    <h1 className='text-white sm:text-[15px] text-[12px] font-normal ml-[5px]' >Watch Demos</h1>
+                                                                </div>
+                                                            </ParticleEffectButton>
                                                         </div>
                                                     </MovingText>
                                                 }
