@@ -583,14 +583,14 @@ const Home = () => {
                             <h1 className=' sm:text-[65px] text-[20px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
                             <h1 className='text-[#fff] sm:text-[35px] text-[18px] sm:mt-[10px] font-medium ' >United by GroGrip</h1>
                         </div>
-                        <div className='relative border-[0px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
+                        <div className='relative border-[1px] sm:min-w-[500px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
                             <img
                                 src="/images/user/globe1.png"
-                                className=' sm:w-[550px] w-[80%] sm:h-[550px] spin-animate-slow '
+                                className=' sm:w-[550px] h-[200px] h-[200px] sm:h-[550px] spin-animate-slow '
                                 alt="star" />
                             <img
                                 src="/images/user/dottedPath1.png"
-                                className=' absolute top-[0px] sm:w-[400px] w-[65%] sm:h-[400px] sm:left-[80px] sm:top-[50px] top-[10%] '
+                                className=' absolute top-[0px] sm:w-[400px] sm: w-[65%] sm:h-[400px] sm:left-[80px] sm:top-[50px] top-[10%] '
                                 alt="star" />
                             <img
                                 src="/images/user/avtar.png"
