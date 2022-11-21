@@ -373,9 +373,9 @@ const Home = () => {
                         className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        <div className='border-[1px] flex flex-wrap items-center w-[100%] justify-center mt-[100px] z-[100] ' >
+                        <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-center mt-[100px] z-[100] ' >
 
-                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px] flex items-center justify-center sm:pl-[20px] pl-[0px]  border-[1px] sm:min-w-[550px] ` + textContainerStyle}
+                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px] flex items-center justify-center sm:pl-[20px] pl-[0px]  border-[0px] sm:min-w-[550px] ` + textContainerStyle}
                             >
                                 <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[0px] flex relative ' >
                                     <img
