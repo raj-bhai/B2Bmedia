@@ -18,7 +18,8 @@ import {
     FaInstagram,
     FaAngleDoubleUp,
     FaWhatsapp,
-    FaPlayCircle
+    FaPlayCircle,
+    FaChevronRight
 } from 'react-icons/fa';
 import Globe from '../components/Home/globe';
 import Services from '../components/Home/services';
@@ -330,7 +331,7 @@ const Home = () => {
             <div id="home" className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
                 ref={scroll}
             >
-                <div className={'w-[100%] sm:h-[700px] border-[0px]'} ref={HomeRef}>
+                <div className={'w-[100%] sm:min-h-[700px] border-[0px]'} ref={HomeRef}>
                     <Header
                         className={headerStyle}
                         onClickHome={() => {
@@ -374,7 +375,7 @@ const Home = () => {
                     {
                         <div className='border-[0px] flex flex-wrap items-center w-[100%] sm:justify-between justify-center mt-[80px] z-[100] ' >
 
-                            <div className={`sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px]  ` + textContainerStyle}
+                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px] sm:min-w-[550px] ` + textContainerStyle}
                             >
                                 <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[50px] ml-[10px] sm:mt-[80px] mt-[0px] flex relative ' >
                                     {/* <div className='w-[50px] h-[100%] border-[0px]' > */}
@@ -507,7 +508,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='sm:w-[50%] w-[90%] h-[500px] border-[0px] flex sm:justify-end justify-center sm:pr-[50px] ' >
+                            <div className='sm:w-[50%] sm:min-w-[550px] w-[90%] h-[500px] border-[0px] flex sm:justify-end justify-center sm:pr-[50px] ' >
                                 <Globe />
                             </div>
                         </div>
