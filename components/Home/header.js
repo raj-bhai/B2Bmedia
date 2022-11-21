@@ -33,8 +33,9 @@ const Header = (props) => {
 
 
     return (
-        <div className={`w-[100%] sm:h-[80px] h-[50px] border-[0px] justify-evenly flex flex-wrap  fixed z-[200] top-0` + props.className} >
-            <div className="w-[385px] sm:w-[200px] h-[83px] border-[0px] sm:ml-[0px] ml-[20px] sm:mt-[8px] mt-[5px] " >
+        // sm:h-[80px] h-[50px]
+        <div className={`w-[100%] border-[0px] justify-evenly flex flex-wrap  fixed z-[200] top-0` + props.className} >
+            <div className="w-[385px] sm:w-[200px] h-[70px] border-[0px] sm:ml-[0px] ml-[20px] sm:mt-[8px] mt-[5px] " >
                 <h1
                     className={"absolute font-bold ml-[0px] mt-[-5px] sm:text-[52px] text-transparent text-[30px] bg-clip-text " + Gradiants[logoColor]}
                 >GroGrip</h1>
