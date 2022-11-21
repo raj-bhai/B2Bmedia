@@ -583,7 +583,7 @@ const Home = () => {
                             <h1 className=' sm:text-[65px] text-[20px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
                             <h1 className='text-[#fff] sm:text-[35px] text-[18px] sm:mt-[10px] font-medium ' >United by GroGrip</h1>
                         </div>
-                        <div className='relative border-[1px] sm:min-w-[500px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
+                        <div className='relative border-[0px] sm:min-w-[500px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
                             <img
                                 src="/images/user/globe1.png"
                                 className=' sm:w-[550px] h-[200px] h-[200px] sm:h-[550px] spin-animate-slow '

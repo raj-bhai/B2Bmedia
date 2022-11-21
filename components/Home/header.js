@@ -33,13 +33,13 @@ const Header = (props) => {
 
 
     return (
-        <div className={`w-[100%] sm:h-[80px] h-[50px] border-[0px] flex fixed z-[200] top-0` + props.className} >
-            <div className="w-[385px] h-[83px] border-[0px] sm:ml-[97.5px] ml-[20px] sm:mt-[8px] mt-[5px] " >
+        <div className={`w-[100%] sm:h-[80px] h-[50px] border-[0px] justify-evenly flex flex-wrap  fixed z-[200] top-0` + props.className} >
+            <div className="w-[385px] sm:w-[200px] h-[83px] border-[0px] sm:ml-[0px] ml-[20px] sm:mt-[8px] mt-[5px] " >
                 <h1
                     className={"absolute font-bold ml-[0px] mt-[-5px] sm:text-[52px] text-transparent text-[30px] bg-clip-text " + Gradiants[logoColor]}
                 >GroGrip</h1>
             </div>
-            <div className="flex mt-[19.5px] ml-[150x] sm:w-[800px] sm:visible invisible border-[0px] justify-between " >
+            <div className="flex mt-[19.5px] ml-[150x] sm:visible invisible border-[0px] pr-[10px] justify-evenly gap-[50px] " >
                 <div className=" w-[80px] h-[60px] border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickHome()
