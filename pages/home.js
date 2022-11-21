@@ -373,19 +373,17 @@ const Home = () => {
                         className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        <div className='border-[0px] flex flex-wrap items-center w-[100%] sm:justify-between justify-center mt-[80px] z-[100] ' >
+                        <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-center mt-[100px] z-[100] ' >
 
-                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px]  border-[0px] sm:min-w-[550px] ` + textContainerStyle}
+                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px] flex items-center justify-center  border-[0px] sm:min-w-[550px] ` + textContainerStyle}
                             >
-                                <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[50px] ml-[10px] sm:mt-[80px] mt-[0px] flex relative ' >
-                                    {/* <div className='w-[50px] h-[100%] border-[0px]' > */}
+                                <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[0px] flex relative ' >
                                     <img
                                         src="/images/user/star.png"
-                                        className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[-20px] top-[-5px] sm:left-[0px] '
+                                        className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[50px] top-[-5px] sm:left-[-50px] '
                                         alt="star" />
-                                    {/* </div> */}
                                     <div>
-                                        <div className='border-[0px] sm:ml-[50px] ml-[10px] ' >
+                                        <div className='' >
                                             {/* <h1 className='text-yellow-200 text-[50px] leading-[50px] text-left font-semibold  ' >Stand out of the crowd</h1> */}
                                             <MovingText
                                                 type="flipFromLeftToCenter"
