@@ -697,7 +697,7 @@ const Home = () => {
                         </div>
                         <div className='w-[75%] sm:px-[40px] px-[10px] sm:mt-[0px] mt-[5%]  ' >
                             <div className='sm:w-[100%] sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
-                                <h1 className=' text-[#fff] sm:text-[50px] text-[18px] ' >Simple, transparent pricing</h1>
+                                <h1 className=' text-[#fff] sm:text-[50px] text-[18px] leading-none ' >Simple, transparent pricing</h1>
                             </div>
                             <div>
                                 <h1 className=' text-[#fff] sm:text-[25px] text-[14px] sm:leading-[30px] leading-tight ' >Super affordable plans , for content creators, startups and enterprises  and for everyone . </h1>
