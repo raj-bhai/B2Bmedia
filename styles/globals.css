@@ -33,6 +33,16 @@
     animation: spin 60s linear infinite;
 }
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .bounce-slow {
     animation: bounce 5s infinite;
 }
