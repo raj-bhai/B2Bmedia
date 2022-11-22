@@ -7,11 +7,18 @@ const focusedBG = ' bg-[#fff]'  //white
 const Features = (props) => {
     return (
         <div className="sm:w-[300px] flex border-[0px] py-[5px] " >
-            <div className={`${props.focused ? focusedBG : unFocusedBG} w-[20px] h-[20px] rounded-[10px] flex items-center justify-center `} >
-                <FaCheck
-                    size={12}
-                    color={props.focused ? '#000' : '#fff'}
-                />
+            <div className={`${props.focused ? focusedBG : unFocusedBG} w-[20px] h-[20px] rounded-[10px] flex items-center justify-center `}
+                onClick={() => {
+                    props.onCheck()
+                }}
+            >
+                {
+                    props.seoChecked &&
+                    <FaCheck
+                        size={12}
+                        color={props.focused ? '#000' : '#fff'}
+                    />
+                }
             </div>
             <h1 className=" text-[#fff] ml-[10px] text-[13px] sm:text-[15px] leading-none " >{props.name}</h1>
         </div>
@@ -22,6 +29,9 @@ const PricingCard = (props) => {
 
     const [focused, setFocused] = useState(false);
     const [domLoaded, setDomLoaded] = useState(false);
+    const [seoChecked, setSeoChecked] = useState(false);
+    const [price, setPrice] = useState(props.amount)
+
 
 
     // const green = "#0FA152";
@@ -48,6 +58,14 @@ const PricingCard = (props) => {
         }
     }, [props.seletedIndex])
 
+    useEffect(() => {
+        if (seoChecked) {
+            setPrice(props.amount + 5)
+        } else {
+            setPrice(props.amount)
+        }
+    }, [seoChecked])
+
 
 
     return (
@@ -73,7 +91,7 @@ const PricingCard = (props) => {
                             alt="person7" />
                     </div>
                     <div className="ml-[20px] " >
-                        <h1 className=" text-[#fff] sm:text-[18px] text-[14px] leading-tight " >for {props.for}</h1>
+                        <h1 className=" text-[#fff] sm:text-[16px] text-[14px] leading-tight " >for {props.for}</h1>
                         <h1 className=" text-[#fff] sm:text-[24px] text-[16px] leading-tight font-semibold " >{props.type}</h1>
                     </div>
                 </div>
@@ -81,7 +99,7 @@ const PricingCard = (props) => {
                     <h1 className=" text-[#fff] sm:text-[17px] text-[14px] font-normal sm:leading-[30px] " >{props.desc}</h1>
                 </div>
                 <div className="flex items-end mt-[10px] " >
-                    <h1 className=" text-[#fff] sm:text-[50px] text-[16px] sm:leading-none font-bold " >{props.amount}</h1>
+                    <h1 className=" text-[#fff] sm:text-[50px] text-[16px] sm:leading-none font-bold " >${price}</h1>
                     <h1 className=" text-[#fff] font-medium sm:text-[18px] text-[14px] "  > /video</h1>
                 </div>
                 <div className=" sm:mt-[15px] mt-[5px] " >
@@ -116,22 +134,42 @@ const PricingCard = (props) => {
                     <Features
                         name="Script"
                         focused={focused}
+                        seoChecked={true}
+                        onCheck={() => {
+                            null
+                        }}
                     />
                     <Features
                         name="Voice over"
                         focused={focused}
+                        seoChecked={true}
+                        onCheck={() => {
+                            null
+                        }}
                     />
                     <Features
                         name="Video Editing"
                         focused={focused}
+                        seoChecked={true}
+                        onCheck={() => {
+                            null
+                        }}
                     />
                     <Features
                         name="Thumbnail"
                         focused={focused}
+                        seoChecked={true}
+                        onCheck={() => {
+                            null
+                        }}
                     />
                     <Features
                         name="SEO"
                         focused={focused}
+                        seoChecked={seoChecked}
+                        onCheck={() => {
+                            setSeoChecked(!seoChecked)
+                        }}
                     />
                 </div>
             </div>

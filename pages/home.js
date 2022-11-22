@@ -12,6 +12,7 @@ import MovingText from 'react-moving-text';
 import ParticleEffectButton from 'react-particle-effect-button'
 import PricingCard from '../components/Home/pricingCard';
 import CustomPlan from '../components/Home/customPlan';
+import Success from '../components/pupups/sucess';
 import {
     FaTwitter,
     FaFacebookSquare,
@@ -122,6 +123,8 @@ const Home = () => {
     const textPrimaryCol = ' text-[#ECF0F1]';
     const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
     const textHover = 'hover:text-yellow-200'
+
+    const [showPopup, setShowPopup] = useState(false);
 
     const gradiantText1 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#B2BABB] to-[#F0F3F4]';
     const gradiantText2 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#5D9B81] via-[#93D900] to-[#93D900]';
@@ -331,6 +334,16 @@ const Home = () => {
             <div id="home" className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
                 ref={scroll}
             >
+                {
+                    showPopup &&
+                    <Success
+                        text1="Great!"
+                        text2="Your response submitted successfully, our team will contact you soon."
+                        onClose={() => {
+                            setShowPopup(false)
+                        }}
+                    />
+                }
                 <div className={'w-[100%] sm:min-h-[700px] border-[0px]'} ref={HomeRef}>
                     <Header
                         className={headerStyle}
@@ -708,12 +721,12 @@ const Home = () => {
                 <div className='w-[100%] flex item-center justify-center' >
                     <div className=' w-[90%] border-[0px] mt-[50px] flex gap-[80px] flex-wrap items-center justify-center ' >
                         <PricingCard
-                            for="small"
+                            for="Short Videos (4-5 mins)"
                             type="Basic"
                             index={0}
-                            amount={'$69'}
+                            amount={35}
                             seletedIndex={pricingIndex}
-                            desc="5 min video with 500 words"
+                            desc="700-800 words"
                             onFocus={() => {
                                 console.log('gg')
                             }}
@@ -722,12 +735,12 @@ const Home = () => {
                             }}
                         />
                         <PricingCard
-                            for="startups"
+                            for="Long Videos (8-9 mins)"
                             type="Pro"
                             index={1}
-                            amount={'$199'}
+                            amount={55}
                             seletedIndex={pricingIndex}
-                            desc="10 min video with 1000 words"
+                            desc="1400-1500 words"
                             onFocus={() => {
                                 console.log('gg')
                             }}
@@ -736,12 +749,12 @@ const Home = () => {
                             }}
                         />
                         <PricingCard
-                            for="business"
-                            type="Enterprise"
+                            for="extra-long videos (18-20 mins)"
+                            type="Premium"
                             index={2}
-                            amount={'$399'}
+                            amount={100}
                             seletedIndex={pricingIndex}
-                            desc="15 min video with 2000 words"
+                            desc="2800-3000 word"
                             onFocus={() => {
                                 console.log('gg')
                             }}
@@ -813,7 +826,12 @@ const Home = () => {
                     <Review />
                 </div>
                 <div id="contact" className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
-                    <Contact />
+                    <Contact
+                        onClick={() => {
+                            console.log("ok mf")
+                            setShowPopup(true);
+                        }}
+                    />
                 </div>
                 <div className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
                     {
