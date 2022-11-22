@@ -1,6 +1,5 @@
 import React from "react";
 import { FaStar } from 'react-icons/fa';
-import { Carousel } from 'react-responsive-carousel';
 const RightArrow = (props) => {
     return (
         <div>
