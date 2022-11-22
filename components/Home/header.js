@@ -34,49 +34,49 @@ const Header = (props) => {
 
     return (
         // sm:h-[80px] h-[50px]
-        <div className={`w-[100%] border-[0px] justify-evenly flex flex-wrap  fixed z-[200] top-0` + props.className} >
+        <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[80px] justify-evenly flex flex-wrap  fixed z-[200] top-0` + props.className} >
             <div className="w-[385px] sm:w-[200px] h-[70px] border-[0px] sm:ml-[0px] ml-[20px] sm:mt-[8px] mt-[5px] " >
                 <h1
                     className={"absolute font-bold ml-[0px] mt-[-5px] sm:text-[52px] text-transparent text-[30px] bg-clip-text " + Gradiants[logoColor]}
                 >GroGrip</h1>
             </div>
             <div className="flex mt-[19.5px] ml-[150x] sm:visible invisible border-[0px] pr-[10px] justify-evenly gap-[50px] " >
-                <div className=" w-[80px] h-[60px] border-[0px] flex items-center justify-center "
+                <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickHome()
                     }}
                 >
-                    <h1 className={"text-[#fff] font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Home</h1>
+                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Home</h1>
                 </div>
-                <div className=" w-[80px] h-[60px] border-[0px] flex items-center justify-center "
+                <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickService()
                     }}
                 >
-                    <h1 className={"text-[#fff] font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Services</h1>
+                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Services</h1>
                 </div>
-                <div className=" w-[80px] h-[60px] border-[0px] flex items-center justify-center "
+                <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickPricing()
                     }}
                 >
-                    <h1 className={"text-[#fff] font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Pricing</h1>
+                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Pricing</h1>
                 </div>
-                <div className=" w-[80px] h-[60px] border-[0px] flex items-center justify-center "
+                <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickContact()
                     }}
                 >
-                    <h1 className={"text-[#fff] font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Contact</h1>
+                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Contact</h1>
                 </div>
-                <div className=" w-[80px] h-[60px] border-[0px] flex items-center justify-center "
+                <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickAbout()
                     }}
                 >
-                    <h1 className={"text-[#fff] font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >About</h1>
+                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >About</h1>
                 </div>
-                <input type="button" value={"Login"} className={" text-[#fff] font-normal  w-[80px] h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
+                <input type="button" value={"Login"} className={" text-[#fff] sm:visible invisible font-normal  w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
                 </input>
             </div>
         </div>
