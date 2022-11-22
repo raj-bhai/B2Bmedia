@@ -5,7 +5,7 @@ const Globe = (props) => {
         <div className=" sm:w-[500px] sm:h-[500px] border-[0px] sm:mt-[50px] flex items-center justify-center relative " >
             <img
                 src="/images/user/globe.png"
-                className=" spin-animate-slow "
+                className=" spin-animate-slow"
                 alt="star" />
             <img
                 src="/images/user/microphone.png"

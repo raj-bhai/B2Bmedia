@@ -521,7 +521,7 @@ const Home = () => {
                         alt="star" />
                     <img
                         src="/images/user/whiteRing.png"
-                        className=' absolute  right-[0px] bottom-[0px] sm:visible invisible'
+                        className=' absolute sm:w-[50px] sm:h-[100px] md:w-[100px] md:h-[200px] w-[20px] h-[40px]  right-[0px] bottom-[0px] sm:visible visible'
                         alt="star" />
                     <div className='w-[100%] border-[0px] flex-wrap flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
@@ -547,18 +547,20 @@ const Home = () => {
                             className=' absolute right-[200px] top-[150px] sm:visible invisible '
                             alt="star" />
                         <div className=' sm:w-[50%] w-[100%] sm:h-[100%] border-[0px] flex sm:flex-row flex-col justify-center items-center ' >
-                            <img
-                                src="/images/user/service.png"
-                                className=' border-[0px] '
-                                alt="star" />
+                            <div className='relative' >
+                                <img
+                                    src="/images/user/service.png"
+                                    className=' border-[0px] '
+                                    alt="star" />
+                            </div>
                         </div>
                         <div id='service' className=' sm:w-[50%] sm:h-[100%] border-[0px] flex justify-center items-center sm:px-[0px]  px-[10px] ' >
                             <div>
-                                <div className='border-[0px] sm:w-[80%]' >
-                                    <h1 className=' text-[#fff] sm:text-[50px] text-[16px] font-semibold ' >Non-Stoppable service</h1>
+                                <div className='border-[0px]' >
+                                    <h1 className=' text-[#fff] sm:text-[50px] text-[16px] leading-none font-semibold ' >Non-Stoppable service</h1>
                                 </div>
-                                <div className='border-[0px] sm:w-[80%] ' >
-                                    <h1 className=' text-[#E0E5F3] sm:text-[20px] text-[14px] leading-tight ' >
+                                <div className='border-[0px] sm:w-[90%] ' >
+                                    <h1 className=' text-[#E0E5F3] sm:text-[20px] text-[14px] leading-none mt-[10px] ' >
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis diam quis massa. Nulla ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.
                                     </h1>
                                 </div>
@@ -576,12 +578,12 @@ const Home = () => {
                         className=' absolute top-[450px] right-[0px] sm:visible invisible   '
                         alt="star" />
 
-                    <div className='w-[100%] border-[0px] sm:flex justify-evenly sm:pl-[100px] items-center ' >
+                    <div className='w-[100%] border-[0px] sm:flex flex-wrap justify-evenly sm:pl-[100px] items-center ' >
                         <div className='sm:w-[650px] w-[100%] border-[0px]' >
                             <h1 className=' sm:text-[65px] text-[20px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
                             <h1 className='text-[#fff] sm:text-[35px] text-[18px] sm:mt-[10px] font-medium ' >United by GroGrip</h1>
                         </div>
-                        <div className='relative border-[0px] sm:min-w-[500px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
+                        <div className='relative border-[0px] sm:min-w-[550px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
                             <img
                                 src="/images/user/globe1.png"
                                 className=' sm:w-[550px] h-[200px] h-[200px] sm:h-[550px] spin-animate-slow '
@@ -589,6 +591,30 @@ const Home = () => {
                             <img
                                 src="/images/user/dottedPath1.png"
                                 className=' absolute top-[0px] sm:w-[400px] sm: w-[65%] sm:h-[400px] sm:left-[80px] sm:top-[50px] top-[10%] '
+                                alt="star" />
+                            <img
+                                src="/images/user/arrow1.png"
+                                className=' absolute left-[81px] top-[150px] '
+                                alt="star" />
+                            <img
+                                src="/images/user/arrow2.png"
+                                className=' absolute left-[200px] top-[68px] '
+                                alt="star" />
+                            <img
+                                src="/images/user/arrow3.png"
+                                className=' absolute right-[135px] top-[150px] '
+                                alt="star" />
+                            <img
+                                src="/images/user/arrow4.png"
+                                className=' absolute right-[200px] bottom-[165px] '
+                                alt="star" />
+                            <img
+                                src="/images/user/arrow5.png"
+                                className=' absolute left-[200px] bottom-[240px] '
+                                alt="star" />
+                            <img
+                                src="/images/user/arrow6.png"
+                                className=' absolute left-[280px] top-[200px]  '
                                 alt="star" />
                             <img
                                 src="/images/user/avtar.png"
@@ -624,11 +650,11 @@ const Home = () => {
                             />
                             <Label
                                 text="Voice Artist"
-                                className=" absolute left-[20px] top-[100px] "
+                                className=" absolute left-[40px] top-[30px] "
                             />
                             <Label
                                 text="Video Editor"
-                                className=" absolute right-[50px] top-[-5px] "
+                                className=" absolute right-[90px] top-[-5px] "
                             />
                             <Label
                                 text="Thumbnail Maker"
@@ -640,7 +666,7 @@ const Home = () => {
                             />
                             <Label
                                 text="Team Leader"
-                                className=" absolute left-[200px] top-[100px] "
+                                className=" absolute left-[200px] top-[110px] "
                             />
                         </div>
                     </div>
