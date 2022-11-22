@@ -349,22 +349,18 @@ const Home = () => {
                         className={headerStyle}
                         onClickHome={() => {
                             document.getElementById('home').scrollIntoView()
-                            console.log("home clicked")
                         }}
                         onClickService={() => {
                             document.getElementById('service').scrollIntoView()
-                            console.log("service clicked")
                         }}
                         onClickPricing={() => {
                             document.getElementById('pricing').scrollIntoView()
-                            console.log("pricing clicked")
                         }}
                         onClickContact={() => {
                             document.getElementById('contact').scrollIntoView()
-                            console.log("Contact clicked")
                         }}
                         onClickAbout={() => {
-                            console.log("about clicked")
+                            document.getElementById('footer').scrollIntoView()
                         }}
                     />
                     {/* AroowUpIcon */}
@@ -685,10 +681,10 @@ const Home = () => {
                     </div>
 
                 </div>
-                <div className='sm:w-[100%]  flex items-center justify-center sm:visible invisible '>
+                <div id='getStarted' className='sm:w-[100%] border-[0px] pt-[100px] flex items-center justify-center sm:visible invisible '>
                     <div className='w-[100%] ' >
                         <Services
-                            id='getStarted'
+                            id=''
                         />
                     </div>
                 </div>
@@ -833,13 +829,13 @@ const Home = () => {
                         }}
                     />
                 </div>
-                <div className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
+                <div  className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
                     {
                         typeof window !== 'undefined' &&
                         <Footer />
                     }
                 </div>
-                <div className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' id="footer" >
+                <div className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' >
                     <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
                         <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
                             {/* <FaWhatsapp

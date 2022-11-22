@@ -91,7 +91,7 @@ const PricingCard = (props) => {
                             alt="person7" />
                     </div>
                     <div className="ml-[20px] " >
-                        <h1 className=" text-[#fff] sm:text-[16px] text-[14px] leading-tight " >for {props.for}</h1>
+                        <h1 className=" text-[#fff] sm:text-[16px] text-[14px] leading-tight " >{props.for}</h1>
                         <h1 className=" text-[#fff] sm:text-[24px] text-[16px] leading-tight font-semibold " >{props.type}</h1>
                     </div>
                 </div>
