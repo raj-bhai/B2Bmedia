@@ -1,12 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Success from "../pupups/sucess";
 
 const Contact = (props) => {
 
+    const [btnDisabled, setBtnDisabled] = useState(true);
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastname] = useState('');
+    const [email, setEmail] = useState('');
+    const [contact, setContact] = useState('');
+    const [desc, setDesc] = useState('');
+    const [cusror, setCursor] = useState(" cursor-not-allowed");
     const text1 = " text-[#fff] md:text-[25px] sm:text-[20px] text-[16px] font-light "
     const text2 = " text-[#fff] md:text-[22px] sm:text-[18px] text-[14px] font-medium "
     const inputStyle = " mt-[5px] bg-transparent border border-gray-300 h-[50px] text-[#fff] text-sm rounded-lg  block w-full p-2.5  placeholder-gray-400 "
+
+    useEffect(() => {
+        if (btnDisabled) {
+            setCursor(" cursor-not-allowed bg-gray-500 ")
+        } else {
+            setCursor(" cursor-pointer bg-[#0FA152] ")
+        }
+    }, [btnDisabled])
+
+    useEffect(() => {
+
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (firstName.length > 3 && lastName.length > 3 && email.length > 3 && contact.length > 9 && desc.length > 3 && email.match(validRegex)) {
+            setBtnDisabled(false)
+        } else {
+            setBtnDisabled(true)
+        }
+    }, [firstName, lastName, email, contact, desc])
 
     return (
         <div className=" w-[70%] border-[0.5px] rounded-[20px] mt-[100px] relative md:p-[50px] sm:p-[30px] p-[20px] " >
@@ -22,36 +47,55 @@ const Contact = (props) => {
                         <div className=" w-[100%] flex flex-wrap gap-[20px] mt-[10px] justify-between " >
                             <input type={'text'}
                                 placeholder="first name"
+                                value={firstName}
                                 className=" w-[45%] text-[#fff] md:h-[40px] sm:h-[30px] focus:border-sky-500 h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400 "
+                                onChange={(e) => {
+                                    setFirstName(e.target.value)
+                                }}
                             >
                             </input>
                             <input type={'text'}
                                 placeholder="last name"
+                                value={lastName}
                                 className=" w-[45%] text-[#fff] v md:h-[40px] sm:h-[30px] h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400"
+                                onChange={(e) => {
+                                    setLastname(e.target.value)
+                                }}
                             >
                             </input>
                         </div>
                         <div className="w-[100%] mt-[10px] flex items-center justify-center " >
                             <input type={'text'}
                                 placeholder="Email"
+                                value={email}
                                 className=" w-[100%] text-[#fff] md:h-[40px] sm:h-[30px] h-[30px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5  placeholder-gray-400"
+                                onChange={(e) => {
+                                    setEmail(e.target.value)
+                                }}
                             >
                             </input>
                         </div>
                         <div className="w-[100%] mt-[10px] flex items-center justify-center " >
                             <input type={'text'}
                                 placeholder="enter contact number"
+                                value={contact}
                                 className=" w-[100%] text-[#fff] md:h-[40px] sm:h-[30px] h-[30px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5  placeholder-gray-400"
-
+                                onChange={(e) => {
+                                    setContact(e.target.value)
+                                }}
                             >
                             </input>
                         </div>
                         <div className="w-[100%] mt-[10px] flex items-center justify-center " >
-                            <input type={'text'}
-                                placeholder="describe your requirement"
+                            <textarea name="description" placeholder="describe your requirement"
+                                value={desc}
                                 className=" w-[100%] text-[#fff] flex md:h-[200px] sm:h-[170px] h-[150px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5  placeholder-gray-400"
+                                onChange={(e) => {
+                                    setDesc(e.target.value)
+                                }}
                             >
-                            </input>
+
+                            </textarea>
                         </div>
                     </div>
                     <div className=" md:w-[280px] w-[0px] h-[100%] border-[0px] relative flex items-end justify-center md:visible invisible sm:invisible p-2.5  placeholder-gray-400" >
@@ -59,13 +103,27 @@ const Contact = (props) => {
                             src={`/images/user/person10.png`}
                             className=' w-[415px] h-[300px] z-[200] absolute top-[0px] md:visible invisible sm:invisible '
                             alt="project1" />
-                        <div className=" w-[200px] h-[50px] rounded-[30px] bg-[#0FA152] flex items-center justify-center cursor-pointer "
+                        {/* <div className=" w-[200px] h-[50px] rounded-[30px] bg-[#0FA152] flex items-center justify-center cursor-pointer "
                             onClick={() => {
                                 props.onClick()
                             }}
                         >
                             <h1 className=" text-[#fff] text-[20px] font-semibold " >Submit</h1>
-                        </div>
+                        </div> */}
+                        <input type={'button'}
+                            value={'Submit'}
+                            disabled={btnDisabled}
+                            className={" w-[200px] h-[50px] rounded-[30px] flex items-center justify-center text-[#fff] text-[20px] font-semibold " + cusror}
+                            onClick={() => {
+                                props.onClick();
+                                setFirstName('');
+                                setLastname('');
+                                setEmail('');
+                                setContact('');
+                                setDesc();
+                            }}
+                        >
+                        </input>
                     </div>
                 </div>
             </div>
