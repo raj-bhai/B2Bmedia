@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 const Header = (props) => {
-    const textHover = ' hover:text-yellow-200 hover:border-b-[2px] hover:border-b-yellow-200'
+    const textHover = ' hover:text-yellow-200 hover:border-b-[2px] hover:border-b-yellow-200 '
+    const selected = ' text-yellow-200 border-b-[2px] border-b-yellow-200 '
     const hoverBtn = ' hover:bg-white hover:border-[0px] hover:text-[#000] hover:font-semi bold'
-    const hoverTxt = ' hover:text-[#107840] hover:font-semibold  '
-    const [btnFocused, setBtnFocused] = useState(false);
-    const [btnBG, setBtnBG] = useState(' ');
-    const [btnText, setBtnText] = useState(' ');
-    const [logoColor, setLogoColor] = useState(0)
+
+    const textStyle = ` text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer  ${textHover}`
+    const [logoColor, setLogoColor] = useState(0);
+    const [selectedHeader, setSelectedHeader] = useState(props.selectedHeader)
 
     const Gradiants = [
         ' bg-gradient-to-r from-[#F7F9F9] via-[#F7F9F9] to-[#F7F9F9] ',
@@ -31,6 +31,11 @@ const Header = (props) => {
         return () => clearTimeout(timer);
     }, [logoColor])
 
+    useEffect(() => {
+        console.log("Selected Header :", props.selectedHeader);
+        setSelectedHeader(props.selectedHeader)
+    }, [props.selectedHeader])
+
 
     return (
         // sm:h-[80px] h-[50px]
@@ -46,35 +51,35 @@ const Header = (props) => {
                         props.onClickHome()
                     }}
                 >
-                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Home</h1>
+                    <h1 className={textStyle} >Home</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickService()
                     }}
                 >
-                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Services</h1>
+                    <h1 className={textStyle} >Services</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickPricing()
                     }}
                 >
-                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Pricing</h1>
+                    <h1 className={textStyle} >Pricing</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickContact()
                     }}
                 >
-                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >Contact</h1>
+                    <h1 className={textStyle} >Contact</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickAbout()
                     }}
                 >
-                    <h1 className={"text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer " + textHover} >About</h1>
+                    <h1 className={textStyle} >About</h1>
                 </div>
                 <input type="button" value={"Login"} className={" text-[#fff] sm:visible invisible font-normal  w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
                 </input>

@@ -135,7 +135,9 @@ const Home = () => {
     const [showText4, setShowText4] = useState(false);
     const [showText5, setShowText5] = useState(false);
 
-    const LETTER1 = ["S", "t", "a", "n", "d"]
+    //selected header index
+    const [selectedHeader, setSelectedHeader] = useState(1)
+
 
     const [index, setIndex] = useState(0);
 
@@ -347,20 +349,26 @@ const Home = () => {
                 <div className={'w-[100%] sm:min-h-[700px] border-[0px]'} ref={HomeRef}>
                     <Header
                         className={headerStyle}
+                        selectedHeader={selectedHeader}
                         onClickHome={() => {
-                            document.getElementById('home').scrollIntoView()
+                            document.getElementById('home').scrollIntoView();
+                            setSelectedHeader(1)
                         }}
                         onClickService={() => {
-                            document.getElementById('service').scrollIntoView()
+                            document.getElementById('service').scrollIntoView();
+                            setSelectedHeader(2)
                         }}
                         onClickPricing={() => {
-                            document.getElementById('pricing').scrollIntoView()
+                            document.getElementById('pricing').scrollIntoView();
+                            setSelectedHeader(3)
                         }}
                         onClickContact={() => {
-                            document.getElementById('contact').scrollIntoView()
+                            document.getElementById('contact').scrollIntoView();
+                            setSelectedHeader(4)
                         }}
                         onClickAbout={() => {
-                            document.getElementById('footer').scrollIntoView()
+                            document.getElementById('footer').scrollIntoView();
+                            setSelectedHeader(5)
                         }}
                     />
                     {/* AroowUpIcon */}
@@ -829,7 +837,7 @@ const Home = () => {
                         }}
                     />
                 </div>
-                <div  className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
+                <div className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
                     {
                         typeof window !== 'undefined' &&
                         <Footer />
