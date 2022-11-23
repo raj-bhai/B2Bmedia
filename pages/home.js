@@ -1,12 +1,4 @@
 import React, { useState, useEffect, useRef, useMemo, } from 'react'
-import Logo from '../public/images/logo.png';
-import Image from 'next/image';
-import axios from 'axios';
-import url from '../constants/url';
-import { useRouter } from 'next/router';
-import LoadingScreen from '../components/Loader/LoadingScreen';
-import AnimatedText from 'react-animated-text-content';
-import TextTransition, { presets } from "react-text-transition";
 import Header from '../components/Home/header';
 import MovingText from 'react-moving-text';
 import ParticleEffectButton from 'react-particle-effect-button'
@@ -29,12 +21,6 @@ import Contact from '../components/Home/contact';
 import Footer from '../components/Home/footer';
 import Label from '../components/Home/micro/label';
 
-const TEXTS = [
-    "Forest",
-    "Building",
-    "Tree",
-    "Color"
-];
 
 const ProjectTypes = [
     "All",
@@ -43,58 +29,9 @@ const ProjectTypes = [
     "Crypto"
 ]
 
-const SERVICES = [
-    {
-        name: "Script Writing",
-        image: "/images/user/scriptW.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    {
-        name: "Voice over",
-        image: "/images/user/voice-over.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    {
-        name: "Thumbnail",
-        image: "/images/user/thumbnail.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    {
-        name: "Video Editing",
-        image: "/images/user/video-edit0.png",
-        image1: "/images/user/video-edit1.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-];
-
-const WORKS = [
-    {
-        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
-    },
-    {
-        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
-    },
-    {
-        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
-    },
-    {
-        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
-    },
-    {
-        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
-    },
-    {
-        uri: "https://res.cloudinary.com/drgvislmm/image/upload/v1663776103/WebsiteImages/Screenshot_19_ivsskc.png"
-    },
-];
-
-
-
-
 
 const uderlineText = 'underline underline-offset-8 decoration-sky-500';
 
-const AboutUsText = "We are a group of young YouTube specialists and enthusiasts dedicated to establishing a viable career path for YouTubers. Our goal is to assist individuals in acing their YouTube journey and turning YouTube into a revenue-generating platform through content improvement."
 const Home = () => {
 
     const [domLoaded, setDomLoaded] = useState(false);
@@ -211,62 +148,39 @@ const Home = () => {
         setOffset(window.pageYOffset);
         console.log("gg :", AboutRef.current?.clientHeight)
         if (window.pageYOffset > 50) {
-            setHeaderStyle(' bg-[#107840]');
-            // setTextContainerStyle('pt-[250px]');
-            // setTextContainerStyle('fixed top-[0px]');
+            // setHeaderStyle(' bg-[#107840]');
             setShowArrowUp(true)
-            // if ((335 > window.pageYOffset) && (window.pageYOffset > 156)) {
-            //     setTextContainerStyle('pt-[350px]')
+            // if ((window.pageYOffset > HomeRef.current?.clientHeight - 100)) {
+            //     if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight - 100)) {
+            //         if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100)) {
+            //             if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight + PricingRef.current?.clientHeight + PortfolioRef.current?.clientHeight - 150)) {
+            //                 ContactFocused()
+            //             } else {
+            //                 PricingFocused()
+            //             }
+            //         } else {
+            //             ServiceFocused()
+            //         }
+            //     } else {
+            //         AboutFocused()
+            //     }
+            // } else {
+            //     HomeFocused()
             // }
-            // if ((380 > window.pageYOffset) && (window.pageYOffset > 280)) {
-            //     setTextContainerStyle('pt-[450px]')
-            // }
-            // if ((window.pageYOffset > 720) && (window.pageYOffset > 770)) {
-            //     setAboutStyle('pt-[20px]')
-            // }
-            // if ((window.pageYOffset > 720) && (window.pageYOffset > 770)) {
-            //     setAboutStyle('pt-[20px]')
-            // }
-            // if ((window.pageYOffset > 770) && (window.pageYOffset > 840)) {
-            //     setAboutStyle('pt-[70px]')
-            // }
-            // if ((window.pageYOffset > 1444) && (window.pageYOffset < 1716)) {
-            //     setServiceStyle('fixed top-[100px]');
-            // }
-            if ((window.pageYOffset > 400)) {
-                setShowMaiinText(false);
+
+            if (window.pageYOffset > HomeRef.current?.clientHeight + 100 ) {
+                setSelectedHeader(2)
             } else {
-                setShowMaiinText(true);
+                setSelectedHeader(1)
             }
 
-            if ((window.pageYOffset > HomeRef.current?.clientHeight - 100)) {
-                if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight - 100)) {
-                    if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100)) {
-                        if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight + PricingRef.current?.clientHeight + PortfolioRef.current?.clientHeight - 150)) {
-                            ContactFocused()
-                        } else {
-                            PricingFocused()
-                        }
-                    } else {
-                        ServiceFocused()
-                    }
-                } else {
-                    AboutFocused()
-                }
-            } else {
-                HomeFocused()
-            }
-
-            if ((window.pageYOffset > 1716)) {
-                setServiceStyle('')
-            }
         } else {
             setShowArrowUp(false);
-            setShowMaiinText(true);
-            setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
-            setTextContainerStyle('');
-            setServiceStyle('');
-            HomeFocused()
+            // setShowMaiinText(true);
+            // setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+            // setTextContainerStyle('');
+            // setServiceStyle('');
+            // HomeFocused()
         }
     };
 
@@ -334,7 +248,6 @@ const Home = () => {
         domLoaded &&
             typeof window !== 'undefined' ?
             <div id="home" className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
-                ref={scroll}
             >
                 {
                     showPopup &&

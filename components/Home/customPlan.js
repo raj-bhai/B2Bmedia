@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaCaretDown } from 'react-icons/fa';
 
 const CustomPlan = (props) => {
 
+    const [price, setPrice] = useState('');
     const labelStyle = " text-[#fff] text-[17px] font-normal "
     const inputStyle = " mt-[5px] bg-transparent border border-gray-300 h-[50px] text-[#fff] text-sm rounded-lg  block w-full p-2.5  placeholder-gray-400 "
     const input1Style = " mt-[5px] bg-transparent border border-gray-300 h-[280px] text-[#fff] flex items-start text-sm rounded-lg  block w-full p-2.5  placeholder-gray-400 "
@@ -15,6 +16,9 @@ const CustomPlan = (props) => {
                     //className=" w-[80%] bg-transparent border-[0.5px] h-[50px] rounded-[10px] mt-[5px] px-[10px] "
                     className={inputStyle}
                     placeholder={data.placeholder}
+                    onChange={(e) => {
+                        
+                    }}
                 >
                 </input>
             </div>

@@ -6,6 +6,7 @@ const Header = (props) => {
     const hoverBtn = ' hover:bg-white hover:border-[0px] hover:text-[#000] hover:font-semi bold'
 
     const textStyle = ` text-[#fff] sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer  ${textHover}`
+    const textSelectedStyle = ' text-yellow-200 border-b-[2px] border-b-yellow-200 sm:visible invisible font-normal text-[18px] leading-[30px] cursor-pointer '
     const [logoColor, setLogoColor] = useState(0);
     const [selectedHeader, setSelectedHeader] = useState(props.selectedHeader)
 
@@ -39,7 +40,7 @@ const Header = (props) => {
 
     return (
         // sm:h-[80px] h-[50px]
-        <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[80px] justify-evenly flex flex-wrap  fixed z-[200] top-0` + props.className} >
+        <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[80px] justify-evenly flex flex-wrap  fixed z-[2000] top-0` + props.className} >
             <div className="w-[385px] sm:w-[200px] h-[70px] border-[0px] sm:ml-[0px] ml-[20px] sm:mt-[8px] mt-[5px] " >
                 <h1
                     className={"absolute font-bold ml-[0px] mt-[-5px] sm:text-[52px] text-transparent text-[30px] bg-clip-text " + Gradiants[logoColor]}
@@ -51,35 +52,35 @@ const Header = (props) => {
                         props.onClickHome()
                     }}
                 >
-                    <h1 className={textStyle} >Home</h1>
+                    <h1 className={selectedHeader == 1 ? textSelectedStyle : textStyle} >Home</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickService()
                     }}
                 >
-                    <h1 className={textStyle} >Services</h1>
+                    <h1 className={selectedHeader == 2 ? textSelectedStyle : textStyle} >Services</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickPricing()
                     }}
                 >
-                    <h1 className={textStyle} >Pricing</h1>
+                    <h1 className={selectedHeader == 3 ? textSelectedStyle : textStyle} >Pricing</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickContact()
                     }}
                 >
-                    <h1 className={textStyle} >Contact</h1>
+                    <h1 className={selectedHeader == 4 ? textSelectedStyle : textStyle} >Contact</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
                         props.onClickAbout()
                     }}
                 >
-                    <h1 className={textStyle} >About</h1>
+                    <h1 className={selectedHeader == 5 ? textSelectedStyle : textStyle} >About</h1>
                 </div>
                 <input type="button" value={"Login"} className={" text-[#fff] sm:visible invisible font-normal  w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
                 </input>
