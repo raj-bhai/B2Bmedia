@@ -168,7 +168,7 @@ const Home = () => {
             //     HomeFocused()
             // }
 
-            if (window.pageYOffset > HomeRef.current?.clientHeight + 100 ) {
+            if (window.pageYOffset > HomeRef.current?.clientHeight + 100) {
                 setSelectedHeader(2)
             } else {
                 setSelectedHeader(1)
@@ -702,7 +702,11 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='w-[100%]  flex justify-center border-[0px] ' >
-                    <CustomPlan />
+                    <CustomPlan
+                        onSubmit={() => {
+                            setShowPopup(true);
+                        }}
+                    />
                 </div>
                 <div id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
                     <div className=' w-[80%] border-[0px] mt-[100px]  ' >
@@ -745,7 +749,6 @@ const Home = () => {
                 <div id="contact" className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
                     <Contact
                         onClick={() => {
-                            console.log("ok mf")
                             setShowPopup(true);
                         }}
                     />
