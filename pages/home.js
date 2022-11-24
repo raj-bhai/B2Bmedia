@@ -730,7 +730,7 @@ const Home = () => {
                                             <img
                                                 key={index}
                                                 src={`/images/user/project${index + 1}.png`}
-                                                className=' sm:w-[550px] sm:h-[350px] rounded-[20px] '
+                                                className=' sm:w-[500px] sm:h-[350px] rounded-[20px] '
                                                 alt="project1" />
                                         )
                                     })
