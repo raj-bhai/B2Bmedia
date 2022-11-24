@@ -70,7 +70,7 @@ const PricingCard = (props) => {
 
     return (
         domLoaded &&
-        <div className={`sm:w-[320px] sm:h-[500px] rounded-[20px] px-[20px] pt-[20px] pb-[20px] ${focused ? focusedBorder : unFocusedBorder} `}
+        <div className={`sm:w-[320px] w-[250px] sm:h-[500px] rounded-[20px] sm:px-[20px] sm:pt-[20px] sm:pb-[20px] px-[15px] pt-[15px] pb-[15px] ${focused ? focusedBorder : unFocusedBorder} `}
             onFocus={() => {
                 props.onFocus();
             }}
