@@ -94,7 +94,7 @@ const Home = () => {
 
     // useEffect(() => {
     //     if (domLoaded) {
-    //         document?.getElementById('pricing').scrollIntoView();
+    //         document?.getElementById('gg').scrollIntoView();
     //     }
     // })
 
@@ -644,7 +644,6 @@ const Home = () => {
                 </div>
                 <div
                     id="portfolio"
-                    // id='gg'
                     ref={PortfolioRef} className='w-[100%] relative border-[0px] flex items-center justify-center '>
                     <img
                         src="/images/user/circle4.png"
@@ -722,7 +721,7 @@ const Home = () => {
                         src="/images/user/circle6.png"
                         className=' absolute right-[0px] sm:visible invisible '
                         alt="person7" />
-                    <div className='sm:h-[250px] h-[150px] w-[100%]  border-[0px] flex justify-between ' >
+                    <div  className='sm:h-[250px] h-[150px] w-[100%]  border-[0px] flex justify-between ' >
                         <div className='sm:w-[600px] h-[100%] flex items-center ' >
                             <div>
                                 <h1 className={`text-[#fff] sm:text-[40px] font-semibold ${gradiantText1}`} >Confused about the plans</h1>
@@ -737,7 +736,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[100%]  flex justify-center border-[0px] ' >
+                <div  className='w-[100%]  flex justify-center border-[0px] ' >
                     <CustomPlan
                         onSubmit={() => {
                             setShowPopup(true);
