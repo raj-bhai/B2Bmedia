@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-//import SlideButton from 'react-slide-button';
+import SlideButton from '../react-slide-button';
 
 const Footer = (props) => {
 
@@ -30,7 +30,7 @@ const Footer = (props) => {
                     <div className=" w-[80%] h-[80%] bg-[#fff] rounded-[30px] flex items-center justify-start px-[50px] " >
                         <div>
                             <h1 className="text-[#000] text-[18px] font-semibold " >Signup to receive product updates and more</h1>
-                            {/* {
+                            {
                                 typeof (window) !== 'undefined' &&
                                 <div className=" mt-[10px] " >
                                     <SlideButton
@@ -63,7 +63,7 @@ const Footer = (props) => {
                                         }
                                     />
                                 </div>
-                            } */}
+                            }
                         </div>
                     </div>
                 </div>
