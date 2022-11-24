@@ -303,14 +303,14 @@ const Home = () => {
                         className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-center mt-[100px] z-[100] ' >
+                        <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] ' >
 
-                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[20px] flex items-center justify-center sm:pl-[20px] pl-[0px]  border-[0px] sm:min-w-[550px] ` + textContainerStyle}
+                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] pl-[0px]  border-[0px] sm:min-w-[550px] ` + textContainerStyle}
                             >
-                                <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[0px] flex relative ' >
+                                <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[60px] flex relative ' >
                                     <img
                                         src="/images/user/star.png"
-                                        className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[50px] top-[-5px] sm:left-[-50px] '
+                                        className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[50px] sm:top-[-5px] top-[-10px] sm:left-[-50px] left-[200px] '
                                         alt="star" />
                                     <div>
                                         <div className='' >
@@ -321,9 +321,9 @@ const Home = () => {
                                                 delay="100ms"
                                                 direction="normal"
                                                 timing="ease"
-                                                iteration={1}
+                                                iteration={1} 
                                                 fillMode="none"
-                                                className='text-yellow-200 sm:text-[50px] text-[20px] leading-[50px] text-left font-semibold  '
+                                                className='text-yellow-200 sm:text-[50px] text-[18px] sm:leading-[50px] text-left font-semibold  '
                                             >
                                                 Stand out of the crowd
                                             </MovingText>
@@ -341,7 +341,7 @@ const Home = () => {
                                                         iteration={1}
                                                         fillMode="forwards"
                                                         presences="letters"
-                                                        className='text-white sm:text-[40px] text-[20px] leading-[45px] text-left font-normal '
+                                                        className='text-white sm:text-[40px] text-[17px] sm:leading-[45px] text-left font-normal '
                                                     >
                                                         {'Creating videos is never so been easy'}
                                                     </MovingText>
@@ -350,10 +350,10 @@ const Home = () => {
                                             <div className='w-[100%] sm:h-[50px] h-[30px] border-[0px] sm:mt-[10px] mt-[0px] flex items-center ' >
                                                 <img
                                                     src="/images/user/path.png"
-                                                    className=' ml-[10px] sm:mt-[-30px] mt-[0px] '
+                                                    className=' ml-[10px] sm:mt-[-30px] mt-[10px] '
                                                     alt="star" />
                                             </div>
-                                            <div className='w-[100%] h-[50px] border-[0px] mt-[-10px]  ' >
+                                            <div className='w-[100%] h-[50px] border-[0px] sm:mt-[-10px] mt-[10px]  ' >
                                                 {
                                                     showText3 &&
                                                     <MovingText
@@ -365,7 +365,7 @@ const Home = () => {
                                                         iteration={1}
                                                         fillMode="forwards"
                                                         presences="letters"
-                                                        className='text-white leading-[25px] '
+                                                        className='text-white sm:text-[18px] text-[14px] sm:leading-[25px] '
                                                     >
                                                         {'Just focus on your business we will create content for your business without limits'}
                                                     </MovingText>
@@ -394,7 +394,7 @@ const Home = () => {
                                                                 <input
                                                                     type={"button"}
                                                                     value="Get Started"
-                                                                    className='sm:w-[120px] w-[80px] text-[#000] font-bold sm:text-[15px] text-[12px sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer '
+                                                                    className='sm:w-[120px] w-[80px] text-[#000] font-bold sm:text-[15px] text-[12px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer '
                                                                     onClick={() => {
                                                                         setBtn1Animate(true)
                                                                         setTimeout(() => {
@@ -436,7 +436,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='sm:w-[50%] sm:min-w-[550px] w-[90%] h-[500px] border-[0px] flex sm:justify-end justify-center sm:pr-[50px] ' >
+                            <div className='sm:w-[50%] sm:min-w-[550px] w-[90%] sm:h-[500px] border-[0px] flex sm:justify-end justify-center sm:pr-[50px] ' >
                                 <Globe />
                             </div>
                         </div>
@@ -453,22 +453,22 @@ const Home = () => {
                         src="/images/user/whiteRing.png"
                         className=' absolute sm:w-[50px] sm:h-[100px] md:w-[100px] md:h-[200px] w-[20px] h-[40px]  right-[0px] bottom-[0px] sm:visible visible'
                         alt="star" />
-                    <div className='w-[100%] border-[0px] flex-wrap flex items-center justify-between sm:px-[20px] px-[10px] ' >
+                    <div className='w-[100%] border-[0px] sm:mt-[0px] mt-[20px] flex-wrap flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >4.8K</h1>
-                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >Projects Completed</h1>
+                            <h1 className='text-[#fff] sm:text-[35px] text-[13px] leading-tight font-semibold  ' >4.8K</h1>
+                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >Projects Completed</h1>
                         </div>
                         <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff]  sm:text-[35px] text-[15px] leading-tight font-semibold  ' >12+</h1>
-                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >In Progress</h1>
+                            <h1 className='text-[#fff]  sm:text-[35px] text-[13px] leading-tight font-semibold  ' >12+</h1>
+                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >In Progress</h1>
                         </div>
                         <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >2.5K+</h1>
-                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >World wide clients</h1>
+                            <h1 className='text-[#fff] sm:text-[35px] text-[13px] leading-tight font-semibold  ' >2.5K+</h1>
+                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >World wide clients</h1>
                         </div>
                         <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] leading-tight font-semibold  ' >120+</h1>
-                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight font-normal  ' >Popular</h1>
+                            <h1 className='text-[#fff] sm:text-[35px] text-[13px] leading-tight font-semibold  ' >120+</h1>
+                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >Popular</h1>
                         </div>
                     </div>
                     <div className='w-[100%] sm:h-[500px] border-[0px] sm:flex   ' >
@@ -476,7 +476,7 @@ const Home = () => {
                             src="/images/user/star.png"
                             className=' absolute right-[200px] top-[150px] sm:visible invisible '
                             alt="star" />
-                        <div className=' sm:w-[50%] w-[100%] sm:h-[100%] border-[0px] flex sm:flex-row flex-col justify-center items-center ' >
+                        <div className=' sm:w-[50%] w-[100%] sm:px-[0px] px-[10px] sm:h-[100%] border-[0px] flex sm:flex-row flex-col justify-center items-center ' >
                             <div className='relative' >
                                 <img
                                     src="/images/user/service.png"
@@ -489,9 +489,9 @@ const Home = () => {
                                 <div className='border-[0px]' >
                                     <h1 className=' text-[#fff] sm:text-[50px] text-[16px] leading-none font-semibold ' >Non-Stoppable service</h1>
                                 </div>
-                                <div className='border-[0px] sm:w-[90%] ' >
-                                    <h1 className=' text-[#E0E5F3] sm:text-[20px] text-[14px] leading-none mt-[10px] ' >
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. A consequat nunc id purus pretium sagittis diam quis massa. Nulla ridiculus nullam bibendum luctus viverra. Eu pellentesque sem sed platea diam dignissim duis purus.
+                                <div className='border-[0px] sm:w-[90%] sm:mr-[0px] mr-[10px] ' >
+                                    <h1 className=' text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight mt-[10px] ' >
+                                    We are a group of young YouTube specialists and enthusiasts dedicated to establishing a viable career path for YouTubers. We make sure that our content is engaging by using animated titles, sound effects, background music, and 100% copyright free high-quality videos to keep viewers watching.
                                     </h1>
                                 </div>
                             </div>
@@ -510,13 +510,13 @@ const Home = () => {
 
                     <div className='w-[100%] border-[0px] sm:flex flex-wrap justify-evenly sm:pl-[100px] items-center ' >
                         <div className='sm:w-[650px] w-[100%] border-[0px]' >
-                            <h1 className=' sm:text-[65px] text-[20px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
-                            <h1 className='text-[#fff] sm:text-[35px] text-[18px] sm:mt-[10px] font-medium ' >United by GroGrip</h1>
+                            <h1 className=' sm:text-[65px] text-[18px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
+                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] sm:mt-[10px] font-medium ' >United by GroGrip</h1>
                         </div>
-                        <div className='relative border-[0px] sm:min-w-[550px] flex items-center justify-center sm:mt-[0px] mt-[20px]  ' >
+                        <div className='relative border-[0px] sm:min-w-[550px] flex items-center justify-center sm:mt-[0px] mt-[20px] ' >
                             <img
                                 src="/images/user/globe1.png"
-                                className=' sm:w-[550px] h-[200px] h-[200px] sm:h-[550px] spin-animate-slow '
+                                className=' sm:w-[550px] h-[300px] h-[300px] sm:h-[550px] spin-animate-slow '
                                 alt="star" />
                             <img
                                 src="/images/user/dottedPath1.png"
@@ -524,79 +524,79 @@ const Home = () => {
                                 alt="star" />
                             <img
                                 src="/images/user/arrow1.png"
-                                className=' absolute left-[81px] top-[150px] '
+                                className=' absolute left-[81px] sm:w-[25px] sm:h-[25px] w-[10px] h-[10px] top-[150px] '
                                 alt="star" />
                             <img
                                 src="/images/user/arrow2.png"
-                                className=' absolute left-[200px] top-[68px] '
+                                className=' absolute sm:w-[25px] sm:h-[25px] left-[200px] top-[68px] sm:visible invisible '
                                 alt="star" />
                             <img
                                 src="/images/user/arrow3.png"
-                                className=' absolute right-[135px] top-[150px] '
+                                className=' absolute sm:w-[25px] sm:h-[25px] right-[135px] top-[150px] sm:visible invisible '
                                 alt="star" />
                             <img
                                 src="/images/user/arrow4.png"
-                                className=' absolute right-[200px] bottom-[165px] '
+                                className=' absolute sm:w-[25px] sm:h-[25px] right-[200px] bottom-[165px] sm:visible invisible '
                                 alt="star" />
                             <img
                                 src="/images/user/arrow5.png"
-                                className=' absolute left-[200px] bottom-[240px] '
+                                className=' absolute sm:w-[25px] sm:h-[25px] left-[200px] bottom-[240px] sm:visible invisible '
                                 alt="star" />
                             <img
                                 src="/images/user/arrow6.png"
-                                className=' absolute left-[280px] top-[200px]  '
+                                className=' absolute sm:w-[25px] sm:h-[25px] left-[280px] top-[200px]  sm:visible invisible '
                                 alt="star" />
                             <img
                                 src="/images/user/avtar.png"
-                                className=' absolute sm:w-[40px] sm:h-[40px] top-[20px] right-[160px] '
+                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[20px] sm:right-[160px] top-[10px] right-[110px] '
                                 alt="video-editor" />
                             <img
                                 src="/images/user/avtar1.png"
-                                className=' absolute sm:w-[40px] sm:h-[40px] top-[55px] left-[80px] '
+                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[55px] sm:left-[80px] top-[30px] left-[60px] '
                                 alt="voice-artist" />
                             <img
                                 src="/images/user/avtar2.png"
-                                className=' absolute sm:w-[40px] sm:h-[40px] top-[220px] left-[55px] '
+                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[220px] sm:left-[55px] top-[130px] left-[45px] '
                                 alt="script-writer" />
                             <img
                                 src="/images/user/avtar3.png"
-                                className=' absolute sm:w-[40px] sm:h-[40px] sm:top-[300px] sm:right-[50px] '
+                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[300px] sm:right-[50px] top-[160px] right-[40px] '
                                 alt="video-editor" />
                             <img
                                 src="/images/user/avtar4.png"
-                                className=' absolute sm:w-[40px] sm:h-[40px] sm:bottom-[80px] sm:left-[140px] '
+                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:bottom-[80px] sm:left-[140px] bottom-[45px] left-[90px] '
                                 alt="video-editor" />
                             <img
                                 src="/images/user/avtar5.png"
-                                className=' absolute sm:w-[40px] sm:h-[40px] sm:top-[130px] sm:left-[240px] '
+                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[130px] sm:left-[240px] top-[60px] left-[150px] '
                                 alt="video-editor" />
                             <img
                                 src="/images/user/avtar6.png"
-                                className=' absolute sm:w-[40px] sm:h-[40px] sm:top-[250px] sm:left-[300px] '
+                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[250px] sm:left-[300px] top-[130px] left-[100px] '
                                 alt="video-editor" />
                             <Label
                                 text="Script Writer"
-                                className=" absolute left-[0px] "
+                                className=" absolute left-[0px] sm:visible invisible "
                             />
                             <Label
                                 text="Voice Artist"
-                                className=" absolute left-[40px] top-[30px] "
+                                className=" absolute left-[40px] top-[30px] sm:visible invisible "
                             />
                             <Label
                                 text="Video Editor"
-                                className=" absolute right-[90px] top-[-5px] "
+                                className=" absolute right-[90px] top-[-5px] sm:visible invisible "
                             />
                             <Label
                                 text="Thumbnail Maker"
-                                className=" absolute right-[-50px] bottom-[180px] "
+                                className=" absolute right-[-50px] bottom-[180px] sm:visible invisible "
                             />
                             <Label
                                 text="SEO"
-                                className=" absolute left-[120px] bottom-[50px] "
+                                className=" absolute left-[120px] bottom-[50px] sm:visible invisible "
                             />
                             <Label
                                 text="Team Leader"
-                                className=" absolute left-[200px] top-[110px] "
+                                className=" absolute left-[200px] top-[110px] sm:visible invisible "
                             />
                         </div>
                     </div>

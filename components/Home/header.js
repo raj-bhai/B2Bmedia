@@ -40,7 +40,7 @@ const Header = (props) => {
 
     return (
         // sm:h-[80px] h-[50px]
-        <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[80px] justify-evenly flex flex-wrap  fixed z-[2000] top-0` + props.className} >
+        <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[50px] justify-evenly flex flex-wrap  fixed z-[2000] top-0` + props.className} >
             <div className="w-[385px] sm:w-[200px] h-[70px] border-[0px] sm:ml-[0px] ml-[20px] sm:mt-[8px] mt-[5px] " >
                 <h1
                     className={"absolute font-bold ml-[0px] mt-[-5px] sm:text-[52px] text-transparent text-[30px] bg-clip-text " + Gradiants[logoColor]}
