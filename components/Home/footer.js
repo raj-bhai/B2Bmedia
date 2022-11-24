@@ -13,7 +13,7 @@ const Footer = (props) => {
     }, []);
 
 
-    
+
     return (
         domLoaded &&
         <div className=" w-[90%] h-[300px] border-[0px] p-[50px] relative " >
@@ -34,7 +34,6 @@ const Footer = (props) => {
                                 typeof (window) !== 'undefined' &&
                                 <div className=" mt-[10px] " >
                                     <SlideButton
-                                        // mainText="slide me"
                                         overlayText="D O N E"
                                         onSlideDone={() => {
                                             setTimeout(() => {

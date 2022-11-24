@@ -169,9 +169,9 @@ const Home = () => {
             // }
 
             if (window.pageYOffset > HomeRef.current?.clientHeight + 100) {
-                setSelectedHeader(2)
+               // setSelectedHeader(2)
             } else {
-                setSelectedHeader(1)
+              //  setSelectedHeader(1)
             }
 
         } else {
