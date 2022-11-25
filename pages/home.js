@@ -92,6 +92,64 @@ const Home = () => {
     const [selectedPortfolio, setSelectedPortfolio] = useState([]);   //video urls
 
 
+    const [countingStart, setCountingStart] = useState(false);
+    const [count, setCount] = useState(0);
+    const [count1, setCount1] = useState(0);
+    const [count2, setCount2] = useState(100);
+    const [count3, setCount3] = useState(220000);
+
+
+
+    useEffect(() => {
+        if (countingStart) {
+            if (Math.floor(count) < 50) {
+                const intervalId = setInterval(() =>
+                    setCount(count + 0.1),
+                    1 // every 3 seconds
+                );
+                return () => clearTimeout(intervalId);
+            }
+        }
+    }, [count, countingStart])
+
+    useEffect(() => {
+        if (countingStart) {
+            if (Math.floor(count1) < 150) {
+                const intervalId = setInterval(() =>
+                    setCount1(count1 + 0.3),
+                    1 // every 3 seconds
+                );
+                return () => clearTimeout(intervalId);
+            }
+        }
+    }, [count1, countingStart])
+
+
+    useEffect(() => {
+        if (countingStart) {
+            if (Math.floor(count2) < 500) {
+                const intervalId = setInterval(() =>
+                    setCount2(count2 + 1),
+                    1 // every 3 seconds
+                );
+                return () => clearTimeout(intervalId);
+            }
+        }
+    }, [count2, countingStart])
+
+    useEffect(() => {
+        if (countingStart) {
+            if (Math.floor(count3) < 267841) {
+                const intervalId = setInterval(() =>
+                    setCount3(count3 + 100),
+                    0.001 // every 3 seconds
+                );
+                return () => clearTimeout(intervalId);
+            }
+        }
+    }, [count3, countingStart])
+
+
 
     useEffect(() => {
         if (ProjectTypes[projectIndex] == "TECH") {
@@ -173,7 +231,7 @@ const Home = () => {
 
     const onScroll = () => {
         setOffset(window.pageYOffset);
-        console.log("gg :", AboutRef.current?.clientHeight)
+        // console.log("gg :", AboutRef.current?.clientHeight)
         if (window.pageYOffset > 50) {
             // setHeaderStyle(' bg-[#107840]');
             setShowArrowUp(true)
@@ -194,6 +252,14 @@ const Home = () => {
             // } else {
             //     HomeFocused()
             // }
+
+
+            //number countdown star
+            if (window.pageYOffset > 300) {
+                if (!countingStart) {
+                    setCountingStart(true)
+                }
+            }
 
             if (window.pageYOffset > HomeRef.current?.clientHeight + 100) {
                 // setSelectedHeader(2)
@@ -505,26 +571,43 @@ const Home = () => {
                         alt="star" />
                     <div className='w-[100%] border-[0px] sm:mt-[0px] mt-[20px] flex-wrap flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] sm:text-[35px] text-[13px] leading-tight font-semibold  ' >4.8K</h1>
-                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >Projects Completed</h1>
+                            <div className=' w-[100%] flex justify-center items-center ' >
+                                <h1 className='text-[#fff] sm:text-[50px] text-[13px] leading-tight font-semibold  ' >{Math.round(count)}+</h1>
+                            </div>
+                            <div className=' w-[100%] flex justify-center items-center ' >
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal sm:ml-[-20px]  ' >Clients</h1>
+                            </div>
                         </div>
                         <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff]  sm:text-[35px] text-[13px] leading-tight font-semibold  ' >12+</h1>
-                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >In Progress</h1>
+                            <div className=' w-[100%] flex justify-center items-center ' >
+                                <h1 className='text-[#fff]  sm:text-[50px] text-[13px] leading-tight font-semibold  ' >{Math.round(count1)}+</h1>
+                            </div>
+                            <div className=' w-[100%] flex justify-center items-center ' >
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >Positive Feedback</h1>
+                            </div>
+
                         </div>
                         <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] sm:text-[35px] text-[13px] leading-tight font-semibold  ' >2.5K+</h1>
-                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >World wide clients</h1>
+                            <div className=' w-[100%] flex justify-center items-center ' >
+                                <h1 className='text-[#fff] sm:text-[50px] text-[13px] leading-tight font-semibold  ' >{Math.round(count2)}+</h1>
+                            </div>
+                            <div className=' w-[100%] flex justify-center items-center ' >
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal sm:ml-[-10px]  ' >Channels</h1>
+                            </div>
                         </div>
                         <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
-                            <h1 className='text-[#fff] sm:text-[35px] text-[13px] leading-tight font-semibold  ' >120+</h1>
-                            <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >Popular</h1>
+                            <div className=' w-[100%] flex justify-center items-center ' >
+                                <h1 className='text-[#fff] sm:text-[50px] text-[13px] leading-tight font-semibold  ' >{Math.round(count3)}+</h1>
+                            </div>
+                            <div className=' w-[100%] flex justify-center items-center ' >
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >Views Daily</h1>
+                            </div>
                         </div>
                     </div>
                     <div className='w-[100%] sm:h-[500px] border-[0px] sm:flex   ' >
                         <img
                             src="/images/user/star.png"
-                            className=' absolute right-[200px] top-[150px] sm:visible invisible '
+                            className=' absolute right-[200px] top-[200px] sm:visible invisible '
                             alt="star" />
                         <div className=' sm:w-[50%] w-[100%] sm:px-[0px] px-[10px] sm:h-[100%] border-[0px] flex sm:flex-row flex-col justify-center items-center ' >
                             <div className='relative' >
