@@ -50,6 +50,42 @@ export default {
                 url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669383389/videos/WHITEBOARD%20/How_to_make_money_law_of_attraction_llsxqv.mp4",
                 thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669388570/videos/WHITEBOARD%20/3_Money_Lies_That_Keep_You_Broke_Forever_rxqdzk.png"
             }
+        ],
+        Sports: [
+            {
+                url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669405699/videos/Sports/yt1s.com_-_JUST_REVEALED_What_Vettel_Just_Announced_Is_INSANE_1080p_pk8leu.mp4",
+                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669405651/videos/Sports/4._JUST_REVEALED_What_Vettel_Just_Announced_Is_INSANE_qxeyym.jpg"
+            },
+            {
+                url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669405703/videos/Sports/yt1s.com_-_Hamilton_WARNED_Of_TERRIFYING_Thing_About_Verstappen_After_Second_Formula_One_Title_1080p.mp4_l9vwyx.mp4",
+                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669405647/videos/Sports/1._Hamilton_Warned_of_Terrifying_Thing_About_Verstappen_After_Second_Formula_One_q0dq8y.jpg"
+            },
+            {
+                url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669407874/videos/Sports/This_is_Insane_Ronaldo_piers_morgan_full_interview_jc4ucs.mp4",
+                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg"
+            },
+            {
+                url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669406960/videos/Sports/CJDKDL_m3qccv.mp4",
+                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669406940/videos/Sports/nfl_highlights_craziest_moments_athletic_edition_kcgche.jpg"
+            },
+        ],
+        Mix: [
+            {
+                url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669405605/videos/mix%20VIDEOS/yt1s.com_-Elon_Musk_REVEALED_This_SECRET_About_The_James_Webb_Telescope_1080p.mp4_-_Compressed_with_FlexClip_ab8srg.mp4",
+                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669413403/videos/mix%20VIDEOS/maxresdefault_4_jrldyu.jpg"
+            },
+            {
+                url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669404720/videos/mix%20VIDEOS/yt1s.com_-_6_Exercises_From_Chloe_Ting_That_You_NEED_To_Now_For_Better_Glutes_1080p_-_Compressed_with_FlexClip_k2htmv.mp4",
+                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669404665/videos/mix%20VIDEOS/maxresdefault_o1hgwu.jpg"
+            },
+            {
+                url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669389300/videos/mix%20VIDEOS/yt1s.com_-HOW_TO_THINK_ABOUT_MONEY_IN_A_RECESSION_1080p_n3kfkq.mp4",
+                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669398579/videos/mix%20VIDEOS/maxresdefault_2_kydstn.jpg"
+            },
+            {
+                url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669413626/videos/mix%20VIDEOS/Inside_Bintulu_Methanol_Plant_in_Kuala_Lumpur_Malaysia_-_Compressed_with_FlexClip_murnhg.mp4",
+                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669413666/videos/mix%20VIDEOS/maxresdefault_5_oasq9a.jpg"
+            }
         ]
     }
 }

@@ -162,6 +162,12 @@ const Home = () => {
         if (ProjectTypes[projectIndex] == "CELEB") {
             setSelectedPortfolio(Videos.Videos.Celeb)
         }
+        if (ProjectTypes[projectIndex] == "SPORTS") {
+            setSelectedPortfolio(Videos.Videos.Sports)
+        }
+        if (ProjectTypes[projectIndex] == "MIX VIDEOS") {
+            setSelectedPortfolio(Videos.Videos.Mix)
+        }
     }, [projectIndex])
 
 
