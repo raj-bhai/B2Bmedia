@@ -105,8 +105,8 @@ const Home = () => {
         if (countingStart) {
             if (Math.floor(count) < 50) {
                 const intervalId = setInterval(() =>
-                    setCount(count + 0.1),
-                    1 // every 3 seconds
+                    setCount(count + 0.5),
+                    0.01 // every 3 seconds
                 );
                 return () => clearTimeout(intervalId);
             }
@@ -117,8 +117,8 @@ const Home = () => {
         if (countingStart) {
             if (Math.floor(count1) < 150) {
                 const intervalId = setInterval(() =>
-                    setCount1(count1 + 0.3),
-                    1 // every 3 seconds
+                    setCount1(count1 + 1),
+                    0.0001 // every 3 seconds
                 );
                 return () => clearTimeout(intervalId);
             }
@@ -130,8 +130,8 @@ const Home = () => {
         if (countingStart) {
             if (Math.floor(count2) < 500) {
                 const intervalId = setInterval(() =>
-                    setCount2(count2 + 1),
-                    1 // every 3 seconds
+                    setCount2(count2 + 4),
+                    0.00000001 // every 3 seconds
                 );
                 return () => clearTimeout(intervalId);
             }
@@ -142,8 +142,8 @@ const Home = () => {
         if (countingStart) {
             if (Math.floor(count3) < 267841) {
                 const intervalId = setInterval(() =>
-                    setCount3(count3 + 100),
-                    0.001 // every 3 seconds
+                    setCount3(count3 + 444),
+                    0.00001 // every 3 seconds
                 );
                 return () => clearTimeout(intervalId);
             }
@@ -570,38 +570,38 @@ const Home = () => {
                         src="/images/user/whiteRing.png"
                         className=' absolute sm:w-[50px] sm:h-[100px] md:w-[100px] md:h-[200px] w-[20px] h-[40px]  right-[0px] bottom-[0px] sm:visible visible'
                         alt="star" />
-                    <div className='w-[100%] border-[0px] sm:mt-[0px] mt-[20px] flex-wrap flex items-center justify-between sm:px-[20px] px-[10px] ' >
-                        <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
+                    <div className='w-[100%] border-[0px] sm:py-[0px] py-[50px] sm:mt-[0px] mt-[50px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
+                        <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[13px] leading-tight font-semibold  ' >{Math.round(count)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[45px] leading-tight font-semibold  ' >{Math.round(count)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal sm:ml-[-20px]  ' >Clients</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal sm:ml-[-20px]  ' >Clients</h1>
                             </div>
                         </div>
-                        <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
+                        <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff]  sm:text-[50px] text-[13px] leading-tight font-semibold  ' >{Math.round(count1)}+</h1>
+                                <h1 className='text-[#fff]  sm:text-[50px] text-[40px] leading-tight font-semibold  ' >{Math.round(count1)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >Positive Feedback</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal  ' >Positive Feedback</h1>
                             </div>
 
                         </div>
-                        <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
+                        <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[13px] leading-tight font-semibold  ' >{Math.round(count2)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight font-semibold  ' >{Math.round(count2)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal sm:ml-[-10px]  ' >Channels</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal sm:ml-[-10px]  ' >Channels</h1>
                             </div>
                         </div>
-                        <div className='sm:w-[20%] w-[20%] border-[0px] align-bottom text-center ' >
+                        <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[13px] leading-tight font-semibold  ' >{Math.round(count3)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight font-semibold  ' >{Math.round(count3)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[11px] leading-tight font-normal  ' >Views Daily</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal  ' >Views Daily</h1>
                             </div>
                         </div>
                     </div>
@@ -883,6 +883,10 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='w-[100%] border-[0px] flex items-center justify-center sm:mb-[50px] relative ' >
+                    {/* <div>
+                        <h1>Social</h1>
+                        <h1>What do our customers say</h1>
+                    </div> */}
                     <img
                         src={`/images/user/circle9.png`}
                         className=' absolute right-[0px] top-[30%] sm:visible invisible '
