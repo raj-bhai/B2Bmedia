@@ -31,14 +31,14 @@ const Review = (props) => {
         },
     };
 
-    const textStyle = " text-[#fff]  ml-[50px]";
+    const textStyle = " text-[#fff]  sm:ml-[20px] sm:text-[16px] text-[13px] ";
 
     const yellow = "#F1C40F";
     const white = "#fff";
 
     return (
         <>
-            <div className="wrapdiv w-full ml-64">
+            <div className="wrapdiv w-full sm:ml-64 sm:px-[0px] px-[10px]">
                 <Carousel
                     swipeable={true}
                     draggable={false}
@@ -50,20 +50,20 @@ const Review = (props) => {
                     containerClass="carousel-container"
                     removeArrowOnDeviceType={["tablet", "desktop", "mobile"]}
                 >
-                    <div className=" w-[80%] h-[300px] border-[0.2px] border-[#FFFEF7] rounded-[10px] flex relative ">
-                        <div className=" w-[300px] h-[100%] border-r-[0px]  p-[25px]">
+                    <div className="sm:w-[80%] sm:h-[300px] sm:pb-[0px] sm:border-[0.2px] border-[1px] border-[#FFFEF7] rounded-[10px] sm:flex relative  ">
+                        <div className="sm:w-[300px] h-[100%] border-r-[0px]  p-[25px]">
                             <div className=" w-[100%] h-[100%] bg-[#fff] rounded-[10px] flex items-center justify-center ">
-                                <img src={`/images/user/person9.png`} className=" w-[90%] h-[90%]  " alt="project1" />
+                                <img src={`/images/user/person9.png`} className=" sm:w-[90%] w-[200px] sm:h-[90%] h-[200px]  " alt="project1" />
                             </div>
                         </div>
-                        <div className=" p-[25px] w-[600px] ">
+                        <div className=" sm:p-[25px] p-[10px] sm:w-[600px] border-[0px]">
                             <h1 className={textStyle}>
                                 GG is really awesome, it contributes a lot to grow my youtube channel Lorem ipsum dolor sit amet,
                                 consectetur adipiscing elit. Mauris porta rhoncus neque eu vestibulum. Vivamus hendrerit purus
                                 eget varius luctus. Proin condimentum suscipit magna nec pulvinar. Nulla ac ligula dolor.
                                 Maecenas at vulputate odio, a semper nisl.
                             </h1>
-                            <h1 className={textStyle + " mt-[50px] "}>Linda Gerrmy</h1>
+                            <h1 className={textStyle + " sm:mt-[50px] mt-[20px] "}>Linda Gerrmy</h1>
                             <h1 className={textStyle}>11 Nov 2022</h1>
                         </div>
                         <div className="border-[0px] absolute right-[0px] bottom-[0px] flex items-center justify-center gap-[5px] p-[15px] ">

@@ -737,7 +737,7 @@ const Home = () => {
                     </div>
 
                 </div>
-                <div id='getStarted' className='sm:w-[100%] border-[0px] pt-[100px] flex items-center justify-center sm:visible invisible '>
+                <div id='getStarted' className='sm:w-[100%] sm:h-full w-[0px] h-[0px] border-[0px] pt-[100px] flex items-center justify-center sm:visible invisible '>
                     <div className='w-[100%] sm:visible invisible ' >
                         <Services
                             id=''
@@ -746,7 +746,7 @@ const Home = () => {
                 </div>
                 <div
                     id="portfolio"
-                    ref={PortfolioRef} className='w-[100%] relative border-[0px] flex items-center justify-center '>
+                    ref={PortfolioRef} className='w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center '>
                     <img
                         src="/images/user/circle4.png"
                         className=' absolute left-[0px] top-[-50px] sm:visible invisible '
@@ -845,7 +845,7 @@ const Home = () => {
                         }}
                     />
                 </div>
-                <div className='w-[100%] border-[0px] flex items-center justify-center '>
+                <div id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
                     <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] sm:px-[0px] px-[10px]  ' >
                         <h1 className=' text-[#fff] sm:text-[30px] text-[18px] font-semibold ' >Our Latest Projects</h1>
                         <div className=' w-[100%] flex flex-wrap sm:gap-[50px] gap-[10px] mt-[20px] pb-[50px] ' >
@@ -860,7 +860,7 @@ const Home = () => {
                                     )
                                 })
                             }
-                            <div id='demos' className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
+                            <div className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
                                 {
                                     selectedPortfolio.map((item, index) => {
                                         return (
@@ -882,10 +882,10 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
+                <div className='w-[100%] border-[0px] flex items-center justify-center sm:mb-[50px] relative ' >
                     <img
                         src={`/images/user/circle9.png`}
-                        className=' absolute right-[0px] top-[30%] '
+                        className=' absolute right-[0px] top-[30%] sm:visible invisible '
                         alt="project1" />
                     <Review />
                 </div>
