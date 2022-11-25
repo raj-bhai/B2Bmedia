@@ -845,7 +845,7 @@ const Home = () => {
                         }}
                     />
                 </div>
-                <div id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
+                <div className='w-[100%] border-[0px] flex items-center justify-center '>
                     <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] sm:px-[0px] px-[10px]  ' >
                         <h1 className=' text-[#fff] sm:text-[30px] text-[18px] font-semibold ' >Our Latest Projects</h1>
                         <div className=' w-[100%] flex flex-wrap sm:gap-[50px] gap-[10px] mt-[20px] pb-[50px] ' >
@@ -860,7 +860,7 @@ const Home = () => {
                                     )
                                 })
                             }
-                            <div className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
+                            <div id='demos' className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
                                 {
                                     selectedPortfolio.map((item, index) => {
                                         return (

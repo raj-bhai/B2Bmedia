@@ -18,7 +18,7 @@ const Video = (props) => {
 
     const videoRef = useRef(null);
     return (
-        <div key={props.key} className=" sm:w-[500px] sm:h-[300px] w-[300px] h-[160px] border-[1px] rounded-lg relative "
+        <div key={props.key} className=" flex items-center justify-center sm:w-[500px] sm:h-[300px] w-[300px] h-[160px] border-[1px] rounded-lg relative "
 
         >{
                 showVideo &&
@@ -50,7 +50,7 @@ const Video = (props) => {
             {!showVideo &&
                 <FaPlayCircle
                     color='#107840'
-                    className={'text-[20px] sm:text-[100px] cursor-pointer absolute left-[200px] top-[100px] ' + imageOpacity}
+                    className={'text-[20px] sm:text-[100px] text-[50px] cursor-pointer absolute ' + imageOpacity}
                     onClick={() => {
                         setShowVideo(true)
                     }}
