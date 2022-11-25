@@ -18,7 +18,7 @@ const Video = (props) => {
 
     const videoRef = useRef(null);
     return (
-        <div className=" sm:w-[500px] sm:h-[300px] w-[300px] h-[160px] border-[1px] rounded-lg relative "
+        <div key={props.key} className=" sm:w-[500px] sm:h-[300px] w-[300px] h-[160px] border-[1px] rounded-lg relative "
 
         >{
                 showVideo &&

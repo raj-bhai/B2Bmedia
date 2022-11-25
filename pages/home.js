@@ -871,6 +871,7 @@ const Home = () => {
                                             //     ></iframe>
                                             // </>
                                             <Video
+                                                key={index}
                                                 thumbnail={item.thumbnail}
                                                 src={item.url}
                                             />
