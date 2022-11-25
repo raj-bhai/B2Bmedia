@@ -94,7 +94,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        if (ProjectTypes[{projectIndex}] == "TECH") {
+        if (ProjectTypes[projectIndex] == "TECH") {
             setSelectedPortfolio(Videos.Videos.Tech)
         }
         if (ProjectTypes[projectIndex] == "WHITEBOARD") {
