@@ -94,15 +94,15 @@ const Home = () => {
 
 
     useEffect(() => {
-        if (ProjectTypes[1] == "TECH") {
+        if (ProjectTypes[{projectIndex}] == "TECH") {
             setSelectedPortfolio(Videos.Videos.Tech)
         }
-        // if (ProjectTypes[projectIndex] == "WHITEBOARD") {
-        //     setSelectedPortfolio(Videos.Videos.Whiteboard)
-        // }
-        // if (ProjectTypes[projectIndex] == "CELEB") {
-        //     setSelectedPortfolio(Videos.Videos.Celeb)
-        // }
+        if (ProjectTypes[projectIndex] == "WHITEBOARD") {
+            setSelectedPortfolio(Videos.Videos.Whiteboard)
+        }
+        if (ProjectTypes[projectIndex] == "CELEB") {
+            setSelectedPortfolio(Videos.Videos.Celeb)
+        }
     }, [projectIndex])
 
 
