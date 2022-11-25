@@ -20,6 +20,7 @@ import Review from '../components/Home/review';
 import Contact from '../components/Home/contact';
 import Footer from '../components/Home/footer';
 import Label from '../components/Home/micro/label';
+import Videos from '../constants/portfolio';
 import YouTube, { YouTubeProps } from 'react-youtube';
 
 
@@ -721,7 +722,7 @@ const Home = () => {
                         src="/images/user/circle6.png"
                         className=' absolute right-[0px] sm:visible invisible '
                         alt="person7" />
-                    <div  className='sm:h-[250px] h-[150px] w-[100%]  border-[0px] flex justify-between ' >
+                    <div className='sm:h-[250px] h-[150px] w-[100%]  border-[0px] flex justify-between ' >
                         <div className='sm:w-[600px] h-[100%] flex items-center ' >
                             <div>
                                 <h1 className={`text-[#fff] sm:text-[40px] font-semibold ${gradiantText1}`} >Confused about the plans</h1>
@@ -736,7 +737,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div  className='w-[100%]  flex justify-center border-[0px] ' >
+                <div className='w-[100%]  flex justify-center border-[0px] ' >
                     <CustomPlan
                         onSubmit={() => {
                             setShowPopup(true);
@@ -760,15 +761,14 @@ const Home = () => {
                             }
                             <div className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
                                 {
-                                    [...Array(8)].map((item, index) => {
+                                    Videos.Videos.Tech.map((item, index) => {
                                         return (
-                                            <img
-                                                key={index}
-                                                src={`/images/user/project${index + 1}.png`}
-                                                className=' sm:w-[500px] sm:h-[350px] rounded-[20px] '
-                                                alt="project1" />
-                                            // <iframe width="500" height="350" src="http://www.youtube.com/embed/e5SbPyIxSoA?modestbranding=1" frameborder="0"
-                                            //     allowfullscreen></iframe>
+                                            <>
+                                                <iframe width="500" height="350"
+                                                    src={item.url}
+                                                    frameborder="0"
+                                                    allowfullscreen></iframe>
+                                            </>
                                         )
                                     })
                                 }
