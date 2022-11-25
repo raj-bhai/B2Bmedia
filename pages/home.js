@@ -14,6 +14,7 @@ import {
     FaPlayCircle,
     FaChevronRight
 } from 'react-icons/fa';
+import Video from '../components/Home/video';
 import Globe from '../components/Home/globe';
 import Services from '../components/Home/services';
 import Review from '../components/Home/review';
@@ -21,7 +22,7 @@ import Contact from '../components/Home/contact';
 import Footer from '../components/Home/footer';
 import Label from '../components/Home/micro/label';
 import Videos from '../constants/portfolio';
-import YouTube, { YouTubeProps } from 'react-youtube';
+
 
 
 
@@ -170,7 +171,7 @@ const Home = () => {
 
     // useEffect(() => {
     //     if (domLoaded) {
-    //         document?.getElementById('gg').scrollIntoView();
+    //         document?.getElementById('demos').scrollIntoView();
     //     }
     // })
 
@@ -845,13 +846,13 @@ const Home = () => {
                     />
                 </div>
                 <div id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
-                    <div className=' w-[80%] border-[0px] mt-[100px]  ' >
-                        <h1 className=' text-[#fff] text-[30px] font-semibold ' >Our Latest Projects</h1>
-                        <div className=' w-[100%] flex flex-wrap gap-[50px] mt-[20px] pb-[50px] ' >
+                    <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] sm:px-[0px] px-[10px]  ' >
+                        <h1 className=' text-[#fff] sm:text-[30px] text-[18px] font-semibold ' >Our Latest Projects</h1>
+                        <div className=' w-[100%] flex flex-wrap sm:gap-[50px] gap-[10px] mt-[20px] pb-[50px] ' >
                             {
                                 ProjectTypes.map((item, index) => {
                                     return (
-                                        <h1 key={index} className={` text-[19px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                        <h1 key={index} className={` sm:text-[19px] text-[12px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
                                             onClick={() => {
                                                 setprojectIndex(index)
                                             }}
@@ -863,14 +864,16 @@ const Home = () => {
                                 {
                                     selectedPortfolio.map((item, index) => {
                                         return (
-                                            <>
-                                                <iframe width="500" height="350"
-                                                    className='rounded-lg'
-                                                    src={item.url}
-                                                // frameborder="0"
-                                                // allowfullScreen
-                                                ></iframe>
-                                            </>
+                                            // <>
+                                            //     <iframe
+                                            //         className='rounded-lg sm-w-[1000px] sm:h-[350px] w-[300px] h-[160px] '
+                                            //         src={item.url}
+                                            //     ></iframe>
+                                            // </>
+                                            <Video
+                                                thumbnail={item.thumbnail}
+                                                src={item.url}
+                                            />
                                         )
                                     })
                                 }
