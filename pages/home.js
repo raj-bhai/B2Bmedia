@@ -766,8 +766,9 @@ const Home = () => {
                                             <>
                                                 <iframe width="500" height="350"
                                                     src={item.url}
-                                                    frameborder="0"
-                                                    allowfullscreen></iframe>
+                                                // frameborder="0"
+                                                // allowfullScreen
+                                                ></iframe>
                                             </>
                                         )
                                     })
