@@ -89,7 +89,7 @@ const Home = () => {
     //selected project types (ex: All, Tech, Crypto)
     const [projectIndex, setprojectIndex] = useState(1);
 
-    const [selectedPortfolio, setSelectedPortfolio] = useState(null);   //video urls
+    const [selectedPortfolio, setSelectedPortfolio] = useState([]);   //video urls
 
 
 
