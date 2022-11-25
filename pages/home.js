@@ -24,12 +24,13 @@ import Videos from '../constants/portfolio';
 import YouTube, { YouTubeProps } from 'react-youtube';
 
 
+
 const ProjectTypes = [
     "All",
     "TECH",
+    "WHITEBOARD",
     "CELEB",
     "SPORTS",
-    "WHITEBOARD",
     "MIX VIDEOS"
 ]
 
@@ -87,6 +88,22 @@ const Home = () => {
 
     //selected project types (ex: All, Tech, Crypto)
     const [projectIndex, setprojectIndex] = useState(1);
+
+    const [selectedPortfolio, setSelectedPortfolio] = useState(null);   //video urls
+
+
+
+    useEffect(() => {
+        if (ProjectTypes[projectIndex] == "TECH") {
+            setSelectedPortfolio(Videos.Videos.Tech)
+        }
+        if (ProjectTypes[projectIndex] == "WHITEBOARD") {
+            setSelectedPortfolio(Videos.Videos.Whiteboard)
+        }
+        if (ProjectTypes[projectIndex] == "CELEB") {
+            setSelectedPortfolio(Videos.Videos.Celeb)
+        }
+    }, [projectIndex])
 
 
     useEffect(() => {
@@ -761,10 +778,11 @@ const Home = () => {
                             }
                             <div className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
                                 {
-                                    Videos.Videos.Tech.map((item, index) => {
+                                    selectedPortfolio.map((item, index) => {
                                         return (
                                             <>
                                                 <iframe width="500" height="350"
+                                                    className='rounded-lg'
                                                     src={item.url}
                                                 // frameborder="0"
                                                 // allowfullScreen

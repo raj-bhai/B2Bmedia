@@ -63,7 +63,7 @@ const Review = (props) => {
                                 eget varius luctus. Proin condimentum suscipit magna nec pulvinar. Nulla ac ligula dolor.
                                 Maecenas at vulputate odio, a semper nisl.
                             </h1>
-                            <h1 className={textStyle + " mt-[50px] "}>Linda Germy</h1>
+                            <h1 className={textStyle + " mt-[50px] "}>Linda Gerrmy</h1>
                             <h1 className={textStyle}>11 Nov 2022</h1>
                         </div>
                         <div className="border-[0px] absolute right-[0px] bottom-[0px] flex items-center justify-center gap-[5px] p-[15px] ">
