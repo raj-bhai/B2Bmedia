@@ -34,7 +34,7 @@ const Contact = (props) => {
     }, [firstName, lastName, email, contact, desc])
 
     return (
-        <div className=" w-[70%] border-[0.5px] rounded-[20px] mt-[100px] relative md:p-[50px] sm:p-[30px] p-[20px] " >
+        <div className=" sm:w-[70%] w-[100%] border-[0.5px] rounded-[20px] sm:mt-[100px] mt-[50px] relative md:p-[50px] sm:p-[30px] p-[20px] " >
             <img
                 src={`/images/user/circle10.png`}
                 className=' absolute right-[0px] md:visible invisible bottom-[0px] md:w-[300px] sm:w-[200px] sm:h-[150px] w-[0px] h-[0px] md:h-[230px] rounded-br-[20px] z-[0] '
@@ -42,13 +42,13 @@ const Contact = (props) => {
             <div className=" w-[100%] " >
                 <h1 className={text1} >GET IN TOUCH</h1>
                 <h1 className={text2} >24/7 We will answer of your question and problems</h1>
-                <div className=" w-[100%] h-[400px] border-[0px] mt-[20px] flex justify-between" >
+                <div className=" w-[100%] h-[400px] border-[0px] mt-[20px] flex sm:justify-between justify-nenter " >
                     <div className="w-[100%] h-[100%] border-[0px] p-[10px] " >
                         <div className=" w-[100%] flex flex-wrap gap-[20px] mt-[10px] justify-between " >
                             <input type={'text'}
                                 placeholder="first name"
                                 value={firstName}
-                                className=" w-[45%] text-[#fff] md:h-[40px] sm:h-[30px] focus:border-sky-500 h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400 "
+                                className=" sm:w-[45%] w-[100%] text-[#fff] md:h-[40px] sm:h-[30px] focus:border-sky-500 h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400 "
                                 onChange={(e) => {
                                     setFirstName(e.target.value)
                                 }}
@@ -57,7 +57,7 @@ const Contact = (props) => {
                             <input type={'text'}
                                 placeholder="last name"
                                 value={lastName}
-                                className=" w-[45%] text-[#fff] v md:h-[40px] sm:h-[30px] h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400"
+                                className=" sm:w-[45%] w-[100%] text-[#fff] v md:h-[40px] sm:h-[30px] h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400"
                                 onChange={(e) => {
                                     setLastname(e.target.value)
                                 }}
@@ -98,7 +98,7 @@ const Contact = (props) => {
                             </textarea>
                         </div>
                     </div>
-                    <div className=" md:w-[280px] w-[0px] h-[100%] border-[0px] relative flex items-end justify-center md:visible invisible sm:invisible p-2.5  placeholder-gray-400" >
+                    <div className=" md:w-[280px] w-[0px] h-[100%] border-[0px] relative flex sm:items-end items-center justify-center  p-2.5  placeholder-gray-400" >
                         <img
                             src={`/images/user/person10.png`}
                             className=' w-[415px] h-[300px] z-[200] absolute top-[0px] md:visible invisible sm:invisible '
@@ -113,7 +113,7 @@ const Contact = (props) => {
                         <input type={'button'}
                             value={'Submit'}
                             disabled={btnDisabled}
-                            className={" w-[200px] h-[50px] rounded-[30px] flex items-center justify-center text-[#fff] text-[20px] font-semibold " + cusror}
+                            className={" sm:w-[200px] sm:h-[50px] w-[100px] h-[35px] sm:relative absolute sm:top-[0px] top-[360px] sm:right-[0px] right-[0px] rounded-[30px] flex items-center justify-center text-[#fff] sm:text-[20px] text-[13px] font-semibold " + cusror}
                             onClick={() => {
                                 props.onClick();
                                 setFirstName('');

@@ -142,7 +142,7 @@ const Home = () => {
         if (countingStart) {
             if (Math.floor(count3) < 267841) {
                 const intervalId = setInterval(() =>
-                    setCount3(count3 + 444),
+                    setCount3(count3 + 1),
                     0.00001 // every 3 seconds
                 );
                 return () => clearTimeout(intervalId);
@@ -177,7 +177,7 @@ const Home = () => {
 
     // useEffect(() => {
     //     if (domLoaded) {
-    //         document?.getElementById('demos').scrollIntoView();
+    //         document.getElementById('footer').scrollIntoView();
     //     }
     // })
 
@@ -428,7 +428,7 @@ const Home = () => {
                     {
                         <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] ' >
 
-                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] pl-[0px]  border-[0px] sm:min-w-[550px] ` + textContainerStyle}
+                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[30px] sm:pb-[0px] pb-[50px] pl-[0px]  border-[0px] sm:min-w-[550px] ` + textContainerStyle}
                             >
                                 <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[60px] flex relative ' >
                                     <img
@@ -899,14 +899,14 @@ const Home = () => {
                         alt="project1" />
                     <Review />
                 </div>
-                <div id="contact" className='w-[100%] border-[0px] flex items-center justify-center mb-[50px] relative ' >
+                <div id="contact" className='w-[100%] sm:px-[0px] px-[10px] border-[0px] flex items-center justify-center mb-[50px] relative ' >
                     <Contact
                         onClick={() => {
                             setShowPopup(true);
                         }}
                     />
                 </div>
-                <div className='w-[100%] border-[0px] flex items-center justify-center' id="footer" >
+                <div className='w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center' id="footer" >
                     {
                         typeof window !== 'undefined' &&
                         <Footer />

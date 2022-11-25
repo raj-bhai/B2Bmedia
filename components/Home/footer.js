@@ -16,7 +16,7 @@ const Footer = (props) => {
 
     return (
         domLoaded &&
-        <div className=" w-[90%] h-[300px] border-[0px] p-[50px] relative " >
+        <div className=" sm:w-[90%] w-[100%] sm:h-[300px] border-[0px] sm:p-[50px] relative " >
             <img
                 src={`/images/user/footer1.png`}
                 className=' absolute left-[0px] top-[0px] '
@@ -25,8 +25,8 @@ const Footer = (props) => {
                 src={`/images/user/footer2.png`}
                 className=' absolute left-[30px] top-[0px] '
                 alt="project1" />
-            <div className=" w-[100%] h-[250px] border-[0px] flex " >
-                <div className="w-[50%] h-[100%] border-r-[0px] flex items-start justify-between " >
+            <div className=" w-[100%] sm:h-[250px] h-[200px] border-[0px] flex " >
+                <div className="w-[50%] h-[100%] border-r-[0px] flex items-start justify-between sm:visible invisible " >
                     <div className=" w-[80%] h-[80%] bg-[#fff] rounded-[30px] flex items-center justify-start px-[50px] " >
                         <div>
                             <h1 className="text-[#000] text-[18px] font-semibold " >Signup to receive product updates and more</h1>
@@ -66,21 +66,21 @@ const Footer = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="w-[50%] h-[100%] border-[0px] px-[20px] py-[20px] flex  justify-end " >
+                <div className="sm:w-[50%] w-[100%] h-[100%] sm:relative absolute border-[0px] px-[20px] py-[20px] flex  justify-end " >
                     <div className=" w-[50%] h-[100%] border-r-[0px] flex items-start justify-end " >
-                        <div className=" mt-[20px] " >
-                            <h1 className=" text-[#fff] text-[18px] font-medium  " >Office</h1>
-                            <h1 className=" text-[#fff] text-[16px] font-normal mt-[10px] leading-tight  " >Plot number 470</h1>
-                            <h1 className=" text-[#fff] text-[16px] font-normal leading-tight " >Udyog Vihar, phase-5</h1>
-                            <h1 className=" text-[#fff] text-[16px] font-normal leading-tight " >Gurugram, Haryana</h1>
-                            <h1 className=" text-[#fff] text-[16px] font-normal leading-tight " >India    </h1>
+                        <div className=" mt-[20px] invisible " >
+                            <h1 className=" text-[#fff] sm:text-[18px] text-[14px] font-medium  " >Office</h1>
+                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal mt-[10px] leading-tight  " >Plot number 470</h1>
+                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal leading-tight " >Udyog Vihar, phase-5</h1>
+                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal leading-tight " >Gurugram, Haryana</h1>
+                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal leading-tight " >India    </h1>
                         </div>
                     </div>
-                    <div className=" w-[50%] h-[100%] border-[0px] flex items-start justify-end " >
+                    <div className=" w-[50%] h-[100%] border-[0px] sm:pl-[0px] pl-[10px] flex items-start sm:justify-end " >
                         <div className=" mt-[20px] " >
-                            <h1 className=" text-[#fff] text-[18px] font-medium  " >Contact</h1>
-                            <h1 className=" text-[#fff] text-[16px] font-normal mt-[10px] leading-tight  " >+91 6000205657</h1>
-                            <h1 className=" text-[#fff] text-[16px] font-normal leading-tight  " >support@growgrip.com</h1>
+                            <h1 className=" text-[#fff] sm:text-[18px] text-[14px] font-medium  " >Contact</h1>
+                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal mt-[10px] leading-tight  " >+91 6000205657</h1>
+                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal leading-tight  " >support@growgrip.com</h1>
                         </div>
                     </div>
                 </div>
