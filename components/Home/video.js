@@ -15,7 +15,8 @@ const Video = (props) => {
         setVideoOpacity(' opacity-0  z-[100]');
         setImageOpacity(' opacity-1 z-[200]')
         setShowVideo(false)
-    }, [])
+        console.log("Project Index :", props.projectIndex)
+    }, [props.projectIndex])
 
     const videoRef = useRef(null);
 
@@ -64,7 +65,10 @@ const Video = (props) => {
                         }}
                     />
                 }
-                <img src={'https://www.abhaf.org/assets/images/dark-loader.gif'} style={{ position: 'absolute', width: 50, height: 50, display: imageLoaded && videoLoad ? "none" : "block" }}></img>
+                {/* {
+                    (!videoLoad || !imageLoaded) && */}
+                <img src={'https://www.abhaf.org/assets/images/dark-loader.gif'} style={{ position: 'absolute', width: 50, height: 50, }}></img>
+                {/* } */}
             </div>
         </>
     )

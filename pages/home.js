@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo, } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Header from '../components/Home/header';
 import MovingText from 'react-moving-text';
 import ParticleEffectButton from 'react-particle-effect-button'
@@ -37,53 +37,40 @@ const ProjectTypes = [
 ]
 
 
-const uderlineText = 'underline underline-offset-8 decoration-sky-500';
-
 const Home = () => {
 
     const [domLoaded, setDomLoaded] = useState(false);
 
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
-    const [textContainerStyle, setTextContainerStyle] = useState('');
     const [btn1Animate, setBtn1Animate] = useState(false);
     const [btn2Animate, setBtn2Animate] = useState(false);
-    const [showMainText, setShowMaiinText] = useState(true);
-    const [aboutStyle, setAboutStyle] = useState('');
-    const [serviceStyle, setServiceStyle] = useState('');
-    const [homeH1, setHomeH1] = useState('');
-    const [AboutH1, setAboutH1] = useState('');
-    const [ServicesH1, setServicesH1] = useState('');
-    const [PricingH1, setPricingH1] = useState('');
-    const [ContactH1, setContactH1] = useState('');
     const [showArrowUp, setShowArrowUp] = useState(false);
-    const [homeBG, setHomeBG] = useState(0);
-    const scroll = useRef(null);
     const HomeRef = useRef(null);
     const AboutRef = useRef(null);
     const ServicesRef = useRef(null);
+    const GlobeRef = useRef(null)
     const PortfolioRef = useRef(null)
     const PricingRef = useRef(null);
+    const ExtraRef = useRef(null);
+    const ExtraRef1 = useRef(null);
+    const ExtraRef2 = useRef(null);
+    const CustomPlanRef = useRef(null)
     const ContactRef = useRef(null);
-    const textPrimaryCol = ' text-[#ECF0F1]';
+    const FooterRef = useRef(null);
+    const BottomRef = useRef(null);
     const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
-    const textHover = 'hover:text-yellow-200'
 
     const [showPopup, setShowPopup] = useState(false);
 
     const gradiantText1 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#B2BABB] to-[#F0F3F4]';
     const gradiantText2 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#5D9B81] via-[#93D900] to-[#93D900]';
 
-    const [offset, setOffset] = useState(0);
     const [showText2, setShowText2] = useState(false);
     const [showText3, setShowText3] = useState(false);
     const [showText4, setShowText4] = useState(false);
-    const [showText5, setShowText5] = useState(false);
 
     //selected header index
     const [selectedHeader, setSelectedHeader] = useState(1)
-
-
-    const [index, setIndex] = useState(0);
 
     //selected pricing
     const [pricingIndex, setPricingIndex] = useState(1);
@@ -180,20 +167,6 @@ const Home = () => {
         setDomLoaded(true);
     }, []);
 
-    // useEffect(() => {
-    //     if (domLoaded) {
-    //         document.getElementById('footer').scrollIntoView();
-    //     }
-    // })
-
-    useEffect(() => {
-        const intervalId = setInterval(() =>
-            setIndex(index => index + 1),
-            3000 // every 3 seconds
-        );
-        return () => clearTimeout(intervalId);
-    }, []);
-
     setTimeout(() => {
         setShowText2(true)
     }, 1000);
@@ -206,31 +179,6 @@ const Home = () => {
         setShowText4(true)
     }, 2000);
 
-    setTimeout(() => {
-        setShowText5(true)
-    }, 2500);
-
-    useEffect(() => {
-        HomeFocused()
-    }, [])
-
-    const bgImages = [
-        "url(https://res.cloudinary.com/drgvislmm/image/upload/v1663691577/WebsiteImages/27263_szxh1r.jpg)",
-        "url(https://res.cloudinary.com/drgvislmm/image/upload/v1664009359/WebsiteImages/90595_gi3aj3.jpg)",
-        "url(https://res.cloudinary.com/drgvislmm/image/upload/v1663689788/WebsiteImages/rm373batch2-08_ikx2nb.jpg)"
-    ]
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            if (homeBG < bgImages.length - 1) {
-                setHomeBG(homeBG + 1)
-            } else {
-                setHomeBG(0)
-            }
-        }, 15000);
-        return () => clearTimeout(timer);
-    }, [homeBG])
-
     useEffect(() => {
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
@@ -242,29 +190,9 @@ const Home = () => {
     }, [])
 
     const onScroll = () => {
-        setOffset(window.pageYOffset);
-        // console.log("gg :", AboutRef.current?.clientHeight)
         if (window.pageYOffset > 50) {
             setHeaderStyle(' bg-gradient-to-r from-[#063f09] via-[#107840] via-[#1F5025] via -[#28602E] to-[#146a24]');
             setShowArrowUp(true)
-            // if ((window.pageYOffset > HomeRef.current?.clientHeight - 100)) {
-            //     if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight - 100)) {
-            //         if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100)) {
-            //             if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + ServicesRef.current?.clientHeight + PricingRef.current?.clientHeight + PortfolioRef.current?.clientHeight - 150)) {
-            //                 ContactFocused()
-            //             } else {
-            //                 PricingFocused()
-            //             }
-            //         } else {
-            //             ServiceFocused()
-            //         }
-            //     } else {
-            //         AboutFocused()
-            //     }
-            // } else {
-            //     HomeFocused()
-            // }
-
 
             //number countdown star
             if (window.pageYOffset > 300) {
@@ -274,104 +202,29 @@ const Home = () => {
             }
 
             if (window.pageYOffset > HomeRef.current?.clientHeight + 100) {
-                // setSelectedHeader(2)
+                if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100) {
+                    if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight) {
+                        if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight + ContactRef.current?.clientHeight - 200) {
+                            setSelectedHeader(5)
+                        } else {
+                            setSelectedHeader(4)
+                        }
+                    } else {
+                        setSelectedHeader(3)
+                    }
+                } else {
+                    setSelectedHeader(2)
+                }
             } else {
-                //  setSelectedHeader(1)
+                setSelectedHeader(1)
             }
 
         } else {
             setShowArrowUp(false);
-            // setShowMaiinText(true);
             setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
-            // setTextContainerStyle('');
-            // setServiceStyle('');
-            // HomeFocused()
         }
     };
 
-    // const onPlayerReady = YouTubeProps['onReady'] = (event) => {
-    //     // access to player in all event handlers via event.target
-    //     event.target.pauseVideo();
-    // }
-
-    // const opts = YouTubeProps['opts'] = {
-    //     height: '390',
-    //     width: '640',
-    //     playerVars: {
-    //         // https://developers.google.com/youtube/player_parameters
-    //         autoplay: 1,
-    //     },
-    // };
-
-
-    const HomeFocused = (scroll) => {
-        setHomeH1(uderlineText);
-        if (scroll) {
-            document.getElementById('home').scrollIntoView();
-        }
-        setAboutH1('');
-        setServicesH1('');
-        setPricingH1('');
-        setContactH1('');
-    }
-
-
-    const AboutFocused = (scroll) => {
-        setHomeH1('');
-        if (scroll) {
-            document.getElementById('about').scrollIntoView();
-        }
-        setAboutH1(uderlineText);
-        setServicesH1('');
-        setPricingH1('');
-        setContactH1('');
-    }
-
-    const ServiceFocused = (scroll) => {
-        setHomeH1('');
-        if (scroll) {
-            document.getElementById('services').scrollIntoView();
-        }
-        setAboutH1('');
-        setServicesH1(uderlineText);
-        setPricingH1('');
-        setContactH1('')
-    }
-
-
-
-    const PricingFocused = (scroll) => {
-        setHomeH1('');
-        if (scroll) {
-            document.getElementById('pricing').scrollIntoView();
-        }
-        setAboutH1('');
-        setServicesH1('');
-        setPricingH1(uderlineText);
-        setContactH1('')
-    }
-
-    const ContactFocused = (scroll) => {
-        setHomeH1('');
-        if (scroll) {
-            document.getElementById('contact').scrollIntoView();
-        }
-        setAboutH1('');
-        setServicesH1('');
-        setPricingH1('');
-        setContactH1(uderlineText);
-    }
-
-    const opts = {
-        height: '350',
-        width: '500',
-        playerVars: {
-            // https://developers.google.com/youtube/player_parameters
-            autoplay: 1,
-        },
-    };
-
-    // console.log(offset);
     return (
         domLoaded &&
             typeof window !== 'undefined' ?
@@ -387,7 +240,7 @@ const Home = () => {
                         }}
                     />
                 }
-                <div className={'w-[100%] sm:min-h-[700px] border-[0px]'} ref={HomeRef}>
+                <div ref={HomeRef} className={'w-[100%] sm:min-h-[700px] border-[0px]'}>
                     <Header
                         className={headerStyle}
                         selectedHeader={selectedHeader}
@@ -433,7 +286,7 @@ const Home = () => {
                     {
                         <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] ' >
 
-                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[30px] sm:pb-[0px] pb-[50px] pl-[0px]  border-[0px] sm:min-w-[550px] ` + textContainerStyle}
+                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[30px] sm:pb-[0px] pb-[50px] pl-[0px]  border-[0px] sm:min-w-[550px] `}
                             >
                                 <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[60px] flex relative ' >
                                     <img
@@ -570,8 +423,8 @@ const Home = () => {
                         </div>
                     }
                 </div>
-                <div
-                    className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative' id='about' ref={AboutRef}
+                <div ref={AboutRef}
+                    className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative' id='about'
                 >
                     <img
                         src="/images/user/circle1.png"
@@ -643,8 +496,8 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div
-                    ref={ServicesRef} className='w-[100%] relative sm:pt-[0px] sm:px-[80px] px-[10px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
+                <div ref={GlobeRef}
+                    className='w-[100%] relative sm:pt-[0px] sm:px-[80px] px-[10px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
                     <img
                         src="/images/user/circle2.png"
                         className=' absolute top-[-100px] left-[0px] sm:visible invisible   '
@@ -748,16 +601,15 @@ const Home = () => {
                     </div>
 
                 </div>
-                <div id='getStarted' className='sm:w-[100%] sm:h-full w-[0px] h-[0px] border-[0px] pt-[100px] flex items-center justify-center sm:visible invisible '>
+                <div ref={ServicesRef} id='getStarted' className='sm:w-[100%] sm:h-full w-[0px] h-[0px] border-[0px] pt-[100px] flex items-center justify-center sm:visible invisible '>
                     <div className='w-[100%] sm:visible invisible ' >
                         <Services
                             id=''
                         />
                     </div>
                 </div>
-                <div
-                    id="portfolio"
-                    ref={PortfolioRef} className='w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center '>
+                <div ref={PortfolioRef}
+                    id="portfolio" className='w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center '>
                     <img
                         src="/images/user/circle4.png"
                         className=' absolute left-[0px] top-[-50px] sm:visible invisible '
@@ -783,7 +635,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[100%] flex item-center justify-center' >
+                <div ref={PricingRef} className='w-[100%] flex item-center justify-center' >
                     <div className=' w-[90%] border-[0px] sm:mt-[50px] mt-[20px] flex sm:gap-[80px] gap-[20px] flex-wrap items-center justify-center ' >
                         <PricingCard
                             for="Short Videos (4-5 mins)"
@@ -829,7 +681,7 @@ const Home = () => {
                         />
                     </div>
                 </div>
-                <div className='w-[100%] flex justify-center border-[0px] sm:pt-[50px] sm:pl-[50px] sm:pr-[150px] pl-[10px] pr-[10px] ' >
+                <div ref={ExtraRef} className='w-[100%] flex justify-center border-[0px] sm:pt-[50px] sm:pl-[50px] sm:pr-[150px] pl-[10px] pr-[10px] ' >
                     <img
                         src="/images/user/circle6.png"
                         className=' absolute right-[0px] sm:visible invisible '
@@ -849,34 +701,36 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[100%]  flex justify-center border-[0px] ' >
+                <div ref={CustomPlanRef} className='w-[100%]  flex justify-center border-[0px] ' >
                     <CustomPlan
                         onSubmit={() => {
                             setShowPopup(true);
                         }}
                     />
                 </div>
-                <div id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
+                <div ref={ExtraRef1} id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
                     <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] sm:px-[0px] px-[10px]  ' >
                         <h1 className=' text-[#fff] sm:text-[30px] text-[18px] font-semibold ' >Our Latest Projects</h1>
-                        <div className=' w-[100%] flex flex-wrap sm:gap-[50px] gap-[10px] mt-[20px] pb-[50px]' >
-                            {
-                                ProjectTypes.map((item, index) => {
-                                    return (
-                                        <input type={"button"}
-                                            onClick={() => {
-                                                setprojectIndex(index)
-                                            }}
-                                            value={item}
-                                            key={index}
-                                            className={` sm:text-[19px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
-                                        >
-                                        </input>
-                                        // <h1 key={index} className={` sm:text-[19px] text-[12px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
-                                        // >{item}</h1>
-                                    )
-                                })
-                            }
+                        <div className=' w-[100%] flex flex-wrap mt-[20px] pb-[50px] border-[0px]' >
+                            <div className='w-[100%] flex flex-wrap sm:gap-[50px] gap-[10px] border-[0px] sm:pb-[50px] ' >
+                                {
+                                    ProjectTypes.map((item, index) => {
+                                        return (
+                                            <input type={"button"}
+                                                onClick={() => {
+                                                    setprojectIndex(index)
+                                                }}
+                                                value={item}
+                                                key={index}
+                                                className={` sm:text-[19px] border-[0px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                            >
+                                            </input>
+                                            // <h1 key={index} className={` sm:text-[19px] text-[12px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                            // >{item}</h1>
+                                        )
+                                    })
+                                }
+                            </div>
                             <div className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
                                 {
                                     selectedPortfolio.map((item, index) => {
@@ -885,6 +739,7 @@ const Home = () => {
                                                 key={index}
                                                 thumbnail={item.thumbnail}
                                                 src={item.url}
+                                                projectIndex={projectIndex}
                                             />
                                         )
                                     })
@@ -893,7 +748,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[100%] border-[0px] flex items-center justify-center sm:mb-[50px] relative ' >
+                <div ref={ExtraRef2} className='w-[100%] border-[0px] flex items-center justify-center sm:mb-[50px] relative ' >
                     {/* <div>
                         <h1>Social</h1>
                         <h1>What do our customers say</h1>
@@ -904,20 +759,20 @@ const Home = () => {
                         alt="project1" />
                     <Review />
                 </div>
-                <div id="contact" className='w-[100%] sm:px-[0px] px-[10px] border-[0px] flex items-center justify-center mb-[50px] relative ' >
+                <div ref={ContactRef} id="contact" className='w-[100%] sm:px-[0px] px-[10px] border-[0px] flex items-center justify-center mb-[50px] relative ' >
                     <Contact
                         onClick={() => {
                             setShowPopup(true);
                         }}
                     />
                 </div>
-                <div className='w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center' id="footer" >
+                <div ref={FooterRef} className='w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center' id="footer" >
                     {
                         typeof window !== 'undefined' &&
                         <Footer />
                     }
                 </div>
-                <div className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' >
+                <div ref={BottomRef} className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' >
                     <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
                         <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
                             {/* <FaWhatsapp
@@ -947,7 +802,7 @@ const Home = () => {
                                 className='text-[20px] sm:text-[30px] cursor-pointer '
                                 onClick={() => {
                                     window?.open("https://www.instagram.com/grogrip_media/")
-                                }} 
+                                }}
                             />
                             <FaLinkedinIn
                                 color='white'
