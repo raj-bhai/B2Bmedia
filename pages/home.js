@@ -143,7 +143,7 @@ const Home = () => {
             if (Math.floor(count3) < 267841) {
                 const intervalId = setInterval(() =>
                     setCount3(count3 + 1),
-                    0.00001 // every 3 seconds
+                    0.001 // every 3 seconds
                 );
                 return () => clearTimeout(intervalId);
             }
