@@ -135,7 +135,7 @@ const Home = () => {
                     0.001 // every 3 seconds
                 );
                 return () => clearTimeout(intervalId);
-            } else{
+            } else {
                 setCount3(215794)
             }
         }
@@ -720,6 +720,7 @@ const Home = () => {
                                     ProjectTypes.map((item, index) => {
                                         return (
                                             <button type="button"
+                                                key={index}
                                                 className={` sm:text-[19px] border-[0px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52]' : ' text-[#fff]'}`}
                                                 onClick={() => {
                                                     setprojectIndex(index)
@@ -758,7 +759,7 @@ const Home = () => {
                         alt="project1" />
                     <Review />
                     <div className='absolute bottom-[0px] border-[0px] sm:right-[50px] right-[0px] w-[200px] h-[50px] flex items-center sm:justify-center justify-end ' >
-                        <button type="button" class="text-[#fff] hover:text-[#000] hover:bg-white focus:ring-4 focus:ring-white focus:outline-none  font-medium rounded-lg text-lg border-[1px] hover:border-[0px] px-5 py-2.5 text-center inline-flex items-center mr-2 ">
+                        <button type="button" className="text-[#fff] hover:text-[#000] hover:bg-white focus:ring-4 focus:ring-white focus:outline-none  font-medium rounded-lg text-lg border-[1px] hover:border-[0px] px-5 py-2.5 text-center inline-flex items-center mr-2 ">
                             <FaStar
                                 className='mr-[10px]'
                             />
