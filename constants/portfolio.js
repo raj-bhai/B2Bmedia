@@ -48,7 +48,7 @@ export default {
             },
             {
                 url: "https://res.cloudinary.com/drgvislmm/video/upload/v1669383389/videos/WHITEBOARD%20/How_to_make_money_law_of_attraction_llsxqv.mp4",
-                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669388570/videos/WHITEBOARD%20/3_Money_Lies_That_Keep_You_Broke_Forever_rxqdzk.png"
+                thumbnail: "https://res.cloudinary.com/drgvislmm/image/upload/v1669483095/videos/WHITEBOARD%20/whiteboard5_z7u6s7.png"
             }
         ],
         Sports: [

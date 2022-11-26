@@ -6,6 +6,24 @@ const RightArrow = (props) => {
     return <div></div>;
 };
 
+const SERVICES = [
+    {
+        review: "The team appeared to be very confident in their abilities, which gave me confidence that I had found the right team for the job. It is very easy to communicate with them, and they promptly responded to any and all questions and concerns I had. Good Job.",
+        name: "Tessa De Ree",
+        date: "11 Nov 2022"
+    },
+    {
+        review: "They were very good at following instructions and delivering exactly what I asked for in a timely and professional manner. Fantastic Work!.",
+        name: "Neils Van Linde",
+        date: "16 Oct 2022"
+    },
+    {
+        review: "Working with them was a fantastic experience. Great communication and a fantastic final product. I will undoubtedly work with them again in the future.",
+        name: "Ebru Yigistroy",
+        date: "30 oct 2022"
+    },
+]
+
 const Review = (props) => {
     //Carousel
     const responsive = {
@@ -50,31 +68,31 @@ const Review = (props) => {
                     containerClass="carousel-container"
                     removeArrowOnDeviceType={["tablet", "desktop", "mobile"]}
                 >
-                    <div className="sm:w-[80%] sm:h-[300px] sm:pb-[0px] sm:border-[0.2px] border-[1px] border-[#FFFEF7] rounded-[10px] sm:flex relative  ">
-                        <div className="sm:w-[300px] h-[100%] border-r-[0px]  p-[25px]">
-                            <div className=" w-[100%] h-[100%] bg-[#fff] rounded-[10px] flex items-center justify-center ">
-                                <img src={`/images/user/person9.png`} className=" sm:w-[90%] w-[200px] sm:h-[90%] h-[200px]  " alt="project1" />
-                            </div>
-                        </div>
-                        <div className=" sm:p-[25px] p-[10px] sm:w-[600px] border-[0px]">
-                            <h1 className={textStyle}>
-                                GG is really awesome, it contributes a lot to grow my youtube channel Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit. Mauris porta rhoncus neque eu vestibulum. Vivamus hendrerit purus
-                                eget varius luctus. Proin condimentum suscipit magna nec pulvinar. Nulla ac ligula dolor.
-                                Maecenas at vulputate odio, a semper nisl.
-                            </h1>
-                            <h1 className={textStyle + " sm:mt-[50px] mt-[20px] "}>Linda Gerrmy</h1>
-                            <h1 className={textStyle}>11 Nov 2022</h1>
-                        </div>
-                        <div className="border-[0px] absolute right-[0px] bottom-[0px] flex items-center justify-center gap-[5px] p-[15px] ">
-                            {[...Array(5)].map((x, index) => {
-                                return <FaStar key={index} color={yellow} size={30} />;
-                            })}
-                        </div>
-                    </div>
-
-
-
+                    {
+                        SERVICES.map((item, index) => {
+                            return (
+                                <div className="sm:w-[80%] sm:h-[300px] sm:pb-[0px] sm:border-[0.2px] border-[1px] border-[#FFFEF7] rounded-[10px] sm:flex relative  ">
+                                    <div className="sm:w-[300px] h-[100%] border-r-[0px]  p-[25px]">
+                                        <div className=" w-[100%] h-[100%] bg-[#fff] rounded-[10px] flex items-center justify-center ">
+                                            <img src={`/images/user/person9.png`} className=" sm:w-[90%] w-[200px] sm:h-[90%] h-[200px]  " alt="project1" />
+                                        </div>
+                                    </div>
+                                    <div className=" sm:p-[25px] p-[10px] sm:w-[600px] border-[0px]">
+                                        <h1 className={textStyle}>
+                                            {item.review}
+                                        </h1>
+                                        <h1 className={textStyle + " sm:mt-[50px] mt-[20px] "}>{item.name}</h1>
+                                        <h1 className={textStyle}>{item.date}</h1>
+                                    </div>
+                                    <div className="border-[0px] absolute right-[0px] bottom-[0px] flex items-center justify-center gap-[5px] p-[15px] ">
+                                        {[...Array(5)].map((x, index) => {
+                                            return <FaStar key={index} color={yellow} size={30} />;
+                                        })}
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
                 </Carousel>
             </div>
         </>

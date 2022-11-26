@@ -13,7 +13,8 @@ import {
     FaWhatsapp,
     FaPlayCircle,
     FaChevronRight,
-    FaLinkedinIn
+    FaLinkedinIn,
+    FaStar
 } from 'react-icons/fa';
 import Video from '../components/Home/video';
 import Globe from '../components/Home/globe';
@@ -134,6 +135,8 @@ const Home = () => {
                     0.001 // every 3 seconds
                 );
                 return () => clearTimeout(intervalId);
+            } else{
+                setCount3(215794)
             }
         }
     }, [count3, countingStart])
@@ -716,17 +719,13 @@ const Home = () => {
                                 {
                                     ProjectTypes.map((item, index) => {
                                         return (
-                                            <input type={"button"}
+                                            <button type="button"
+                                                className={` sm:text-[19px] border-[0px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52]' : ' text-[#fff]'}`}
                                                 onClick={() => {
                                                     setprojectIndex(index)
                                                 }}
-                                                value={item}
-                                                key={index}
-                                                className={` sm:text-[19px] border-[0px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52]' : ' text-[#fff]'}`}
                                             >
-                                            </input>
-                                            // <h1 key={index} className={` sm:text-[19px] text-[12px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
-                                            // >{item}</h1>
+                                                {item}</button>
                                         )
                                     })
                                 }
@@ -747,17 +746,25 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div ref={ExtraRef2} className='w-[100%] border-[0px] flex items-center justify-center sm:mb-[50px] relative ' >
-                    {/* <div>
-                        <h1>Social</h1>
-                        <h1>What do our customers say</h1>
-                    </div> */}
+                </div >
+                <div ref={ExtraRef2} className='w-[100%] border-[0px] sm:pt-[100px] pt-[60px] sm:pb-[100px] pb-[80px] flex items-center justify-center sm:mb-[50px] relative ' >
+                    <div className='absolute top-[0px] sm:left-[50px] left-[10px] ' >
+                        <h1 className=' text-[#fff] sm:text-[25px] ' >Social</h1>
+                        <h1 className=' text-[#fff] sm:text-[30px] ' >What do our customers say?</h1>
+                    </div>
                     <img
                         src={`/images/user/circle9.png`}
                         className=' absolute right-[0px] top-[30%] sm:visible invisible '
                         alt="project1" />
                     <Review />
+                    <div className='absolute bottom-[0px] border-[0px] sm:right-[50px] right-[0px] w-[200px] h-[50px] flex items-center sm:justify-center justify-end ' >
+                        <button type="button" class="text-[#fff] hover:text-[#000] hover:bg-white focus:ring-4 focus:ring-white focus:outline-none  font-medium rounded-lg text-lg border-[1px] hover:border-[0px] px-5 py-2.5 text-center inline-flex items-center mr-2 ">
+                            <FaStar
+                                className='mr-[10px]'
+                            />
+                            Rate us
+                        </button>
+                    </div>
                 </div>
                 <div ref={ContactRef} id="contact" className='w-[100%] sm:px-[0px] px-[10px] border-[0px] flex items-center justify-center mb-[50px] relative ' >
                     <Contact
@@ -814,7 +821,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div> : null
+            </div > : null
     )
 }
 

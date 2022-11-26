@@ -30,6 +30,7 @@
     background: green !important;
 }
 
+
 .spin-animate-slow {
     animation: spin 60s linear infinite;
 }
