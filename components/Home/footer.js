@@ -32,7 +32,7 @@ const Footer = (props) => {
                             <h1 className="text-[#000] text-[18px] font-semibold " >Signup to receive product updates and more</h1>
                             {
                                 typeof (window) !== 'undefined' &&
-                                <div className=" mt-[10px] " >
+                                <div className=" mt-[10px] relative " >
                                     <SlideButton
                                         overlayText="D O N E"
                                         onSlideDone={() => {
@@ -46,7 +46,7 @@ const Footer = (props) => {
                                         classList="my-class"
                                         overlayClassList="my-overlay-class"
                                         caret={
-                                            <div className="bg-[#fff] rounded-[5px] ml-[-5px] w-[100%] h-[100%] flex items-center justify-center " >
+                                            <div className="bg-[#fff] cursor-pointer rounded-[5px] ml-[-5px] w-[100%] h-[100%] flex items-center justify-center " >
                                                 <h1 className=" text-[#000] " >Submit</h1>
                                             </div>
                                         }
@@ -56,11 +56,17 @@ const Footer = (props) => {
                                             <input
                                                 type={'text'}
                                                 className={inputStyle}
-                                                placeholder="enter your email id"
+                                                placeholder=""
                                             >
                                             </input>
                                         }
                                     />
+                                    <input
+                                        type={'text'}
+                                        className=" border-[0px] absolute focus:outline-none text-white top-[0px] right-[0px] w-[60%] h-[100%] bg-transparent "
+                                        placeholder="enter email id"
+                                    >
+                                    </input>
                                 </div>
                             }
                         </div>

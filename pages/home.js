@@ -12,7 +12,8 @@ import {
     FaAngleDoubleUp,
     FaWhatsapp,
     FaPlayCircle,
-    FaChevronRight
+    FaChevronRight,
+    FaLinkedinIn
 } from 'react-icons/fa';
 import Video from '../components/Home/video';
 import Globe from '../components/Home/globe';
@@ -946,19 +947,16 @@ const Home = () => {
                                 className='text-[20px] sm:text-[30px] cursor-pointer '
                                 onClick={() => {
                                     window?.open("https://www.instagram.com/grogrip_media/")
-                                }}
+                                }} 
                             />
-                            {/* <FaTwitter
+                            <FaLinkedinIn
                                 color='white'
-                                className='text-[20px] sm:text-[20px] cursor-pointer '
-                                onClick={() => {
-                                    window?.open("https://twitter.com/iamrajkalwar")
-                                }}
-                            /> */}
+                                className='text-[20px] sm:text-[30px] cursor-pointer '
+                            // onClick={() => {
+                            //     window?.open("https://www.instagram.com/grogrip_media/")
+                            // }}
+                            />
                         </div>
-                        {/* <div className='sm:w-[400px] w-[100%] h-[50%] border-[0px] flex items-center sm:justify-end justify-center' >
-                        <h1 className='text-white text-[15px] sm:text-[17px] sm:pb-[0px] pb-[10px] ' >{`2022 ${`©`} brandName`}</h1>
-                    </div> */}
                     </div>
                 </div>
             </div> : null
