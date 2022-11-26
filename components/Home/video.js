@@ -8,7 +8,8 @@ const Video = (props) => {
     const [videoOpacity, setVideoOpacity] = useState(' opacity-0  z-[100]')
     const [imageOpacity, setImageOpacity] = useState(' opacity-1 z-[200]')
     const [showVideo, setShowVideo] = useState(false);
-    const [imageLoaded, setImageLoaded] = useState(false)
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [videoLoad, setVideoLoad] = useState(false);
 
     useEffect(() => {
         setVideoOpacity(' opacity-0  z-[100]');
@@ -32,6 +33,7 @@ const Video = (props) => {
                         onLoad={() => {
                             setImageOpacity(' opacity-0  z-[100] ')
                             setVideoOpacity(' opacity-1 z-[200] ')
+                            setVideoLoad(true)
                         }}
                         onPause={() => {
                             setShowVideo(false)
@@ -62,7 +64,7 @@ const Video = (props) => {
                         }}
                     />
                 }
-                <img src={'https://www.abhaf.org/assets/images/dark-loader.gif'} style={{ position: 'absolute', width: 50, height: 50, display: imageLoaded ? "none" : "block" }}></img>
+                <img src={'https://www.abhaf.org/assets/images/dark-loader.gif'} style={{ position: 'absolute', width: 50, height: 50, display: imageLoaded && videoLoad ? "none" : "block" }}></img>
             </div>
         </>
     )

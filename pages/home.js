@@ -858,7 +858,7 @@ const Home = () => {
                 <div id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
                     <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] sm:px-[0px] px-[10px]  ' >
                         <h1 className=' text-[#fff] sm:text-[30px] text-[18px] font-semibold ' >Our Latest Projects</h1>
-                        <div className=' w-[100%] flex flex-wrap sm:gap-[50px] gap-[10px] mt-[20px] pb-[50px] ' >
+                        <div className=' w-[100%] flex flex-wrap sm:gap-[50px] gap-[10px] mt-[20px] pb-[50px]' >
                             {
                                 ProjectTypes.map((item, index) => {
                                     return (
@@ -868,7 +868,7 @@ const Home = () => {
                                             }}
                                             value={item}
                                             key={index}
-                                            className={` sm:text-[19px] cursor-pointer text-[12px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                            className={` sm:text-[19px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
                                         >
                                         </input>
                                         // <h1 key={index} className={` sm:text-[19px] text-[12px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
@@ -880,12 +880,6 @@ const Home = () => {
                                 {
                                     selectedPortfolio.map((item, index) => {
                                         return (
-                                            // <>
-                                            //     <iframe
-                                            //         className='rounded-lg sm-w-[1000px] sm:h-[350px] w-[300px] h-[160px] '
-                                            //         src={item.url}
-                                            //     ></iframe>
-                                            // </>
                                             <Video
                                                 key={index}
                                                 thumbnail={item.thumbnail}
