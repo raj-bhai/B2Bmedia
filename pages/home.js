@@ -153,6 +153,10 @@ const Home = () => {
 
 
     useEffect(() => {
+        if (ProjectTypes[projectIndex] == "All") {
+
+            setSelectedPortfolio([...Videos.Videos.Tech, ...Videos.Videos.Whiteboard, ...Videos.Videos.Celeb, ...Videos.Videos.Sports, ...Videos.Videos.Mix])
+        }
         if (ProjectTypes[projectIndex] == "TECH") {
             setSelectedPortfolio(Videos.Videos.Tech)
         }
@@ -240,7 +244,7 @@ const Home = () => {
         setOffset(window.pageYOffset);
         // console.log("gg :", AboutRef.current?.clientHeight)
         if (window.pageYOffset > 50) {
-            // setHeaderStyle(' bg-[#107840]');
+            setHeaderStyle(' bg-gradient-to-r from-[#063f09] via-[#107840] via-[#1F5025] via -[#28602E] to-[#146a24]');
             setShowArrowUp(true)
             // if ((window.pageYOffset > HomeRef.current?.clientHeight - 100)) {
             //     if ((window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight - 100)) {
@@ -277,7 +281,7 @@ const Home = () => {
         } else {
             setShowArrowUp(false);
             // setShowMaiinText(true);
-            // setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+            setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
             // setTextContainerStyle('');
             // setServiceStyle('');
             // HomeFocused()
@@ -366,7 +370,7 @@ const Home = () => {
         },
     };
 
-    console.log(offset);
+    // console.log(offset);
     return (
         domLoaded &&
             typeof window !== 'undefined' ?
@@ -414,7 +418,7 @@ const Home = () => {
                         >
                             <FaAngleDoubleUp
                                 onClick={() => {
-                                    console.log("ok mf")
+                                    //  console.log("ok mf")
                                     document.getElementById('home').scrollIntoView()
                                 }}
                                 className='text-white sm:text-[40px] text-[25px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
@@ -788,7 +792,7 @@ const Home = () => {
                             seletedIndex={pricingIndex}
                             desc="700-800 words"
                             onFocus={() => {
-                                console.log('gg')
+                                // console.log('gg')
                             }}
                             onClick={() => {
                                 setPricingIndex(0)
@@ -802,7 +806,7 @@ const Home = () => {
                             seletedIndex={pricingIndex}
                             desc="1400-1500 words"
                             onFocus={() => {
-                                console.log('gg')
+                                // console.log('gg')
                             }}
                             onClick={() => {
                                 setPricingIndex(1)
@@ -816,7 +820,7 @@ const Home = () => {
                             seletedIndex={pricingIndex}
                             desc="2800-3000 word"
                             onFocus={() => {
-                                console.log('gg')
+                                //  console.log('gg')
                             }}
                             onClick={() => {
                                 setPricingIndex(2)
@@ -858,11 +862,17 @@ const Home = () => {
                             {
                                 ProjectTypes.map((item, index) => {
                                     return (
-                                        <h1 key={index} className={` sm:text-[19px] text-[12px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                        <input type={"button"}
                                             onClick={() => {
                                                 setprojectIndex(index)
                                             }}
-                                        >{item}</h1>
+                                            value={item}
+                                            key={index}
+                                            className={` sm:text-[19px] cursor-pointer text-[12px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                        >
+                                        </input>
+                                        // <h1 key={index} className={` sm:text-[19px] text-[12px] cursor-pointer ${projectIndex == index ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                        // >{item}</h1>
                                     )
                                 })
                             }
