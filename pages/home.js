@@ -797,7 +797,7 @@ const Home = () => {
                         >8413802010</h1> */}
                             <h1 className='text-white text-[15px] sm-text-[18px]' >{`2022 ${`©`} All Rights Reserved`}</h1>
                         </div>
-                        <div className='flex border-[0px] w-[400px] sm:w-[200px] h-[40px] items-center justify-center sm:gap-[10px] gap-[20px]' >
+                        <div className='flex border-[0px] w-[400px] sm:w-[250px] h-[40px] items-center justify-center sm:gap-[10px] gap-[20px]' >
                             <FaFacebookSquare
                                 color='white'
                                 className='text-[20px] sm:text-[30px] cursor-pointer '
@@ -812,13 +812,25 @@ const Home = () => {
                                     window?.open("https://www.instagram.com/grogrip_media/")
                                 }}
                             />
-                            <FaLinkedinIn
+                            {/* <FaLinkedinIn
                                 color='white'
                                 className='text-[20px] sm:text-[30px] cursor-pointer '
                             // onClick={() => {
                             //     window?.open("https://www.instagram.com/grogrip_media/")
                             // }}
+                            /> */}
+                            <FaWhatsapp
+                                color='white'
+                                className='text-[20px] sm:text-[30px] cursor-pointer '
+                                onClick={() => {
+                                    window?.open("https://wa.me/918076455801")
+                                }}
                             />
+                            <h1 className='text-white text-[15px] sm-text-[18px] cursor-pointer'
+                                onClick={() => {
+                                    window?.open("https://wa.me/918076455801")
+                                }}
+                            >+91 8076455801</h1>
                         </div>
                     </div>
                 </div>
