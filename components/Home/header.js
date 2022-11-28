@@ -94,25 +94,19 @@ const Header = (props) => {
             <div className=" sm:w-[200px] sm:h-[60px] border-[0px] absolute sm:right-[20px] right-[10px] sm:top-[15px] top-[10px] flex items-center justify-end gap-[10px] " >
                 <img
                     src={`/images/icons/instagram1.webp`}
-                    // onLoad={() => {
-                    //     setShowIcons(true)
-                    // }}
                     className=' sm:w-[35px] sm:h-[35px] w-[25px] h-[25px] '
                     alt="project1"
                     onClick={() => {
                         window?.open("https://www.instagram.com/grogrip_media/")
                     }}
                 />
-                {/* {
-                    showIcons && */}
-                    <FaWhatsapp
-                        color='white'
-                        className='text-[30px] sm:text-[35px] cursor-pointer '
-                        onClick={() => {
-                            window?.open("https://wa.me/918076455801")
-                        }}
-                    />
-                {/* // } */}
+                <FaWhatsapp
+                    color='white'
+                    className='text-[30px] sm:text-[35px] cursor-pointer '
+                    onClick={() => {
+                        window?.open("https://wa.me/918076455801")
+                    }}
+                />
             </div>
         </div>
     );
