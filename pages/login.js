@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import Logo from '../public/images/logo.png';
 import Image from 'next/image';
 import axios from 'axios';
 import url from '../constants/url';
 import { useRouter } from 'next/router';
 import LoadingScreen from '../components/Loader/LoadingScreen';
-import $ from 'jquery';
-import GoogleProvider from "next-auth/providers/google";
 // import { GoogleLogin } from 'react-google-login';
 // import { gapi } from 'gapi-script';
 
