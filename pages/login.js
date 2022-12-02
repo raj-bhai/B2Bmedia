@@ -4,36 +4,22 @@ import axios from 'axios';
 import url from '../constants/url';
 import { useRouter } from 'next/router';
 import LoadingScreen from '../components/Loader/LoadingScreen';
-// import { GoogleLogin } from 'react-google-login';
-// import { gapi } from 'gapi-script';
+import { GoogleLogin } from 'react-google-login';
 
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 
-// import {
-//   LoginSocialGoogle,
-//   LoginSocialAmazon,
-//   LoginSocialFacebook,
-//   LoginSocialGithub,
-//   LoginSocialInstagram,
-//   LoginSocialLinkedin,
-//   LoginSocialMicrosoft,
-//   LoginSocialPinterest,
-//   LoginSocialTwitter,
-//   LoginSocialApple,
-//   IResolveParams,
-// } from 'reactjs-social-login';
 
 import {
   FacebookLoginButton,
   GoogleLoginButton,
-  GithubLoginButton,
-  AmazonLoginButton,
-  InstagramLoginButton,
-  LinkedInLoginButton,
-  MicrosoftLoginButton,
-  TwitterLoginButton,
-  AppleLoginButton,
+  // GithubLoginButton,
+  // AmazonLoginButton,
+  // InstagramLoginButton,
+  // LinkedInLoginButton,
+  // MicrosoftLoginButton,
+  // TwitterLoginButton,
+  // AppleLoginButton,
 } from 'react-social-login-buttons';
 
 
@@ -52,7 +38,7 @@ const Login = () => {
   const [placeholder, setPlaceHolder] = useState('enter whatsapp number')
   const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
 
-  const clientId = '1036453217553-jp5qt13pvskkoqui4lkf81esnm4oguof.apps.googleusercontent.com';
+  const clientId = '1036453217553-382m7c1vsrsuqt0o08fkrsngjfi39bhh.apps.googleusercontent.com';
 
 
   //facebook login
@@ -62,16 +48,12 @@ const Login = () => {
   const [picture, setPicture] = useState('');
 
 
-  // const responseFacebook = (response) => {
-  //   console.log(response);
-  //   setData(response);
-  //   setPicture(response.picture.data.url);
-  //   if (response.accessToken) {
-  //     setLogin(true);
-  //   } else {
-  //     setLogin(false);
-  //   }
-  // }
+  const responseFacebook = (response) => {
+    console.log(response);
+    if (response.accessToken) {
+    } else {
+    }
+  }
 
 
   useEffect(() => {
@@ -137,9 +119,6 @@ const Login = () => {
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   }
 
-  const responseFacebook = (response) => {
-    console.log(response);
-  }
 
 
   return (
@@ -185,18 +164,33 @@ const Login = () => {
                 appId="3349740341947591"
                 autoLoad={true}
                 fields="name,email,picture"
-                // onClick={componentClicked}
-                // callback={responseFacebook}
+                //onClick={componentClicked}
+                callback={responseFacebook}
                 render={renderProps => (
                   <FacebookLoginButton
-                  onClick={renderProps.onClick}
+                    onClick={renderProps.onClick}
                   />
                 )}
               />
             </div>
-            <div className='w-[80%]  border-[1px] ' >
-              <GoogleLoginButton
+            <div className='w-[80%] h-[50px]  border-[1px] ' >
+              {/* <GoogleLoginButton
                 onClick={() => alert("Hello")}
+              /> */}
+              <GoogleLogin
+                clientId={clientId}
+                buttonText='Login'
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={'single_host_origin'}
+                isSignedIn={false}
+                style={{ width: 500 }}
+                render={renderProps => (
+                  <GoogleLoginButton
+                    onClick={renderProps.onClick}
+                  />
+                  // <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
+                )}
               />
             </div>
 
