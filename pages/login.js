@@ -49,8 +49,11 @@ const Login = () => {
 
 
   const responseFacebook = (response) => {
-    console.log(response);
+   // console.log(response);
     if (response.accessToken) {
+      console.log("name :", response.name)
+      console.log("email :", response.email)
+      console.log("fbId :", response.id)
     } else {
     }
   }
@@ -64,41 +67,73 @@ const Login = () => {
     }
   }, [emailError, passwordError])
 
-  const Validate = () => {
-    if (!email.length) {
-      setEmailError(true);
-      setErrorText("Enter email");
-      return;
-    }
-    if (!password.length) {
-      setPasswordError(true);
-      setErrorText("Enter password");
-      return;
-    }
-    Login()
+  // axios.post(`${url.apiRoot}/auth/signIn`, {
+  //   "email": email,
+  //   "password": password
+  // })
+  //   .then(res => {
+  //     if (res.data.success) {     ---------------------------------------------------------POST API STRUCTURE
+  //       console.log("Success");
+  //     }
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
+
+  const SentOtp = () => {
+
   }
 
-  const Login = () => {
-    setLoading(true);
+  const VerifyOtp = () => {
     axios.post(`${url.apiRoot}/auth/signIn`, {
-      "email": email,
-      "password": password
+      number: "919954546495",
+      otp: "123456"
     })
       .then(res => {
         if (res.data.success) {
           console.log("Success");
-          router.push('/dashboard');
         }
-        // localStorage.setItem("ensowebtoken", response.data.access_token);
       })
       .catch(err => {
-        console.log("Login Error :");
-        setEmailError(true);
-        setErrorText("Invalis credentials");
-        setLoading(false);
-        // throw error
+        console.log(err);
       });
   }
+
+  // const Validate = () => {
+  //   if (!email.length) {
+  //     setEmailError(true);
+  //     setErrorText("Enter email");
+  //     return;
+  //   }
+  //   if (!password.length) {
+  //     setPasswordError(true);
+  //     setErrorText("Enter password");
+  //     return;
+  //   }
+  //   Login()
+  // }
+
+  // const Login = () => {
+  //   setLoading(true);
+  //   axios.post(`${url.apiRoot}/auth/signIn`, {
+  //     "email": email,
+  //     "password": password
+  //   })
+  //     .then(res => {
+  //       if (res.data.success) {
+  //         console.log("Success");
+  //         router.push('/dashboard');
+  //       }
+  //       // localStorage.setItem("ensowebtoken", response.data.access_token);
+  //     })
+  //     .catch(err => {
+  //       console.log("Login Error :");
+  //       setEmailError(true);
+  //       setErrorText("Invalis credentials");
+  //       setLoading(false);
+  //       // throw error
+  //     });
+  //  }
 
   if (loading) {
     return (<LoadingScreen />)
@@ -163,7 +198,7 @@ const Login = () => {
               <FacebookLogin
                 appId="3349740341947591"
                 autoLoad={true}
-                fields="name,email,picture"
+                fields="name,email"
                 //onClick={componentClicked}
                 callback={responseFacebook}
                 render={renderProps => (
