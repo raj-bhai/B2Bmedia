@@ -27,7 +27,6 @@ import {
 const Login = () => {
 
   const router = useRouter()
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showError, setShowError] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -45,17 +44,44 @@ const Login = () => {
 
   const [login, setLogin] = useState(false);
   const [data, setData] = useState({});
+
+
   const [picture, setPicture] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState('');
+  const [fbId, setFbId] = useState('');
 
 
-  const responseFacebook = (response) => {
-   // console.log(response);
+  const responseFacebook = async (response) => {
+    // console.log(response);
     if (response.accessToken) {
-      console.log("name :", response.name)
-      console.log("email :", response.email)
-      console.log("fbId :", response.id)
+      // console.log("name :", response.name);
+      // console.log("email :", response.email);
+      // console.log("fbId :", response.id);
+      Login(response.name, response.email, "", "facebook", false, response.id, "")
     } else {
     }
+  }
+
+  const Login = (name, email, number, type, isAdmin, fbId, googleId) => {
+    axios.post(`${url.apiRoot}/auth/signIn`, {
+      name: name,
+      email: email,
+      number: number,
+      type: type,
+      isAdmin: isAdmin,
+      fbId: fbId,
+      googleId: googleId
+    })
+      .then(res => {
+        if (res.data.success) {
+          router.push('/home')
+          console.log("Success");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
 
@@ -85,7 +111,7 @@ const Login = () => {
   }
 
   const VerifyOtp = () => {
-    axios.post(`${url.apiRoot}/auth/signIn`, {
+    axios.post(`${url.apiRoot}/auth/verifyOtp`, {
       number: "919954546495",
       otp: "123456"
     })
