@@ -1,12 +1,14 @@
 import {
     TASKS,
-    CLIENTTYPE
+    CLIENTTYPE,
+    SHEET
 } from '../action/dashboard';
 
 
 const initialState = {
     Task: [],
-    ClientType: []
+    ClientType: [],
+    Sheet: []
 };
 
 export default (state = initialState, action) => {
@@ -20,6 +22,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 ClientType: action.data,
+            };
+        case SHEET:
+            return {
+                ...state,
+                Sheet: action.data,
             };
     }
     return state;

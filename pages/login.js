@@ -223,9 +223,8 @@ const Login = () => {
             <div className='w-[80%]  border-[1px] mt-[30px] ' >
               <FacebookLogin
                 appId="3349740341947591"
-                autoLoad={true}
+                //  autoLoad={true}
                 fields="name,email"
-                //onClick={componentClicked}
                 callback={responseFacebook}
                 render={renderProps => (
                   <FacebookLoginButton
@@ -235,9 +234,6 @@ const Login = () => {
               />
             </div>
             <div className='w-[80%] h-[50px]  border-[1px] ' >
-              {/* <GoogleLoginButton
-                onClick={() => alert("Hello")}
-              /> */}
               <GoogleLogin
                 clientId={clientId}
                 buttonText='Login'
@@ -250,19 +246,9 @@ const Login = () => {
                   <GoogleLoginButton
                     onClick={renderProps.onClick}
                   />
-                  // <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
                 )}
               />
             </div>
-
-            {/* <GoogleLogin
-            clientId={clientId}
-            buttonText="Sign in with Google"
-            onSuccess={onSuccess}
-            onFailure={onFailure}
-            cookiePolicy={'single_host_origin'}
-            isSignedIn={true}
-          /> */}
           </div>
         </div>
         <div className="smallParent">
