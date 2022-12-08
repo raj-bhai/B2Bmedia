@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as dashboardAction from '../../redux/action/dashboard';
 import axios from "axios";
 
-import { Spreadsheet } from "react-spreadsheet";
+import { Spreadsheet, DataViewer } from "./react-spreadsheet"
 
 const Sheet = (props) => {
 
@@ -39,6 +39,25 @@ const Sheet = (props) => {
     //     }, 5000)
     // }, [])
 
+    const BindData_ = async () => {
+        if (Sheet_?.data) {
+            let arr = []
+            Sheet_?.data?.forEach((element, index) => {
+                let arr1 = []
+                element.forEach((x, i) => {
+                    let obj = x ;
+                    // if (i == 3) {
+                    //     obj.readOnly = true
+                    // }
+                    arr1.push(obj)
+                });
+                arr.push(arr1)
+            });
+            console.log("arr :", arr)
+            setData(arr)
+        }
+    }
+
 
 
     const BindData = async () => {
@@ -63,9 +82,8 @@ const Sheet = (props) => {
     }
 
     useEffect(() => {
-        // setData(Sheet_)
-        BindData()
-    }, [])
+        BindData_()
+    }, [Sheet_])
 
 
 
@@ -95,8 +113,8 @@ const Sheet = (props) => {
     //     [{ value: "", className: classNameItem }, { value: "" }],
     //     [{ value: "", className: classNameItem }, { value: "" }],
     // ])
-    const header = [
-        { value: "Item", className: headerbox + " ", active: true, Dimensions: { width: 200, height: 300 } },
+    const header = [[
+        { value: "Item", className: headerbox + " ", },
         { value: "Comment", className: headerbox },
         { value: "STARTING", className: headerbox, },
         { value: "Clients", className: headerbox, },
@@ -107,7 +125,7 @@ const Sheet = (props) => {
         { value: "Uploaded", className: headerbox, },
         { value: "SCRIPT PAID", className: headerbox, },
         { value: "CLIENT PAID", className: headerbox, }
-    ]
+    ]]
 
     const DataEditor = (item) => {
         console.log("GG :", item.cell)
@@ -123,26 +141,37 @@ const Sheet = (props) => {
 
     }
 
+    const DataViewer_ = (props) => {
+        console.log(props)
+        return (
+            // <div className=" w-[100px] h-[50px] bg-yellow-200 " >
+            //     <h1>{props.cell.value}</h1>
+            // </div>
+            DataViewer
+        )
+    }
+
     return (
         <Spreadsheet
             // hideColumnIndicators
             columnLabels={Titles}
             //rowLabels={["", "", "", "", "", "", "", "", ""]}
             // hideRowIndicators
+            // data={Sheet_?.data ? Sheet_.data : []}
             data={data}
             className=" text-[#000] "
             darkMode={true}
             onChange={async (item) => {
-                console.log(item);
                 setData(item)
-                await dispatch(dashboardAction.updateTask(item))
+                // await dispatch(dashboardAction.updateTask(item))
             }}
-        //  DataEditor={DataEditor}
-        // Cell={() =>
-        //     <div className=" min-w-[100px] h-[50px] border-[1px] " >
-
-        //     </div>
-        // }
+            onActivate={(item) => {
+                console.log("active item", item)
+            }}
+        //  DataViewer={DataViewer_}
+        // onSelect={(point) => {
+        //     console.log("onselect :", point )
+        // }}
         />
     )
 }

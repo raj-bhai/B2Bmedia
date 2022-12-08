@@ -4,9 +4,11 @@ import axios from 'axios';
 import url from '../constants/url';
 import { useRouter } from 'next/router';
 import LoadingScreen from '../components/Loader/LoadingScreen';
-import { GoogleLogin } from 'react-google-login';
+//import { GoogleLogin } from 'react-google-login';
 
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 
 
@@ -220,7 +222,7 @@ const Login = () => {
             >
               {otpSent ? 'Login' : 'Sent Otp'}
             </button>
-            <div className='w-[80%]  border-[1px] mt-[30px] ' >
+            {/* <div className='w-[80%]  border-[1px] mt-[30px] ' >
               <FacebookLogin
                 appId="3349740341947591"
                 //  autoLoad={true}
@@ -232,9 +234,9 @@ const Login = () => {
                   />
                 )}
               />
-            </div>
+            </div> */}
             <div className='w-[80%] h-[50px]  border-[1px] ' >
-              <GoogleLogin
+              {/* <GoogleLogin
                 clientId={clientId}
                 buttonText='Login'
                 onSuccess={onSuccess}
@@ -247,7 +249,18 @@ const Login = () => {
                     onClick={renderProps.onClick}
                   />
                 )}
-              />
+              /> */}
+              <GoogleOAuthProvider clientId={clientId}>
+                <GoogleLogin
+                  onSuccess={credentialResponse => {
+                    console.log(credentialResponse);
+                  }}
+                  onError={() => {
+                    console.log('Login Failed');
+                  }}
+                  useOneTap
+                />
+              </GoogleOAuthProvider>
             </div>
           </div>
         </div>
