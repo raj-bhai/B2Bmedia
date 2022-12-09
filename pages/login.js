@@ -253,9 +253,12 @@ const Login = () => {
               <GoogleOAuthProvider clientId={clientId}>
                 <GoogleLogin
                   onSuccess={credentialResponse => {
-                    console.log(credentialResponse);
-
-                    Login("", "", "", "google", false, "", credentialResponse.token)
+                    try {
+                      console.log(credentialResponse.clientId);
+                      Login("", "", "", "google", false, "", credentialResponse.clientId)
+                    } catch (err) {
+                      console.log(err)
+                    }
                   }}
                   onError={() => {
                     console.log('Login Failed');
