@@ -255,7 +255,7 @@ const Login = () => {
                   onSuccess={credentialResponse => {
                     try {
                       console.log(credentialResponse);
-                      Login("", "", "", "google", false, "", credentialResponse.clientId)
+                      Login("", "", "", "google", false, "", credentialResponse.credential)
                     } catch (err) {
                       console.log(err)
                     }
