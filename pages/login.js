@@ -254,6 +254,8 @@ const Login = () => {
                 <GoogleLogin
                   onSuccess={credentialResponse => {
                     console.log(credentialResponse);
+
+                    Login("", "", "", "google", false, "", credentialResponse.token)
                   }}
                   onError={() => {
                     console.log('Login Failed');
