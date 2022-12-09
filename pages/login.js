@@ -254,7 +254,7 @@ const Login = () => {
                 <GoogleLogin
                   onSuccess={credentialResponse => {
                     try {
-                      console.log(credentialResponse.clientId);
+                      console.log(credentialResponse);
                       Login("", "", "", "google", false, "", credentialResponse.clientId)
                     } catch (err) {
                       console.log(err)
