@@ -24,6 +24,7 @@ import {
   // TwitterLoginButton,
   // AppleLoginButton,
 } from 'react-social-login-buttons';
+import { decode } from 'next-auth/jwt';
 
 
 
@@ -245,10 +246,10 @@ const Login = () => {
                       var decoded = jwt_decode(credentialResponse.credential)
                       console.log("decoded :", decoded)
                       router.push('/home')
-                       Login("", "", "", "google", false, "", credentialResponse.credential)
+                      Login(decoded.name, decoded.email, "", "google", false, "", credentialResponse.credential)
                     } catch (err) {
                       console.log(err)
-                    }
+                    } 
                   }}
                   onError={() => {
                     console.log('Login Failed');
