@@ -5,6 +5,7 @@ import url from '../constants/url';
 import { useRouter } from 'next/router';
 import LoadingScreen from '../components/Loader/LoadingScreen';
 //import { GoogleLogin } from 'react-google-login';
+import jwt_decode from "jwt-decode";
 
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
