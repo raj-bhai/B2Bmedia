@@ -245,7 +245,7 @@ const Login = () => {
                       var decoded = jwt_decode(credentialResponse.credential)
                       console.log("decoded :", decoded)
                       router.push('/home')
-                      // Login("", "", "", "google", false, "", credentialResponse.credential)
+                       Login("", "", "", "google", false, "", credentialResponse.credential)
                     } catch (err) {
                       console.log(err)
                     }
