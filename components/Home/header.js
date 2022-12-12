@@ -5,6 +5,10 @@ import {
     FaInstagram,
     FaInstagramSquare
 } from 'react-icons/fa'
+
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 // import {
 //     FaInstagramSquare
 // } from 'react-icons/md'
@@ -97,6 +101,7 @@ const Header = (props) => {
                             localStorage.removeItem("token")
                         } else {
                             router.push('/login')
+                            toast("you are logged out !")
                         }
                     }}
                     value={token?.length ? "Logout" : "Login"} className={" text-[#fff] sm:visible invisible font-normal  w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
@@ -119,6 +124,7 @@ const Header = (props) => {
                     }}
                 />
             </div>
+            <ToastContainer />
         </div>
     );
 };

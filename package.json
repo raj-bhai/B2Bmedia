@@ -42,6 +42,7 @@
     "react-social-login-buttons": "^3.6.1",
     "react-spreadsheet": "^0.7.7",
     "react-text-transition": "^3.0.2",
+    "react-toastify": "^9.1.1",
     "react-youtube": "^10.1.0",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
