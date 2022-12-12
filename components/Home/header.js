@@ -93,9 +93,13 @@ const Header = (props) => {
                 </div>
                 <input type="button"
                     onClick={() => {
-                        router.push('/login')
+                        if (token?.length) {
+                            localStorage.removeItem("token")
+                        } else {
+                            router.push('/login')
+                        }
                     }}
-                    value={ token?.length? "Logout" : "Login"} className={" text-[#fff] sm:visible invisible font-normal  w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
+                    value={token?.length ? "Logout" : "Login"} className={" text-[#fff] sm:visible invisible font-normal  w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
                 </input>
             </div>
             <div className=" sm:w-[200px] sm:h-[60px] border-[0px] absolute sm:right-[20px] right-[10px] sm:top-[15px] top-[10px] flex items-center justify-end gap-[10px] " >
