@@ -240,6 +240,8 @@ const Login = () => {
                   onSuccess={credentialResponse => {
                     try {
                       console.log(credentialResponse);
+                      localStorage.setItem("token", credentialResponse.credential)
+                      router.push('/home')
                       // Login("", "", "", "google", false, "", credentialResponse.credential)
                     } catch (err) {
                       console.log(err)
