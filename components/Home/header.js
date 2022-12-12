@@ -99,9 +99,9 @@ const Header = (props) => {
                     onClick={() => {
                         if (token?.length) {
                             localStorage.removeItem("token")
+                            toast("you are logged out !")
                         } else {
                             router.push('/login')
-                            toast("you are logged out !")
                         }
                     }}
                     value={token?.length ? "Logout" : "Login"} className={" text-[#fff] sm:visible invisible font-normal  w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
