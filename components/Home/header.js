@@ -48,6 +48,22 @@ const Header = (props) => {
         setSelectedHeader(props.selectedHeader)
     }, [props.selectedHeader])
 
+    //SuccessToast
+    const successLogin = (msg) => {
+        toast.success(msg, {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: false,
+            theme: "colored",
+        }
+
+        )
+    }
+
 
     return (
         // sm:h-[80px] h-[50px]
@@ -99,7 +115,7 @@ const Header = (props) => {
                     onClick={() => {
                         if (token?.length) {
                             localStorage.removeItem("token")
-                            toast("you are logged out !")
+                            successLogin("you are logged out !")
                         } else {
                             router.push('/login')
                         }
@@ -124,7 +140,8 @@ const Header = (props) => {
                     }}
                 />
             </div>
-            <ToastContainer />
+            <ToastContainer
+            />
         </div>
     );
 };
