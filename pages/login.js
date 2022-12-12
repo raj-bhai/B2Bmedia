@@ -249,7 +249,7 @@ const Login = () => {
                       Login(decoded.name, decoded.email, "", "google", false, "", credentialResponse.credential)
                     } catch (err) {
                       console.log(err)
-                    } 
+                    }
                   }}
                   onError={() => {
                     console.log('Login Failed');
