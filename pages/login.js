@@ -201,11 +201,10 @@ const Login = () => {
         >
           <div className=' w-[90%] mt-[100px] z-[100]  z-1 py-8 sm:w-[40%] md:w-[25%] flex flex-col items-center bg-indigo-100 rounded-xl hover:bg-indigo-100 duration-300'>
             <div
-            // className="animate-bounce"
             >
-              <Image src="/images/favicon.png" width={100} height={100} className='rounded-lg' alt="logo"></Image>
+              <Image src="/images/favicon.png" width={50} height={50} className='rounded-lg' alt="logo"></Image>
             </div>
-            <input className='w-[80%] h-[45px] mt-[20px] border-2 rounded-lg px-2  hover:border-violet-500'
+            {/* <input className='w-[80%] h-[45px] mt-[20px] border-2 rounded-lg px-2  hover:border-violet-500'
               placeholder={otpSent ? "enter 6 digit otp" : "enter whatsapp number"}
               onChange={(e) => {
                 setEmail(e.target.value)
@@ -221,7 +220,7 @@ const Login = () => {
               }}
             >
               {otpSent ? 'Login' : 'Sent Otp'}
-            </button>
+            </button> */}
             {/* <div className='w-[80%]  border-[1px] mt-[30px] ' >
               <FacebookLogin
                 appId="3349740341947591"
@@ -235,27 +234,13 @@ const Login = () => {
                 )}
               />
             </div> */}
-            <div className='w-[80%] h-[50px]  border-[1px] ' >
-              {/* <GoogleLogin
-                clientId={clientId}
-                buttonText='Login'
-                onSuccess={onSuccess}
-                onFailure={onFailure}
-                cookiePolicy={'single_host_origin'}
-                isSignedIn={false}
-                style={{ width: 500 }}
-                render={renderProps => (
-                  <GoogleLoginButton
-                    onClick={renderProps.onClick}
-                  />
-                )}
-              /> */}
+            <div className='w-[80%] h-[50px] mt-[10px]  border-[1px] ' >
               <GoogleOAuthProvider clientId={clientId}>
                 <GoogleLogin
                   onSuccess={credentialResponse => {
                     try {
                       console.log(credentialResponse);
-                      Login("", "", "", "google", false, "", credentialResponse.credential)
+                      // Login("", "", "", "google", false, "", credentialResponse.credential)
                     } catch (err) {
                       console.log(err)
                     }
