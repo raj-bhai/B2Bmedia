@@ -241,6 +241,8 @@ const Login = () => {
                     try {
                       console.log(credentialResponse);
                       localStorage.setItem("token", credentialResponse.credential)
+                      var decoded = jwt_decode(token)
+                      console.log("decoded :", credentialResponse.credential)
                       router.push('/home')
                       // Login("", "", "", "google", false, "", credentialResponse.credential)
                     } catch (err) {
