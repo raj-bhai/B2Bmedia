@@ -9,9 +9,7 @@ import {
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
-// import {
-//     FaInstagramSquare
-// } from 'react-icons/md'
+
 
 const Header = (props) => {
     const router = useRouter();
