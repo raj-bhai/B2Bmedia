@@ -12,8 +12,31 @@ import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props
 
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 const Login = () => {
+  const router = useRouter()
   const backgroundGradient = " bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]";
   const clientId = "1036453217553-382m7c1vsrsuqt0o08fkrsngjfi39bhh.apps.googleusercontent.com";
+
+
+  const Login = (name, email, number, type, isAdmin, fbId, googleId) => {
+    axios.post(`${url.apiRoot}/auth/signIn`, {
+      name: name,
+      email: email,
+      number: number,
+      type: type,
+      isAdmin: isAdmin,
+      fbId: fbId,
+      googleId: googleId
+    })
+      .then(res => {
+        if (res.data.success) {
+          router.push('/home')
+          console.log("Success");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   return (
     <>
