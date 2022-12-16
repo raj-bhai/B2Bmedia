@@ -106,7 +106,7 @@ const Services = (props) => {
                     alt="star" />
                 <img
                     src="/images/user/person4.png"
-                    className="sm:w-[81px] sm:h-[115px] absolute sm:top-[365px] sm:left-[100px] "
+                    className="sm:w-[81px] sm:h-[115px] absolute sm:top-[365px] sm:left-[100px] animate-bounce "
                     alt="star" />
                 <img
                     src="/images/user/search.png"
@@ -134,7 +134,7 @@ const Services = (props) => {
                 </div>
                 <img
                     src="/images/user/person6.png"
-                    className="sm:w-[54px] sm:h-[134px] absolute sm:top-[345px] sm:left-[800px] "
+                    className="sm:w-[54px] sm:h-[134px] absolute sm:top-[345px] person2-animate sm:left-[800px] "
                     alt="star" />
                 <img
                     src="/images/user/person11.png"

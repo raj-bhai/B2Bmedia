@@ -18,7 +18,20 @@ const Sheet = (props) => {
 
     const [data, setData] = useState([[{ value: "" }], [{ value: "" }]]);
 
+    const [activeItem, setActiveItem] = useState(null);
+    const [openPopup, setOpenPopup] = useState(false)
+
     //console.log(Tasks[0].title)
+
+
+    useEffect(() => {
+        if (activeItem?.column == 4) {
+            console.log("open popup")
+            setOpenPopup(true)
+        } else {
+            setOpenPopup(false)
+        }
+    }, [activeItem])
 
     const GetValue = (index, rowIndex) => {
         let taskName = Tasks[rowIndex]?.title
@@ -45,7 +58,7 @@ const Sheet = (props) => {
             Sheet_?.data?.forEach((element, index) => {
                 let arr1 = []
                 element.forEach((x, i) => {
-                    let obj = x ;
+                    let obj = x;
                     // if (i == 3) {
                     //     obj.readOnly = true
                     // }
@@ -152,27 +165,38 @@ const Sheet = (props) => {
     }
 
     return (
-        <Spreadsheet
-            // hideColumnIndicators
-            columnLabels={Titles}
-            //rowLabels={["", "", "", "", "", "", "", "", ""]}
-            // hideRowIndicators
-            // data={Sheet_?.data ? Sheet_.data : []}
-            data={data}
-            className=" text-[#000] "
-            darkMode={true}
-            onChange={async (item) => {
-                setData(item)
-                // await dispatch(dashboardAction.updateTask(item))
-            }}
-            onActivate={(item) => {
-                console.log("active item", item)
-            }}
-        //  DataViewer={DataViewer_}
-        // onSelect={(point) => {
-        //     console.log("onselect :", point )
-        // }}
-        />
+        <>
+            {
+                openPopup &&
+                <div className=" w-[300px] h-[300px] bg-yellow-200 absolute top-[0px] right-[0px] z-50 " >
+                    <div className="w-[100%] h-[50px] bg-white " >
+                        <h1></h1>
+                    </div>
+                </div>
+            }
+            <Spreadsheet
+                // hideColumnIndicators
+                columnLabels={Titles}
+                //rowLabels={["", "", "", "", "", "", "", "", ""]}
+                // hideRowIndicators
+                // data={Sheet_?.data ? Sheet_.data : []}
+                data={data}
+                className=" text-[#000] "
+                darkMode={true}
+                onChange={async (item) => {
+                    setData(item)
+                    // await dispatch(dashboardAction.updateTask(item))
+                }}
+                onActivate={(item) => {
+                    setActiveItem(item)
+                    // console.log("active item", item)
+                }}
+            //  DataViewer={DataViewer_}
+            // onSelect={(point) => {
+            //     console.log("onselect :", point )
+            // }}
+            />
+        </>
     )
 }
 

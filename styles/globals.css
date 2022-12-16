@@ -96,6 +96,18 @@
     }
 }
 
+.person2-animate {
+    animation: rotateHorizontal2 3s linear infinite;
+}
+
+@keyframes rotateHorizontal2 {
+    0% {}
+
+    50% {
+        left: 950px
+    }
+}
+
 .moving-star {
     animation: move 3s linear infinite;
 }
