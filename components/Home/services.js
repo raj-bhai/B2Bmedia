@@ -148,10 +148,6 @@ const Services = (props) => {
                     src="/images/user/starYellow.png"
                     className="sm:w-[40px] moving-star sm:h-[40px] absolute bottom-[50px] left-[650px] "
                     alt="star" />
-
-                {/* <VideoEdit
-                    className='  ' 
-                /> */}
                 <div className=' w-[100%] h-[50px] border-[0px] absolute top-[210px] flex items-center ' >
                     <div className=' flex absolute left-[90px] items-center ' >
                         <RoundedNumber
