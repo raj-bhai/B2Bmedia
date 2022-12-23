@@ -164,18 +164,19 @@ const Sheet = (props) => {
         )
     }
 
+
     return (
         <>
             {
                 openPopup &&
                 <div className=" w-[300px] h-[300px] bg-yellow-200 absolute top-[0px] right-[0px] z-50 " >
-                    <div className="w-[100%] h-[50px] bg-white " >
-                        <h1></h1>
+                    <div className="w-[200px] h-[50px] bg-white " >
+                        <h1 className="text-[#000] " >progress</h1>
                     </div>
                 </div>
             }
             <Spreadsheet
-                // hideColumnIndicators
+                // hideColumnIndicators 
                 columnLabels={Titles}
                 //rowLabels={["", "", "", "", "", "", "", "", ""]}
                 // hideRowIndicators

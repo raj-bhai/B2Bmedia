@@ -35,6 +35,7 @@ import Inbox from "../components/Inbox/Inbox";
 import Checkbox from '@mui/material/Checkbox';
 import SubTable from "../components/TableComponents/subtable";
 import Sheet from "../components/Dashboard/sheet";
+import Spreadsheet from "../components/Dashboard/spreadsheet";
 
 
 const Dashboard = () => {
@@ -174,12 +175,12 @@ const Dashboard = () => {
         ];
 
         return (
-            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)] border-[0px]  mt-[50px] fixed overflow-y-auto"
+            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)] border-[0px]  mt-[50px] z-0  fixed overflow-y-auto"
                 style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
             >
                 {
                     ClientsType.length ?
-                        <div className="w-[100%] h-[100px] border-[0px] pl-[10px] pt-[5px] flex bg-[rgba(19,141,117,0.1)]" >
+                        <div className="w-[100%] h-[100px] border-[0px] z-[100] pl-[10px] pt-[5px] z-0 flex bg-[rgba(19,141,117,0.1)]" >
                             <h1 className="text-[#fff] text-2xl" >{ClientsType[clientIndex].clientType.toUpperCase()}</h1>
                             <FaStar
                                 size={15}
@@ -187,10 +188,10 @@ const Dashboard = () => {
                                 className="mt-[9px] ml-[8px]"
                             />
                         </div> :
-                        <div className="w-[100%] h-[100px] border-[0px] pl-[10px] pt-[5px] flex bg-[rgba(19,141,117,0.1)]" >
+                        <div className="w-[100%] h-[100px] border-[0px] z-[100] pl-[10px] pt-[5px] z-0 flex bg-[rgba(19,141,117,0.1)]" >
                         </div>
                 }
-                <div className="w-[100%] rounded-lg border-[0px] mb-[100px] pt-[20px] overflow-hidden" >
+                <div className="w-[100%] rounded-lg border-[0px] mb-[100px] pt-[20px] z-0 overflow-hidden" >
                     {
                         ProjectGroup.map((item, index) => {
                             const color = (index === 0) ? "#5DADE2" : "#28B463";
@@ -198,8 +199,8 @@ const Dashboard = () => {
                             const Data = (item.name === "Active Projects") ? DashboardData.filter(Active) : DashboardData.filter(Completed);
                             return (
                                 (active === index) ?
-                                    <div key={item.name} className="border-[0px] overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-x-scroll">
-                                        <div className="flex" >
+                                    <div key={item.name} className="border-[0px] z-10 overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-x-scroll">
+                                        <div className="flex z-0" >
                                             <FaAngleDown
                                                 size={20}
                                                 color={color}
@@ -209,7 +210,9 @@ const Dashboard = () => {
                                             <h1 onClick={() => setActive(null)} style={{ color: color }} className="text-[20px] ml-[10px] cursor-pointer  ">{item.name}</h1>
                                             <h1 className="text-xs text-[#B3B6B7] mt-[9px] ml-[5px]" >{item.items + " items / " + item.subItems + " subitems"}</h1>
                                         </div>
-                                        <Sheet />
+                                        {/* <Sheet /> */}
+                                        <Spreadsheet 
+                                        />
                                     </div> :
                                     <div className=" w-[100%] border-[0px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] ">
                                         <div className="flex" >
