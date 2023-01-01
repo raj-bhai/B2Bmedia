@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import { useSelector } from 'react-redux';
-import { FaRegComment } from 'react-icons/fa';
+import { FaRegComment, FaAngleRight } from 'react-icons/fa';
+import { height } from "@mui/system";
 
 
 const Spreadsheet = () => {
@@ -10,8 +11,8 @@ const Spreadsheet = () => {
     const header = [`Item`, "Comment", "STARTING", "Clients", "Script", "Voice Over", "Video", "Thumbnaiil", "Uploaded", "SCRIPT PAID", "CLIENT PAID"]
     const [focusedItem, setFocusedItem] = useState({ row: null, column: null });
 
-    const div1 = " h-[35px] flex "
-    const div2 = " h-[100%] flex items-center"
+    const div1 = " flex "
+    const div2 = "flex items-center"
     const bg = " bg-[#1C2833] "
     const focusedBg = " bg-[#145A32] "
     const font = " text-[14px] "
@@ -19,8 +20,10 @@ const Spreadsheet = () => {
     const workingClr = " bg-[#F1C40F] "
     const approvalClr = " bg-[#633974] "
     const revisedClr = " bg-[#515A5A] "
+    const itemHeight = ' h-[35px] '
     const inputClass = `text-white truncate bg-transparent w-[100%] border-[0.5px] border-white h-[100%] px-[5px] text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:border-[1px] focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500`
-
+    const inputClass1 = `text-white truncate bg-transparent w-[100%] border-[0px] border-white h-[100%] px-[5px] text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:border-[1px] focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500`
+    const inputDiv = `text-white flex truncate w-[100%] border-[0.5px] border-white h-[100%] text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:border-[1px] focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500`
 
     let arr = [1, 2, 3, 4, 5, 6, 7];
     let row = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
@@ -32,12 +35,26 @@ const Spreadsheet = () => {
     }
 
 
+    const DetailBox = () => {
+        return (
+            <div className=" w-[100%] h-[150px] relative flex items-center  " >
+                <div className=" w-[700px] h-[90%] absolute left-[100px] top border-[1px] " >
+
+                </div>
+            </div>
+        )
+    }
+
+
+
     const Item = (props) => {
+
 
         const [showDD, setShowDD] = useState(false);
         const [showDD1, setShowDD1] = useState(false);
         const [type, setType] = useState('input');
         const [selectedDD, setSelectedDD] = useState('');
+        const [showDetail, setShowDetail] = useState(false);
 
         const inputRef = useRef(null);
 
@@ -57,16 +74,6 @@ const Spreadsheet = () => {
             }
         }, [focusedItem, type])
 
-
-        // const onClick = (index, index1) => {
-        //     let obj = { row: index, column: index1 }
-        //     setFocusedItem(obj)
-        // }
-
-        const onBlur = () => {
-            // setShowDD(false)
-            // setShowDD1(false)
-        }
 
         const Dropdown = () => {
             const btn = "w-[90%] h-[30px] flex items-center justify-center z-50 cursor-pointer text-[#fff] text-sm "
@@ -111,7 +118,7 @@ const Spreadsheet = () => {
         }
 
         return (
-            <div className={`${(focusedItem.row === props.index) ? focusedBg : bg} ${div2} border-[0px]  ${props.classname} `}
+            <div className={` border-[0px]  ${props.classname} relative `}
             >
                 {
                     showDD &&
@@ -123,37 +130,58 @@ const Spreadsheet = () => {
                 }
                 {
                     (type === "input") &&
-                    <input type={'text'}
-                        ref={inputRef}
-                        
-                        className={` ${inputClass} ${props.verticalLast ? '' : ' border-b-[0px] '} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} `}
-                        defaultValue={props.value}
-                        onBeforeInput={() => {
-                            console.log("gg")
-                        }}
-                        onFocus={async () => {
-                            // setTimeout(() => {
-                            //     let obj = { row: props.index, column: props.index1 }
-                            //     setFocusedItem(obj)
-                            //   }, "1000")
-                        }}
-
-                        onKeyDownCapture={() => {
-                            console.log('key down')
-                        }}
+                    <div
+                        className={` ${inputDiv} ${props.verticalLast ? '' : showDetail ? '' : ' border-b-[0px] '} ${showDetail ? ' h-[35px] items-center ' : ' h-[35px] flex items-center'} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} ${(focusedItem.row === props.index) ? focusedBg : bg} `}
                     >
-                    </input>
+                        {
+                            props.index1 === 0 &&
+                            <div className={`  w-[40px] h-[40px] items-center justify-center flex `} >
+                                <FaAngleRight
+                                    className=" text-[22px] "
+                                    onClick={() => {
+                                        setShowDetail(!showDetail)
+                                    }}
+                                />
+                            </div>
+                        }
+                        <input type={'text'}
+                            ref={inputRef}
+                            className={` ${inputClass1}  ${(props.index1 === 2) ? ' text-transparent' : font}`}
+                            // className={` ${inputClass} ${props.verticalLast ? '' : ' border-b-[0px] '} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} `}
+                            defaultValue={props.value}
+                            onBeforeInput={() => {
+                                console.log("gg")
+                            }}
+                            onFocus={async () => {
+                                // setTimeout(() => {
+                                //     let obj = { row: props.index, column: props.index1 }
+                                //     setFocusedItem(obj)
+                                //   }, "1000")
+                            }}
+
+                            onKeyDownCapture={() => {
+                                console.log('key down')
+                            }}
+                        >
+                        </input>
+                    </div>
+                }
+                {
+                    showDetail &&
+                    <DetailBox />
                 }
                 {
                     (type === "btn") &&
-                    <input type={'button'}
-                        className={` ${inputClass} ${props.verticalLast ? '' : ' border-b-[0px] '} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} `}
-                        value={selectedDD}
-                        onClick={() => {
-                            onClick(props.index, props.index1)
-                        }}
-                    >
-                    </input>
+                    <div className={`${showDetail ? ' h-[50px] items-center ' : ' h-[35px] flex items-center'} ${(focusedItem.row === props.index) ? focusedBg : bg} `} >
+                        <input type={'button'}
+                            className={` ${inputClass} ${props.verticalLast ? '' : ' border-b-[0px] '} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} `}
+                            value={selectedDD}
+                            onClick={() => {
+                                onClick(props.index, props.index1)
+                            }}
+                        >
+                        </input>
+                    </div>
                 }
 
             </div>
@@ -162,7 +190,7 @@ const Spreadsheet = () => {
 
     return (
         <div className=" border-[0px] z-50 px-[5px] py-[5px] w-[100%] relative  " >
-            <div className={`${div1} relative`} >
+            <div className={`${div1} ${itemHeight} flex relative`} >
                 {
                     header.map((x, index1) => {
                         let classname = ""
@@ -189,7 +217,7 @@ const Spreadsheet = () => {
             {
                 Sheet?.data?.map((x, index) => {
                     return (
-                        <div className={`${div1} relative `} >
+                        <div className={`${div1} ${height} relative `} >
                             {
                                 x.map((r, index1) => {
                                     let classname = ""
@@ -222,7 +250,7 @@ const Spreadsheet = () => {
                                         <>
                                             {
                                                 (index1 === 1) ?
-                                                    <div className={`${div2} ${classname} border-[0.5px] px-[5px] ${(focusedItem.row === index) ? focusedBg : bg} flex items-center justify-center`}
+                                                    <div className={`${div2} ${itemHeight} ${classname} border-[0.5px] px-[5px] ${(focusedItem.row === index) ? focusedBg : bg} flex items-center justify-center`}
                                                         onClick={() => {
                                                             onClick(index, index1)
                                                         }}
@@ -231,14 +259,17 @@ const Spreadsheet = () => {
                                                             className=" text-[20px] text-[#fff] "
                                                         />
                                                     </div> :
-                                                    <Item
-                                                        classname={classname}
-                                                        verticalLast={verticalLast}
-                                                        horizontalLast={horizontalLast}
-                                                        value={r?.value}
-                                                        index={index}
-                                                        index1={index1}
-                                                    />
+                                                    <div>
+                                                        <Item
+                                                            classname={classname}
+                                                            verticalLast={verticalLast}
+                                                            horizontalLast={horizontalLast}
+                                                            value={r?.value}
+                                                            index={index}
+                                                            index1={index1}
+                                                        />
+
+                                                    </div>
                                             }
                                         </>
                                     )
