@@ -12,7 +12,7 @@ import {
 const iconColor = ' text-[#808080]'
 const RoundedNumber = (props) => {
     return (
-        <div className=" sm:w-[40px] sm:h-[40px] rounded-[20px] ml-[10px] bg-[#fff] flex items-center justify-center " >
+        <div c lassName=" sm:w-[40px] sm:h-[40px] rounded-[20px] ml-[10px] bg-[#fff] flex items-center justify-center " >
             <h1 className=' text-[#000] text-[16px] ' >{props.count}</h1>
         </div>
     )

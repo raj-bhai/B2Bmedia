@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import { useSelector } from 'react-redux';
-import { FaRegComment, FaAngleRight } from 'react-icons/fa';
+import { FaRegComment, FaAngleRight, FaAngleDown } from 'react-icons/fa';
 import { height } from "@mui/system";
+import DetailBox from "./sheetComponent/detailBox";
 
 
 const Spreadsheet = () => {
@@ -35,15 +36,15 @@ const Spreadsheet = () => {
     }
 
 
-    const DetailBox = () => {
-        return (
-            <div className=" w-[100%] h-[150px] relative flex items-center  " >
-                <div className=" w-[700px] h-[90%] absolute left-[100px] top border-[1px] " >
+    // const DetailBox = () => {
+    //     return (
+    //         <div className=" w-[100%] h-[150px] relative flex items-center  " >
+    //             <div className=" w-[700px] h-[90%] absolute left-[100px] top border-[1px] " >
 
-                </div>
-            </div>
-        )
-    }
+    //             </div>
+    //         </div>
+    //     )
+    // }
 
 
 
@@ -135,13 +136,22 @@ const Spreadsheet = () => {
                     >
                         {
                             props.index1 === 0 &&
-                            <div className={`  w-[40px] h-[40px] items-center justify-center flex `} >
-                                <FaAngleRight
-                                    className=" text-[22px] "
-                                    onClick={() => {
-                                        setShowDetail(!showDetail)
-                                    }}
-                                />
+                            <div className={`  w-[40px] h-[40px] items-center justify-center flex hover:bg-gray-600 `} >
+                                {
+                                    !showDetail ?
+                                        <FaAngleRight
+                                            className=" text-[20px]  "
+                                            onClick={() => {
+                                                setShowDetail(!showDetail)
+                                            }}
+                                        /> :
+                                        <FaAngleDown
+                                            className=" text-[20px]  "
+                                            onClick={() => {
+                                                setShowDetail(!showDetail)
+                                            }}
+                                        />
+                                }
                             </div>
                         }
                         <input type={'text'}
