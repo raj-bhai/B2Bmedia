@@ -4,6 +4,9 @@ import { useSelector } from 'react-redux';
 import { FaRegComment, FaAngleRight, FaAngleDown } from 'react-icons/fa';
 import { height } from "@mui/system";
 import DetailBox from "./sheetComponent/detailBox";
+import TitleContainer from "./organisms/titleContainer";
+
+import Drawer_ from "./organisms/drawer";
 
 
 const Spreadsheet = () => {
@@ -131,50 +134,56 @@ const Spreadsheet = () => {
                 }
                 {
                     (type === "input") &&
-                    <div
-                        className={` ${inputDiv} ${props.verticalLast ? '' : showDetail ? '' : ' border-b-[0px] '} ${showDetail ? ' h-[35px] items-center ' : ' h-[35px] flex items-center'} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} ${(focusedItem.row === props.index) ? focusedBg : bg} `}
-                    >
-                        {
-                            props.index1 === 0 &&
-                            <div className={`  w-[40px] h-[40px] items-center justify-center flex hover:bg-gray-600 `} >
-                                {
-                                    !showDetail ?
-                                        <FaAngleRight
-                                            className=" text-[20px]  "
-                                            onClick={() => {
-                                                setShowDetail(!showDetail)
-                                            }}
-                                        /> :
-                                        <FaAngleDown
-                                            className=" text-[20px]  "
-                                            onClick={() => {
-                                                setShowDetail(!showDetail)
-                                            }}
-                                        />
-                                }
-                            </div>
-                        }
-                        <input type={'text'}
-                            ref={inputRef}
-                            className={` ${inputClass1}  ${(props.index1 === 2) ? ' text-transparent' : font}`}
-                            // className={` ${inputClass} ${props.verticalLast ? '' : ' border-b-[0px] '} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} `}
-                            defaultValue={props.value}
-                            onBeforeInput={() => {
-                                console.log("gg")
-                            }}
-                            onFocus={async () => {
-                                // setTimeout(() => {
-                                //     let obj = { row: props.index, column: props.index1 }
-                                //     setFocusedItem(obj)
-                                //   }, "1000")
-                            }}
+                    // <div
+                    //     className={` ${inputDiv} ${props.verticalLast ? '' : showDetail ? '' : ' border-b-[0px] '} ${showDetail ? ' h-[35px] items-center ' : ' h-[35px] flex items-center'} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} ${(focusedItem.row === props.index) ? focusedBg : bg} `}
+                    // >
+                    //     {
+                    //         props.index1 === 0 &&
+                    //         <div className={`  w-[40px] h-[40px] items-center justify-center flex hover:bg-gray-600 `} >
+                    //             {
+                    //                 !showDetail ?
+                    //                     <FaAngleRight
+                    //                         className=" text-[20px]  "
+                    //                         onClick={() => {
+                    //                             setShowDetail(!showDetail)
+                    //                         }}
+                    //                     /> :
+                    //                     <FaAngleDown
+                    //                         className=" text-[20px]  "
+                    //                         onClick={() => {
+                    //                             setShowDetail(!showDetail)
+                    //                         }}
+                    //                     />
+                    //             }
+                    //         </div>
+                    //     }
+                    //     <input type={'text'}
+                    //         className={` ${inputClass1}  ${(props.index1 === 2) ? ' text-transparent' : font}`}
+                    //         defaultValue={props.value}
+                    //         onBeforeInput={() => {
+                    //             console.log("gg")
+                    //         }}
+                    //         onFocus={async () => {
+                    //             // setTimeout(() => {
+                    //             //     let obj = { row: props.index, column: props.index1 }
+                    //             //     setFocusedItem(obj)
+                    //             //   }, "1000")
+                    //         }}
 
-                            onKeyDownCapture={() => {
-                                console.log('key down')
-                            }}
-                        >
-                        </input>
-                    </div>
+                    //         onKeyDownCapture={() => {
+                    //             console.log('key down')
+                    //         }}
+                    //     >
+                    //     </input>
+                    // </div>
+                    <TitleContainer
+                        containerClass={` ${inputDiv} ${props.verticalLast ? '' : showDetail ? '' : ' border-b-[0px] '} ${showDetail ? ' h-[35px] items-center ' : ' h-[35px] flex items-center'} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} `}
+                        showDetail={showDetail}
+                        index1={props.index1}
+                        onClickIcon={() => setShowDetail(!showDetail)}
+                        value={props.value}
+                        inputContainerClass={` ${inputClass1}  ${(props.index1 === 2) ? ' text-transparent' : font}`}
+                    />
                 }
                 {
                     showDetail &&

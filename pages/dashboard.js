@@ -36,6 +36,7 @@ import Checkbox from '@mui/material/Checkbox';
 import SubTable from "../components/TableComponents/subtable";
 import Sheet from "../components/Dashboard/sheet";
 import Spreadsheet from "../components/Dashboard/spreadsheet";
+import Drawer_ from "../components/Dashboard/organisms/drawer";
 
 
 const Dashboard = () => {
@@ -175,312 +176,316 @@ const Dashboard = () => {
         ];
 
         return (
-            <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)] border-[0px]  mt-[50px] z-0  fixed overflow-y-auto"
-                style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
-            >
-                {
-                    ClientsType.length ?
-                        <div className="w-[100%] h-[100px] border-[0px] z-[100] pl-[10px] pt-[5px] z-0 flex bg-[rgba(19,141,117,0.1)]" >
-                            <h1 className="text-[#fff] text-2xl" >{ClientsType[clientIndex].clientType.toUpperCase()}</h1>
-                            <FaStar
-                                size={15}
-                                color="gray"
-                                className="mt-[9px] ml-[8px]"
-                            />
-                        </div> :
-                        <div className="w-[100%] h-[100px] border-[0px] z-[100] pl-[10px] pt-[5px] z-0 flex bg-[rgba(19,141,117,0.1)]" >
-                        </div>
-                }
-                <div className="w-[100%] rounded-lg border-[0px] mb-[100px] pt-[20px] z-0 overflow-hidden" >
+            <>
+                <div className="h-[100%] w-[100%] bg-[rgba(19,141,117,0.1)] border-[0px]  mt-[50px] z-0  fixed overflow-y-auto"
+                    style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
+                >
                     {
-                        ProjectGroup.map((item, index) => {
-                            const color = (index === 0) ? "#5DADE2" : "#28B463";
-                            // const Data = (item.name === "Active Projects") ? DashboardData.ActiveProjects : DashboardData.FinishedProjects;
-                            const Data = (item.name === "Active Projects") ? DashboardData.filter(Active) : DashboardData.filter(Completed);
-                            return (
-                                (active === index) ?
-                                    <div key={item.name} className="border-[0px] z-10 overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-x-scroll">
-                                        <div className="flex z-0" >
-                                            <FaAngleDown
-                                                size={20}
-                                                color={color}
-                                                className="mt-[8px]"
-                                                onClick={() => setActive(null)}
+                        ClientsType.length ?
+                            <div className="w-[100%] h-[100px] border-[0px] z-[100] pl-[10px] pt-[5px] z-0 flex bg-[rgba(19,141,117,0.1)]" >
+                                <h1 className="text-[#fff] text-2xl" >{ClientsType[clientIndex].clientType.toUpperCase()}</h1>
+                                <FaStar
+                                    size={15}
+                                    color="gray"
+                                    className="mt-[9px] ml-[8px]"
+                                />
+                            </div> :
+                            <div className="w-[100%] h-[100px] border-[0px] z-[100] pl-[10px] pt-[5px] z-0 flex bg-[rgba(19,141,117,0.1)]" >
+                            </div>
+                    }
+                    <div className="w-[100%] rounded-lg border-[0px] mb-[100px] pt-[20px] z-0 overflow-hidden" >
+                        {
+                            ProjectGroup.map((item, index) => {
+                                const color = (index === 0) ? "#5DADE2" : "#28B463";
+                                // const Data = (item.name === "Active Projects") ? DashboardData.ActiveProjects : DashboardData.FinishedProjects;
+                                const Data = (item.name === "Active Projects") ? DashboardData.filter(Active) : DashboardData.filter(Completed);
+                                return (
+                                    (active === index) ?
+                                        <div key={item.name} className="border-[0px] z-10 overflow-y-auto w-[100%]  mb-[50px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] overflow-x-scroll">
+                                            <div className="flex z-0" >
+                                                <FaAngleDown
+                                                    size={20}
+                                                    color={color}
+                                                    className="mt-[8px]"
+                                                    onClick={() => setActive(null)}
+                                                />
+                                                <h1 onClick={() => setActive(null)} style={{ color: color }} className="text-[20px] ml-[10px] cursor-pointer  ">{item.name}</h1>
+                                                <h1 className="text-xs text-[#B3B6B7] mt-[9px] ml-[5px]" >{item.items + " items / " + item.subItems + " subitems"}</h1>
+                                            </div>
+                                            {/* <Sheet /> */}
+                                            <Spreadsheet
                                             />
-                                            <h1 onClick={() => setActive(null)} style={{ color: color }} className="text-[20px] ml-[10px] cursor-pointer  ">{item.name}</h1>
-                                            <h1 className="text-xs text-[#B3B6B7] mt-[9px] ml-[5px]" >{item.items + " items / " + item.subItems + " subitems"}</h1>
-                                        </div>
-                                        {/* <Sheet /> */}
-                                        <Spreadsheet 
-                                        />
-                                    </div> :
-                                    <div className=" w-[100%] border-[0px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] ">
-                                        <div className="flex" >
-                                            <FaAngleRight
-                                                size={20}
-                                                color={color}
-                                                className="mt-[8px]"
-                                                onClick={() => {
-                                                    window.scrollTo({
-                                                        top: 0,
-                                                        behavior: 'smooth'
-                                                        /* you can also use 'auto' behaviour
-                                                           in place of 'smooth' */
-                                                    });
+                                        </div> :
+                                        <div className=" w-[100%] border-[0px] bg-[rgba(0,0,0,0.5)] pt-[5px] px-[5px] pb-[15px] rounded-lg mt-[10px] ml-[5px] ">
+                                            <div className="flex" >
+                                                <FaAngleRight
+                                                    size={20}
+                                                    color={color}
+                                                    className="mt-[8px]"
+                                                    onClick={() => {
+                                                        window.scrollTo({
+                                                            top: 0,
+                                                            behavior: 'smooth'
+                                                            /* you can also use 'auto' behaviour
+                                                               in place of 'smooth' */
+                                                        });
+                                                        if (item.items) {
+                                                            setActive(index);
+                                                        }
+                                                    }}
+                                                />
+                                                <h1 onClick={() => {
                                                     if (item.items) {
                                                         setActive(index);
                                                     }
-                                                }}
-                                            />
-                                            <h1 onClick={() => {
-                                                if (item.items) {
-                                                    setActive(index);
                                                 }
-                                            }
-                                            }
-                                                style={{ color: color }} className="text-[20px] ml-[10px] cursor-pointer  ">{item.name}</h1>
+                                                }
+                                                    style={{ color: color }} className="text-[20px] ml-[10px] cursor-pointer  ">{item.name}</h1>
+                                            </div>
+                                            <h1 className="text-xs text-[#B3B6B7] ml-[35px]" >{item.items + " items / " + item.subItems + " subitems"}</h1>
                                         </div>
-                                        <h1 className="text-xs text-[#B3B6B7] ml-[35px]" >{item.items + " items / " + item.subItems + " subitems"}</h1>
-                                    </div>
-                            )
-                        })
-                    }
+                                )
+                            })
+                        }
+                    </div >
                 </div >
-            </div >
+            </>
         )
     }
 
 
     return (
-        <ConfigProvider colors={['red', 'green', 'blue']}>
-            <div className="flex-col overflow-hidden">
-                <Header />
-                <div className="flex  overflow-hidden">
-                    <div className="w-[60px] h-screen bg-[#17202A] justify-end flex-col border-[0px] "
-                        onFocus={() => console.log("view focused")}
-                    >
-                        <div className="items-center w-[60px] h-[65%]">
-                            <FaThLarge
-                                color={dashBFocused || (iconIndex === 0) ? focusedColor : "#fff"}
-                                size={25}
-                                className="ml-[15px] mt-[60px] cursor-pointer"
-                                onClick={() => {
-                                    setIconIndex(0)
-                                }}
-                                onMouseOver={() => {
-                                    setDashBFocused(true)
-                                }}
-                                onMouseOut={() => {
-                                    setDashBFocused(false)
-                                }}
-                            />
-                            {
-                                dashBFocused &&
-                                <IconTip
-                                    title={"Dashboard"}
+        <>
+            <ConfigProvider colors={['red', 'green', 'blue']}>
+                <div className="flex-col overflow-hidden border-[0px]">
+                    <Header />
+                    <div className="flex  overflow-hidden">
+                        <div className="w-[60px] h-screen bg-[#17202A] justify-end flex-col border-[0px] "
+                            onFocus={() => console.log("view focused")}
+                        >
+                            <div className="items-center w-[60px] h-[65%]">
+                                <FaThLarge
+                                    color={dashBFocused || (iconIndex === 0) ? focusedColor : "#fff"}
+                                    size={25}
+                                    className="ml-[15px] mt-[60px] cursor-pointer"
+                                    onClick={() => {
+                                        setIconIndex(0)
+                                    }}
+                                    onMouseOver={() => {
+                                        setDashBFocused(true)
+                                    }}
+                                    onMouseOut={() => {
+                                        setDashBFocused(false)
+                                    }}
                                 />
-                            }
-                            <FaSnapchatGhost
-                                color={notfFocused || (iconIndex === 1) ? focusedColor : "#fff"}
-                                size={25}
-                                className="ml-[15px] mt-[20px] cursor-pointer"
-                                onClick={() => {
-                                    setIconIndex(1)
-                                }}
-                                onMouseOver={() => {
-                                    setNotfFocused(true)
-                                }}
-                                onMouseOut={() => {
-                                    setNotfFocused(false)
-                                }}
-                            />
-                            {
-                                notfFocused &&
-                                <IconTip
-                                    title={"Notification"}
-                                />
-                            }
-                            <FaEnvelopeOpenText
-                                color={inboxFocused || (iconIndex === 2) ? focusedColor : "#fff"}
-                                size={25}
-                                className="ml-[15px] mt-[20px] cursor-pointer"
-                                onClick={() => {
-                                    setIconIndex(2)
-                                }}
-                                onMouseOver={() => {
-                                    setInboxFocused(true)
-                                }}
-                                onMouseOut={() => {
-                                    setInboxFocused(false)
-                                }}
-                            />
-                            {
-                                inboxFocused &&
-                                <IconTip
-                                    title={"Inbox"}
-                                />
-                            }
-                            <FaCannabis
-                                color={myDeskFocused || (iconIndex === 3) ? focusedColor : "#fff"}
-                                size={25}
-                                className="ml-[15px] mt-[20px] cursor-pointer"
-                                onClick={() => {
-                                    setIconIndex(3)
-                                }}
-                                onMouseOver={() => {
-                                    setMyDeskFocused(true)
-                                }}
-                                onMouseOut={() => {
-                                    setMyDeskFocused(false)
-                                }}
-                            />
-                            {
-                                myDeskFocused &&
-                                <IconTip
-                                    title={"My Work"}
-                                />
-                            }
-                        </div>
-                        <div className="items-center w-[60px] h-[35%] justify-end">
-                            <FaUserPlus
-                                color={InviteFocused ? focusedColor : "#fff"}
-                                size={25}
-                                className="ml-[15px] mt-[20px] cursor-pointer"
-                                onMouseOver={() => {
-                                    setInviteFocused(true);
-                                }}
-                                onMouseOut={() => {
-                                    setInviteFocused(false)
-                                }}
-                            />
-                            {
-                                InviteFocused &&
-                                <IconTip
-                                    title={"Invite"}
-                                />
-                            }
-                            <FaSearch
-                                color={searchFocused ? focusedColor : "#fff"}
-                                size={25}
-                                className="ml-[15px] mt-[20px] cursor-pointer"
-                                onMouseOver={() => {
-                                    setSearchFocused(true)
-                                }}
-                                onMouseOut={() => {
-                                    setSearchFocused(false)
-                                }}
-                            />
-                            {
-                                searchFocused &&
-                                <IconTip
-                                    title={"Search"}
-                                />
-                            }
-                        </div>
-                    </div>
-                    {
-                        (iconIndex === 0) &&
-
-                        <div className="w-[300px] px-[10px] border-[0px]  h-screen bg-gray-600 items-center ">
-                            {workSpaceModal &&
-                                <div className="h-[300px] w-[300px] bg-[#fff] border-2 absolute top-[135px] left-[110px] rounded-lg">
-
-                                </div>
-                            }
-                            <div className="mt-[50px] w-[300px] h-[40px] flex justify-between p-[10px] text-sm items-center text-left">
-                                <h1 className="text-[#fff] mx-[10px]">Workspace</h1>
-                                <FaEllipsisH
-                                    color="#fff"
-                                    size={15}
-                                    className="mx-[10px]"
-                                />
-                            </div>
-                            <div className="w-[220px] h-[40px] mx-[20px] border-[1px] self-center rounded-lg justify-between items-center flex hover:bg-[#5B6168] cursor-pointer opacity-100"
-                                onClick={() => setWorkSpaceModal(!workSpaceModal)}
-                            >
-                                <div className="w-[30px] h-[30px] border-2 ml-[5px] rounded bg-[#fff] justify-center items-center text-center" >
-                                    <h1 className="text-[#17202A] font-bold text-lg">{WorkspaceName.slice(0, 1)}</h1>
-                                </div>
-                                <h1 className="text-[#fff] italic font-bold text-[15px]">{WorkspaceName}</h1>
                                 {
-                                    !workSpaceModal ?
-                                        <FaAngleDown
-                                            color="#fff"
-                                            size={15}
-                                            className="mx-[10px]"
-                                        /> :
-                                        <FaAngleUp
-                                            color="#fff"
-                                            size={15}
-                                            className="mx-[10px]"
-                                        />
+                                    dashBFocused &&
+                                    <IconTip
+                                        title={"Dashboard"}
+                                    />
+                                }
+                                <FaSnapchatGhost
+                                    color={notfFocused || (iconIndex === 1) ? focusedColor : "#fff"}
+                                    size={25}
+                                    className="ml-[15px] mt-[20px] cursor-pointer"
+                                    onClick={() => {
+                                        setIconIndex(1)
+                                    }}
+                                    onMouseOver={() => {
+                                        setNotfFocused(true)
+                                    }}
+                                    onMouseOut={() => {
+                                        setNotfFocused(false)
+                                    }}
+                                />
+                                {
+                                    notfFocused &&
+                                    <IconTip
+                                        title={"Notification"}
+                                    />
+                                }
+                                <FaEnvelopeOpenText
+                                    color={inboxFocused || (iconIndex === 2) ? focusedColor : "#fff"}
+                                    size={25}
+                                    className="ml-[15px] mt-[20px] cursor-pointer"
+                                    onClick={() => {
+                                        setIconIndex(2)
+                                    }}
+                                    onMouseOver={() => {
+                                        setInboxFocused(true)
+                                    }}
+                                    onMouseOut={() => {
+                                        setInboxFocused(false)
+                                    }}
+                                />
+                                {
+                                    inboxFocused &&
+                                    <IconTip
+                                        title={"Inbox"}
+                                    />
+                                }
+                                <FaCannabis
+                                    color={myDeskFocused || (iconIndex === 3) ? focusedColor : "#fff"}
+                                    size={25}
+                                    className="ml-[15px] mt-[20px] cursor-pointer"
+                                    onClick={() => {
+                                        setIconIndex(3)
+                                    }}
+                                    onMouseOver={() => {
+                                        setMyDeskFocused(true)
+                                    }}
+                                    onMouseOut={() => {
+                                        setMyDeskFocused(false)
+                                    }}
+                                />
+                                {
+                                    myDeskFocused &&
+                                    <IconTip
+                                        title={"My Work"}
+                                    />
                                 }
                             </div>
-                            <div className="w-[100%] border-b-[1px] border-[white] self-center mt-[10px] pl-[20px] pt-[10px] pb-[30px]">
-                                <div className="flex cursor-pointer border-[0px]  mr-[40px] pt-[4px] pb-[5px] hover:bg-[#5B6168]  rounded-lg pl-[10px]" >
-                                    <FaPlus
-                                        color="#fff"
-                                        size={12}
-                                        className="mt-[7px]"
-                                    />
-                                    <h1 className="ml-[10px] text-[#fff]" >Add</h1>
-                                </div>
-                                <div className="flex cursor-pointer border-[0px] pb-[5px] pt-[4px]  hover:bg-[#5B6168] mr-[40px] mt-[5px] pl-[10px] rounded-lg" >
-                                    <FaFilter
-                                        color="#fff"
-                                        size={12}
-                                        className="mt-[7px]"
-                                    />
-                                    <h1 className="ml-[10px] text-[#fff]" >Filters</h1>
-                                </div>
-                            </div>
-                            <div className="pt-[30px]">
+                            <div className="items-center w-[60px] h-[35%] justify-end">
+                                <FaUserPlus
+                                    color={InviteFocused ? focusedColor : "#fff"}
+                                    size={25}
+                                    className="ml-[15px] mt-[20px] cursor-pointer"
+                                    onMouseOver={() => {
+                                        setInviteFocused(true);
+                                    }}
+                                    onMouseOut={() => {
+                                        setInviteFocused(false)
+                                    }}
+                                />
                                 {
-                                    ClientsType.map(((item, index) => (
-                                        <div key={index} className="flex border-[0px] mt-[2px] pt-[2px] pb-[4px] px-[10px] ml-[25px] mr-[40px] rounded-lg hover:bg-[#5B6168] cursor-pointer"
-                                            style={{ backgroundColor: (clientIndex === index) ? "#138D75" : null }}
-                                            onClick={() => setClientIndex(index)}
-                                        >
-                                            <FaFolderOpen
+                                    InviteFocused &&
+                                    <IconTip
+                                        title={"Invite"}
+                                    />
+                                }
+                                <FaSearch
+                                    color={searchFocused ? focusedColor : "#fff"}
+                                    size={25}
+                                    className="ml-[15px] mt-[20px] cursor-pointer"
+                                    onMouseOver={() => {
+                                        setSearchFocused(true)
+                                    }}
+                                    onMouseOut={() => {
+                                        setSearchFocused(false)
+                                    }}
+                                />
+                                {
+                                    searchFocused &&
+                                    <IconTip
+                                        title={"Search"}
+                                    />
+                                }
+                            </div>
+                        </div>
+                        {
+                            (iconIndex === 0) &&
+
+                            <div className="w-[300px] px-[10px] border-[0px]  h-screen bg-gray-600 items-center ">
+                                {workSpaceModal &&
+                                    <div className="h-[300px] w-[300px] bg-[#fff] border-2 absolute top-[135px] left-[110px] rounded-lg">
+
+                                    </div>
+                                }
+                                <div className="mt-[50px] w-[300px] h-[40px] flex justify-between p-[10px] text-sm items-center text-left">
+                                    <h1 className="text-[#fff] mx-[10px]">Workspace</h1>
+                                    <FaEllipsisH
+                                        color="#fff"
+                                        size={15}
+                                        className="mx-[10px]"
+                                    />
+                                </div>
+                                <div className="w-[220px] h-[40px] mx-[20px] border-[1px] self-center rounded-lg justify-between items-center flex hover:bg-[#5B6168] cursor-pointer opacity-100"
+                                    onClick={() => setWorkSpaceModal(!workSpaceModal)}
+                                >
+                                    <div className="w-[30px] h-[30px] border-2 ml-[5px] rounded bg-[#fff] justify-center items-center text-center" >
+                                        <h1 className="text-[#17202A] font-bold text-lg">{WorkspaceName.slice(0, 1)}</h1>
+                                    </div>
+                                    <h1 className="text-[#fff] italic font-bold text-[15px]">{WorkspaceName}</h1>
+                                    {
+                                        !workSpaceModal ?
+                                            <FaAngleDown
                                                 color="#fff"
                                                 size={15}
-                                                className="mt-[7px]"
+                                                className="mx-[10px]"
+                                            /> :
+                                            <FaAngleUp
+                                                color="#fff"
+                                                size={15}
+                                                className="mx-[10px]"
                                             />
-                                            <p className="ml-[5px] text-white" >{item.clientType.toUpperCase()}</p>
-                                        </div>
-                                    )))
-                                }
+                                    }
+                                </div>
+                                <div className="w-[100%] border-b-[1px] border-[white] self-center mt-[10px] pl-[20px] pt-[10px] pb-[30px]">
+                                    <div className="flex cursor-pointer border-[0px]  mr-[40px] pt-[4px] pb-[5px] hover:bg-[#5B6168]  rounded-lg pl-[10px]" >
+                                        <FaPlus
+                                            color="#fff"
+                                            size={12}
+                                            className="mt-[7px]"
+                                        />
+                                        <h1 className="ml-[10px] text-[#fff]" >Add</h1>
+                                    </div>
+                                    <div className="flex cursor-pointer border-[0px] pb-[5px] pt-[4px]  hover:bg-[#5B6168] mr-[40px] mt-[5px] pl-[10px] rounded-lg" >
+                                        <FaFilter
+                                            color="#fff"
+                                            size={12}
+                                            className="mt-[7px]"
+                                        />
+                                        <h1 className="ml-[10px] text-[#fff]" >Filters</h1>
+                                    </div>
+                                </div>
+                                <div className="pt-[30px]">
+                                    {
+                                        ClientsType.map(((item, index) => (
+                                            <div key={index} className="flex border-[0px] mt-[2px] pt-[2px] pb-[4px] px-[10px] ml-[25px] mr-[40px] rounded-lg hover:bg-[#5B6168] cursor-pointer"
+                                                style={{ backgroundColor: (clientIndex === index) ? "#138D75" : null }}
+                                                onClick={() => setClientIndex(index)}
+                                            >
+                                                <FaFolderOpen
+                                                    color="#fff"
+                                                    size={15}
+                                                    className="mt-[7px]"
+                                                />
+                                                <p className="ml-[5px] text-white" >{item.clientType.toUpperCase()}</p>
+                                            </div>
+                                        )))
+                                    }
+                                </div>
                             </div>
-                        </div>
-                    }
-                    {
-                        (iconIndex === 0) &&
+                        }
+                        {
+                            (iconIndex === 0) &&
 
-                        <div className="h-screen bg-[#000] w-[80%] border-[0px] px-[10px]"
-                            style={{
-                                backgroundImage: `url("https://www.icegif.com/wp-content/uploads/2022/05/icegif-507.gif")`,
-                            }}
-                        >
-                            {/* Dashboard Content here */}
-                            <Dashboard_ />
-                        </div>
-                    }
-                    {
-                        (iconIndex === 1) &&
-                        <Inbox
-                            type="Notification"
-                        />
-                    }
-                    {
-                        (iconIndex === 2) &&
-                        <Inbox
-                            type="Inbox"
-                        />
-                    }
+                            <div className="h-screen bg-[#000] w-[80%] border-[0px] px-[10px]"
+                                style={{
+                                    backgroundImage: `url("https://www.icegif.com/wp-content/uploads/2022/05/icegif-507.gif")`,
+                                }}
+                            >
+                                {/* Dashboard Content here */}
+                                <Dashboard_ />
+                            </div>
+                        }
+                        {
+                            (iconIndex === 1) &&
+                            <Inbox
+                                type="Notification"
+                            />
+                        }
+                        {
+                            (iconIndex === 2) &&
+                            <Inbox
+                                type="Inbox"
+                            />
+                        }
+                    </div>
+                    {/* <Drawer_ /> */}
                 </div>
-            </div>
-        </ConfigProvider>
-
+            </ConfigProvider>
+        </>
     );
 };
 
