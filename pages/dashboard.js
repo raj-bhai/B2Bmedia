@@ -12,22 +12,10 @@ import {
     FaSearch,
     FaPlus,
     FaFilter,
-    FaBook,
     FaFolderOpen,
     FaStar,
-    FaAlignRight,
     FaAngleRight,
-    FaExpand,
-    FaYoutube,
-    FaCheck,
-    FaChevronRight,
-    FaChevronDown,
-    FaRegCommentAlt
 } from "react-icons/fa";
-//Fimport DashboardModal from "../components/modal";
-//import ClientsType from "../constants/ClientsType";
-//import DashboardData from "../constants/DashboardData";
-//import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import * as dashboardAction from '../redux/action/dashboard';
 import { ConfigProvider } from 'react-avatar';
@@ -36,7 +24,6 @@ import Checkbox from '@mui/material/Checkbox';
 import SubTable from "../components/TableComponents/subtable";
 import Sheet from "../components/Dashboard/sheet";
 import Spreadsheet from "../components/Dashboard/spreadsheet";
-import Drawer_ from "../components/Dashboard/organisms/drawer";
 
 
 const Dashboard = () => {
@@ -482,7 +469,6 @@ const Dashboard = () => {
                             />
                         }
                     </div>
-                    {/* <Drawer_ /> */}
                 </div>
             </ConfigProvider>
         </>

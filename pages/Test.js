@@ -1,7 +1,8 @@
 import React from "react";
 
-export default function Drawer_({ isOpen, setIsOpen }) {
+export default function Test() {
 
+    const [isOpen, setIsOpen] = React.useState(true);
     return (
         <main
             className={
@@ -13,11 +14,13 @@ export default function Drawer_({ isOpen, setIsOpen }) {
         >
             <section
                 className={
-                    " w-screen max-w-lg right-0 absolute  h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
+                    " w-screen max-w-lg right-0 absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
                     (isOpen ? " translate-x-0 " : " translate-x-full ")
                 }
             >
-                <article className="relative w-screen bg-white max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
+                <article className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
+                    <header className="p-4 font-bold text-lg">Header</header>
+                    {/* {children} */}
                 </article>
             </section>
             <section

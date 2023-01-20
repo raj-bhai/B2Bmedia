@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 
 import { FaRegComment, FaAngleRight, FaAngleDown, FaExpand } from 'react-icons/fa';
+import Drawer_ from "./drawer";
 
 const TitleContainer = (props) => {
 
     const [focused, setFocused] = useState(false);
+    const [isOpen, setIsOpen] = React.useState(false);
 
     const bg = " bg-[#1C2833] "
     const focusedBg = " bg-[#145A32] "
+
 
     return (
         <div
@@ -49,7 +52,7 @@ const TitleContainer = (props) => {
                         setFocused(true);
                     }}
                     onClick={() => {
-
+                        setIsOpen(true);
                     }}
                 />
             }
@@ -58,6 +61,7 @@ const TitleContainer = (props) => {
                 defaultValue={props.value}
             >
             </input>
+            <Drawer_ isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
     )
 }
