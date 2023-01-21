@@ -61,7 +61,9 @@ const TitleContainer = (props) => {
                 defaultValue={props.value}
             >
             </input>
-            <Drawer_ isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Drawer_ isOpen={isOpen} setIsOpen={setIsOpen}
+                data={props}
+            />
         </div>
     )
 }
