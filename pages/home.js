@@ -42,7 +42,7 @@ import { staggerContainer, slideIn } from '../utils/motion';
 
 
 const ProjectTypes = [
-    "ALL",
+    // "ALL",
     "TECH",
     "WHITEBOARD",
     "CELEB",
@@ -124,6 +124,25 @@ const Home = () => {
     const [SSopen, setSSOpen] = useState(false);
     const handleOpen = () => setSSOpen(true);
     const handleClose = () => setSSOpen(false);
+
+
+    useEffect(() => {
+        if (btn1Animate) {
+            setTimeout(() => {
+                // console.log("abcde")
+                setBtn1Animate(false)
+            }, 2500);
+        }
+    }, [btn1Animate])
+
+    useEffect(() => {
+        if (btn2Animate) {
+            setTimeout(() => {
+                // console.log("abcde")
+                setBtn2Animate(false)
+            }, 2500);
+        }
+    }, [btn2Animate])
 
 
 
@@ -268,7 +287,7 @@ const Home = () => {
     return (
         domLoaded &&
             typeof window !== 'undefined' ?
-            <div id="home" className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
+            <div id="home" className={'w-full fade-in px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             >
                 {
                     showPopup &&
@@ -280,7 +299,7 @@ const Home = () => {
                         }}
                     />
                 }
-                <div ref={HomeRef} className={'w-[100%] sm:min-h-[700px] border-[0px]'}>
+                <div ref={HomeRef} className={'w-[100%] sm:min-h-[650px] border-[0px]'}>
                     <Header
                         className={headerStyle}
                         selectedHeader={selectedHeader}
@@ -470,15 +489,16 @@ const Home = () => {
                                                                 <input
                                                                     type={"button"}
                                                                     value="Get Started"
-                                                                    className='sm:w-[120px] w-[80px] text-[#000] my-font-bold sm:text-[15px] text-[12px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer '
+                                                                    className='sm:w-[150px] w-[80px] text-[#000] font-bold sm:text-[15px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer '
                                                                     onClick={() => {
                                                                         setBtn1Animate(true)
                                                                         setTimeout(() => {
                                                                             document.getElementById('getStarted').scrollIntoView()
                                                                         }, 1500);
-                                                                        setTimeout(() => {
-                                                                            setBtn1Animate(false)
-                                                                        }, 2500);
+                                                                        // setTimeout(() => {
+                                                                        //     console.log("abcde")
+                                                                        //     setBtn1Animate(false)
+                                                                        // }, 2500);
                                                                     }}
                                                                 />
                                                             </ParticleEffectButton>
@@ -486,15 +506,16 @@ const Home = () => {
                                                                 color='#fff'
                                                                 hidden={btn2Animate}
                                                             >
-                                                                <div className='sm:w-[150px] sm:h-[40px] my-font-bold rounded-md flex items-center justify-end cursor-pointer  '
+                                                                <div className='sm:w-[170px] flex items-center justify-center sm:h-[50px] hover:border my-font-bold rounded-md flex items-center justify-end cursor-pointer  '
                                                                     onClick={() => {
                                                                         setBtn2Animate(true)
                                                                         setTimeout(() => {
                                                                             document.getElementById('demos').scrollIntoView()
                                                                         }, 1500);
-                                                                        setTimeout(() => {
-                                                                            setBtn2Animate(false)
-                                                                        }, 2500);
+                                                                        // setTimeout(() => {
+                                                                        //     console.log("abcde")
+                                                                        //     setBtn2Animate(false)
+                                                                        // }, 2500);
                                                                     }}
                                                                 >
                                                                     <FaPlayCircle
@@ -519,17 +540,17 @@ const Home = () => {
                     }
                 </div>
                 <div ref={AboutRef}
-                    className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative' id='about'
+                    className='w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative' id='about'
                 >
-                    <img
+                    {/* <img
                         src="/images/user/circle1.png"
                         className=' absolute top-[100px] sm:visible invisible '
                         alt="star" />
                     <img
                         src="/images/user/whiteRing.png"
                         className=' absolute sm:w-[50px] sm:h-[100px] md:w-[100px] md:h-[200px] w-[20px] h-[40px]  right-[0px] bottom-[0px] sm:visible visible'
-                        alt="star" />
-                    <div className='w-[100%] border-[0px] sm:py-[0px] py-[50px] sm:mt-[0px] mt-[50px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
+                        alt="star" /> */}
+                    <div className='w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
                                 <h1 className='text-[#fff] sm:text-[50px] text-[45px] my-font leading-tight  ' >{Math.round(count)}+</h1>
@@ -564,7 +585,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='w-[100%] sm:h-[500px] border-[0px] sm:flex   ' >
+                    {/* <div className='w-[100%] sm:h-[500px] border-[0px] sm:flex   ' >
                         <img
                             src="/images/user/star.png"
                             className=' absolute right-[200px] top-[200px] sm:visible invisible '
@@ -589,7 +610,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 {/* <div ref={GlobeRef}
                     className='w-[100%] relative sm:pt-[0px] sm:px-[80px] px-[10px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
@@ -734,14 +755,16 @@ const Home = () => {
                         whileInView="show"
                         variants={slideIn("right", "tween", 0.5, 1)}
                     > */}
-                    <div id="pricing" className='  sm:h-[400px] w-[60%] border-[0px] flex  sm:pl-[0px] pl-10px ' >
-                        <div className=' w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
+                    <div id="pricing" className=' sm:h-[400px] w-[80%] border-[0px] flex  sm:pl-[0px] pl-10px ' >
+                        <div className=' w-[40%] flex items-center justify-center ' >
                             <img
-                                src="/images/user/person7.png"
-                                className=' sm:w-[176px] w-[80px] h-[110px] sm:h-[248px] '
+                                src="https://res.cloudinary.com/drgvislmm/image/upload/v1683385350/WebsiteImages/ggmoney_axjqvu.gif"
+                                className='absolute '
+                                width={600}
+                                height={600}
                                 alt="person7" />
                         </div>
-                        <div className='w-[100%] sm:px-[40px] pl-[10px] pr-[0] sm:mt-[0px] mt-[5%]  ' >
+                        <div className='w-full sm:px-[40px] pr-[0] sm:mt-[0px] mt-[5%]  ' >
                             <div className='sm:w-full sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
                                 <h1 className=' text-yellow-200 sm:text-[30px] my-font-bold text-[17px] leading-sm ' >AFFORDABLE PRICING, EXCEPTIONAL RESULTS</h1>
                             </div>
@@ -843,7 +866,7 @@ const Home = () => {
                                             <button type="button"
                                                 key={index}
                                                 // focus:ring focus:ring-green-700
-                                                className={` ${(index == 2) ? 'lg:w-[130px]' : 'lg:w-[120px]'} hover:bg-[#F2F4F4]   focus:text-[#fff] focus:bg-green-600   drop-shadow-lg lg:text-[16px] lg:font-bold sm:text-[#000]  lg:border-[0px] rounded  sm:h-[40px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52] bg-green-600' : ' text-[#fff] sm:bg-[#E5E7E9] '} `}
+                                                className={` ${(index == 1) ? 'lg:w-[130px]' : 'lg:w-[120px]'} hover:bg-[#F2F4F4]   focus:text-[#fff] ny-font-bold focus:bg-green-600   drop-shadow-lg lg:text-[16px] lg:font-bold sm:text-[#000]  lg:border-[0px] rounded  sm:h-[40px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52] bg-green-600' : ' text-[#fff] sm:bg-[#E5E7E9] '} `}
                                                 onClick={() => {
                                                     setprojectIndex(index)
                                                 }}
@@ -889,13 +912,13 @@ const Home = () => {
                         </button>
                     </div>
                 </div> */}
-                <div ref={ContactRef} id="contact" className='w-[100%] sm:px-[0px] px-[10px] border-[0px] flex items-center justify-center mb-[50px] relative ' >
+                {/* <div ref={ContactRef} id="contact" className='w-[100%] sm:px-[0px] px-[10px] border-[0px] flex items-center justify-center mb-[50px] relative ' >
                     <Contact
                         onClick={() => {
                             setShowPopup(true);
                         }}
                     />
-                </div>
+                </div> */}
                 <div ref={FooterRef} className='w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center' id="footer" >
                     {
                         typeof window !== 'undefined' &&

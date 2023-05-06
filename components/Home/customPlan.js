@@ -1,6 +1,7 @@
 import { string } from "prop-types";
 import React, { useState, useEffect } from "react";
 import { FaCaretDown } from 'react-icons/fa';
+import PricingCard from "./pricingCardCustom";
 
 const CustomPlan = (props) => {
 
@@ -63,22 +64,39 @@ const CustomPlan = (props) => {
                     className=" ml-[20px] mt-[2px] sm:visible invisible "
                 />
             </div>
-            <div className=" sm:w-[100%] sm:h-[500px] relative sm:mt-[50px] mt-[15px] rounded-[20px] border-[1px] flex flex-wrap justify-between " >
-                <img
+            <div className=" sm:w-[100%] sm:h-[500px] relative sm:mt-[50px] mt-[15px] rounded-[20px] gap-8 flex flex-wrap justify-center " >
+                {/* <img
                     src="/images/user/circle7.png"
                     className=' absolute  left-[0px] top-[0px] sm:visible invisible  '
-                    alt="star" />
-                <img
+                    alt="star" /> */}
+                {/* <img
                     src="/images/user/circle8.png"
                     className=' absolute  left-[50px] bottom-[0px] sm:visible invisible '
-                    alt="star" />
-                <div className="sm:w-[33%] sm:h-[100%] w-[0px] h-[0px] border-r-[0px] flex items-center justify-center sm:visible invisible " >
+                    alt="star" /> */}
+                {/* <div className=" invisible sm:w-[33%] sm:h-[100%] w-[0px] h-[0px] border-r-[0px] flex items-center justify-center sm:visible invisible " >
                     <img
                         src="/images/user/person8.png"
                         className=' sm:w-[250px] sm:h-[335px] mb-[70px] sm:visible invisible  '
                         alt="star" />
+                </div> */}
+                <div className="w-[50%] h-[100%] border flex items-center justify-center text-white " >
+                    <h1>image here........ Tanmay Gif Banke dega fir dikhega ye image</h1>
                 </div>
-                <div className="sm:w-[33%] w-[100%] sm:h-[100%] sm:px-[0px] px-[10px] border-r-[0px] sm:mt-[20px] sm:pr-[25px] " >
+                <PricingCard
+                    for="Short Videos (4-5 mins)"
+                    type="Basic"
+                    index={0}
+                    amount={35}
+                    seletedIndex={0}
+                    desc="700-800 words"
+                    onFocus={() => {
+                        // console.log('gg')
+                    }}
+                    onClick={() => {
+                        // setPricingIndex(0)
+                    }}
+                />
+                {/* <div className="sm:w-[33%] w-[100%] sm:h-[100%] sm:px-[0px] px-[10px] border-r-[0px] sm:mt-[20px] sm:pr-[25px] " >
                     {
                         Input(
                             {
@@ -146,7 +164,7 @@ const CustomPlan = (props) => {
                         >
                         </input>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

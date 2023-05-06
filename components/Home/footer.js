@@ -86,7 +86,7 @@ const Footer = (props) => {
                         <div className=" mt-[20px] " >
                             <h1 className=" text-[#fff] sm:text-[18px] text-[14px] my-font-semibold  " >Contact</h1>
                             <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal mt-[10px] my-font leading-tight  " >+91 8076455801</h1>
-                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal my-font leading-tight  " >support@growgrip.com</h1>
+                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal my-font leading-tight  " >support@grogrip.com</h1>
                         </div>
                     </div>
                 </div>

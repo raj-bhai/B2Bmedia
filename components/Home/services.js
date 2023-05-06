@@ -53,7 +53,7 @@ const RoundedText = (props) => {
                     className={iconStyle}
                 />
             }
-            <h1 className=' text-[#000] text-[16px] ' >{props.text}</h1>
+            <h1 className=' text-[#000] my-font-semibold text-[14px] ' >{props.text}</h1>
         </div>
     )
 }
@@ -81,8 +81,8 @@ const Services = (props) => {
                             className="sm:w-[165px] sm:h-[228px] ml-[-20px] bounce-medium "
                             alt="star" />
                         <div>
-                            <h1 className=' sm:text-[30px]  sm:mt-[20px] text-[#fff] ' >HOW TO GET</h1>
-                            <h1 className=' sm:text-[30px]  text-yellow-200 font-bold ' >STARTED</h1>
+                            <h1 className=' sm:text-[30px] my-font  sm:mt-[20px] text-[#fff] ' >HOW TO GET</h1>
+                            <h1 className=' sm:text-[30px]  text-yellow-200 my-font-bold ' >STARTED</h1>
                         </div>
                     </div>
                     <div className='flex items-end sm:ml-[-30px] ' >

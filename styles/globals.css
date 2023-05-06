@@ -31,12 +31,27 @@
     font-weight: bold;
     font-style: italic;
   }
+
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   
 
   .my-font {
         font-family: 'Montserrat', sans-serif;
         font-weight: 300;
-        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   }
 
   .my-font-bold {
@@ -48,7 +63,7 @@
 .my-font-semibold {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 .homeBG {
