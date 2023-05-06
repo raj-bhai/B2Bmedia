@@ -11,15 +11,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
     "@fontsource/roboto": "^4.5.8",
-    "@mui/material": "^5.10.13",
+    "@mui/material": "^5.12.3",
     "@react-oauth/google": "^0.5.1",
     "@reduxjs/toolkit": "^1.8.5",
     "@trendyol-js/react-carousel": "^3.0.0",
     "@vercel/analytics": "^0.1.5",
     "axios": "^0.27.2",
+    "framer-motion": "^10.12.8",
     "jquery": "^3.6.1",
     "jwt-decode": "^3.1.2",
     "next": "12.2.3",
@@ -39,6 +40,7 @@
     "react-multi-carousel": "^2.8.2",
     "react-particle-effect-button": "^1.0.1",
     "react-redux": "^8.0.2",
+    "react-responsive-carousel": "^3.2.23",
     "react-shimmer": "^3.2.0",
     "react-social-login-buttons": "^3.6.1",
     "react-spreadsheet": "^0.7.7",
@@ -49,7 +51,8 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
     "rsuite": "^5.24.1",
-    "scheduler": "^0.23.0"
+    "scheduler": "^0.23.0",
+    "vara": "^1.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",

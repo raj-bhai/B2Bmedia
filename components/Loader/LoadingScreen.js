@@ -1,9 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import VaraText from '../Home/micro/VaraText'
 
 const LoadingScreen = () => {
+    const [domLoad, setDomLoad] = useState(false);
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+        setDomLoad(true)
+        audioRef.current.play();
+    }, [])
     return (
-        <div className="h-[100%] w-[100%] bg-gradient-to-r from-[#0B5345] to-[#1B4F72] border-[0px]  fixed overflow-y-auto flex items-center justify-center" >
-            <img src={'https://www.abhaf.org/assets/images/dark-loader.gif'} style={{ width: 100, height: 100 }}></img>
+        // bg-gradient-to-r from-[#0B5345] to-[#1B4F72] border-[0px] 
+
+        <div className=" w-[100%] h-screen bg-[#FADBD8] relative  fixed overflow-y-auto flex items-center justify-center" >
+            <audio ref={audioRef} src="https://res.cloudinary.com/drgvislmm/video/upload/v1683328395/WebsiteImages/final_animation_kwxwiu.mp3" />
+            <img
+                className=' drop-shadow-lg h-screen w-full resize-none '
+                src={'https://res.cloudinary.com/drgvislmm/image/upload/v1683328919/WebsiteImages/ggL_qizfy6.gif'} style={{}}></img>
+            {/* <div className=' absolute ' >
+                <div className='relative' >
+                    <div className='absolute z-[10] left-[40px] top-[30px]  -rotate-[32deg] h-[30px]  ' >
+                        <VaraText text='Grogrip' domLoad={domLoad} />
+                    </div>
+                    <img
+                        className='rounded-[30px] drop-shadow-lg'
+                        src={'https://res.cloudinary.com/drgvislmm/image/upload/v1683327434/WebsiteImages/final_animation_vo7quy.gif'} style={{ width: 200, opacity: 1 }}></img>
+                </div>
+            </div> */}
+            {/* <div className='relative' >
+                <div className='absolute z-[10] left-[40px] top-[30px]  -rotate-[32deg] h-[30px]  ' >
+                    <VaraText text='Grogrip' domLoad={domLoad} />
+                </div>
+                <img
+                    className='rounded-[30px] drop-shadow-lg'
+                    src={'https://res.cloudinary.com/drgvislmm/image/upload/v1683320215/WebsiteImages/tttt_qgayyr.gif'} style={{ width: 200 }}></img>
+            </div> */}
         </div>
     )
 }

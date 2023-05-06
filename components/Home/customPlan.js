@@ -9,8 +9,8 @@ const CustomPlan = (props) => {
     const [email, setEmail] = useState('');
     const [contact, setContact] = useState('');
     const [desc, setDesc] = useState('');
-    const labelStyle = " text-[#fff] sm:text-[17px] text-[15px] font-normal "
-    const inputStyle = " mt-[5px] bg-transparent border border-gray-300 h-[50px] text-[#fff] text-sm rounded-lg  block w-full p-2.5  placeholder-gray-400 "
+    const labelStyle = " text-[#fff] sm:text-[17px] text-[15px] my-font "
+    const inputStyle = " mt-[5px] bg-transparent border border-gray-300 h-[50px] text-[#fff] my-font text-sm rounded-lg  block w-full p-2.5  placeholder-gray-400 "
     const input1Style = " mt-[5px] bg-transparent border border-gray-300 sm:h-[280px] h-[150px] text-[#fff] flex items-start text-sm rounded-lg  block w-full p-2.5  placeholder-gray-400 "
     const String = {
         price: "price",
@@ -56,7 +56,7 @@ const CustomPlan = (props) => {
     return (
         <div className=" sm:w-[80%] w-[100%] sm:px-[0px] px-[10px] border-[0px] " >
             <div className=" flex items-center " >
-                <h1 className=" text-[#fff] sm:text-[28px] text-[18px] leading-none " >Create Custom plan</h1>
+                <h1 className=" text-[#fff] sm:text-[28px] text-[18px] my-font-semibold leading-none " >Create Custom plan</h1>
                 <FaCaretDown
                     color="#fff"
                     size={30}
@@ -139,7 +139,7 @@ const CustomPlan = (props) => {
                         <input
                             type={'button'}
                             value={'Get Started'}
-                            className='sm:w-[250px] w-[150px] cursor-pointer sm:h-[50px] h-[40px] mt-[20px] sm:rounded-[50px] rounded-[30px] justify-center bg-[#fff] sm:text-[20px] text-[15px]  font-semibold text-[#000]'
+                            className='sm:w-[250px] w-[150px] my-font-semibold cursor-pointer sm:h-[50px] h-[40px] mt-[20px] sm:rounded-[50px] rounded-[30px] justify-center bg-[#fff] sm:text-[20px] text-[15px]  font-semibold text-[#000]'
                             onClick={() => {
                                 props.onSubmit();
                             }}

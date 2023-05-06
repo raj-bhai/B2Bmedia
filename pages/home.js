@@ -24,12 +24,25 @@ import Contact from '../components/Home/contact';
 import Footer from '../components/Home/footer';
 import Label from '../components/Home/micro/label';
 import Videos from '../constants/portfolio';
-
+import { AiFillEye } from 'react-icons/ai';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Image from 'next/image';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Carousel from '../components/Home/micro/imageCarousel';
+import { motion } from "framer-motion";
+import { staggerContainer, slideIn } from '../utils/motion';
+// import { slideIn, staggerContainer, textVariant, textVariant2 } from "@/utils/motion";
+// import VaraText from '../components/Home/micro/VaraText';
 
 
 
 const ProjectTypes = [
-    "All",
+    "ALL",
     "TECH",
     "WHITEBOARD",
     "CELEB",
@@ -37,6 +50,26 @@ const ProjectTypes = [
     "MIX VIDEOS"
 ]
 
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    // width: 400,
+    bgcolor: 'background.paper',
+    // border: '2px solid #000',
+    // boxShadow: 24,
+    p: 4,
+};
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+}));
 
 const Home = () => {
 
@@ -87,6 +120,10 @@ const Home = () => {
     const [count1, setCount1] = useState(0);
     const [count2, setCount2] = useState(100);
     const [count3, setCount3] = useState(220000);
+
+    const [SSopen, setSSOpen] = useState(false);
+    const handleOpen = () => setSSOpen(true);
+    const handleClose = () => setSSOpen(false);
 
 
 
@@ -307,13 +344,14 @@ const Home = () => {
                                                 timing="ease"
                                                 iteration={1}
                                                 fillMode="none"
-                                                className='text-yellow-200 sm:text-[50px] text-[18px] sm:leading-[50px] text-left font-semibold  '
+                                                className=' text-shadow my-font-bold drop-shadow-lg text-yellow-200 sm:text-[50px] text-[18px] sm:leading-[50px] text-left font-semibold  '
                                             >
-                                                Stand out of the crowd
+                                                {`Expert YouTube Service  and Support`}
                                             </MovingText>
 
                                             {/* <h1 className='text-white text-[40px] leading-[45px] mt-[30px] text-left font-normal ' >{'Creating videos is never so been easy'}</h1> */}
-                                            <div className='sm:mt-[28px] mt-[0px] border-[0px] sm:h-[100px]' >
+                                            <div className='sm:mt-[28px] flex mt-[0px] border-[0px] sm:h-[100px]' >
+                                                {/* <VaraText text='WiseCode Team' /> */}
                                                 {
                                                     showText2 &&
                                                     <MovingText
@@ -325,11 +363,66 @@ const Home = () => {
                                                         iteration={1}
                                                         fillMode="forwards"
                                                         presences="letters"
-                                                        className='text-white sm:text-[40px] text-[17px] sm:leading-[45px] text-left font-normal '
+                                                        className='text-white sm:text-[40px] my-font text-[17px] sm:leading-[45px] text-left font-normal '
                                                     >
-                                                        {'Creating videos is never so been easy'}
+                                                        {'Proven Track record of Success'}
                                                     </MovingText>
                                                 }
+                                                {/* <div className='w-[30px] hover:bg-white flex items-center justify-center rounded-sm h-[22px] mt-[15px] ml-[10px] border border-[#D5D8DC] '
+                                                    onClick={handleOpen}
+                                                >
+                                                    <AiFillEye
+                                                        onClick={() => handleOpen()}
+                                                        size={18}
+                                                        className='text-[#fff] hover:text-gray-600 '
+                                                    />
+                                                </div> */}
+                                                <Modal
+                                                    open={SSopen}
+                                                    onClose={handleClose}
+                                                    aria-labelledby="modal-modal-title"
+                                                    aria-describedby="modal-modal-description"
+                                                >
+                                                    {/* <div>
+                                                        <h1>hello guys, welcome back to my channel</h1>
+                                                    </div> */}
+                                                    <Box
+                                                        sx={style}
+                                                        className='rounded-lg'
+                                                    >
+                                                        <Carousel />
+                                                        {/* <Stack direction="row" spacing={2}> */}
+                                                        {/* <Image
+                                                                src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg"
+                                                                width={500}
+                                                                height={500}
+                                                                alt="Picture of the author"
+                                                            /> */}
+                                                        {/* <img
+                                                                src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg"
+                                                                alt="new"
+                                                                onLoad={() => {
+                                                                    // setImageLoaded(true)
+                                                                }}
+                                                            /> */}
+                                                        {/* <img
+                                                                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                                                                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                                                alt={item.title}
+                                                                loading="lazy"
+                                                            /> */}
+                                                        {/* <Item>Item 1</Item>
+                                                            <Item>Item 2</Item>
+                                                            <Item>Item 3</Item> */}
+                                                        {/* </Stack> */}
+                                                        {/* <Typography id="modal-modal-title" variant="h6" component="h2">
+                                                            Text in a modal
+                                                        </Typography>
+                                                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                                                        </Typography> */}
+                                                    </Box>
+                                                </Modal>
                                             </div>
                                             <div className='w-[100%] sm:h-[50px] h-[30px] border-[0px] sm:mt-[10px] mt-[0px] flex items-center ' >
                                                 <img
@@ -349,11 +442,10 @@ const Home = () => {
                                                         iteration={1}
                                                         fillMode="forwards"
                                                         presences="letters"
-                                                        className='text-white sm:text-[18px] text-[14px] sm:leading-[25px] '
+                                                        className='text-white sm:text-[18px] my-font text-[14px] sm:leading-[25px] '
                                                     >
-                                                        {'Just focus on your business we will create content for your business without limits'}
+                                                        {"Unlock your channel's potential with our professional video production and optimization"}
                                                     </MovingText>
-                                                    // <h1 className='text-white leading-[25px] ' >Just focus on your business we will create content for your business without limits</h1>
                                                 }
                                             </div>
                                             <div className='w-[100%] h-[50px] mt-[30px]' >
@@ -378,7 +470,7 @@ const Home = () => {
                                                                 <input
                                                                     type={"button"}
                                                                     value="Get Started"
-                                                                    className='sm:w-[120px] w-[80px] text-[#000] font-bold sm:text-[15px] text-[12px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer '
+                                                                    className='sm:w-[120px] w-[80px] text-[#000] my-font-bold sm:text-[15px] text-[12px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer '
                                                                     onClick={() => {
                                                                         setBtn1Animate(true)
                                                                         setTimeout(() => {
@@ -394,7 +486,7 @@ const Home = () => {
                                                                 color='#fff'
                                                                 hidden={btn2Animate}
                                                             >
-                                                                <div className='sm:w-[150px] sm:h-[40px] rounded-md flex items-center justify-end cursor-pointer  '
+                                                                <div className='sm:w-[150px] sm:h-[40px] my-font-bold rounded-md flex items-center justify-end cursor-pointer  '
                                                                     onClick={() => {
                                                                         setBtn2Animate(true)
                                                                         setTimeout(() => {
@@ -440,35 +532,35 @@ const Home = () => {
                     <div className='w-[100%] border-[0px] sm:py-[0px] py-[50px] sm:mt-[0px] mt-[50px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[45px] leading-tight font-semibold  ' >{Math.round(count)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[45px] my-font leading-tight  ' >{Math.round(count)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal sm:ml-[-20px]  ' >Clients</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold sm:ml-[-20px]  ' >Clients</h1>
                             </div>
                         </div>
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff]  sm:text-[50px] text-[40px] leading-tight font-semibold  ' >{Math.round(count1)}+</h1>
+                                <h1 className='text-[#fff]  sm:text-[50px] text-[40px] leading-tight my-font  ' >{Math.round(count1)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal  ' >Positive Feedback</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold  ' >Positive Feedback</h1>
                             </div>
 
                         </div>
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight font-semibold  ' >{Math.round(count2)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight my-font  ' >{Math.round(count2)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal sm:ml-[-10px]  ' >Channels</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold sm:ml-[-10px]  ' >Channels</h1>
                             </div>
                         </div>
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight font-semibold  ' >{Math.round(count3)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight my-font  ' >{Math.round(count3)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal  ' >Views Daily</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold  ' >Views Daily</h1>
                             </div>
                         </div>
                     </div>
@@ -488,10 +580,10 @@ const Home = () => {
                         <div id='service' className=' sm:w-[50%] sm:h-[100%] border-[0px] flex justify-center items-center sm:px-[0px]  px-[10px] ' >
                             <div>
                                 <div className='border-[0px]' >
-                                    <h1 className=' text-[#fff] sm:text-[50px] text-[16px] leading-none font-semibold ' >Non-Stoppable service</h1>
+                                    <h1 className=' text-[#fff] sm:text-[50px] text-[16px] leading-none my-font-bold ' >Non-Stoppable service</h1>
                                 </div>
                                 <div className='border-[0px] sm:w-[90%] sm:mr-[0px] mr-[10px] ' >
-                                    <h1 className=' text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight mt-[10px] ' >
+                                    <h1 className=' text-[#E0E5F3] sm:text-[18px] text-[13px] my-font leading-tight mt-[10px] ' >
                                         We are a group of young YouTube specialists and enthusiasts dedicated to establishing a viable career path for YouTubers. We make sure that our content is engaging by using animated titles, sound effects, background music, and 100% copyright free high-quality videos to keep viewers watching.
                                     </h1>
                                 </div>
@@ -499,7 +591,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={GlobeRef}
+                {/* <div ref={GlobeRef}
                     className='w-[100%] relative sm:pt-[0px] sm:px-[80px] px-[10px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
                     <img
                         src="/images/user/circle2.png"
@@ -510,9 +602,15 @@ const Home = () => {
                         className=' absolute top-[450px] right-[0px] sm:visible invisible   '
                         alt="star" />
 
+                    <motion.div
+                        variants={staggerContainer}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: false, amount: 0.45 }}
+                    >
                     <div className='w-[100%] border-[0px] sm:flex flex-wrap justify-evenly sm:pl-[100px] items-center ' >
                         <div className='sm:w-[650px] w-[100%] border-[0px]' >
-                            <h1 className=' sm:text-[65px] text-[18px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
+                            <h1 className=' sm:text-[65px] text-[18px] text-yellow-200 my-font-bold leading-none ' >Divided by Countries</h1>
                             <h1 className='text-[#fff] sm:text-[35px] text-[15px] sm:mt-[10px] font-medium ' >United by GroGrip</h1>
                         </div>
                         <div className='relative border-[0px] sm:min-w-[550px] flex items-center justify-center sm:mt-[0px] mt-[20px] ' >
@@ -602,8 +700,9 @@ const Home = () => {
                             />
                         </div>
                     </div>
+                    </motion.div>
 
-                </div>
+                </div> */}
                 <div ref={ServicesRef} id='getStarted' className='sm:w-[100%] sm:h-full w-[0px] h-[0px] border-[0px] pt-[100px] flex items-center justify-center sm:visible invisible '>
                     <div className='w-[100%] sm:visible invisible ' >
                         <Services
@@ -611,6 +710,14 @@ const Home = () => {
                         />
                     </div>
                 </div>
+                {/* <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.45 }}
+                    className='border w-[90%] '
+                > */}
+
                 <div ref={PortfolioRef}
                     id="portfolio" className='w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center '>
                     <img
@@ -621,23 +728,35 @@ const Home = () => {
                         src="/images/user/circle5.png"
                         className=' absolute right-[0px] bottom-[0px] sm:visible invisible  '
                         alt="person7" />
-                    <div id="pricing" className=' sm:w-[70%] sm:h-[400px] border-[0px] flex  sm:pl-[0px] pl-10px ' >
+
+                    {/* <motion.div
+                        initial="hidden"
+                        whileInView="show"
+                        variants={slideIn("right", "tween", 0.5, 1)}
+                    > */}
+                    <div id="pricing" className='  sm:h-[400px] w-[60%] border-[0px] flex  sm:pl-[0px] pl-10px ' >
                         <div className=' w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
                             <img
                                 src="/images/user/person7.png"
                                 className=' sm:w-[176px] w-[80px] h-[110px] sm:h-[248px] '
                                 alt="person7" />
                         </div>
-                        <div className='w-[75%] sm:px-[40px] px-[10px] sm:mt-[0px] mt-[5%]  ' >
-                            <div className='sm:w-[100%] sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
-                                <h1 className=' text-[#fff] sm:text-[50px] text-[17px] leading-none ' >Simple, transparent pricing</h1>
+                        <div className='w-[100%] sm:px-[40px] pl-[10px] pr-[0] sm:mt-[0px] mt-[5%]  ' >
+                            <div className='sm:w-full sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
+                                <h1 className=' text-yellow-200 sm:text-[30px] my-font-bold text-[17px] leading-sm ' >AFFORDABLE PRICING, EXCEPTIONAL RESULTS</h1>
                             </div>
                             <div>
-                                <h1 className=' text-[#fff] sm:text-[25px] text-[13px] sm:mt-[0px] mt-[10px] sm:leading-[30px] leading-tight ' >Super affordable plans , for content creators, startups and enterprises  and for everyone . </h1>
+                                <h1 className=' text-[#fff]  sm:text-[18px] my-font-semibold text-[13px] sm:-mt-[20px] mt-[10px]  leading-tight ' >
+                                    <p>"Choose from our flexible pricing plans to suit</p>
+                                    <p>your budget and goals."</p>
+                                    {/* Choose from our flexible pricing plans to suit your budget and goals */}
+                                </h1>
                             </div>
                         </div>
                     </div>
+                    {/* </motion.div> */}
                 </div>
+                {/* </motion.div> */}
                 <div ref={PricingRef} className='w-[100%] flex item-center justify-center' >
                     <div className=' w-[90%] border-[0px] sm:mt-[50px] mt-[20px] flex sm:gap-[80px] gap-[20px] flex-wrap items-center justify-center ' >
                         <PricingCard
@@ -692,8 +811,8 @@ const Home = () => {
                     <div className='sm:h-[250px] h-[150px] w-[100%]  border-[0px] flex justify-between ' >
                         <div className='sm:w-[600px] h-[100%] flex items-center ' >
                             <div>
-                                <h1 className={`text-[#fff] sm:text-[40px] font-semibold ${gradiantText1}`} >Confused about the plans</h1>
-                                <h1 className={`text-[#fff] sm:text-[60px] font-bold ${gradiantText2}`} >Dont worry</h1>
+                                <h1 className={`text-[#fff] sm:text-[40px] my-font-semibold ${gradiantText1}`} >Confused about the plans</h1>
+                                <h1 className={`text-[#fff] sm:text-[60px] my-font-bold ${gradiantText2}`} >Dont worry</h1>
                             </div>
                         </div>
                         <div className='h-[100%] border-l-[0px] flex items-center justify-center ' >
@@ -712,16 +831,19 @@ const Home = () => {
                     />
                 </div>
                 <div ref={ExtraRef1} id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
-                    <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] sm:px-[0px] px-[10px]  ' >
-                        <h1 className=' text-[#fff] sm:text-[30px] text-[18px] font-semibold ' >Our Latest Projects</h1>
-                        <div className=' w-[100%] flex flex-wrap mt-[20px] pb-[50px] border-[0px]' >
-                            <div className='w-[100%] flex flex-wrap sm:gap-[50px] gap-[10px] border-[0px] sm:pb-[50px] ' >
+                    <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
+                        <div className=' flex items-center justify-center py-[5px] rounded ' >
+                            <h1 className=' text-[#fff] bg-gradient-to-r from-white via-yellow-100 to-green-100 text-transparent bg-clip-text text-center lg:text-[45px] text-[18px] font-bold ' >OUR LATEST PROJECTS</h1>
+                        </div>
+                        <div className=' w-[100%] flex flex-wrap mt-[50px] pb-[50px] border-[0px]' >
+                            <div className='w-[100%] flex flex-wrap justify-center sm:gap-[50px] gap-[10px] border-[0px] sm:pb-[50px] ' >
                                 {
                                     ProjectTypes.map((item, index) => {
                                         return (
                                             <button type="button"
                                                 key={index}
-                                                className={` sm:text-[19px] border-[0px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                                // focus:ring focus:ring-green-700
+                                                className={` ${(index == 2) ? 'lg:w-[130px]' : 'lg:w-[120px]'} hover:bg-[#F2F4F4]   focus:text-[#fff] focus:bg-green-600   drop-shadow-lg lg:text-[16px] lg:font-bold sm:text-[#000]  lg:border-[0px] rounded  sm:h-[40px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52] bg-green-600' : ' text-[#fff] sm:bg-[#E5E7E9] '} `}
                                                 onClick={() => {
                                                     setprojectIndex(index)
                                                 }}
@@ -748,7 +870,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div >
-                <div ref={ExtraRef2} className='w-[100%] border-[0px] sm:pt-[100px] pt-[60px] sm:pb-[100px] pb-[80px] flex items-center justify-center sm:mb-[50px] relative ' >
+                {/* <div ref={ExtraRef2} className='w-[100%] border-[0px] sm:pt-[100px] pt-[60px] sm:pb-[100px] pb-[80px] flex items-center justify-center sm:mb-[50px] relative ' >
                     <div className='absolute top-[0px] sm:left-[50px] left-[10px] ' >
                         <h1 className=' text-[#fff] sm:text-[25px] ' >Social</h1>
                         <h1 className=' text-[#fff] sm:text-[30px] ' >What do our customers say?</h1>
@@ -766,7 +888,7 @@ const Home = () => {
                             Rate us
                         </button>
                     </div>
-                </div>
+                </div> */}
                 <div ref={ContactRef} id="contact" className='w-[100%] sm:px-[0px] px-[10px] border-[0px] flex items-center justify-center mb-[50px] relative ' >
                     <Contact
                         onClick={() => {
@@ -795,7 +917,7 @@ const Home = () => {
                                 window?.open("https://wa.me/918413802010")
                             }}
                         >8413802010</h1> */}
-                            <h1 className='text-white text-[15px] sm-text-[18px]' >{`2022 ${`©`} All Rights Reserved`}</h1>
+                            <h1 className='text-white text-[15px] sm-text-[18px] my-font ' >{`2022 ${`©`} All Rights Reserved`}</h1>
                         </div>
                         <div className='flex border-[0px] w-[400px] sm:w-[250px] h-[40px] items-center justify-center sm:gap-[10px] gap-[20px]' >
                             <FaFacebookSquare
@@ -826,7 +948,7 @@ const Home = () => {
                                     window?.open("https://wa.me/918076455801")
                                 }}
                             />
-                            <h1 className='text-white text-[15px] sm-text-[18px] cursor-pointer'
+                            <h1 className='text-white text-[15px] sm-text-[18px] my-font cursor-pointer'
                                 onClick={() => {
                                     window?.open("https://wa.me/918076455801")
                                 }}

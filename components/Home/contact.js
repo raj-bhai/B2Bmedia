@@ -11,8 +11,8 @@ const Contact = (props) => {
     const [contact, setContact] = useState('');
     const [desc, setDesc] = useState('');
     const [cusror, setCursor] = useState(" cursor-not-allowed");
-    const text1 = " text-[#fff] md:text-[25px] sm:text-[20px] text-[16px] font-light "
-    const text2 = " text-[#fff] md:text-[22px] sm:text-[18px] text-[14px] font-medium "
+    const text1 = " text-[#fff] md:text-[25px] sm:text-[20px] text-[16px] my-font-semibold "
+    const text2 = " text-[#fff] md:text-[22px] sm:text-[18px] text-[14px] my-font "
     const inputStyle = " mt-[5px] bg-transparent border border-gray-300 h-[50px] text-[#fff] text-sm rounded-lg  block w-full p-2.5  placeholder-gray-400 "
 
     useEffect(() => {
@@ -48,7 +48,7 @@ const Contact = (props) => {
                             <input type={'text'}
                                 placeholder="first name"
                                 value={firstName}
-                                className=" sm:w-[45%] w-[100%] text-[#fff] md:h-[40px] sm:h-[30px] focus:border-sky-500 h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400 "
+                                className=" sm:w-[45%] w-[100%] my-font text-[#fff] md:h-[40px] sm:h-[30px] focus:border-sky-500 h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400 "
                                 onChange={(e) => {
                                     setFirstName(e.target.value)
                                 }}
@@ -57,7 +57,7 @@ const Contact = (props) => {
                             <input type={'text'}
                                 placeholder="last name"
                                 value={lastName}
-                                className=" sm:w-[45%] w-[100%] text-[#fff] v md:h-[40px] sm:h-[30px] h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400"
+                                className=" sm:w-[45%] my-font w-[100%] text-[#fff] v md:h-[40px] sm:h-[30px] h-[30px] min-w-[200px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5 placeholder-gray-400"
                                 onChange={(e) => {
                                     setLastname(e.target.value)
                                 }}
@@ -68,7 +68,7 @@ const Contact = (props) => {
                             <input type={'text'}
                                 placeholder="Email"
                                 value={email}
-                                className=" w-[100%] text-[#fff] md:h-[40px] sm:h-[30px] h-[30px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5  placeholder-gray-400"
+                                className=" w-[100%] text-[#fff] my-font md:h-[40px] sm:h-[30px] h-[30px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5  placeholder-gray-400"
                                 onChange={(e) => {
                                     setEmail(e.target.value)
                                 }}
@@ -79,7 +79,7 @@ const Contact = (props) => {
                             <input type={'text'}
                                 placeholder="enter contact number"
                                 value={contact}
-                                className=" w-[100%] text-[#fff] md:h-[40px] sm:h-[30px] h-[30px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5  placeholder-gray-400"
+                                className=" w-[100%] text-[#fff] my-font md:h-[40px] sm:h-[30px] h-[30px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5  placeholder-gray-400"
                                 onChange={(e) => {
                                     setContact(e.target.value)
                                 }}
@@ -89,7 +89,7 @@ const Contact = (props) => {
                         <div className="w-[100%] mt-[10px] flex items-center justify-center " >
                             <textarea name="description" placeholder="describe your requirement"
                                 value={desc}
-                                className=" w-[100%] text-[#fff] flex md:h-[200px] sm:h-[170px] h-[150px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5  placeholder-gray-400"
+                                className=" w-[100%] text-[#fff] my-font flex md:h-[200px] sm:h-[170px] h-[150px] rounded-[5px] bg-transparent border border-[#fff] border-[0.3px] p-2.5  placeholder-gray-400"
                                 onChange={(e) => {
                                     setDesc(e.target.value)
                                 }}
@@ -113,7 +113,7 @@ const Contact = (props) => {
                         <input type={'button'}
                             value={'Submit'}
                             disabled={btnDisabled}
-                            className={" sm:w-[200px] sm:h-[50px] w-[100px] h-[35px] sm:relative absolute sm:top-[0px] top-[360px] sm:right-[0px] right-[0px] rounded-[30px] flex items-center justify-center text-[#fff] sm:text-[20px] text-[13px] font-semibold " + cusror}
+                            className={" sm:w-[200px] sm:h-[50px] my-font-bold w-[100px] h-[35px] sm:relative absolute sm:top-[0px] top-[360px] sm:right-[0px] right-[0px] rounded-[30px] flex items-center justify-center text-[#fff] sm:text-[20px] text-[13px] font-semibold " + cusror}
                             onClick={() => {
                                 props.onClick();
                                 setFirstName('');
