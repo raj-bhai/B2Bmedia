@@ -237,51 +237,51 @@ const Home = () => {
         setShowText4(true)
     }, 1000);
 
-    // useEffect(() => {
-    //     window.removeEventListener('scroll', onScroll);
-    //     window.addEventListener('scroll', onScroll, { passive: true });
-    //     return () => window.removeEventListener('scroll', onScroll);
-    // }, []);
+    useEffect(() => {
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
-    // const onScroll = () => {
-    //     if (window.pageYOffset > 50) {
-    //         setHeaderStyle(' bg-gradient-to-r from-[#063f09] via-[#107840] via-[#1F5025] via -[#28602E] to-[#146a24]');
-    //         setShowArrowUp(true)
+    const onScroll = () => {
+        if (window.pageYOffset > 50) {
+            setHeaderStyle(' bg-gradient-to-r from-[#063f09] via-[#107840] via-[#1F5025] via -[#28602E] to-[#146a24]');
+            setShowArrowUp(true)
 
-    //         //number countdown star
-    //         if (window.pageYOffset > 300) {
-    //             if (!countingStart) {
-    //                 setCountingStart(true)
-    //             }
-    //         }
+            //number countdown star
+            if (window.pageYOffset > 300) {
+                if (!countingStart) {
+                    setCountingStart(true)
+                }
+            }
 
-    //         if (window.pageYOffset > HomeRef.current?.clientHeight + 100) {
-    //             if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100) {
-    //                 if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight) {
-    //                     if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight + ContactRef.current?.clientHeight - 200) {
-    //                         setSelectedHeader(5)
-    //                     } else {
-    //                         setSelectedHeader(4)
-    //                     }
-    //                 } else {
-    //                     setSelectedHeader(3)
-    //                 }
-    //             } else {
-    //                 setSelectedHeader(2)
-    //             }
-    //         } else {
-    //             setSelectedHeader(1)
-    //         }
+            if (window.pageYOffset > HomeRef.current?.clientHeight + 100) {
+                // if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100) {
+                //     if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight) {
+                //         if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight + ContactRef.current?.clientHeight - 200) {
+                //             setSelectedHeader(5)
+                //         } else {
+                //             setSelectedHeader(4)
+                //         }
+                //     } else {
+                //         setSelectedHeader(3)
+                //     }
+                // } else {
+                //     setSelectedHeader(2)
+                // }
+            } else {
+                setSelectedHeader(1)
+            }
 
-    //     } else {
-    //         setShowArrowUp(false);
-    //         setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
-    //     }
-    // };
+        } else {
+            setShowArrowUp(false);
+            setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+        }
+    };
 
     return (
         domLoaded &&

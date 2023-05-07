@@ -73,7 +73,7 @@ const VideoEdit = (props) => {
 const Services = (props) => {
     return (
         <div id={props.id} className='relative border-[0px] w-[100%] py-[50px] flex items-center justify-center '>
-            <div className=' border-[0px] relative  ' >
+            {/* <div className=' border-[0px] relative  ' >
                 <div className='flex justify-between border-[0px] sm:w-[1100px] items-end  sm:pr-[30px]' >
                     <div className='flex' >
                         <img
@@ -218,9 +218,10 @@ const Services = (props) => {
                         />
                     </div>
                 </div>
-            </div>
+            </div> */}
             <img
-            
+            src='https://res.cloudinary.com/drgvislmm/image/upload/v1683472192/scriptgg_naaae8.gif'
+            className='border w-[80%] '
             />
         </div>
     )
