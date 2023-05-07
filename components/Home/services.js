@@ -219,6 +219,9 @@ const Services = (props) => {
                     </div>
                 </div>
             </div>
+            <img
+            
+            />
         </div>
     )
 }

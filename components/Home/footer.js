@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import SlideButton from '../react-slide-button';
 
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 const Footer = (props) => {
 
     const [reset, setReset] = useState(0);
@@ -12,11 +16,25 @@ const Footer = (props) => {
         setDomLoaded(true);
     }, []);
 
+    const SubmitHandler = () => {
+        toast.success("Submitted Successfully !!", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: false,
+            theme: "colored",
+        })
+    }
 
 
     return (
         domLoaded &&
         <div className=" sm:w-[90%] w-[100%] sm:h-[300px] border-[0px] sm:p-[50px] relative " >
+            <ToastContainer
+            />
             <img
                 src={`/images/user/footer1.png`}
                 className=' absolute left-[0px] top-[0px] '
@@ -39,6 +57,7 @@ const Footer = (props) => {
                                             setTimeout(() => {
                                                 setReset(reset + 1)
                                             }, 3000);
+                                            SubmitHandler()
                                             // return () => clearTimeout(timer);
                                         }}
                                         reset={reset}
