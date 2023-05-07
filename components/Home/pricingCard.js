@@ -20,7 +20,7 @@ const Features = (props) => {
                     />
                 }
             </div>
-            <h1 className=" text-[#fff] ml-[10px] text-[13px] sm:text-[15px] leading-none " >{props.name}</h1>
+            <h1 className=" text-[#fff] ml-[10px] my-font-semibold text-[13px] sm:text-[14px] leading-none " >{props.name}</h1>
         </div>
     )
 }
@@ -38,8 +38,8 @@ const PricingCard = (props) => {
     // const white = "#fff"
 
     //button
-    const focusedbtnText = ' text-[#000]'  //black
-    const unfocusedBtnText = ' text-[#fff]'  //white
+    const focusedbtnText = ' text-[#000] my-font-bold '  //black
+    const unfocusedBtnText = ' text-[#fff] my-font-bold'  //white
 
     //boder
     const focusedBorder = ' border-[2px] '
@@ -91,19 +91,19 @@ const PricingCard = (props) => {
                             alt="person7" />
                     </div>
                     <div className="ml-[20px] " >
-                        <h1 className=" text-[#fff] sm:text-[16px] text-[14px] leading-tight " >{props.for}</h1>
-                        <h1 className=" text-[#fff] sm:text-[24px] text-[16px] leading-tight font-semibold " >{props.type}</h1>
+                        <h1 className=" text-[#fff] sm:text-[13px] text-[14px] leading-tight my-font " >{props.for}</h1>
+                        <h1 className=" text-[#fff] sm:text-[24px] text-[16px] leading-tight my-font-semibold " >{props.type}</h1>
                     </div>
                 </div>
                 <div>
-                    <h1 className=" text-[#fff] sm:text-[17px] text-[14px] font-normal sm:leading-[30px] " >{props.desc}</h1>
+                    <h1 className=" text-[#fff] sm:text-[17px] text-[14px] my-font sm:leading-[30px] " >{props.desc}</h1>
                 </div>
                 <div className="flex items-end mt-[10px] " >
-                    <h1 className=" text-[#fff] sm:text-[50px] text-[16px] sm:leading-none font-bold " >${price}</h1>
-                    <h1 className=" text-[#fff] font-medium sm:text-[18px] text-[14px] "  > /video</h1>
+                    <h1 className=" text-[#fff] sm:text-[50px] text-[16px] sm:leading-none my-font-bold " >${price}</h1>
+                    <h1 className=" text-[#fff] my-font-semibold sm:text-[18px] text-[14px] "  > /video</h1>
                 </div>
                 <div className=" sm:mt-[15px] mt-[5px] " >
-                    <h1 className=" text-[#fff] sm:text-[15px] text-[13px] font-medium " >What&apos;s included</h1>
+                    <h1 className=" text-[#fff] sm:text-[15px] text-[13px] my-font-semibold " >What&apos;s included</h1>
                 </div>
                 <div className=" mt-[5px] " >
                     {/* {
@@ -175,7 +175,7 @@ const PricingCard = (props) => {
             </div>
             <div className=" w-[100%] border-t-[0px] flex justify-center " >
                 <div className={`sm:w-[250px] w-[200px] cursor-pointer h-[50px] mt-[20px] rounded-[50px] flex items-center justify-center ${focused ? focusedBG : unFocusedBG}`} >
-                    <h1 className={`text-[20px] leading-none font-semibold ${focused ? focusedbtnText : unfocusedBtnText} `} >Get Started</h1>
+                    <h1 className={`text-[20px] leading-none ${focused ? focusedbtnText : unfocusedBtnText} `} >Get Started</h1>
                 </div>
 
             </div>

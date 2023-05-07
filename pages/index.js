@@ -7,10 +7,16 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('./home')
+
+    function sayHello() {
+      router.push('./home')
+      // console.log();
+    }
+
+    setTimeout(sayHello, 1050);
   }, [])
 
   return (
-      <LoadingScreen />
+    <LoadingScreen />
   )
 }

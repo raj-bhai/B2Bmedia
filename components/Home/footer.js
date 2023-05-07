@@ -1,22 +1,40 @@
 import React, { useState, useEffect } from "react";
 import SlideButton from '../react-slide-button';
 
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 const Footer = (props) => {
 
     const [reset, setReset] = useState(0);
     const [domLoaded, setDomLoaded] = useState(false);
 
-    const inputStyle = " bg-transparent h-[100%] text-[#fff] text-sm rounded-lg  block w-[100%] p-2.5 pl-[100px]  placeholder-gray-400 "
+    const inputStyle = " bg-transparent h-[100%] text-[#fff] text-sm rounded-lg my-font  block w-[100%] p-2.5 pl-[100px]  placeholder-gray-400 "
 
     useEffect(() => {
         setDomLoaded(true);
     }, []);
 
+    const SubmitHandler = () => {
+        toast.success("Submitted Successfully !!", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: false,
+            theme: "colored",
+        })
+    }
 
 
     return (
         domLoaded &&
         <div className=" sm:w-[90%] w-[100%] sm:h-[300px] border-[0px] sm:p-[50px] relative " >
+            <ToastContainer
+            />
             <img
                 src={`/images/user/footer1.png`}
                 className=' absolute left-[0px] top-[0px] '
@@ -29,7 +47,7 @@ const Footer = (props) => {
                 <div className="w-[50%] h-[100%] border-r-[0px] flex items-start justify-between sm:visible invisible " >
                     <div className=" w-[80%] h-[80%] bg-[#fff] rounded-[30px] flex items-center justify-start px-[50px] " >
                         <div>
-                            <h1 className="text-[#000] text-[18px] font-semibold " >Signup to receive product updates and more</h1>
+                            <h1 className="text-[#000] text-[18px] my-font-semibold " >Signup to receive product updates and more</h1>
                             {
                                 typeof (window) !== 'undefined' &&
                                 <div className=" mt-[10px] relative " >
@@ -39,6 +57,7 @@ const Footer = (props) => {
                                             setTimeout(() => {
                                                 setReset(reset + 1)
                                             }, 3000);
+                                            SubmitHandler()
                                             // return () => clearTimeout(timer);
                                         }}
                                         reset={reset}
@@ -47,7 +66,7 @@ const Footer = (props) => {
                                         overlayClassList="my-overlay-class"
                                         caret={
                                             <div className="bg-[#fff] cursor-pointer rounded-[5px] ml-[-5px] w-[100%] h-[100%] flex items-center justify-center " >
-                                                <h1 className=" text-[#000] " >Submit</h1>
+                                                <h1 className=" text-[#000] my-font-semibold " >Submit</h1>
                                             </div>
                                         }
                                         customCaretWidth={100}
@@ -63,8 +82,8 @@ const Footer = (props) => {
                                     />
                                     <input
                                         type={'text'}
-                                        className=" border-[0px] absolute focus:outline-none text-white top-[0px] right-[0px] w-[60%] h-[100%] bg-transparent "
-                                        placeholder="enter email id"
+                                        className=" border-[0px] my-font absolute focus:outline-none text-white top-[0px] right-[0px] w-[60%] h-[100%] bg-transparent "
+                                        placeholder="Enter email id"
                                     >
                                     </input>
                                 </div>
@@ -84,9 +103,9 @@ const Footer = (props) => {
                     </div>
                     <div className=" w-[50%] h-[100%] border-[0px] sm:pl-[0px] pl-[10px] flex items-start sm:justify-end " >
                         <div className=" mt-[20px] " >
-                            <h1 className=" text-[#fff] sm:text-[18px] text-[14px] font-medium  " >Contact</h1>
-                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal mt-[10px] leading-tight  " >+91 8076455801</h1>
-                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal leading-tight  " >support@growgrip.com</h1>
+                            <h1 className=" text-[#fff] sm:text-[18px] text-[14px] my-font-semibold  " >Contact</h1>
+                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal mt-[10px] my-font leading-tight  " >+91 8076455801</h1>
+                            <h1 className=" text-[#fff] sm:text-[16px] text-[12px] font-normal my-font leading-tight  " >support@grogrip.com</h1>
                         </div>
                     </div>
                 </div>

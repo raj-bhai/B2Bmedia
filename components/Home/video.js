@@ -18,6 +18,7 @@ const Video = (props) => {
         console.log("Project Index :", props.projectIndex)
     }, [props.projectIndex])
 
+
     const videoRef = useRef(null);
 
     return (

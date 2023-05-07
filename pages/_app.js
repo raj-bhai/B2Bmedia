@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import Head from 'next/head';
 import store from '../redux/store';
 import { Analytics } from '@vercel/analytics/react';
-import Drawer_ from '../components/Dashboard/organisms/drawer';
 
 function MyApp({ Component, pageProps }) {
   return (

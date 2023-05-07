@@ -2,7 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
+/* import {} from '' */
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-SemiBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+  .my-font {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .my-font-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.my-font-semibold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.my-font-bold-noshadow {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    /* text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); */
+}
 .homeBG {
     background: linear-gradient(178.81deg, #107840 100%, #1F5025 32.65%, #107840 62.9%, #28602E 85.85%, #107840 100.14%);
 }
@@ -29,6 +97,21 @@
 .my-overlay-class {
     background: green !important;
 }
+
+.logo-animate {
+    animation: mymove 2s infinite;;
+}
+
+@keyframes mymove {
+    0%   {top: 0px;}
+    /* 25%  {top: 500px;}
+    75%  {top: 50px} */
+    25% {top: 400px;}
+    50% {top : 250px }
+    75% {top: 450px}
+    100%{top: 400px}
+    /* 100%{ top: 350px} */
+  }
 
 
 .spin-animate-slow {

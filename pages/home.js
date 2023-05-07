@@ -24,12 +24,25 @@ import Contact from '../components/Home/contact';
 import Footer from '../components/Home/footer';
 import Label from '../components/Home/micro/label';
 import Videos from '../constants/portfolio';
-
+import { AiFillEye } from 'react-icons/ai';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Image from 'next/image';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Carousel from '../components/Home/micro/imageCarousel';
+import { motion } from "framer-motion";
+import { staggerContainer, slideIn } from '../utils/motion';
+// import { slideIn, staggerContainer, textVariant, textVariant2 } from "@/utils/motion";
+// import VaraText from '../components/Home/micro/VaraText';
 
 
 
 const ProjectTypes = [
-    "All",
+    "ALL",
     "TECH",
     "WHITEBOARD",
     "CELEB",
@@ -37,6 +50,26 @@ const ProjectTypes = [
     "MIX VIDEOS"
 ]
 
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    // width: 400,
+    bgcolor: 'background.paper',
+    // border: '2px solid #000',
+    // boxShadow: 24,
+    p: 4,
+};
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+}));
 
 const Home = () => {
 
@@ -87,6 +120,29 @@ const Home = () => {
     const [count1, setCount1] = useState(0);
     const [count2, setCount2] = useState(100);
     const [count3, setCount3] = useState(220000);
+
+    const [SSopen, setSSOpen] = useState(false);
+    const handleOpen = () => setSSOpen(true);
+    const handleClose = () => setSSOpen(false);
+
+
+    useEffect(() => {
+        if (btn1Animate) {
+            setTimeout(() => {
+                // console.log("abcde")
+                setBtn1Animate(false)
+            }, 2500);
+        }
+    }, [btn1Animate])
+
+    useEffect(() => {
+        if (btn2Animate) {
+            setTimeout(() => {
+                // console.log("abcde")
+                setBtn2Animate(false)
+            }, 2500);
+        }
+    }, [btn2Animate])
 
 
 
@@ -144,8 +200,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        if (ProjectTypes[projectIndex] == "All") {
-
+        if (ProjectTypes[projectIndex] == "ALL") {
             setSelectedPortfolio([...Videos.Videos.Tech, ...Videos.Videos.Whiteboard, ...Videos.Videos.Celeb, ...Videos.Videos.Sports, ...Videos.Videos.Mix])
         }
         if (ProjectTypes[projectIndex] == "TECH") {
@@ -180,58 +235,58 @@ const Home = () => {
 
     setTimeout(() => {
         setShowText4(true)
-    }, 2000);
+    }, 1000);
 
-    useEffect(() => {
-        window.removeEventListener('scroll', onScroll);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
-    }, []);
+    // useEffect(() => {
+    //     window.removeEventListener('scroll', onScroll);
+    //     window.addEventListener('scroll', onScroll, { passive: true });
+    //     return () => window.removeEventListener('scroll', onScroll);
+    // }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
-    const onScroll = () => {
-        if (window.pageYOffset > 50) {
-            setHeaderStyle(' bg-gradient-to-r from-[#063f09] via-[#107840] via-[#1F5025] via -[#28602E] to-[#146a24]');
-            setShowArrowUp(true)
+    // const onScroll = () => {
+    //     if (window.pageYOffset > 50) {
+    //         setHeaderStyle(' bg-gradient-to-r from-[#063f09] via-[#107840] via-[#1F5025] via -[#28602E] to-[#146a24]');
+    //         setShowArrowUp(true)
 
-            //number countdown star
-            if (window.pageYOffset > 300) {
-                if (!countingStart) {
-                    setCountingStart(true)
-                }
-            }
+    //         //number countdown star
+    //         if (window.pageYOffset > 300) {
+    //             if (!countingStart) {
+    //                 setCountingStart(true)
+    //             }
+    //         }
 
-            if (window.pageYOffset > HomeRef.current?.clientHeight + 100) {
-                if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100) {
-                    if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight) {
-                        if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight + ContactRef.current?.clientHeight - 200) {
-                            setSelectedHeader(5)
-                        } else {
-                            setSelectedHeader(4)
-                        }
-                    } else {
-                        setSelectedHeader(3)
-                    }
-                } else {
-                    setSelectedHeader(2)
-                }
-            } else {
-                setSelectedHeader(1)
-            }
+    //         if (window.pageYOffset > HomeRef.current?.clientHeight + 100) {
+    //             if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100) {
+    //                 if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight) {
+    //                     if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight + ContactRef.current?.clientHeight - 200) {
+    //                         setSelectedHeader(5)
+    //                     } else {
+    //                         setSelectedHeader(4)
+    //                     }
+    //                 } else {
+    //                     setSelectedHeader(3)
+    //                 }
+    //             } else {
+    //                 setSelectedHeader(2)
+    //             }
+    //         } else {
+    //             setSelectedHeader(1)
+    //         }
 
-        } else {
-            setShowArrowUp(false);
-            setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
-        }
-    };
+    //     } else {
+    //         setShowArrowUp(false);
+    //         setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+    //     }
+    // };
 
     return (
         domLoaded &&
             typeof window !== 'undefined' ?
-            <div id="home" className={'w-full px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
+            <div id="home" className={'w-full fade-in px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             >
                 {
                     showPopup &&
@@ -243,28 +298,28 @@ const Home = () => {
                         }}
                     />
                 }
-                <div ref={HomeRef} className={'w-[100%] sm:min-h-[700px] border-[0px]'}>
+                <div ref={HomeRef} className={'w-[100%] sm:min-h-[650px] border-[0px]'}>
                     <Header
                         className={headerStyle}
                         selectedHeader={selectedHeader}
                         onClickHome={() => {
-                            document.getElementById('home').scrollIntoView();
+                            document.getElementById('home')?.scrollIntoView();
                             setSelectedHeader(1)
                         }}
                         onClickService={() => {
-                            document.getElementById('service').scrollIntoView();
+                            document.getElementById('getStarted')?.scrollIntoView();
                             setSelectedHeader(2)
                         }}
                         onClickPricing={() => {
-                            document.getElementById('pricing').scrollIntoView();
+                            document.getElementById('pricing')?.scrollIntoView();
                             setSelectedHeader(3)
                         }}
                         onClickContact={() => {
-                            document.getElementById('contact').scrollIntoView();
+                            document.getElementById('contact')?.scrollIntoView();
                             setSelectedHeader(4)
                         }}
                         onClickAbout={() => {
-                            document.getElementById('footer').scrollIntoView();
+                            document.getElementById('footer')?.scrollIntoView();
                             setSelectedHeader(5)
                         }}
                     />
@@ -307,13 +362,14 @@ const Home = () => {
                                                 timing="ease"
                                                 iteration={1}
                                                 fillMode="none"
-                                                className='text-yellow-200 sm:text-[50px] text-[18px] sm:leading-[50px] text-left font-semibold  '
+                                                className=' text-shadow my-font-bold drop-shadow-lg text-yellow-200 sm:text-[50px] text-[18px] sm:leading-[50px] text-left font-semibold  '
                                             >
-                                                Stand out of the crowd
+                                                {`Expert YouTube Service  and Support`}
                                             </MovingText>
 
                                             {/* <h1 className='text-white text-[40px] leading-[45px] mt-[30px] text-left font-normal ' >{'Creating videos is never so been easy'}</h1> */}
-                                            <div className='sm:mt-[28px] mt-[0px] border-[0px] sm:h-[100px]' >
+                                            <div className='sm:mt-[28px] flex mt-[0px] border-[0px] sm:h-[100px]' >
+                                                {/* <VaraText text='WiseCode Team' /> */}
                                                 {
                                                     showText2 &&
                                                     <MovingText
@@ -325,11 +381,24 @@ const Home = () => {
                                                         iteration={1}
                                                         fillMode="forwards"
                                                         presences="letters"
-                                                        className='text-white sm:text-[40px] text-[17px] sm:leading-[45px] text-left font-normal '
+                                                        className='text-white sm:text-[40px] my-font text-[17px] sm:leading-[45px] text-left font-normal '
                                                     >
-                                                        {'Creating videos is never so been easy'}
+                                                        {'Proven Track record of Success'}
                                                     </MovingText>
                                                 }
+                                                <Modal
+                                                    open={SSopen}
+                                                    onClose={handleClose}
+                                                    aria-labelledby="modal-modal-title"
+                                                    aria-describedby="modal-modal-description"
+                                                >
+                                                    <Box
+                                                        sx={style}
+                                                        className='rounded-lg'
+                                                    >
+                                                        <Carousel />
+                                                    </Box>
+                                                </Modal>
                                             </div>
                                             <div className='w-[100%] sm:h-[50px] h-[30px] border-[0px] sm:mt-[10px] mt-[0px] flex items-center ' >
                                                 <img
@@ -349,11 +418,10 @@ const Home = () => {
                                                         iteration={1}
                                                         fillMode="forwards"
                                                         presences="letters"
-                                                        className='text-white sm:text-[18px] text-[14px] sm:leading-[25px] '
+                                                        className='text-white sm:text-[18px] my-font text-[14px] sm:leading-[25px] '
                                                     >
-                                                        {'Just focus on your business we will create content for your business without limits'}
+                                                        {"Unlock your channel's potential with our professional video production and optimization"}
                                                     </MovingText>
-                                                    // <h1 className='text-white leading-[25px] ' >Just focus on your business we will create content for your business without limits</h1>
                                                 }
                                             </div>
                                             <div className='w-[100%] h-[50px] mt-[30px]' >
@@ -368,49 +436,42 @@ const Home = () => {
                                                         iteration={1}
                                                         fillMode="forwards"
                                                         presences="letters"
-                                                    // className='text-white leading-[25px] '
                                                     >
-                                                        <div className='w-[100%] h-[50px] border-[0px] flex items-center justify-between sm:pr-[0px] pr-[20px] ' >
+                                                        <div className='w-[100%] h-[50px] border-[0px] flex items-center justify-start gap-16 sm:pr-[0px] pr-[20px] ' >
                                                             <ParticleEffectButton
                                                                 color='#fff'
                                                                 hidden={btn1Animate}
                                                             >
-                                                                <input
-                                                                    type={"button"}
-                                                                    value="Get Started"
-                                                                    className='sm:w-[120px] w-[80px] text-[#000] font-bold sm:text-[15px] text-[12px] sm:h-[40px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer '
+                                                                <button
+                                                                    type="button"
+                                                                    className="sm:w-[150px] w-[80px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
                                                                     onClick={() => {
                                                                         setBtn1Animate(true)
                                                                         setTimeout(() => {
                                                                             document.getElementById('getStarted').scrollIntoView()
                                                                         }, 1500);
-                                                                        setTimeout(() => {
-                                                                            setBtn1Animate(false)
-                                                                        }, 2500);
                                                                     }}
-                                                                />
+                                                                >
+                                                                    GET STARTED
+                                                                </button>
+
                                                             </ParticleEffectButton>
                                                             <ParticleEffectButton
                                                                 color='#fff'
                                                                 hidden={btn2Animate}
                                                             >
-                                                                <div className='sm:w-[150px] sm:h-[40px] rounded-md flex items-center justify-end cursor-pointer  '
+                                                                <button
+                                                                    type="button"
+                                                                    className="sm:w-[150px] w-[80px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
                                                                     onClick={() => {
                                                                         setBtn2Animate(true)
                                                                         setTimeout(() => {
                                                                             document.getElementById('demos').scrollIntoView()
                                                                         }, 1500);
-                                                                        setTimeout(() => {
-                                                                            setBtn2Animate(false)
-                                                                        }, 2500);
                                                                     }}
                                                                 >
-                                                                    <FaPlayCircle
-                                                                        color='#fff'
-                                                                        size={20}
-                                                                    />
-                                                                    <h1 className='text-white sm:text-[15px] text-[12px] font-normal ml-[5px]' >Watch Demos</h1>
-                                                                </div>
+                                                                    PORTFOLIO
+                                                                </button>
                                                             </ParticleEffectButton>
                                                         </div>
                                                     </MovingText>
@@ -427,182 +488,43 @@ const Home = () => {
                     }
                 </div>
                 <div ref={AboutRef}
-                    className='w-[100%] sm:h-[700px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative' id='about'
+                    className='w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative' id='about'
                 >
-                    <img
-                        src="/images/user/circle1.png"
-                        className=' absolute top-[100px] sm:visible invisible '
-                        alt="star" />
-                    <img
-                        src="/images/user/whiteRing.png"
-                        className=' absolute sm:w-[50px] sm:h-[100px] md:w-[100px] md:h-[200px] w-[20px] h-[40px]  right-[0px] bottom-[0px] sm:visible visible'
-                        alt="star" />
-                    <div className='w-[100%] border-[0px] sm:py-[0px] py-[50px] sm:mt-[0px] mt-[50px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
+                    <div className='w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[45px] leading-tight font-semibold  ' >{Math.round(count)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[45px] my-font leading-tight  ' >{Math.round(count)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal sm:ml-[-20px]  ' >Clients</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold sm:ml-[-20px]  ' >Clients</h1>
                             </div>
                         </div>
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff]  sm:text-[50px] text-[40px] leading-tight font-semibold  ' >{Math.round(count1)}+</h1>
+                                <h1 className='text-[#fff]  sm:text-[50px] text-[40px] leading-tight my-font  ' >{Math.round(count1)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal  ' >Positive Feedback</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold  ' >Positive Feedback</h1>
                             </div>
 
                         </div>
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight font-semibold  ' >{Math.round(count2)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight my-font  ' >{Math.round(count2)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal sm:ml-[-10px]  ' >Channels</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold sm:ml-[-10px]  ' >Channels</h1>
                             </div>
                         </div>
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight font-semibold  ' >{Math.round(count3)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight my-font  ' >{Math.round(count3)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight font-normal  ' >Views Daily</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold  ' >Views Daily</h1>
                             </div>
                         </div>
                     </div>
-                    <div className='w-[100%] sm:h-[500px] border-[0px] sm:flex   ' >
-                        <img
-                            src="/images/user/star.png"
-                            className=' absolute right-[200px] top-[200px] sm:visible invisible '
-                            alt="star" />
-                        <div className=' sm:w-[50%] w-[100%] sm:px-[0px] px-[10px] sm:h-[100%] border-[0px] flex sm:flex-row flex-col justify-center items-center ' >
-                            <div className='relative' >
-                                <img
-                                    src="/images/user/service.png"
-                                    className=' border-[0px] '
-                                    alt="star" />
-                            </div>
-                        </div>
-                        <div id='service' className=' sm:w-[50%] sm:h-[100%] border-[0px] flex justify-center items-center sm:px-[0px]  px-[10px] ' >
-                            <div>
-                                <div className='border-[0px]' >
-                                    <h1 className=' text-[#fff] sm:text-[50px] text-[16px] leading-none font-semibold ' >Non-Stoppable service</h1>
-                                </div>
-                                <div className='border-[0px] sm:w-[90%] sm:mr-[0px] mr-[10px] ' >
-                                    <h1 className=' text-[#E0E5F3] sm:text-[18px] text-[13px] leading-tight mt-[10px] ' >
-                                        We are a group of young YouTube specialists and enthusiasts dedicated to establishing a viable career path for YouTubers. We make sure that our content is engaging by using animated titles, sound effects, background music, and 100% copyright free high-quality videos to keep viewers watching.
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div ref={GlobeRef}
-                    className='w-[100%] relative sm:pt-[0px] sm:px-[80px] px-[10px] gap-[100px] pt-[80px] border-[0px] flex items-center justify-center '>
-                    <img
-                        src="/images/user/circle2.png"
-                        className=' absolute top-[-100px] left-[0px] sm:visible invisible   '
-                        alt="star" />
-                    <img
-                        src="/images/user/circle3.png"
-                        className=' absolute top-[450px] right-[0px] sm:visible invisible   '
-                        alt="star" />
-
-                    <div className='w-[100%] border-[0px] sm:flex flex-wrap justify-evenly sm:pl-[100px] items-center ' >
-                        <div className='sm:w-[650px] w-[100%] border-[0px]' >
-                            <h1 className=' sm:text-[65px] text-[18px] text-yellow-200 font-semibold leading-none ' >Divided by Countries</h1>
-                            <h1 className='text-[#fff] sm:text-[35px] text-[15px] sm:mt-[10px] font-medium ' >United by GroGrip</h1>
-                        </div>
-                        <div className='relative border-[0px] sm:min-w-[550px] flex items-center justify-center sm:mt-[0px] mt-[20px] ' >
-                            <img
-                                src="/images/user/globe1.png"
-                                className=' sm:w-[550px] h-[300px] h-[300px] sm:h-[550px] spin-animate-slow '
-                                alt="star" />
-                            <img
-                                src="/images/user/dottedPath1.png"
-                                className=' absolute top-[0px] sm:w-[400px] sm: w-[65%] sm:h-[400px] sm:left-[80px] sm:top-[50px] top-[10%] '
-                                alt="star" />
-                            <img
-                                src="/images/user/arrow1.png"
-                                className=' absolute sm:left-[81px] left-[62px] sm:w-[25px] sm:h-[25px] w-[10px] h-[10px] top-[90px] sm:top-[150px] '
-                                alt="star" />
-                            <img
-                                src="/images/user/arrow2.png"
-                                className=' absolute sm:w-[25px] sm:h-[25px] sm:left-[200px] left-[150px] top-[36px] sm:top-[68px] w-[10px] h-[10px] '
-                                alt="star" />
-                            <img
-                                src="/images/user/arrow3.png"
-                                className=' absolute sm:w-[25px] sm:h-[25px] sm:right-[135px] right-[96px] top-[80px] sm:top-[150px] w-[10px] h-[10px] '
-                                alt="star" />
-                            <img
-                                src="/images/user/arrow4.png"
-                                className=' absolute sm:w-[25px] sm:h-[25px] sm:right-[200px] right-[140px] bottom-[86px] sm:bottom-[165px] w-[10px] h-[10px] '
-                                alt="star" />
-                            <img
-                                src="/images/user/arrow5.png"
-                                className=' absolute sm:w-[25px] sm:h-[25px] sm:left-[200px] left-[132px] sm:bottom-[240px] w-[10px] h-[10px] '
-                                alt="star" />
-                            <img
-                                src="/images/user/arrow6.png"
-                                className=' absolute sm:w-[25px] sm:h-[25px] sm:left-[280px] left-[171px] top-[110px] sm:top-[200px]  w-[10px] h-[10px] '
-                                alt="star" />
-                            <img
-                                src="/images/user/avtar.png"
-                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[20px] sm:right-[160px] top-[10px] right-[110px] '
-                                alt="video-editor" />
-                            <img
-                                src="/images/user/avtar1.png"
-                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[55px] sm:left-[80px] top-[30px] left-[60px] '
-                                alt="voice-artist" />
-                            <img
-                                src="/images/user/avtar2.png"
-                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[220px] sm:left-[55px] top-[130px] left-[45px] '
-                                alt="script-writer" />
-                            <img
-                                src="/images/user/avtar3.png"
-                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[300px] sm:right-[50px] top-[160px] right-[40px] '
-                                alt="video-editor" />
-                            <img
-                                src="/images/user/avtar4.png"
-                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:bottom-[80px] sm:left-[140px] bottom-[45px] left-[90px] '
-                                alt="video-editor" />
-                            <img
-                                src="/images/user/avtar5.png"
-                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[130px] sm:left-[240px] top-[60px] left-[150px] '
-                                alt="video-editor" />
-                            <img
-                                src="/images/user/avtar6.png"
-                                className=' absolute sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] sm:top-[250px] sm:left-[300px] top-[133px] left-[177px] '
-                                alt="video-editor" />
-                            <Label
-                                text="Script Writer"
-                                className=" absolute sm:left-[0px] left-[0px] top-[158px] sm:top-[270px] "
-                            />
-                            <Label
-                                text="Voice Artist"
-                                className=" absolute sm:left-[40px] sm:top-[30px] left-[35px] top-[8px]  "
-                            />
-                            <Label
-                                text="Video Editor"
-                                className=" absolute sm:right-[90px] sm:top-[-5px] right-[90px] top-[-8px]"
-                            />
-                            <Label
-                                text="Thumbnail Maker"
-                                className=" absolute sm:right-[-50px] sm:bottom-[180px] right-[10px] bottom-[95px] "
-                            />
-                            <Label
-                                text="SEO"
-                                className=" absolute sm:left-[120px] sm:bottom-[50px] left-[100px] bottom-[30px] "
-                            />
-                            <Label
-                                text="Team Leader"
-                                className=" absolute sm:left-[200px] sm:top-[110px] top-[70px] left-[80px] "
-                            />
-                        </div>
-                    </div>
-
                 </div>
                 <div ref={ServicesRef} id='getStarted' className='sm:w-[100%] sm:h-full w-[0px] h-[0px] border-[0px] pt-[100px] flex items-center justify-center sm:visible invisible '>
                     <div className='w-[100%] sm:visible invisible ' >
@@ -621,19 +543,24 @@ const Home = () => {
                         src="/images/user/circle5.png"
                         className=' absolute right-[0px] bottom-[0px] sm:visible invisible  '
                         alt="person7" />
-                    <div id="pricing" className=' sm:w-[70%] sm:h-[400px] border-[0px] flex  sm:pl-[0px] pl-10px ' >
-                        <div className=' w-[25%] h-[100%] border-[0px] flex items-center justify-center ' >
+                    <div id="pricing" className=' sm:h-[400px] w-[80%] border-[0px] flex  sm:pl-[0px] pl-10px ' >
+                        <div className=' w-[40%] flex items-center justify-center ' >
                             <img
-                                src="/images/user/person7.png"
-                                className=' sm:w-[176px] w-[80px] h-[110px] sm:h-[248px] '
+                                src="https://res.cloudinary.com/drgvislmm/image/upload/v1683385350/WebsiteImages/ggmoney_axjqvu.gif"
+                                className='absolute '
+                                width={600}
+                                height={600}
                                 alt="person7" />
                         </div>
-                        <div className='w-[75%] sm:px-[40px] px-[10px] sm:mt-[0px] mt-[5%]  ' >
-                            <div className='sm:w-[100%] sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
-                                <h1 className=' text-[#fff] sm:text-[50px] text-[17px] leading-none ' >Simple, transparent pricing</h1>
+                        <div className='w-full sm:px-[40px] pr-[0] sm:mt-[0px] mt-[5%]  ' >
+                            <div className='sm:w-full sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
+                                <h1 className=' text-yellow-200 sm:text-[30px] my-font-bold text-[17px] leading-sm ' >AFFORDABLE PRICING, EXCEPTIONAL RESULTS</h1>
                             </div>
                             <div>
-                                <h1 className=' text-[#fff] sm:text-[25px] text-[13px] sm:mt-[0px] mt-[10px] sm:leading-[30px] leading-tight ' >Super affordable plans , for content creators, startups and enterprises  and for everyone . </h1>
+                                <h1 className=' text-[#fff]  sm:text-[18px] my-font-semibold text-[13px] sm:-mt-[20px] mt-[10px]  leading-tight ' >
+                                    <p>"Choose from our flexible pricing plans to suit</p>
+                                    <p>your budget and goals."</p>
+                                </h1>
                             </div>
                         </div>
                     </div>
@@ -692,8 +619,8 @@ const Home = () => {
                     <div className='sm:h-[250px] h-[150px] w-[100%]  border-[0px] flex justify-between ' >
                         <div className='sm:w-[600px] h-[100%] flex items-center ' >
                             <div>
-                                <h1 className={`text-[#fff] sm:text-[40px] font-semibold ${gradiantText1}`} >Confused about the plans</h1>
-                                <h1 className={`text-[#fff] sm:text-[60px] font-bold ${gradiantText2}`} >Dont worry</h1>
+                                <h1 className={`text-[#fff] sm:text-[40px] my-font-semibold ${gradiantText1}`} >Confused about the plans</h1>
+                                <h1 className={`text-[#fff] sm:text-[60px] my-font-bold ${gradiantText2}`} >Dont worry</h1>
                             </div>
                         </div>
                         <div className='h-[100%] border-l-[0px] flex items-center justify-center ' >
@@ -712,16 +639,19 @@ const Home = () => {
                     />
                 </div>
                 <div ref={ExtraRef1} id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
-                    <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] sm:px-[0px] px-[10px]  ' >
-                        <h1 className=' text-[#fff] sm:text-[30px] text-[18px] font-semibold ' >Our Latest Projects</h1>
-                        <div className=' w-[100%] flex flex-wrap mt-[20px] pb-[50px] border-[0px]' >
-                            <div className='w-[100%] flex flex-wrap sm:gap-[50px] gap-[10px] border-[0px] sm:pb-[50px] ' >
+                    <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
+                        <div className=' flex items-center justify-center py-[5px] rounded ' >
+                            <h1 className=' text-[#fff] bg-gradient-to-r from-white via-yellow-100 to-green-100 text-transparent bg-clip-text text-center lg:text-[45px] text-[18px] font-bold ' >OUR LATEST PROJECTS</h1>
+                        </div>
+                        <div className=' w-[100%] flex flex-wrap mt-[50px] pb-[50px] border-[0px]' >
+                            <div className='w-[100%] flex flex-wrap justify-center sm:gap-[50px] gap-[10px] border-[0px] sm:pb-[50px] ' >
                                 {
                                     ProjectTypes.map((item, index) => {
                                         return (
                                             <button type="button"
                                                 key={index}
-                                                className={` sm:text-[19px] border-[0px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52]' : ' text-[#fff]'}`}
+                                                // focus:ring focus:ring-green-700
+                                                className={` ${(index == 2) ? 'lg:w-[130px]' : 'lg:w-[120px]'} hover:bg-[#F2F4F4]   focus:text-[#fff] ny-font-bold focus:bg-green-600   drop-shadow-lg lg:text-[16px] lg:font-bold sm:text-[#000]  lg:border-[0px] rounded  sm:h-[40px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52] bg-green-600' : ' text-[#fff] sm:bg-[#E5E7E9] '} `}
                                                 onClick={() => {
                                                     setprojectIndex(index)
                                                 }}
@@ -748,32 +678,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div >
-                <div ref={ExtraRef2} className='w-[100%] border-[0px] sm:pt-[100px] pt-[60px] sm:pb-[100px] pb-[80px] flex items-center justify-center sm:mb-[50px] relative ' >
-                    <div className='absolute top-[0px] sm:left-[50px] left-[10px] ' >
-                        <h1 className=' text-[#fff] sm:text-[25px] ' >Social</h1>
-                        <h1 className=' text-[#fff] sm:text-[30px] ' >What do our customers say?</h1>
-                    </div>
-                    <img
-                        src={`/images/user/circle9.png`}
-                        className=' absolute right-[0px] top-[30%] sm:visible invisible '
-                        alt="project1" />
-                    <Review />
-                    <div className='absolute bottom-[0px] border-[0px] sm:right-[50px] right-[0px] w-[200px] h-[50px] flex items-center sm:justify-center justify-end ' >
-                        <button type="button" className="text-[#fff] hover:text-[#000] hover:bg-white focus:ring-4 focus:ring-white focus:outline-none  font-medium rounded-lg text-lg border-[1px] hover:border-[0px] px-5 py-2.5 text-center inline-flex items-center mr-2 ">
-                            <FaStar
-                                className='mr-[10px]'
-                            />
-                            Rate us
-                        </button>
-                    </div>
-                </div>
-                <div ref={ContactRef} id="contact" className='w-[100%] sm:px-[0px] px-[10px] border-[0px] flex items-center justify-center mb-[50px] relative ' >
-                    <Contact
-                        onClick={() => {
-                            setShowPopup(true);
-                        }}
-                    />
-                </div>
                 <div ref={FooterRef} className='w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center' id="footer" >
                     {
                         typeof window !== 'undefined' &&
@@ -783,19 +687,7 @@ const Home = () => {
                 <div ref={BottomRef} className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' >
                     <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
                         <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
-                            {/* <FaWhatsapp
-                            color='white'
-                            className='text-[20px] sm:text-[30px] cursor-pointer '
-                            onClick={() => {
-                                window?.open("https://wa.me/918413802010")
-                            }}
-                        />
-                        <h1 className='text-white text-[15px] sm-text-[18px] cursor-pointer'
-                            onClick={() => {
-                                window?.open("https://wa.me/918413802010")
-                            }}
-                        >8413802010</h1> */}
-                            <h1 className='text-white text-[15px] sm-text-[18px]' >{`2022 ${`©`} All Rights Reserved`}</h1>
+                            <h1 className='text-white text-[15px] sm-text-[18px] my-font ' >{`2022 ${`©`} All Rights Reserved`}</h1>
                         </div>
                         <div className='flex border-[0px] w-[400px] sm:w-[250px] h-[40px] items-center justify-center sm:gap-[10px] gap-[20px]' >
                             <FaFacebookSquare
@@ -812,13 +704,6 @@ const Home = () => {
                                     window?.open("https://www.instagram.com/grogrip_media/")
                                 }}
                             />
-                            {/* <FaLinkedinIn
-                                color='white'
-                                className='text-[20px] sm:text-[30px] cursor-pointer '
-                            // onClick={() => {
-                            //     window?.open("https://www.instagram.com/grogrip_media/")
-                            // }}
-                            /> */}
                             <FaWhatsapp
                                 color='white'
                                 className='text-[20px] sm:text-[30px] cursor-pointer '
@@ -826,7 +711,7 @@ const Home = () => {
                                     window?.open("https://wa.me/918076455801")
                                 }}
                             />
-                            <h1 className='text-white text-[15px] sm-text-[18px] cursor-pointer'
+                            <h1 className='text-white text-[15px] sm-text-[18px] my-font cursor-pointer'
                                 onClick={() => {
                                     window?.open("https://wa.me/918076455801")
                                 }}

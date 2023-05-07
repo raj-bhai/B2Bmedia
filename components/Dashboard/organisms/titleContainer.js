@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 
 import { FaRegComment, FaAngleRight, FaAngleDown, FaExpand } from 'react-icons/fa';
+import Drawer_ from "./drawer";
 
 const TitleContainer = (props) => {
 
     const [focused, setFocused] = useState(false);
+    const [isOpen, setIsOpen] = React.useState(false);
 
     const bg = " bg-[#1C2833] "
     const focusedBg = " bg-[#145A32] "
 
+
     return (
         <div
-            className={`${props.containerClass} ${focused ? focusedBg : bg} relative `}
+            className={`${props.containerClass} ${(props.index1 == 0) ? ' pr-[35px]' : ''}  ${focused ? focusedBg : bg} relative `}
             onMouseEnter={() => {
                 setFocused(true)
             }}
@@ -45,19 +48,25 @@ const TitleContainer = (props) => {
                 <FaExpand
                     size={25}
                     className={`absolute right-[5px]`}
-                    onMouseEnter={() => {
-                        setFocused(true);
-                    }}
-                    onClick={() => {
-
-                    }}
+                    // onMouseEnter={() => {
+                    //     setFocused(true);
+                    // }}
+                    // onClick={() => {
+                    //     setIsOpen(true);
+                    // }}
                 />
             }
             <input type={'text'}
-                className={props.inputContainerClass}
+                className={`${props.inputContainerClass}`}
                 defaultValue={props.value}
+                // onFocus={() => {
+                //     setFocused(true)
+                // }}
             >
             </input>
+            <Drawer_ isOpen={isOpen} setIsOpen={setIsOpen}
+                data={props}
+            />
         </div>
     )
 }

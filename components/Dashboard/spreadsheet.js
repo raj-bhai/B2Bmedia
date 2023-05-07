@@ -177,7 +177,7 @@ const Spreadsheet = () => {
                     //     </input>
                     // </div>
                     <TitleContainer
-                        containerClass={` ${inputDiv} ${props.verticalLast ? '' : showDetail ? '' : ' border-b-[0px] '} ${showDetail ? ' h-[35px] items-center ' : ' h-[35px] flex items-center'} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} `}
+                        containerClass={` ${inputDiv}  ${props.verticalLast ? '' : showDetail ? '' : ' border-b-[0px] '} ${showDetail ? ' h-[35px] items-center ' : ' h-[35px] flex items-center'} ${props.horizontalLast ? ' ' : ' border-r-[0px] '}  ${(props.index1 === 2) ? ' text-transparent' : font} `}
                         showDetail={showDetail}
                         index1={props.index1}
                         onClickIcon={() => setShowDetail(!showDetail)}
@@ -298,6 +298,7 @@ const Spreadsheet = () => {
                     )
                 })
             }
+            {/* <Drawer_/> */}
         </div>
     )
 }

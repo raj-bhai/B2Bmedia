@@ -12,31 +12,15 @@ import {
     FaSearch,
     FaPlus,
     FaFilter,
-    FaBook,
     FaFolderOpen,
     FaStar,
-    FaAlignRight,
     FaAngleRight,
-    FaExpand,
-    FaYoutube,
-    FaCheck,
-    FaChevronRight,
-    FaChevronDown,
-    FaRegCommentAlt
 } from "react-icons/fa";
-//Fimport DashboardModal from "../components/modal";
-//import ClientsType from "../constants/ClientsType";
-//import DashboardData from "../constants/DashboardData";
-//import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import * as dashboardAction from '../redux/action/dashboard';
 import { ConfigProvider } from 'react-avatar';
 import Inbox from "../components/Inbox/Inbox";
-import Checkbox from '@mui/material/Checkbox';
-import SubTable from "../components/TableComponents/subtable";
-import Sheet from "../components/Dashboard/sheet";
 import Spreadsheet from "../components/Dashboard/spreadsheet";
-import Drawer_ from "../components/Dashboard/organisms/drawer";
 
 
 const Dashboard = () => {
@@ -52,6 +36,8 @@ const Dashboard = () => {
     const focusedColor = "#138D75"
     const [clientIndex, setClientIndex] = useState(0);
     const [iconIndex, setIconIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const Sheet = useSelector(state => state.dashboard.Sheet);
 
     const DashboardData = useSelector(state => state.dashboard.Task);
     const ClientsType = useSelector(state => state.dashboard.ClientType);
@@ -68,6 +54,12 @@ const Dashboard = () => {
             subItems: DashboardData.filter(Completed).length * 4
         }
     ]
+
+    useEffect(() => {
+        if (Sheet?.data) {
+            setLoading(false)
+        }
+    }, [Sheet])
 
 
     useEffect(() => {
@@ -250,6 +242,16 @@ const Dashboard = () => {
                     </div >
                 </div >
             </>
+        )
+    }
+
+    const Loader = () => {
+        return (
+            <div className="h-[100%] w-[100%] bg-[#17202A] border-[1px] flex items-center justify-center  mt-[50px] pb-[50px] z-0  fixed overflow-y-auto"
+                style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
+            >
+                <img src={'https://www.abhaf.org/assets/images/dark-loader.gif'} style={{ width: 50, height: 50 }}></img>
+            </div>
         )
     }
 
@@ -466,7 +468,11 @@ const Dashboard = () => {
                                 }}
                             >
                                 {/* Dashboard Content here */}
-                                <Dashboard_ />
+                                {
+                                    loading ?
+                                        <Loader /> :
+                                        <Dashboard_ />
+                                }
                             </div>
                         }
                         {
@@ -482,7 +488,6 @@ const Dashboard = () => {
                             />
                         }
                     </div>
-                    {/* <Drawer_ /> */}
                 </div>
             </ConfigProvider>
         </>
