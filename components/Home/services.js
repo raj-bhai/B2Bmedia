@@ -13,26 +13,26 @@ const Arr = [
         name: "Script",
         gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683558413/WebsiteImages/sc_wv0z1r.gif",
         className: " lg:left-0 left-16 lg:top-0 top-0 lg:scale-[1.5] scale-[2] ",
-        textStyle: " lg:right-0 lg:bottom-0 right-0 -bottom-10 "
+        textStyle: " lg:right-0 lg:bottom-0 right-0 bottom-[10px] "
     },
     {
         name: "Voiceover",
         gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683558410/WebsiteImages/vo_vvmutn.gif",
         className: " left-0 top-0 lg:scale-[1.5] scale-[2] ",
-        textStyle: " lg:bottom-0 lg:right-[30px] -bottom-11 left-0 "
+        textStyle: " lg:bottom-0 lg:right-[30px] bottom-[10px] left-0 "
     },
 
     {
         name: "Video",
         gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683558413/WebsiteImages/vdo_eadfcz.gif",
         className: " left-0 top-0 lg:scale-[1] scale-[1.5] ",
-        textStyle: " lg:right-0 lg:bottom-0 right-0 bottom-0"
+        textStyle: " lg:right-0 lg:bottom-0 right-0 bottom-[50px]"
     },
     {
         name: "Thumbnail",
         gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683561980/WebsiteImages/th_x6txju.gif ",
         className: "-left-10 top-0 lg:scale-[1] scale-[1.8] ",
-        textStyle: " lg:right-0 lg:bottom-0 left-0 bottom-0"
+        textStyle: " lg:right-0 lg:bottom-0 left-0 bottom-[25px]"
     },
 ]
 
