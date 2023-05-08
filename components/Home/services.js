@@ -8,6 +8,34 @@ import {
 } from 'react-icons/fa';
 
 
+const Arr = [
+    {
+        name: "Script",
+        gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683558413/WebsiteImages/sc_wv0z1r.gif",
+        className: " scale-[1.5] ",
+        textStyle: " right-0 bottom-0"
+    },
+    {
+        name: "Voiceover",
+        gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683558410/WebsiteImages/vo_vvmutn.gif",
+        className: " scale-[1.5] ",
+        textStyle: " bottom-0 right-[30px]"
+    },
+
+    {
+        name: "Video",
+        gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683558413/WebsiteImages/vdo_eadfcz.gif",
+        className: "",
+        textStyle: "right-0 bottom-0"
+    },
+    {
+        name: "Thumbnail",
+        gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683561980/WebsiteImages/th_x6txju.gif ",
+        className: "",
+        textStyle: " right-[20px] bottom-0"
+    },
+]
+
 
 const iconColor = ' text-[#808080]'
 const RoundedNumber = (props) => {
@@ -72,7 +100,7 @@ const VideoEdit = (props) => {
 
 const Services = (props) => {
     return (
-        <div id={props.id} className='relative border-[0px] w-[100%] py-[50px] flex items-center justify-center '>
+        <div id={props.id} className='relative border  w-[100%] gap-[20px] py-[50px] flex flex-wrap items-center justify-center '>
             {/* <div className=' border-[0px] relative  ' >
                 <div className='flex justify-between border-[0px] sm:w-[1100px] items-end  sm:pr-[30px]' >
                     <div className='flex' >
@@ -219,10 +247,23 @@ const Services = (props) => {
                     </div>
                 </div>
             </div> */}
-            <img
+            {/* <img
             src='https://res.cloudinary.com/drgvislmm/image/upload/v1683472192/scriptgg_naaae8.gif'
             className='border w-[80%] '
-            />
+            /> */}
+            {
+                Arr.map((x) => (
+                    <div className='lg:w-[500px] md:w-[70%] sm:w-[80%] w-[90%] flex items-center justify-center h-[300px] relative' >
+                        <img
+                            src={x.gif}
+                            className={`absolute left-0 top-0 ${x.className}`}
+                        />
+                        <div className={`border absolute w-[130px] flex justify-center  rounded-lg  items-center h-[40px]  ${x.textStyle} `} >
+                            <h1 className={`text-white my-font-semibold lg:text-[20px] `} >{x.name}</h1>
+                        </div>
+                    </div>
+                ))
+            }
         </div>
     )
 }

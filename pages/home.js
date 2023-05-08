@@ -344,16 +344,15 @@ const Home = () => {
                     {
                         <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] ' >
 
-                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[30px] sm:pb-[0px] pb-[50px] pl-[0px]  border-[0px] sm:min-w-[550px] `}
+                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[30px] sm:pb-[0px] pb-[50px] pl-[0px] sm:min-w-[550px] `}
                             >
-                                <div className='sm:w-[600px] w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[60px] flex relative ' >
+                                <div className='sm:w-[600px]  w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[60px] flex relative ' >
                                     <img
                                         src="/images/user/star.png"
                                         className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[50px] sm:top-[-5px] top-[-10px] sm:left-[-50px] left-[200px] '
                                         alt="star" />
                                     <div>
-                                        <div className='' >
-                                            {/* <h1 className='text-yellow-200 text-[50px] leading-[50px] text-left font-semibold  ' >Stand out of the crowd</h1> */}
+                                        <div className=' lg:py-0 py-[20px] pb-[40px] flex flex-col lg:gap-0 gap-[20px] lg:p-0 pr-[20px] pl-[20px] ' >
                                             <MovingText
                                                 type="flipFromLeftToCenter"
                                                 duration="1000ms"
@@ -362,14 +361,13 @@ const Home = () => {
                                                 timing="ease"
                                                 iteration={1}
                                                 fillMode="none"
-                                                className=' text-shadow my-font-bold drop-shadow-lg text-yellow-200 sm:text-[50px] text-[18px] sm:leading-[50px] text-left font-semibold  '
+                                                className='  text-shadow my-font-bold  drop-shadow-lg text-yellow-200 sm:text-[50px] text-[25px] sm:leading-[50px] text-left font-semibold  '
                                             >
                                                 {`Expert YouTube Service  and Support`}
                                             </MovingText>
 
                                             {/* <h1 className='text-white text-[40px] leading-[45px] mt-[30px] text-left font-normal ' >{'Creating videos is never so been easy'}</h1> */}
-                                            <div className='sm:mt-[28px] flex mt-[0px] border-[0px] sm:h-[100px]' >
-                                                {/* <VaraText text='WiseCode Team' /> */}
+                                            <div className='lg:mt-[28px] flex mt-[0px] border-[0px] lg:mt-0 mt-[50px] lg:h-[100px]' >
                                                 {
                                                     showText2 &&
                                                     <MovingText
@@ -381,7 +379,7 @@ const Home = () => {
                                                         iteration={1}
                                                         fillMode="forwards"
                                                         presences="letters"
-                                                        className='text-white sm:text-[40px] my-font text-[17px] sm:leading-[45px] text-left font-normal '
+                                                        className='text-white lg:text-[40px] my-font text-[22px] lg:leading-[45px] text-left font-normal '
                                                     >
                                                         {'Proven Track record of Success'}
                                                     </MovingText>
@@ -400,13 +398,13 @@ const Home = () => {
                                                     </Box>
                                                 </Modal>
                                             </div>
-                                            <div className='w-[100%] sm:h-[50px] h-[30px] border-[0px] sm:mt-[10px] mt-[0px] flex items-center ' >
+                                            <div className='  w-[100%] sm:h-[50px] h-[30px] border-[0px] sm:mt-[10px] mt-[0px] flex items-center ' >
                                                 <img
                                                     src="/images/user/path.png"
                                                     className=' ml-[10px] sm:mt-[-30px] mt-[10px] '
                                                     alt="star" />
                                             </div>
-                                            <div className='w-[100%] h-[50px] border-[0px] sm:mt-[-10px] mt-[10px]  ' >
+                                            <div className='  w-[100%] h-[50px] border-[0px] sm:mt-[-10px] mt-[10px]  ' >
                                                 {
                                                     showText3 &&
                                                     <MovingText
@@ -418,13 +416,13 @@ const Home = () => {
                                                         iteration={1}
                                                         fillMode="forwards"
                                                         presences="letters"
-                                                        className='text-white sm:text-[18px] my-font text-[14px] sm:leading-[25px] '
+                                                        className='text-white sm:text-[18px] my-font text-[16px] sm:leading-[25px] '
                                                     >
                                                         {"Unlock your channel's potential with our professional video production and optimization"}
                                                     </MovingText>
                                                 }
                                             </div>
-                                            <div className='w-[100%] h-[50px] mt-[30px]' >
+                                            <div className=' w-[100%] lg:mt-[30px] mt-[50px] lg:mb-0 mb-[50px]' >
                                                 {
                                                     showText4 &&
                                                     <MovingText
@@ -437,14 +435,14 @@ const Home = () => {
                                                         fillMode="forwards"
                                                         presences="letters"
                                                     >
-                                                        <div className='w-[100%] h-[50px] border-[0px] flex items-center justify-start gap-16 sm:pr-[0px] pr-[20px] ' >
+                                                        <div className='w-[100%] flex flex-col lg:h-[100px] lg:flex lg:flex-row items-center lg:items-center lg:justify-start gap-4 lg:gap-16 sm:pr-[0px] lg:pr-[20px] ' >
                                                             <ParticleEffectButton
                                                                 color='#fff'
                                                                 hidden={btn1Animate}
                                                             >
                                                                 <button
                                                                     type="button"
-                                                                    className="sm:w-[150px] w-[100px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
+                                                                    className="sm:w-[150px] w-[200px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[40px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
                                                                     onClick={() => {
                                                                         setBtn1Animate(true)
                                                                         setTimeout(() => {
@@ -462,7 +460,7 @@ const Home = () => {
                                                             >
                                                                 <button
                                                                     type="button"
-                                                                    className="sm:w-[150px] w-[100px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
+                                                                    className="sm:w-[150px] w-[200px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[40px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
                                                                     onClick={() => {
                                                                         setBtn2Animate(true)
                                                                         setprojectIndex(0)
@@ -482,7 +480,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='sm:w-[50%] sm:min-w-[550px] w-[90%] sm:h-[500px] border-[0px] flex sm:justify-end justify-center sm:pr-[50px] ' >
+                            <div className='lg:w-[50%] lg:min-w-[550px] w-0 h-0 lg:h-[500px] border-[0px] flex lg:justify-end justify-center lg:pr-[50px] lg:visible invisible  ' >
                                 <Globe />
                             </div>
                         </div>
@@ -527,8 +525,8 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={ServicesRef} id='getStarted' className='sm:w-[100%] sm:h-full w-[0px] h-[0px] border-[0px] pt-[100px] flex items-center justify-center sm:visible invisible '>
-                    <div className='w-[100%] sm:visible invisible ' >
+                <div ref={ServicesRef} id='getStarted' className='   w-[100%] flex items-center justify-center'>
+                    <div className='w-[100%] ' >
                         <Services
                             id=''
                         />
