@@ -71,24 +71,24 @@ const Features = (props) => {
 
     return (
         <div className="sm:w-[300px] flex border-[0px] items-center relative py-[5px] " >
-            <div className={`${props.focused ? focusedBG : unFocusedBG} w-[20px] h-[20px] rounded-[10px] flex items-center justify-center `}
+            <div className={`${props.focused ? focusedBG : unFocusedBG} lg:w-[20px] lg:h-[20px] w-[15px] h-[15px] rounded-[8px] lg:rounded-[10px] flex items-center justify-center `}
                 onClick={() => {
                     props.onCheck()
                 }}
             >
-                {
+                {/* {
                     props.seoChecked &&
                     <FaCheck
-                        size={12}
+                        className="lg:text-[12px] text-[10px]"
                         color={props.focused ? '#000' : '#fff'}
                     />
-                }
+                } */}
             </div>
-            <h1 className=" text-[#fff] ml-[10px] my-font-semibold text-[13px] sm:text-[14px] leading-none " >{props.name}</h1>
+            <h1 className=" text-[#fff] ml-[10px] my-font-semibold text-[11px] sm:text-[14px] leading-none " >{props.name}</h1>
             {
                 (props.seoChecked && props.name !== String.thumb && props.name !== String.seo) &&
-                <div className="flex" >
-                    <div className="flex items-center ml-2 h-[20px] ">
+                <div className="flex  " >
+                    <div className="flex items-center ml-2 h-[20px] lg:relative absolute top-0 right-0 ">
                         <button className="px-3 h-[20px] border text-sm font-semibold text-gray-700 flex items-center justify-center bg-gray-200 border border-gray-300 rounded-l-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
                             onClick={() => decrement(props.name)}
                         >-</button>
@@ -107,9 +107,8 @@ const Features = (props) => {
 
                         >+</button>
                     </div>
-                    <p className=" ml-[5px] text-white my-font text-[12px] " >{endText}</p>
+                    <p className=" ml-[5px] invisible lg:visible text-white my-font text-[12px] " >{endText}</p>
                 </div>
-
             }
 
         </div>
