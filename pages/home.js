@@ -526,7 +526,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div ref={ServicesRef} id='getStarted' className='   w-[100%] flex items-center justify-center'>
-                    <div className='w-[100%] ' >
+                    <div className='w-[100%] lg:flex lg:flex-col lg:items-center ' >
                         <Services
                             id=''
                         />
@@ -546,12 +546,12 @@ const Home = () => {
                         <div className=' w-[40%] lg:h-[400px] h-[200px] flex items-center justify-center ' >
                             <img
                                 src="https://res.cloudinary.com/drgvislmm/image/upload/v1683385350/WebsiteImages/ggmoney_axjqvu.gif"
-                                className='absolute lg:w-[600px] lg:h-[400px]  '
+                                className='absolute lg:w-[600px] lg:h-[400px] lg:top-0  top-1 '
                                 // width={600}
                                 // height={600}
                                 alt="person7" />
                         </div>
-                        <div className='w-full flex flex-col lg:items-start lg:text-start items-center text-center lg:pb-[120px] sm:px-[40px] pr-[0] sm:mt-[0px] mt-[5%]  ' >
+                        <div className='w-full flex flex-col lg:items-start lg:text-start items-center text-center lg:pb-[120px] sm:px-[40px] pr-[0] sm:mt-[0px] mt-[50px]  ' >
                             <div className='sm:w-full sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
                                 <h1 className=' text-yellow-200 sm:text-[30px] my-font-bold text-[17px] leading-sm ' >AFFORDABLE PRICING, EXCEPTIONAL RESULTS</h1>
                             </div>

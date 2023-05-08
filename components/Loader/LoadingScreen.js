@@ -15,7 +15,7 @@ const LoadingScreen = () => {
         <div className=" w-[100%] h-screen bg-[#FADBD8] relative  fixed overflow-y-auto flex items-center justify-center" >
             <audio ref={audioRef} src="https://res.cloudinary.com/drgvislmm/video/upload/v1683328395/WebsiteImages/final_animation_kwxwiu.mp3" />
             <img
-                className=' drop-shadow-lg h-screen w-full resize-none '
+                className=' drop-shadow-lg lg:h-screen lg:w-full resize-none '
                 src={'https://res.cloudinary.com/drgvislmm/image/upload/v1683328919/WebsiteImages/ggL_qizfy6.gif'} style={{}}></img>
             {/* <div className=' absolute ' >
                 <div className='relative' >
