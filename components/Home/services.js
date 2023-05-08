@@ -12,27 +12,27 @@ const Arr = [
     {
         name: "Script",
         gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683558413/WebsiteImages/sc_wv0z1r.gif",
-        className: " scale-[1.5] ",
-        textStyle: " right-0 bottom-0"
+        className: " lg:left-0 left-16 lg:top-0 top-0 lg:scale-[1.5] scale-[2] ",
+        textStyle: " lg:right-0 lg:bottom-0 right-0 bottom-2 "
     },
     {
         name: "Voiceover",
         gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683558410/WebsiteImages/vo_vvmutn.gif",
-        className: " scale-[1.5] ",
-        textStyle: " bottom-0 right-[30px]"
+        className: " left-0 top-0 lg:scale-[1.5] scale-[2] ",
+        textStyle: " lg:bottom-0 lg:right-[30px] bottom-0 left-0 "
     },
 
     {
         name: "Video",
         gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683558413/WebsiteImages/vdo_eadfcz.gif",
-        className: "",
-        textStyle: "right-0 bottom-0"
+        className: " left-0 top-0 lg:scale-[1] scale-[1.5] ",
+        textStyle: " lg:right-0 lg:bottom-0 right-0 bottom-10"
     },
     {
         name: "Thumbnail",
         gif: "https://res.cloudinary.com/drgvislmm/image/upload/v1683561980/WebsiteImages/th_x6txju.gif ",
-        className: "",
-        textStyle: " right-[20px] bottom-0"
+        className: "-left-10 top-0 lg:scale-[1] scale-[1.8] ",
+        textStyle: " lg:right-0 lg:bottom-0 left-0 bottom-5"
     },
 ]
 
@@ -100,7 +100,7 @@ const VideoEdit = (props) => {
 
 const Services = (props) => {
     return (
-        <div id={props.id} className='relative border  w-[100%] gap-[20px] py-[50px] flex flex-wrap items-center justify-center '>
+        <div id={props.id} className='relative lg:invisible visible  w-[100%] gap-[20px] py-[50px] flex flex-wrap items-center justify-center '>
             {/* <div className=' border-[0px] relative  ' >
                 <div className='flex justify-between border-[0px] sm:w-[1100px] items-end  sm:pr-[30px]' >
                     <div className='flex' >
@@ -256,7 +256,7 @@ const Services = (props) => {
                     <div className='lg:w-[500px] md:w-[70%] sm:w-[80%] w-[90%] flex items-center justify-center h-[300px] relative' >
                         <img
                             src={x.gif}
-                            className={`absolute left-0 top-0 ${x.className}`}
+                            className={`absolute ${x.className}`}
                         />
                         <div className={`border absolute w-[130px] flex justify-center  rounded-lg  items-center h-[40px]  ${x.textStyle} `} >
                             <h1 className={`text-white my-font-semibold lg:text-[20px] `} >{x.name}</h1>

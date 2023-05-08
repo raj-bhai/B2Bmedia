@@ -243,9 +243,9 @@ const Home = () => {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+    // useEffect(() => {
+    //     window.scrollTo(0, 0)
+    // }, [])
 
     const onScroll = () => {
         if (window.pageYOffset > 50) {
@@ -643,14 +643,14 @@ const Home = () => {
                             <h1 className=' text-[#fff] bg-gradient-to-r from-white via-yellow-100 to-green-100 text-transparent bg-clip-text text-center lg:text-[45px] text-[18px] font-bold ' >OUR LATEST PROJECTS</h1>
                         </div>
                         <div className=' w-[100%] flex flex-wrap mt-[50px] pb-[50px] border-[0px]' >
-                            <div className='w-[100%] flex flex-wrap justify-center sm:gap-[50px] gap-[10px] border-[0px] sm:pb-[50px] ' >
+                            <div className='w-[100%] flex flex-wrap justify-center lg:gap-x-[50px] gap-x-[10px] sm:pb-[50px] ' >
                                 {
                                     ProjectTypes.map((item, index) => {
                                         return (
                                             <button type="button"
                                                 key={index}
                                                 // focus:ring focus:ring-green-700
-                                                className={` ${(index == 2) ? 'lg:w-[130px]' : 'lg:w-[120px]'} hover:bg-[#F2F4F4]   focus:text-[#fff] ny-font-bold focus:bg-green-600   drop-shadow-lg lg:text-[16px] lg:font-bold sm:text-[#000]  lg:border-[0px] rounded  sm:h-[40px] sm:mb-[0px] mb-[20px] cursor-pointer text-[11px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52] bg-green-600' : ' text-[#fff] sm:bg-[#E5E7E9] '} `}
+                                                className={` ${(index == 2) ? 'lg:w-[130px] w-[100px]' : 'lg:w-[120px] w-[80px]'} h-[35px] hover:bg-[#F2F4F4]  focus:text-[#fff] ny-font-bold focus:bg-green-600   drop-shadow-lg lg:text-[16px] lg:font-bold sm:text-[#000]  lg:border-[0px] rounded  lg:h-[40px] sm:mb-[0px] mb-[20px] cursor-pointer text-[13px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52] bg-green-600' : ' text-[#fff] sm:bg-[#E5E7E9] '} `}
                                                 onClick={() => {
                                                     setprojectIndex(index)
                                                 }}
