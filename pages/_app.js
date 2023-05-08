@@ -8,10 +8,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>GroGrip - Grow Your Youtube Channel</title>
+        <title>GroGrip - Grow Your Youtube</title>
         <meta name="description" content="One place for your all SEO, SMO, CONTENT" />
-        <meta property="og:title" content="GroGrip - Grow Your Youtube Channel " />
-        <meta property="og:description" content="GroGrip - Grow Your Youtube Channel" />
+        <meta property="og:title" content="GroGrip - Grow Your Youtube " />
+        <meta property="og:description" content="GroGrip - Grow Your Youtube " />
         <meta property="og:url" content="https://grogrip.com/home" />
         {/* <meta property="og:image" content="/beyobofavicon.png" /> */}
         <meta name="og_site_name" property="og:site_name" content="https://grogrip.com" />
