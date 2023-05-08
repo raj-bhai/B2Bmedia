@@ -444,7 +444,7 @@ const Home = () => {
                                                             >
                                                                 <button
                                                                     type="button"
-                                                                    className="sm:w-[150px] w-[80px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
+                                                                    className="sm:w-[150px] w-[100px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
                                                                     onClick={() => {
                                                                         setBtn1Animate(true)
                                                                         setTimeout(() => {
@@ -462,7 +462,7 @@ const Home = () => {
                                                             >
                                                                 <button
                                                                     type="button"
-                                                                    className="sm:w-[150px] w-[80px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
+                                                                    className="sm:w-[150px] w-[100px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
                                                                     onClick={() => {
                                                                         setBtn2Animate(true)
                                                                         setprojectIndex(0)
@@ -494,35 +494,35 @@ const Home = () => {
                     <div className='w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[45px] my-font leading-tight  ' >{Math.round(count)}+</h1>
+                                <h1 className='text-[#fff] lg:text-[50px] text-[30px] my-font leading-tight  ' >{Math.round(count)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold sm:ml-[-20px]  ' >Clients</h1>
+                                <h1 className='text-[#E0E5F3] lg:text-[18px] text-[25px] leading-tight my-font-bold sm:ml-[-20px]  ' >Clients</h1>
                             </div>
                         </div>
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff]  sm:text-[50px] text-[40px] leading-tight my-font  ' >{Math.round(count1)}+</h1>
+                                <h1 className='text-[#fff]  sm:text-[50px] text-[30px] leading-tight my-font  ' >{Math.round(count1)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold  ' >Positive Feedback</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[25px] leading-tight my-font-bold  ' >Positive Feedback</h1>
                             </div>
 
                         </div>
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight my-font  ' >{Math.round(count2)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[30px] leading-tight my-font  ' >{Math.round(count2)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold sm:ml-[-10px]  ' >Channels</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[25px] leading-tight my-font-bold sm:ml-[-10px]  ' >Channels</h1>
                             </div>
                         </div>
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#fff] sm:text-[50px] text-[40px] leading-tight my-font  ' >{Math.round(count3)}+</h1>
+                                <h1 className='text-[#fff] sm:text-[50px] text-[30px] leading-tight my-font  ' >{Math.round(count3)}+</h1>
                             </div>
                             <div className=' w-[100%] flex justify-center items-center ' >
-                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[35px] leading-tight my-font-bold  ' >Views Daily</h1>
+                                <h1 className='text-[#E0E5F3] sm:text-[18px] text-[25px] leading-tight my-font-bold  ' >Views Daily</h1>
                             </div>
                         </div>
                     </div>
@@ -544,16 +544,16 @@ const Home = () => {
                         src="/images/user/circle5.png"
                         className=' absolute right-[0px] bottom-[0px] sm:visible invisible  '
                         alt="person7" />
-                    <div className=' sm:h-[400px] w-[80%] border-[0px] flex  sm:pl-[0px] pl-10px ' >
-                        <div className=' w-[40%] flex items-center justify-center ' >
+                    <div className=' lg:h-[400px] lg:mt-[0px] mt-[20px] w-[80%] border-[0px] lg:flex lg:flex-row flex flex-col items-center lg:justify-center  lg:pl-[0px] pl-10px ' >
+                        <div className=' w-[40%] lg:h-[400px] h-[200px] flex items-center justify-center ' >
                             <img
                                 src="https://res.cloudinary.com/drgvislmm/image/upload/v1683385350/WebsiteImages/ggmoney_axjqvu.gif"
-                                className='absolute '
-                                width={600}
-                                height={600}
+                                className='absolute lg:w-[600px] lg:h-[400px]  '
+                                // width={600}
+                                // height={600}
                                 alt="person7" />
                         </div>
-                        <div className='w-full sm:px-[40px] pr-[0] sm:mt-[0px] mt-[5%]  ' >
+                        <div className='w-full flex flex-col lg:items-start lg:text-start items-center text-center lg:pb-[120px] sm:px-[40px] pr-[0] sm:mt-[0px] mt-[5%]  ' >
                             <div className='sm:w-full sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
                                 <h1 className=' text-yellow-200 sm:text-[30px] my-font-bold text-[17px] leading-sm ' >AFFORDABLE PRICING, EXCEPTIONAL RESULTS</h1>
                             </div>
