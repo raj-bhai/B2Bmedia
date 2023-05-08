@@ -58,14 +58,14 @@ const CustomPlan = (props) => {
                     className=" ml-[20px] mt-[2px] sm:visible invisible "
                 />
             </div>
-            <div className=" sm:w-[100%] relative sm:h-[500px] relative sm:mt-[50px] mt-[15px] rounded-[20px] gap-8 flex flex-wrap justify-center lg:justify-start " >
+            <div className=" sm:w-[100%] relative sm:h-[500px] relative sm:mt-[50px] mt-[15px] rounded-[20px] flex flex-col lg:items-start items-center lg:gap-8 lg:flex lg:flex-wrap justify-center lg:justify-start " >
                 <div className="w-[100%] lg:-ml-[250px]  h-[100%] relative  flex items-center justify-center text-white " >
                     <img
                         src="https://res.cloudinary.com/drgvislmm/image/upload/v1683466408/enggggg_j1ypzs.gif"
                         className="  "
                     />
                 </div>
-                <div className="absolute lg:right-[150px]" >
+                <div className="lg:absolute lg:right-[150px]" >
                     <PricingCard
                         for="Short Videos (4-5 mins)"
                         type="Basic"
