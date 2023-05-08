@@ -110,7 +110,7 @@ const Home = () => {
     const [pricingIndex, setPricingIndex] = useState(1);
 
     //selected project types (ex: All, Tech, Crypto)
-    const [projectIndex, setprojectIndex] = useState(1);
+    const [projectIndex, setprojectIndex] = useState(0);
 
     const [selectedPortfolio, setSelectedPortfolio] = useState([]);   //video urls
 
@@ -465,6 +465,7 @@ const Home = () => {
                                                                     className="sm:w-[150px] w-[80px] text-[#000] my-font-bold-noshadow sm:text-[16px] text-[12px] sm:h-[50px] h-[25px] bg-white rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:border-gray-400  hover:border-2 hover:border-opacity-50 hover:scale-105 transition duration-300"
                                                                     onClick={() => {
                                                                         setBtn2Animate(true)
+                                                                        setprojectIndex(0)
                                                                         setTimeout(() => {
                                                                             document.getElementById('demos').scrollIntoView()
                                                                         }, 1500);
@@ -543,7 +544,7 @@ const Home = () => {
                         src="/images/user/circle5.png"
                         className=' absolute right-[0px] bottom-[0px] sm:visible invisible  '
                         alt="person7" />
-                    <div id="pricing" className=' sm:h-[400px] w-[80%] border-[0px] flex  sm:pl-[0px] pl-10px ' >
+                    <div className=' sm:h-[400px] w-[80%] border-[0px] flex  sm:pl-[0px] pl-10px ' >
                         <div className=' w-[40%] flex items-center justify-center ' >
                             <img
                                 src="https://res.cloudinary.com/drgvislmm/image/upload/v1683385350/WebsiteImages/ggmoney_axjqvu.gif"
@@ -565,7 +566,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={PricingRef} className='w-[100%] flex item-center justify-center' >
+                <div id="pricing" ref={PricingRef} className='w-[100%] pt-[50px] flex item-center justify-center' >
                     <div className=' w-[90%] border-[0px] sm:mt-[50px] mt-[20px] flex sm:gap-[80px] gap-[20px] flex-wrap items-center justify-center ' >
                         <PricingCard
                             for="Short Videos (4-5 mins)"
